@@ -1,0 +1,181 @@
+{
+	"metadata": {
+		"url": "http://vcs.nuwave.link/git/ps/wu/min.json",
+		"date": "2019-03-13T09:25:53"
+	},
+	"data": [
+		{
+			"OS": {
+				"Caption": "Microsoft Windows Server 2008 R2"
+			},
+			"Updates": [
+				{
+					"HotFixID": "KB4490628",
+					"url": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/03/windows6.1-kb4490628-x64_d3de52d6987f7c8bdc2c015dca69eac96047c76e.msu"
+				},
+				{
+					"HotFixID": "KB4087364",
+					"url": "http://download.windowsupdate.com/c/msdownload/update/software/ftpk/2018/07/ndp472-kb4087364-x64_25f386d2fb25b200ed7ddba055d008995403f4e6.exe"
+				},
+				{
+					"HotFixID": "KB2819745",
+					"url": "https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x64-MultiPkg.msu"
+				}
+			]
+		},
+		{
+			"OS": {
+				"Caption": "Microsoft Windows Server 2012 R2"
+			},
+			"Updates": [
+				{
+					"HotFixID": "KB3173424",
+					"url": "https://download.microsoft.com/download/E/2/C/E2CA92A3-8D60-4702-98E2-2AB396FEA1BC/Windows8.1-KB3173424-x64.msu"
+				},
+				{
+					"HotFixID": "KB2919355",
+					"url": "https://download.microsoft.com/download/2/5/6/256CCCFB-5341-4A8D-A277-8A81B21A1E35/Windows8.1-KB2919355-x64.msu"
+				},
+				{
+					"HotFixID": "KB3172614",
+					"url": "https://download.microsoft.com/download/A/8/6/A8686706-78A3-4AC9-ABD2-64DC20A4581F/Windows8.1-KB3172614-x64.msu"
+				},
+				{
+					"HotFixID": "KB4054566",
+					"url": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2018/07/windows8.1-kb4054566-x64_e780e6efac612bd0fcaf9cccfe15d6d05c9cc419.msu"
+				},
+				{
+					"HotFixID": "KB3191564",
+					"url": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu"
+				}
+			]
+		},
+		{
+			"OS": {
+				"Caption": "Microsoft Windows Server 2016"
+			},
+			"Updates": [
+				{
+					"HotFixID": "KB4054590",
+					"Url": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2018/07/windows10.0-kb4054590-x64_4f8ee4cc9304f340d9d2762728f405799e7d846a.msu"
+				}
+				{
+					"HotFixID": "KB4509091",
+					"url": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/07/windows10.0-kb4509091-x64_1e1039047044a1f632562cd65df3ce6b77804018.msu"
+				},
+				{
+					"HotFixID": "KB4507459",
+					"url": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2019/07/windows10.0-kb4507459-x64_67d347cdf1933c9da47f7e6f96424ce89debce41.msu"
+				}
+			]
+		},
+		{
+			"OS": {
+				"Caption": "Microsoft Windows 10"
+			},
+			"Updates": [
+				{
+					"HotFixID": "KB4480977",
+					"url": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2019/01/windows10.0-kb4480977-x64_4630376d446938345665e2ce8379d96bb63a84c8.msu"
+				}
+			]
+		},
+		{
+			"OS": {
+				"Caption": "Microsoft Windows 7",
+				"OSArchitecture": "32-bit",
+				"CSDVersion": "Service Pack 1"
+			},
+			"Updates": [
+				{
+					"__Comment" : "SHA2",
+					"HotFixID": "KB3033929",
+					"url": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2015/02/windows6.1-kb3033929-x86_927e018113fe51250c57029635d46b89bf235920.msu"
+				},
+				{
+					"__Comment" : "Servicing Stack Update, Mar 2019",
+					"HotFixID": "KB4490628",
+					"Reboot": "true",
+					"url": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/03/windows6.1-kb4490628-x86_3cdb3df55b9cd7ef7fcb24fc4e237ea287ad0992.msu"
+				},
+				{
+					"__Comment" : "Convenice Update",
+					"HotFixID": ["KB2524478", "KB2574819", "KB2603229", "KB2603469", "KB2607047", "KB2607576", "KB2608658", "KB2633952", "KB2636573", "KB2639308", "KB2640148", "KB2647753", "KB2660075", "KB2661254", "KB2677070", "KB2679255", "KB2699779", "KB2709630", "KB2709981", "KB2719857", "KB2726535", "KB2731771", "KB2732059", "KB2735855", "KB2739159", "KB2741355", "KB2744129", "KB2749655", "KB2756822", "KB2760730", "KB2762895", "KB2763523", "KB2779562", "KB2786081", "KB2786400", "KB2791765", "KB2794119", "KB2798162", "KB2799926", "KB2800095", "KB2806748", "KB2808679", "KB2829104", "KB2834140", "KB2835174", "KB2836502", "KB2843630", "KB2846960", "KB2846960", "KB2847077", "KB2852386", "KB2853952", "KB2863058", "KB2868116", "KB2882822", "KB2888049", "KB2890882", "KB2891804", "KB2893519", "KB2904266", "KB2905454", "KB2908783", "KB2913152", "KB2913431", "KB2913751", "KB2919469", "KB2922717", "KB2923398", "KB2923545", "KB2928562", "KB2929733", "KB2929755", "KB2966583", "KB2970228", "KB2973337", "KB2977728", "KB2978092", "KB2980245", "KB2981580", "KB2985461", "KB2994023", "KB2998527", "KB2999226", "KB3000988", "KB3004394", "KB3005788", "KB3006121", "KB3006137", "KB3006625", "KB3008627", "KB3009736", "KB3013410", "KB3013531", "KB3014406", "KB3020338", "KB3020370", "KB3040272", "KB3045645", "KB3048761", "KB3049874", "KB3054205", "KB3054476", "KB3065979", "KB3068708", "KB3075249", "KB3077715", "KB3078667", "KB3080079", "KB3080149", "KB3092627", "KB3095649", "KB3102429", "KB3107998", "KB3112148", "KB3118401", "KB3121255", "KB3133977", "KB3137061", "KB3138378", "KB3138901", "KB3145126", "KB3147071", "KB3148851", "KB2830477"],
+					"Reboot": "true",
+					"url": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2016/05/windows6.1-kb3125574-v4-x86_ba1ff5537312561795cc04db0b02fbb0a74b2cbd.msu"
+				},
+				{
+					"__Comment" : "Rollup Mar 2019 (NIC Fix)"
+					"HotFixID": "KB4489878",
+					"url": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/03/windows6.1-kb4489878-x86_4850c313f7149cbebe5cd718d4efa0e426aebc81.msu"
+				},
+				{
+					"__Comment" : "Rollup Jun 2019"
+					"HotFixID": "KB4503292",
+					"url": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/06/windows6.1-kb4503292-x86_932f3cccb6343fa2339648b391b80d28f8134870.msu"
+				},
+				{
+					"__Comment" : ".NET 4.7.2"
+					"HotFixID": "",
+					"url": "http://download.microsoft.com/download/0/5/C/05C1EC0E-D5EE-463B-BFE3-9311376A6809/NDP472-KB4054531-Web.exe",
+					"Arguments" : "/q /norestart",
+					"ExitCodes" : ["0", "1641", "3010"]
+				},
+				{
+					"__Comment" : "WMF 4"
+					"HotFixID": "KB2819745",
+					"url": "http://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x86-MultiPkg.msu"
+				}
+			]
+		},
+		{
+			"OS": {
+				"Caption": "Microsoft Windows 7",
+				"OSArchitecture": "64-bit",
+				"CSDVersion": "Service Pack 1"
+			},
+			"Updates": [
+				{
+					"__Comment" : "SHA2",
+					"HotFixID": "KB3033929",
+					"url": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2015/02/windows6.1-kb3033929-x64_5c56222b0caf43030addc9ad262633fcbddfcd41.msu"
+				},
+				{
+					"__Comment" : "Servicing Stack Update, Mar 2019",
+					"HotFixID": "KB4490628",
+					"Reboot": "true",
+					"url": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/03/windows6.1-kb4490628-x64_d3de52d6987f7c8bdc2c015dca69eac96047c76e.msu"
+				},
+				{
+					"__Comment" : "Convenice Update",
+					"HotFixID": ["KB2524478", "KB2574819", "KB2603229", "KB2603469", "KB2607047", "KB2607576", "KB2608658", "KB2633952", "KB2636573", "KB2639308", "KB2640148", "KB2647753", "KB2660075", "KB2661254", "KB2677070", "KB2679255", "KB2699779", "KB2709630", "KB2709981", "KB2719857", "KB2726535", "KB2731771", "KB2732059", "KB2735855", "KB2739159", "KB2741355", "KB2744129", "KB2749655", "KB2756822", "KB2760730", "KB2762895", "KB2763523", "KB2779562", "KB2786081", "KB2786400", "KB2791765", "KB2794119", "KB2798162", "KB2799926", "KB2800095", "KB2806748", "KB2808679", "KB2829104", "KB2834140", "KB2835174", "KB2836502", "KB2843630", "KB2846960", "KB2846960", "KB2847077", "KB2852386", "KB2853952", "KB2863058", "KB2868116", "KB2882822", "KB2888049", "KB2890882", "KB2891804", "KB2893519", "KB2904266", "KB2905454", "KB2908783", "KB2913152", "KB2913431", "KB2913751", "KB2919469", "KB2922717", "KB2923398", "KB2923545", "KB2928562", "KB2929733", "KB2929755", "KB2966583", "KB2970228", "KB2973337", "KB2977728", "KB2978092", "KB2980245", "KB2981580", "KB2985461", "KB2994023", "KB2998527", "KB2999226", "KB3000988", "KB3004394", "KB3005788", "KB3006121", "KB3006137", "KB3006625", "KB3008627", "KB3009736", "KB3013410", "KB3013531", "KB3014406", "KB3020338", "KB3020370", "KB3040272", "KB3045645", "KB3048761", "KB3049874", "KB3054205", "KB3054476", "KB3065979", "KB3068708", "KB3075249", "KB3077715", "KB3078667", "KB3080079", "KB3080149", "KB3092627", "KB3095649", "KB3102429", "KB3107998", "KB3112148", "KB3118401", "KB3121255", "KB3133977", "KB3137061", "KB3138378", "KB3138901", "KB3145126", "KB3147071", "KB3148851", "KB2830477"],
+					"Reboot": "true",
+					"url": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2016/05/windows6.1-kb3125574-v4-x64_2dafb1d203c8964239af3048b5dd4b1264cd93b9.msu"
+				},
+				{
+					"__Comment" : "Rollup Mar 2019 (NIC Fix)",
+					"HotFixID": "KB4489878",
+					"url": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/03/windows6.1-kb4489878-x64_ad02ba6500855333621fecf1b95cc15a8950f2e8.msu"
+				},
+				{
+					"__Comment" : "Rollup Jun 2019",
+					"HotFixID": "KB4503292",
+					"Reboot" : "true",
+					"url": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/06/windows6.1-kb4503292-x64_a35bb4ea16d1d529fde9abfe8a0c16e9061f74cd.msu"
+				},
+				{
+					"__Comment" : ".NET 4.7.2",
+					"HotFixID": "",
+					"url": "http://download.microsoft.com/download/0/5/C/05C1EC0E-D5EE-463B-BFE3-9311376A6809/NDP472-KB4054531-Web.exe",
+					"Arguments" : "/q /norestart",
+					"ExitCodes" : ["0", "1641", "3010"]
+				},
+				{
+					"__Comment" : "WMF 4",
+					"HotFixID": "KB2819745",
+					"url": "https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x64-MultiPkg.msu"
+				}
+			]
+		}
+	]
+}
