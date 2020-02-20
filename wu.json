@@ -24,6 +24,22 @@
 		},
 		{
 			"OS": {
+				"Caption": "Microsoft Windows Server 2012 XXXXXXXXXXXXXXXXXX"
+			},
+			"Updates": [
+				{
+					"__Comment": "2019-11 SSU",
+					"HotFixID": "KB4523208",
+					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/11/windows8-rt-kb4523208-x64_8ec1a4d459cfab6330b8616f7f298ecb5a0e1665.msu"
+				},
+				{
+					"__Comment": "2020-02 Rollup",
+					"HotFixID": "KB4537814",
+					"Source" : "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/02/windows8-rt-kb4537814-x64_a2a7ba9864a8a587b02aa74d31d56e4737562b78.msu"
+				}
+			]
+		},		{
+			"OS": {
 				"Caption": "Microsoft Windows Server 2012 R2"
 			},
 			"Updates": [
@@ -51,7 +67,8 @@
 		},
 		{
 			"OS": {
-				"Caption": "Microsoft Windows Server 2016"
+				"Caption": "Microsoft Windows Server 2016",
+				"Version": "10.0.14393"
 			},
 			"Updates": [
 				{
@@ -63,6 +80,28 @@
 					"__Comment": "2020-01 Cumulative Update",
 					"HotFixID": "KB4534307",
 					"source": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/01/windows10.0-kb4534307-x64_aecae2d961b07d348d7a0f31a1c5f35ba559527a.msu"
+				},
+				{
+					"__Comment": ".NET Framework 4.8",
+					"HotFixID": "KB4486153",
+					"source": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu"
+				}
+			]
+		},
+		{
+			"OS": {
+				"Caption": "Microsoft Windows Server 2019"
+			},
+			"Updates": [
+				{
+					"__Comment": "2019-11 SSU",
+					"HotFixID": "KB4523204",
+					"source": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/11/windows10.0-kb4523204-x64_57098d9954748b2d7d767f73f60493bc592ff286.msu"
+				},
+				{
+					"__Comment": "2020-01 Cumulative Update",
+					"HotFixID": "KB4534321",
+					"source": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/01/windows10.0-kb4534321-x64_255e6ad394c29107ce053bcaf8fd999fd6b91d1e.msu"
 				},
 				{
 					"__Comment": ".NET Framework 4.8",
