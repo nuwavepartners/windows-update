@@ -1,6 +1,6 @@
-#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.47 2020-02-20T19:56:33.298Z
+#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.56 2020-02-24T16:14:47.891Z
 
-$UpdateConfigUri = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/wu.json'
+$UpdateConfigUri = 'https://vcs.nuwave.link/git/windows/update/blob_plain/devel:/wu.json'
 
 If (!(New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
 	Write-Host -ForegroundColor Red "Script must be run as Administrator"
@@ -30,13 +30,13 @@ $ThisHF = Get-HotFix
 :lCollection Foreach ($UpdateCollection in $UpdateConfig.WindowsUpdate) {
 
 	# Check each qualifier from the config
-	Foreach ($Qualifier in $UpdateCollection.OS.PSObject.Properties) {
-		If ($ThisOS.Caption -inotmatch $UpdateCollection.OS.$Qualifier) {
-			Continue :lCollection
+	Foreach ($Qualifier in $UpdateCollection.OS.PSObject.Properties.Name) {
+		If ($ThisOS.$Qualifier -inotmatch $UpdateCollection.OS.$Qualifier) {
+			Continue lCollection
 		}
 	}
 
-	Out-Debug ('Found Updates for ' + $ThisOS.Caption)
+	Out-Debug ('Found Updates for ' + $UpdateCollection.OS.Caption)
 
 	Foreach ($Update in $UpdateCollection.Updates) {
 		Out-Debug "Searching for $($Update.HotFixID)"
@@ -54,7 +54,7 @@ $ThisHF = Get-HotFix
 			}
 		}
 	}
-
 }
 
+If ($RebootRequired) { Restart-Computer }
 Out-Debug (__FILE__ + ' Script Finished ' + '-' * 60)

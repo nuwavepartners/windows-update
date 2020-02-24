@@ -83,8 +83,8 @@
 				},
 				{
 					"__Comment": ".NET Framework 4.8",
-					"HotFixID": "KB4486153",
-					"source": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu"
+					"HotFixID": "KB4486129",
+					"source": "http://download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu"
 				}
 			]
 		},
