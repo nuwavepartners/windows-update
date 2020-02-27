@@ -1,4 +1,4 @@
-#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.56 2020-02-24T16:14:47.891Z
+#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.59 2020-02-27T17:15:36.305Z
 
 $UpdateConfigUri = 'https://vcs.nuwave.link/git/windows/update/blob_plain/devel:/wu.json'
 
@@ -13,10 +13,10 @@ If (((Get-Module -ListAvailable NuWave-Common) |? {$_.Version -ge [version]"0.3.
 	If (!(Import-Module -PassThru -Name NuWave-Common)) {
 		Throw "Could not load or install NuWave-Common Module"
 	}
-}
+} 
 
 Set-DebugFile 'C:\NuWave.log'
-Out-Debug (__FILE__ + ' Script Started ' + '-' * 60)
+Out-Debug ('' + __FILE__ + ' Script Started ' + '-' * 60)
 $RebootRequired = $false
 
 Out-Debug 'Downloading Windows Update Configuration'
@@ -57,4 +57,4 @@ $ThisHF = Get-HotFix
 }
 
 If ($RebootRequired) { Restart-Computer }
-Out-Debug (__FILE__ + ' Script Finished ' + '-' * 60)
+Out-Debug ('' + __FILE__ + ' Script Finished ' + '-' * 60)
