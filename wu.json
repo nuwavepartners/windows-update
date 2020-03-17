@@ -1,7 +1,10 @@
 {
 	"_meta": {
-		"Date-Modified": "2020-02-05T11:38:00Z"
+		"Date-Modified": "2020-03-17T14:41:16"
 	},
+	"Deprecated": [
+		"Caption"
+	],
 	"WindowsUpdate": [
 		{
 			"OS": {
@@ -121,6 +124,9 @@
 				"CSDVersion": "Service Pack 1",
 				"Version": "6.1.7601"
 			},
+			"Selectors": {
+				"Source": "Source.$($ThisOS.OSArchitecture)"
+			},
 			"Updates": [
 				{
 					"__Comment" : "SHA2",
@@ -198,14 +204,24 @@
 		},
 		{
 			"OS": {
-				"Caption": "Microsoft Windows 10",
-				"Version": "10.0.17763"
+				"Caption": "Microsoft Windows 10"
+			},
+			"Selectors": {
+				"Source": "Source.$($ThisOS.Version)"
+			},
+			"__Comment": {
+				"10.0.17763": "1809",
+				"10.0.18363": "1909/19H2",
+				"10.0.19041": "2004/20H1"
 			},
 			"Updates": [
 				{
 					"__Comment": "2019-11 Service Stack Update",
-					"HotFixID": "KB4523204",
-					"Source": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2019/01/windows10.0-kb4480977-x64_4630376d446938345665e2ce8379d96bb63a84c8.msu"
+					"HotFixID": ["KB4523204", "KB4524569"],
+					"Source": {
+						"10.0.17763": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2019/01/windows10.0-kb4480977-x64_4630376d446938345665e2ce8379d96bb63a84c8.msu",
+						"10.0.18363": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/11/windows10.0-kb4524569-x64_9004236e081c22b1e10c4bc94279bf6e75cd299a.msu"
+					}
 				},
 				{
 					"__Comment": "2020-02 Cumulative Update",
