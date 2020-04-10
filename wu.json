@@ -137,12 +137,12 @@
 					}
 				},
 				{
-					"__Comment" : "Servicing Stack Update, Mar 2019",
-					"HotFixID": "KB4490628",
+					"__Comment" : "2020-03 Servicing Stack Update",
+					"HotFixID": "KB4550735",
 					"Reboot": "true",
 					"Source": {
-						"64-bit": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/03/windows6.1-kb4490628-x64_d3de52d6987f7c8bdc2c015dca69eac96047c76e.msu",
-						"32-bit": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/03/windows6.1-kb4490628-x86_3cdb3df55b9cd7ef7fcb24fc4e237ea287ad0992.msu"
+						"64-bit": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows6.1-kb4550735-x64_18117664b4a0482c3d34a2f05f70c6819296240f.msu",
+						"32-bit": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows6.1-kb4550735-x86_5811def508a4d12403ecd1cb4bbb5c9922c792ea.msu"
 					}
 				},
 				{
@@ -197,8 +197,19 @@
 			},
 			"Updates": [
 				{
-					"HotFixID": "KB4512938",
-					"Source": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/09/windows8.1-kb4512938-x64_5101be24904d01230f39583b5c5ab00aaae096b8.msu"
+					"__Comment" : "2020-03 Servicing Stack Update",
+					"HotFixID": "KB4540725",
+					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows8.1-kb4540725-x64_d855cbd2dbffee6bdcf9688a29d24308dad12afa.msu"
+				},
+				{
+					"__Comment" : "Windows 8.1 Update April 2014",
+					"HotFixID": "KB2919355",
+					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/crup/2014/02/windows8.1-kb2919355-x64_e6f4da4d33564419065a7370865faacf9b40ff72.msu"
+				},
+				{
+					"__Comment" : "Update for Windows 8.1 April 2015",
+					"HotFixID": "KB3000850",
+					"Source": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2014/11/windows8.1-kb3000850-x64_94a08e535c004b860e9434fbd1e2d293583620a2.msu"
 				}
 			]
 		},
@@ -207,26 +218,44 @@
 				"Caption": "Microsoft Windows 10"
 			},
 			"Selectors": {
-				"Source": "Source.$($ThisOS.Version)"
+				"Source": "$($ThisOS.BuildNumber)"
 			},
 			"__Comment": {
+				"10.0.10240": "1507 - UNSUPPORTED",
+				"10.0.10586": "1511 - UNSUPPORTED",
+				"10.0.14393": "1607",
+				"10.0.15063": "1703 - UNSUPPORTED",
+				"10.0.16299": "1709",
+				"10.0.17134": "1803",
 				"10.0.17763": "1809",
+				"10.0.18362": "1903",
 				"10.0.18363": "1909/19H2",
 				"10.0.19041": "2004/20H1"
 			},
 			"Updates": [
 				{
-					"__Comment": "2019-11 Service Stack Update",
-					"HotFixID": ["KB4523204", "KB4524569"],
+					"__Comment": "2020-03 Service Stack Update",
+					"HotFixID": ["KB4541338", "KB4539571", "KB4540724", "KB4541731", "KB4540723"],
 					"Source": {
-						"10.0.17763": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2019/01/windows10.0-kb4480977-x64_4630376d446938345665e2ce8379d96bb63a84c8.msu",
-						"10.0.18363": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/11/windows10.0-kb4524569-x64_9004236e081c22b1e10c4bc94279bf6e75cd299a.msu"
+						"14393": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4540723-x64_78af3b1cfbd08cebf6fc95c337f78a16a024311f.msu",
+						"16299": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4541731-x64_44cc1fa8f73e359f1a21d4948c67765241e9899f.msu",
+						"17134": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4540724-x64_0b6897fb9a65608a472f5b51185a78e281cab1f9.msu",
+						"17763": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4539571-x64_24d9621cc81434610770c25f5ba38082f8d12065.msu",
+						"18362": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4541338-x64_5db6cfc57a8bda4d13107ad24b3fe8fd790219cf.msu",
+						"18363": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4541338-x64_5db6cfc57a8bda4d13107ad24b3fe8fd790219cf.msu"
 					}
 				},
 				{
-					"__Comment": "2020-02 Cumulative Update",
-					"HotFixID": "KB4537818",
-					"Source" : "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/02/windows10.0-kb4537818-x64_b8b65276fc7b9694b9c2350c3c3fd4fa60cd682b.msu"
+					"__Comment": "2020-03 Cumulative Update",
+					"HotFixID": ["KB4554364", "KB4554354", "KB4554349", "KB4554342", "KB4541329"],
+					"Source": {
+						"14393": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/03/windows10.0-kb4541329-x64_320c368bdbf1998bbcec662146706b863116c6fe.msu",
+						"16299": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/03/windows10.0-kb4554342-x64_3a74f78cba7d042240764acf92d26a264512b6c8.msu",
+						"17134": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/03/windows10.0-kb4554349-x64_89372825ff21171505368ed44962c7454e02b271.msu",
+						"17763": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/03/windows10.0-kb4554354-x64_656e139a25ad6577ddabc2213268e7ceb82af165.msu",
+						"18362": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/03/windows10.0-kb4554364-x64_0037f0861430f0d9a5cea807b46735c697a82d0c.msu",
+						"18363": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/03/windows10.0-kb4554364-x64_0037f0861430f0d9a5cea807b46735c697a82d0c.msu"
+					}
 				}
 			]
 		}
