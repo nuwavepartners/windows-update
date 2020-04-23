@@ -1,4 +1,4 @@
-#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.97 2020-04-10T18:23:42.643Z
+#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.114 2020-04-23T17:00:40.559Z
 
 Param (
 	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/devel:/wu.json'
@@ -101,7 +101,7 @@ Param (
 			# Get the JSON
 			Switch -Regex ($u.Scheme) {
 				'http|https' 	{	$t = Invoke-DownloadJson $u; Break }
-				'file'			{	$t = $(Get-Content $u.OriginalString -Raw | ConvertFrom-Json); Break }
+				'file'			{	$t = $(Get-Content -Raw -Path $u.OriginalString | ConvertFrom-Json); Break }
 				Default			{	Throw "Unsupport Uri Scheme $_" }
 			}
 			# Add to the Return Object
@@ -245,22 +245,17 @@ Param (
 
 ################################## THE SCRIPT ##################################
 
-Set-DebugFile 'C:\NuWave.log'
-Write-Host ('Script Started ' + '-' * 60)
+Write-Host ('Script Started ').PadRight(80,'-')
 $RebootRequired = $false
 
 # Load Configuration(s)
-Write-Host ("Retrieving configurations")
-$Conf = New-Object PSCustomObject
-Foreach ($Config in $Configs) {
-	Foreach ($P in (($t = Load-JsonConfig $Config).PSObject.Properties.Name -notmatch "^_")) {
-		Add-Member -InputObject $Conf -MemberType NoteProperty -Name $P -Value $t.$P -Force
-	}
-}
+Write-Host ("Loading configurations")
+$Conf = Load-JsonConfig -Uri $Configs
 
 Write-Host 'Collecting current computer configuration'
 $ThisOS = GWMI Win32_OperatingSystem
 $ThisHF = Get-HotFix
+Write-Host "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.ProductType)>"
 
 :lCollection Foreach ($UpdateCollection in $Conf.WindowsUpdate) {
 
@@ -278,22 +273,22 @@ $ThisHF = Get-HotFix
 	}
 
 	Foreach ($Update in $UpdateCollection.Updates) {
-		Write-Host "Searching for $($Update.HotFixID)"
+		Write-Host "Searching for $($Update.Name)"
 		If ((Compare-Object -ReferenceObject $ThisHF.HotFixID -DifferenceObject $Update.HotFixID -IncludeEqual).SideIndicator -contains '==') {
-			Write-Host "    Found $($Update.HotFixID) Installed"
+			Write-Host "`tFound" -ForegroundColor Green
 		} else {
-			Write-Host "    Downloading $($Update.HotFixID)"
+			Write-Host "`tDownloading"
 			If ($null -eq $UpdateCollection.Selectors.Source) {
-				$f = Invoke-DownloadFile -Uri $Update.Source -Progress
+				#$f = Invoke-DownloadFile -Uri $Update.Source -Progress
 			} else {
-				$f = Invoke-DownloadFile -Uri $Update.Source.$($ExecutionContext.InvokeCommand.ExpandString("$($UpdateCollection.Selectors.Source)")) -Progress
+				#$f = Invoke-DownloadFile -Uri $Update.Source.$($ExecutionContext.InvokeCommand.ExpandString("$($UpdateCollection.Selectors.Source)")) -Progress
 			}
-			Write-Host "    Installing $($Update.HotFixID)"
+			Write-Host "`tInstalling"
 			#$r = Start-Process -FilePath 'C:\Windows\System32\wusa.exe' -ArgumentList $f,'/quiet','/norestart' -Wait -PassThru
 			Switch ($r.ExitCode) {
-				0x0			{ Write-Host "    Installed successfully"; Break }
-				0x00240006	{ Write-Host "    Update already installed"; Break }
-				0x00240005	{ Write-Host "    Installed, Pending reboot"; $RebootRequired = $true; Break }
+				0x0			{ Write-Host "`tInstalled successfully"; Break }
+				0x00240006	{ Write-Host "`tUpdate already installed"; Break }
+				0x00240005	{ Write-Host "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
 				{$_ -gt 0 }	{
 					Write-Host "    Installation returned $($r.ExitCode) 0x$('{0:X8}' -f $r.ExitCode)"
 					Throw "Installation Failed."
@@ -304,4 +299,4 @@ $ThisHF = Get-HotFix
 }
 
 If ($RebootRequired) { Write-Host "Reboot Needed!" }
-Write-Host ('Script Finished ' + '-' * 60)
+Write-Host ('Script Finished ').PadRight(80,'-')
