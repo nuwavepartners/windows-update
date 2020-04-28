@@ -23,22 +23,27 @@
 			},
 			"Updates": [
 				{
-					"HotFixID": "KB3173424",
-					"Source": "https://download.microsoft.com/download/E/2/C/E2CA92A3-8D60-4702-98E2-2AB396FEA1BC/Windows8.1-KB3173424-x64.msu"
+					"__Comment": "	2020-03 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems",
+					"HotFixID": "KB4540725",
+					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows8.1-kb4540725-x64_d855cbd2dbffee6bdcf9688a29d24308dad12afa.msu"
 				},
 				{
+					"__Comment": "Windows Server 2012 R2 Update",
 					"HotFixID": "KB2919355",
-					"Source": "https://download.microsoft.com/download/2/5/6/256CCCFB-5341-4A8D-A277-8A81B21A1E35/Windows8.1-KB2919355-x64.msu"
+					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/crup/2014/02/windows8.1-kb2919355-x64_e6f4da4d33564419065a7370865faacf9b40ff72.msu"
 				},
 				{
+					"__Comment": "Update for Windows Server 2012 R2".
 					"HotFixID": "KB3172614",
-					"Source": "https://download.microsoft.com/download/A/8/6/A8686706-78A3-4AC9-ABD2-64DC20A4581F/Windows8.1-KB3172614-x64.msu"
+					"Source": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2016/07/windows8.1-kb3172614-x64_e41365e643b98ab745c21dba17d1d3b6bb73cfcc.msu"
 				},
 				{
-					"HotFixID": "KB4054566",
-					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2018/07/windows8.1-kb4054566-x64_e780e6efac612bd0fcaf9cccfe15d6d05c9cc419.msu"
+					"__Comment": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64",
+					"HotFixID": "KB4486105",
+					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu"
 				},
 				{
+					"__Comment": "Update for Windows Server 2012 R2 (Windows Management Framework 5.1)",
 					"HotFixID": "KB3191564",
 					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu"
 				}
