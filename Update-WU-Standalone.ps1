@@ -1,4 +1,4 @@
-#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.114 2020-04-23T17:00:40.559Z
+#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.116 2020-04-28 09:55:05
 
 Param (
 	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/devel:/wu.json'
@@ -268,8 +268,8 @@ Write-Host "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.ProductT
 
 	Write-Host ('Found Updates for ' + $UpdateCollection.OS.Caption)
 
-	$UpdateCollection.Selectors.PSobject.Properties |% {
-		$UpdateCollection.Selectors.$($_.Name) = $ExecutionContext.InvokeCommand.ExpandString($_.Value)
+	Foreach ($Selector in $UpdateCollection.Selectors.PSobject.Properties) {
+		$UpdateCollection.Selectors.$($Selector.Name) = $ExecutionContext.InvokeCommand.ExpandString($Selector.Value)
 	}
 
 	Foreach ($Update in $UpdateCollection.Updates) {
@@ -296,6 +296,7 @@ Write-Host "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.ProductT
 			}
 		}
 	}
+	Break;
 }
 
 If ($RebootRequired) { Write-Host "Reboot Needed!" }
