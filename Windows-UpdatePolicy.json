@@ -10,14 +10,20 @@
 			},
 			"Updates": [
 				{
-					"Name": "2020-03 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems",
-					"HotFixID": "KB4540725",
-					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows8.1-kb4540725-x64_d855cbd2dbffee6bdcf9688a29d24308dad12afa.msu"
+					"Name": "Update for Windows Server 2012 R2",
+					"HotFixID": "KB3021910",
+					"Source": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2015/04/windows8.1-kb3021910-x64_e291c0c339586e79c36ebfc0211678df91656c3d.msu"
 				},
 				{
 					"Name": "Windows Server 2012 R2 Update",
 					"HotFixID": "KB2919355",
+					"Reboot": "true",
 					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/crup/2014/02/windows8.1-kb2919355-x64_e6f4da4d33564419065a7370865faacf9b40ff72.msu"
+				},
+				{
+					"Name": "2020-03 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems",
+					"HotFixID": "KB4540725",
+					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows8.1-kb4540725-x64_d855cbd2dbffee6bdcf9688a29d24308dad12afa.msu"
 				},
 				{
 					"Name": "Update for Windows Server 2012 R2",
@@ -195,7 +201,7 @@
 				"10.0.10586": "1511 - UNSUPPORTED",
 				"10.0.14393": "1607",
 				"10.0.15063": "1703 - UNSUPPORTED",
-				"10.0.16299": "1709",
+				"10.0.16299": "1709 - UNSUPPORTED",
 				"10.0.17134": "1803",
 				"10.0.17763": "1809",
 				"10.0.18362": "1903",
@@ -216,15 +222,14 @@
 					}
 				},
 				{
-					"Name": "2020-03 Cumulative Update",
-					"HotFixID": ["KB4554364", "KB4554354", "KB4554349", "KB4554342", "KB4541329"],
+					"Name": "2020-04 Cumulative Update",
+					"HotFixID": ["KB4550947", "KB4550944", "KB4550969", "KB4550945"],
 					"Source": {
-						"14393": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/03/windows10.0-kb4541329-x64_320c368bdbf1998bbcec662146706b863116c6fe.msu",
-						"16299": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/03/windows10.0-kb4554342-x64_3a74f78cba7d042240764acf92d26a264512b6c8.msu",
-						"17134": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/03/windows10.0-kb4554349-x64_89372825ff21171505368ed44962c7454e02b271.msu",
-						"17763": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/03/windows10.0-kb4554354-x64_656e139a25ad6577ddabc2213268e7ceb82af165.msu",
-						"18362": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/03/windows10.0-kb4554364-x64_0037f0861430f0d9a5cea807b46735c697a82d0c.msu",
-						"18363": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/03/windows10.0-kb4554364-x64_0037f0861430f0d9a5cea807b46735c697a82d0c.msu"
+						"14393": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/04/windows10.0-kb4550947-x64_f2ec932f8fb2be82d2f430b5dcd1ec4b92a7611c.msu",
+						"17134": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/04/windows10.0-kb4550944-x64_2582cf5c27f139dba154360c752a026f898aec9d.msu",
+						"17763": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/04/windows10.0-kb4550969-x64_7d0a6efbe9e4d44253babdc161873513f88fc1e4.msu",
+						"18362": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/04/windows10.0-kb4550945-x64_8bc93fe5c681ddf741120602899a730c65c155d6.msu",
+						"18363": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/04/windows10.0-kb4550945-x64_8bc93fe5c681ddf741120602899a730c65c155d6.msu"
 					}
 				},
 				{

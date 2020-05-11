@@ -120,69 +120,117 @@
 			"Name":	"Windows 7, Service Pack 1",
 			"Version":	"6.1.7601",
 			"ProductType":	"1",
-			"OSType":	"18"
+			"OSType":	"18",
+			"Support": {
+				"Status": "Unsupported",
+				"EoL_Date": "2020-01-14"
+			}
 		},
 		{
 			"Name":	"Windows Server 2008 R2",
 			"Version":	"6.1.7600",
-			"OSType":	"18"
+			"OSType":	"18",
+			"Support": {
+				"Status": "Unsupported",
+				"EoL_Date": "2020-01-14"
+			}
 		},
 		{
 			"Name":	"Windows Server 2008 R2, Service Pack 1",
 			"Version":	"6.1.7601",
-			"OSType":	"18"
+			"OSType":	"18",
+			"Support": {
+				"Status": "Unsupported",
+				"EoL_Date": "2020-01-14"
+			}
 		},
 		{
 			"Name":	"Windows Server 2012",
 			"Version":	"6.2.9200",
-			"OSType":	"18"
+			"OSType":	"18",
+			"Support": {
+				"Status": "Supported",
+				"EoL_Date": "2023-10-10"
+			}
 		},
 		{
 			"Name":	"Windows 8",
 			"Version":	"6.2.9200",
 			"ProductType":	"1",
-			"OSType":	"18"
+			"OSType":	"18",
+			"Support": {
+				"Status": "Unsupported",
+				"EoL_Date": "2016-01-12"
+			}
 		},
 		{
 			"Name":	"Windows 8.1",
 			"Version":	"6.3.9600",
 			"ProductType":	"1",
-			"OSType":	"18"
+			"OSType":	"18",
+			"Support": {
+				"Status": "Supported",
+				"EoL_Date": "2023-01-10"
+			}
 		},
 		{
 			"Name":	"Windows Server 2012 R2",
 			"Version":	"6.3.9600",
-			"OSType":	"18"
+			"OSType":	"18",
+			"Support": {
+				"Status": "Supported",
+				"EoL_Date": "2023-10-10"
+			}
 		},
 		{
 			"Name":	"Windows 10, Version 1507",
 			"Version":	"10.0.10240",
 			"ProductType":	"1",
-			"OSType":	"18"
+			"OSType":	"18",
+			"Support": {
+				"Status": "Unsupported",
+				"EoL_Date": "2017-05-09"
+			}
 		},
 		{
 			"Name":	"Windows 10, Version 1511",
 			"Version":	"10.0.10586",
 			"ProductType":	"1",
-			"OSType":	"18"
+			"OSType":	"18",
+			"Support": {
+				"Status": "Unsupported",
+				"EoL_Date": "2017-10-10"
+			}
 		},
 		{
 			"Name":	"Windows 10, Version 1607",
 			"Version":	"10.0.14393",
 			"ProductType":	"1",
-			"OSType":	"18"
+			"OSType":	"18",
+			"Support": {
+				"Status": "LTS",
+				"EoL_Date": "2018-04-10"
+			}
 		},
 		{
 			"Name":	"Windows 10, Version 1703",
 			"Version":	"10.0.15063",
 			"ProductType":	"1",
-			"OSType":	"18"
+			"OSType":	"18",
+			"Support": {
+				"Status": "Unsupported",
+				"EoL_Date": "2018-10-09"
+			}
 		},
 		{
 			"Name":	"Windows 10, Version 1709",
 			"Version":	"10.0.16299",
 			"ProductType":	"1",
-			"OSType":	"18"
+			"OSType":	"18",
+			"Support": {
+				"Status": "Unsupported",
+				"EoL_Date": "2019-04-09"
+			}
 		},
 		{
 			"Name":	"Windows 10, Version 1803",
@@ -200,11 +248,26 @@
 			"Name":	"Windows 10, Version 1903",
 			"Version":	"10.0.18362",
 			"ProductType":	"1",
-			"OSType":	"18"
+			"OSType":	"18",
+			"Support": {
+				"Status": "Supported"
+			}
 		},
 		{
 			"Name":	"Windows 10, Version 1909",
 			"Version":	"10.0.18363",
+			"ProductType":	"1",
+			"OSType":	"18"
+		},
+		{
+			"Name":	"Windows 10, Version 2004",
+			"Version":	"10.0.19041",
+			"ProductType":	"1",
+			"OSType":	"18"
+		},
+		{
+			"Name":	"Windows 10, Version 20H2",
+			"Version":	"10.0.19619",
 			"ProductType":	"1",
 			"OSType":	"18"
 		},

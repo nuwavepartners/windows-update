@@ -1,8 +1,8 @@
-#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.116 2020-04-28 09:55:05
+#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.136 2020-05-06T13:57:18.486Z
 
 Param (
-	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/devel:/wu.json'
-)$This
+	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json'
+)
 
 If (!(New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
 	Write-Host -ForegroundColor Red "Script must be run as Administrator"
@@ -10,6 +10,16 @@ If (!(New-Object Security.Principal.WindowsPrincipal([Security.Principal.Windows
 }
 
 ################################## FUNCTIONS ##################################
+
+function Convert-DisplayBytes($num)
+{
+    [System.Collections.ArrayList]$unit = @("B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB")
+    while ($num -gt 1kb) {
+        $num = $num / 1kb
+        $unit.Remove($unit[0])
+    }
+    Return "{0:N1} {1}" -f $num, $unit[0]
+}
 
 function Invoke-DownloadFile {
 Param (
@@ -277,20 +287,27 @@ Write-Host "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.ProductT
 		If ((Compare-Object -ReferenceObject $ThisHF.HotFixID -DifferenceObject $Update.HotFixID -IncludeEqual).SideIndicator -contains '==') {
 			Write-Host "`tFound" -ForegroundColor Green
 		} else {
+			Write-Host "`tNot Installed" -ForegroundColor Yellow
 			Write-Host "`tDownloading"
 			If ($null -eq $UpdateCollection.Selectors.Source) {
-				#$f = Invoke-DownloadFile -Uri $Update.Source -Progress
+				$Source = $Update.Source
 			} else {
-				#$f = Invoke-DownloadFile -Uri $Update.Source.$($ExecutionContext.InvokeCommand.ExpandString("$($UpdateCollection.Selectors.Source)")) -Progress
+				$Source = $Update.Source.$($ExecutionContext.InvokeCommand.ExpandString("$($UpdateCollection.Selectors.Source)"))
 			}
+			If ($null -eq $Source) {
+				Write-Host "`tSource not found - Unsupported?" -ForegroundColor Red
+				Continue
+			}
+			$f = Invoke-DownloadFile -Uri $Source
 			Write-Host "`tInstalling"
-			#$r = Start-Process -FilePath 'C:\Windows\System32\wusa.exe' -ArgumentList $f,'/quiet','/norestart' -Wait -PassThru
+			$r = Start-Process -FilePath 'C:\Windows\System32\wusa.exe' -ArgumentList $f,'/quiet','/norestart' -Wait -PassThru
 			Switch ($r.ExitCode) {
 				0x0			{ Write-Host "`tInstalled successfully"; Break }
 				0x00240006	{ Write-Host "`tUpdate already installed"; Break }
 				0x00240005	{ Write-Host "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
+				0x0BC2		{ Write-Host "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
 				{$_ -gt 0 }	{
-					Write-Host "    Installation returned $($r.ExitCode) 0x$('{0:X8}' -f $r.ExitCode)"
+					Write-Host "`t`t`Installation returned $($r.ExitCode) 0x$('{0:X8}' -f $r.ExitCode)" -ForegroundColor Yellow
 					Throw "Installation Failed."
 				}
 			}
