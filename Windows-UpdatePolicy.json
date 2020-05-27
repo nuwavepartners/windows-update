@@ -1,266 +1,409 @@
 {
-	"_meta": {
-		"Date-Modified": "2020-04-28T13:59:32Z"
-	},
-	"WindowsUpdate": [
-		{
-			"OS": {
-				"Caption": "Microsoft Windows Server 2012",
-				"Version": "6.2.9200"
-			},
-			"Updates": [
-				{
-					"Name": "Microsoft .NET Framework 4.8 for Windows Server 2012 for x64",
-					"HotFixID": "KB4486081",
-					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8-rt-kb4486081-x64_b3e0bdffee1cf7a1c718de205034eb05737014cb.msu"
-				},
-				{
-					"Name": "Update for Windows Server 2012 (Windows Management Framework 5.1)",
-					"HotFixID": "KB3191565",
-					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu"
-				}
-			]
-		},
-		{
-			"OS": {
-				"Caption": "Microsoft Windows Server 2012 R2",
-				"Version": "6.3"
-			},
-			"Updates": [
-				{
-					"Name": "Update for Windows Server 2012 R2",
-					"HotFixID": "KB3021910",
-					"Source": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2015/04/windows8.1-kb3021910-x64_e291c0c339586e79c36ebfc0211678df91656c3d.msu"
-				},
-				{
-					"Name": "Windows Server 2012 R2 Update",
-					"HotFixID": "KB2919355",
-					"Reboot": "true",
-					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/crup/2014/02/windows8.1-kb2919355-x64_e6f4da4d33564419065a7370865faacf9b40ff72.msu"
-				},
-				{
-					"Name": "2020-03 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems",
-					"HotFixID": "KB4540725",
-					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows8.1-kb4540725-x64_d855cbd2dbffee6bdcf9688a29d24308dad12afa.msu"
-				},
-				{
-					"Name": "Update for Windows Server 2012 R2",
-					"HotFixID": "KB3172614",
-					"Source": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2016/07/windows8.1-kb3172614-x64_e41365e643b98ab745c21dba17d1d3b6bb73cfcc.msu"
-				},
-				{
-					"Name": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64",
-					"HotFixID": "KB4486105",
-					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu"
-				},
-				{
-					"Name": "Update for Windows Server 2012 R2 (Windows Management Framework 5.1)",
-					"HotFixID": "KB3191564",
-					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu"
-				}
-			]
-		},
-		{
-			"OS": {
-				"Caption": "Microsoft Windows Server 2016",
-				"Version": "10.0.14393"
-			},
-			"Updates": [
-				{
-					"Name": "2020-03 Servicing Stack Update for Windows Server 2016",
-					"HotFixID": "KB4540723",
-					"source": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4540723-x64_78af3b1cfbd08cebf6fc95c337f78a16a024311f.msu"
-				},
-				{
-					"Name": "2020-05 Cumulative Update for Windows Server 2016",
-					"HotFixID": "KB4556813",
-					"source": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/04/windows10.0-kb4550947-x64_f2ec932f8fb2be82d2f430b5dcd1ec4b92a7611c.msu"
-				},
-				{
-					"Name": "Microsoft .NET Framework 4.8",
-					"HotFixID": "KB4486129",
-					"source": "http://download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu"
-				}
-			]
-		},
-		{
-			"OS": {
-				"Caption": "Microsoft Windows Server 2019",
-				"Version": "10.0.17763"
-			},
-			"Updates": [
-				{
-					"Name": "2020-03 Servicing Stack Update for Windows Server 2019",
-					"HotFixID": "KB4539571",
-					"source": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4539571-x64_24d9621cc81434610770c25f5ba38082f8d12065.msu",
-					"Hash": "SHA1|24D9621CC81434610770C25F5BA38082F8D12065"
-				},
-				{
-					"Name": "2020-05 Cumulative Update for Windows Server 2019",
-					"HotFixID": "KB4551853",
-					"source": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/05/windows10.0-kb4551853-x64_ce1ea7def481ee2eb8bba6db49ddb42e45cba54f.msu"
-				},
-				{
-					"Name": ".NET Framework 4.8",
-					"HotFixID": "KB4486153",
-					"source": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu"
-				}
-			]
-		},
-		{
-			"OS": {
-				"Caption": "Microsoft Windows 7",
-				"CSDVersion": "Service Pack 1",
-				"Version": "6.1.7601"
-			},
-			"Selectors": {
-				"Source": "Source.$($ThisOS.OSArchitecture)"
-			},
-			"Updates": [
-				{
-					"Name" : "SHA2",
-					"HotFixID": "KB4474419",
-					"Source": {
-						"64-bit": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/08/windows6.1-kb4474419-v2-x64_160414186799f7a367cc6083da216cb49aa66e04.msu",
-						"32-bit": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/08/windows6.1-kb4474419-v2-x86_6461a8e4e61dddd4426f4755c1f1a85aa86fc355.msu"
-					}
-				},
-				{
-					"Name" : "2020-03 Servicing Stack Update",
-					"HotFixID": "KB4550735",
-					"Reboot": "true",
-					"Source": {
-						"64-bit": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows6.1-kb4550735-x64_18117664b4a0482c3d34a2f05f70c6819296240f.msu",
-						"32-bit": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows6.1-kb4550735-x86_5811def508a4d12403ecd1cb4bbb5c9922c792ea.msu"
-					}
-				},
-				{
-					"Name" : "Convenice Update",
-					"__HotFixID": ["KB2524478", "KB2574819", "KB2603229", "KB2603469", "KB2607047", "KB2607576", "KB2608658", "KB2633952", "KB2636573", "KB2639308", "KB2640148", "KB2647753", "KB2660075", "KB2661254", "KB2677070", "KB2679255", "KB2699779", "KB2709630", "KB2709981", "KB2719857", "KB2726535", "KB2731771", "KB2732059", "KB2735855", "KB2739159", "KB2741355", "KB2744129", "KB2749655", "KB2756822", "KB2760730", "KB2762895", "KB2763523", "KB2779562", "KB2786081", "KB2786400", "KB2791765", "KB2794119", "KB2798162", "KB2799926", "KB2800095", "KB2806748", "KB2808679", "KB2829104", "KB2834140", "KB2835174", "KB2836502", "KB2843630", "KB2846960", "KB2846960", "KB2847077", "KB2852386", "KB2853952", "KB2863058", "KB2868116", "KB2882822", "KB2888049", "KB2890882", "KB2891804", "KB2893519", "KB2904266", "KB2905454", "KB2908783", "KB2913152", "KB2913431", "KB2913751", "KB2919469", "KB2922717", "KB2923398", "KB2923545", "KB2928562", "KB2929733", "KB2929755", "KB2966583", "KB2970228", "KB2973337", "KB2977728", "KB2978092", "KB2980245", "KB2981580", "KB2985461", "KB2994023", "KB2998527", "KB2999226", "KB3000988", "KB3004394", "KB3005788", "KB3006121", "KB3006137", "KB3006625", "KB3008627", "KB3009736", "KB3013410", "KB3013531", "KB3014406", "KB3020338", "KB3020370", "KB3040272", "KB3045645", "KB3048761", "KB3049874", "KB3054205", "KB3054476", "KB3065979", "KB3068708", "KB3075249", "KB3077715", "KB3078667", "KB3080079", "KB3080149", "KB3092627", "KB3095649", "KB3102429", "KB3107998", "KB3112148", "KB3118401", "KB3121255", "KB3133977", "KB3137061", "KB3138378", "KB3138901", "KB3145126", "KB3147071", "KB3148851", "KB2830477"],
-					"HotFixID": "KB3125574",
-					"Reboot": "true",
-					"Source": {
-						"64-bit": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2016/05/windows6.1-kb3125574-v4-x64_2dafb1d203c8964239af3048b5dd4b1264cd93b9.msu",
-						"32-bit": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2016/05/windows6.1-kb3125574-v4-x86_ba1ff5537312561795cc04db0b02fbb0a74b2cbd.msu"
-					}
-				},
-				{
-					"Name" : "Rollup Mar 2019 (NIC Fix)",
-					"HotFixID": "KB4489878",
-					"Source": {
-						"64-bit": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/03/windows6.1-kb4489878-x64_ad02ba6500855333621fecf1b95cc15a8950f2e8.msu",
-						"32-bit": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/03/windows6.1-kb4489878-x86_4850c313f7149cbebe5cd718d4efa0e426aebc81.msu"
-					}
-				},
-				{
-					"Name" : "Rollup Jun 2019",
-					"HotFixID": "KB4503292",
-					"Source": {
-						"64-bit": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/06/windows6.1-kb4503292-x64_a35bb4ea16d1d529fde9abfe8a0c16e9061f74cd.msu",
-						"32-bit": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/06/windows6.1-kb4503292-x86_932f3cccb6343fa2339648b391b80d28f8134870.msu"
-					}
-				},
-				{
-					"Name" : ".NET 4.7.2",
-					"HotFixID": "",
-					"Source": {
-						"64-bit": "http://download.microsoft.com/download/0/5/C/05C1EC0E-D5EE-463B-BFE3-9311376A6809/NDP472-KB4054531-Web.exe",
-						"32-bit": "http://download.microsoft.com/download/0/5/C/05C1EC0E-D5EE-463B-BFE3-9311376A6809/NDP472-KB4054531-Web.exe"
-					},
-					"Arguments" : "/q /norestart",
-					"ExitCodes" : ["0", "1641", "3010"]
-				},
-				{
-					"Name" : "WMF 4",
-					"HotFixID": "KB2819745",
-					"Source": {
-						"64-bit": "https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x64-MultiPkg.msu",
-						"32-bit": "https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x86-MultiPkg.msu"
-					}
-				}
-			]
-		},
-		{
-			"OS": {
-				"Caption": "Microsoft Windows 8.1"
-			},
-			"Updates": [
-				{
-					"Name" : "2020-03 Servicing Stack Update",
-					"HotFixID": "KB4540725",
-					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows8.1-kb4540725-x64_d855cbd2dbffee6bdcf9688a29d24308dad12afa.msu"
-				},
-				{
-					"Name" : "Windows 8.1 Update April 2014",
-					"HotFixID": "KB2919355",
-					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/crup/2014/02/windows8.1-kb2919355-x64_e6f4da4d33564419065a7370865faacf9b40ff72.msu"
-				},
-				{
-					"Name" : "Update for Windows 8.1 April 2015",
-					"HotFixID": "KB3000850",
-					"Source": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2014/11/windows8.1-kb3000850-x64_94a08e535c004b860e9434fbd1e2d293583620a2.msu"
-				},
-				{
-					"Name": ".NET Framework 4.8",
-					"HotFixID": "KB4486105",
-					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu"
-				}
-			]
-		},
-		{
-			"OS": {
-				"Caption": "Microsoft Windows 10"
-			},
-			"Selectors": {
-				"Source": "$($ThisOS.BuildNumber)"
-			},
-			"__Comment": {
-				"10.0.10240": "1507 - UNSUPPORTED",
-				"10.0.10586": "1511 - UNSUPPORTED",
-				"10.0.14393": "1607",
-				"10.0.15063": "1703 - UNSUPPORTED",
-				"10.0.16299": "1709 - UNSUPPORTED",
-				"10.0.17134": "1803",
-				"10.0.17763": "1809",
-				"10.0.18362": "1903",
-				"10.0.18363": "1909/19H2",
-				"10.0.19041": "2004/20H1"
-			},
-			"Updates": [
-				{
-					"Name": "2020-03 Service Stack Update",
-					"HotFixID": ["KB4541338", "KB4539571", "KB4540724", "KB4541731", "KB4540723"],
-					"Source": {
-						"14393": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4540723-x64_78af3b1cfbd08cebf6fc95c337f78a16a024311f.msu",
-						"16299": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4541731-x64_44cc1fa8f73e359f1a21d4948c67765241e9899f.msu",
-						"17134": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4540724-x64_0b6897fb9a65608a472f5b51185a78e281cab1f9.msu",
-						"17763": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4539571-x64_24d9621cc81434610770c25f5ba38082f8d12065.msu",
-						"18362": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4541338-x64_5db6cfc57a8bda4d13107ad24b3fe8fd790219cf.msu",
-						"18363": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4541338-x64_5db6cfc57a8bda4d13107ad24b3fe8fd790219cf.msu"
-					}
-				},
-				{
-					"Name": "2020-04 Cumulative Update",
-					"HotFixID": ["KB4550947", "KB4550944", "KB4550969", "KB4550945"],
-					"Source": {
-						"14393": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/04/windows10.0-kb4550947-x64_f2ec932f8fb2be82d2f430b5dcd1ec4b92a7611c.msu",
-						"17134": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/04/windows10.0-kb4550944-x64_2582cf5c27f139dba154360c752a026f898aec9d.msu",
-						"17763": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/04/windows10.0-kb4550969-x64_7d0a6efbe9e4d44253babdc161873513f88fc1e4.msu",
-						"18362": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/04/windows10.0-kb4550945-x64_8bc93fe5c681ddf741120602899a730c65c155d6.msu",
-						"18363": "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/04/windows10.0-kb4550945-x64_8bc93fe5c681ddf741120602899a730c65c155d6.msu"
-					}
-				},
-				{
-					"Name": ".NET Framework 4.8",
-					"HotFixID": ["KB4486129", "KB4486153"],
-					"Source": {
-						"14393": "http://download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu",
-						"16299": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu",
-						"17134": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu",
-						"17763": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu"
-					}
-				}
-			]
-		}
-	]
+	"_meta":  {
+				  "Date_Modified":  "2020-05-27T16:29:13Z"
+			  },
+	"WindowsUpdate":  [
+						  {
+							  "OS":  {
+										 "Caption":  "Microsoft Windows Server 2012",
+										 "Version":  "6.2.9200"
+									 },
+							  "Updates":  [
+											  {
+												  "Name":  "Microsoft .NET Framework 4.8 for Windows Server 2012 for x64",
+												  "HotFixID":  "KB4486081",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8-rt-kb4486081-x64_b3e0bdffee1cf7a1c718de205034eb05737014cb.msu"
+											  },
+											  {
+												  "Name":  "Update for Windows Server 2012 (Windows Management Framework 5.1)",
+												  "HotFixID":  "KB3191565",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu"
+											  }
+										  ]
+						  },
+						  {
+							  "OS":  {
+										 "Caption":  "Microsoft Windows Server 2012 R2",
+										 "Version":  "6.3"
+									 },
+							  "Updates":  [
+											  {
+												  "Name":  "Update for Windows Server 2012 R2",
+												  "HotFixID":  "KB3021910",
+												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2015/04/windows8.1-kb3021910-x64_e291c0c339586e79c36ebfc0211678df91656c3d.msu"
+											  },
+											  {
+												  "Name":  "Windows Server 2012 R2 Update",
+												  "HotFixID":  "KB2919355",
+												  "Reboot":  "true",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/crup/2014/02/windows8.1-kb2919355-x64_e6f4da4d33564419065a7370865faacf9b40ff72.msu"
+											  },
+											  {
+												  "Name":  "2020-03 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems",
+												  "HotFixID":  "KB4540725",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows8.1-kb4540725-x64_d855cbd2dbffee6bdcf9688a29d24308dad12afa.msu"
+											  },
+											  {
+												  "Name":  "Update for Windows Server 2012 R2",
+												  "HotFixID":  "KB3172614",
+												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2016/07/windows8.1-kb3172614-x64_e41365e643b98ab745c21dba17d1d3b6bb73cfcc.msu"
+											  },
+											  {
+												  "Name":  "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64",
+												  "HotFixID":  "KB4486105",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu"
+											  },
+											  {
+												  "Name":  "Update for Windows Server 2012 R2 (Windows Management Framework 5.1)",
+												  "HotFixID":  "KB3191564",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu"
+											  }
+										  ]
+						  },
+						  {
+							  "OS":  {
+										 "Caption":  "Microsoft Windows Server 2016",
+										 "Version":  "10.0.14393"
+									 },
+							  "Updates":  [
+											  {
+												  "Name":  "2020-03 Servicing Stack Update for Windows Server 2016",
+												  "HotFixID":  "KB4540723",
+												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4540723-x64_78af3b1cfbd08cebf6fc95c337f78a16a024311f.msu"
+											  },
+											  {
+												  "Name":  "2020-05 Cumulative Update for Windows Server 2016",
+												  "HotFixID":  "KB4556813",
+												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/04/windows10.0-kb4550947-x64_f2ec932f8fb2be82d2f430b5dcd1ec4b92a7611c.msu"
+											  },
+											  {
+												  "Name":  "Microsoft .NET Framework 4.8",
+												  "HotFixID":  "KB4486129",
+												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu"
+											  }
+										  ]
+						  },
+						  {
+							  "OS":  {
+										 "Caption":  "Microsoft Windows Server 2019",
+										 "Version":  "10.0.17763"
+									 },
+							  "Updates":  [
+											  {
+												  "Name":  "2020-03 Servicing Stack Update for Windows Server 2019",
+												  "HotFixID":  "KB4539571",
+												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4539571-x64_24d9621cc81434610770c25f5ba38082f8d12065.msu",
+												  "Hash":  "SHA1|24D9621CC81434610770C25F5BA38082F8D12065"
+											  },
+											  {
+												  "Name":  "2020-05 Cumulative Update for Windows Server 2019",
+												  "HotFixID":  "KB4551853",
+												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/05/windows10.0-kb4551853-x64_ce1ea7def481ee2eb8bba6db49ddb42e45cba54f.msu"
+											  },
+											  {
+												  "Name":  ".NET Framework 4.8",
+												  "HotFixID":  "KB4486153",
+												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu"
+											  }
+										  ]
+						  },
+						  {
+							  "OS":  {
+										 "Caption":  "Microsoft Windows 7",
+										 "CSDVersion":  "Service Pack 1",
+										 "Version":  "6.1.7601"
+									 },
+							  "Selectors":  {
+												"Source":  "Source.$($ThisOS.OSArchitecture)"
+											},
+							  "Updates":  [
+											  {
+												  "Name":  "SHA2",
+												  "HotFixID":  "KB4474419",
+												  "Source":  {
+																 "64-bit":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/08/windows6.1-kb4474419-v2-x64_160414186799f7a367cc6083da216cb49aa66e04.msu",
+																 "32-bit":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/08/windows6.1-kb4474419-v2-x86_6461a8e4e61dddd4426f4755c1f1a85aa86fc355.msu"
+															 }
+											  },
+											  {
+												  "Name":  "2020-03 Servicing Stack Update",
+												  "HotFixID":  "KB4550735",
+												  "Reboot":  "true",
+												  "Source":  {
+																 "64-bit":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows6.1-kb4550735-x64_18117664b4a0482c3d34a2f05f70c6819296240f.msu",
+																 "32-bit":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows6.1-kb4550735-x86_5811def508a4d12403ecd1cb4bbb5c9922c792ea.msu"
+															 }
+											  },
+											  {
+												  "Name":  "Convenice Update",
+												  "__HotFixID":  [
+																	 "KB2524478",
+																	 "KB2574819",
+																	 "KB2603229",
+																	 "KB2603469",
+																	 "KB2607047",
+																	 "KB2607576",
+																	 "KB2608658",
+																	 "KB2633952",
+																	 "KB2636573",
+																	 "KB2639308",
+																	 "KB2640148",
+																	 "KB2647753",
+																	 "KB2660075",
+																	 "KB2661254",
+																	 "KB2677070",
+																	 "KB2679255",
+																	 "KB2699779",
+																	 "KB2709630",
+																	 "KB2709981",
+																	 "KB2719857",
+																	 "KB2726535",
+																	 "KB2731771",
+																	 "KB2732059",
+																	 "KB2735855",
+																	 "KB2739159",
+																	 "KB2741355",
+																	 "KB2744129",
+																	 "KB2749655",
+																	 "KB2756822",
+																	 "KB2760730",
+																	 "KB2762895",
+																	 "KB2763523",
+																	 "KB2779562",
+																	 "KB2786081",
+																	 "KB2786400",
+																	 "KB2791765",
+																	 "KB2794119",
+																	 "KB2798162",
+																	 "KB2799926",
+																	 "KB2800095",
+																	 "KB2806748",
+																	 "KB2808679",
+																	 "KB2829104",
+																	 "KB2834140",
+																	 "KB2835174",
+																	 "KB2836502",
+																	 "KB2843630",
+																	 "KB2846960",
+																	 "KB2846960",
+																	 "KB2847077",
+																	 "KB2852386",
+																	 "KB2853952",
+																	 "KB2863058",
+																	 "KB2868116",
+																	 "KB2882822",
+																	 "KB2888049",
+																	 "KB2890882",
+																	 "KB2891804",
+																	 "KB2893519",
+																	 "KB2904266",
+																	 "KB2905454",
+																	 "KB2908783",
+																	 "KB2913152",
+																	 "KB2913431",
+																	 "KB2913751",
+																	 "KB2919469",
+																	 "KB2922717",
+																	 "KB2923398",
+																	 "KB2923545",
+																	 "KB2928562",
+																	 "KB2929733",
+																	 "KB2929755",
+																	 "KB2966583",
+																	 "KB2970228",
+																	 "KB2973337",
+																	 "KB2977728",
+																	 "KB2978092",
+																	 "KB2980245",
+																	 "KB2981580",
+																	 "KB2985461",
+																	 "KB2994023",
+																	 "KB2998527",
+																	 "KB2999226",
+																	 "KB3000988",
+																	 "KB3004394",
+																	 "KB3005788",
+																	 "KB3006121",
+																	 "KB3006137",
+																	 "KB3006625",
+																	 "KB3008627",
+																	 "KB3009736",
+																	 "KB3013410",
+																	 "KB3013531",
+																	 "KB3014406",
+																	 "KB3020338",
+																	 "KB3020370",
+																	 "KB3040272",
+																	 "KB3045645",
+																	 "KB3048761",
+																	 "KB3049874",
+																	 "KB3054205",
+																	 "KB3054476",
+																	 "KB3065979",
+																	 "KB3068708",
+																	 "KB3075249",
+																	 "KB3077715",
+																	 "KB3078667",
+																	 "KB3080079",
+																	 "KB3080149",
+																	 "KB3092627",
+																	 "KB3095649",
+																	 "KB3102429",
+																	 "KB3107998",
+																	 "KB3112148",
+																	 "KB3118401",
+																	 "KB3121255",
+																	 "KB3133977",
+																	 "KB3137061",
+																	 "KB3138378",
+																	 "KB3138901",
+																	 "KB3145126",
+																	 "KB3147071",
+																	 "KB3148851",
+																	 "KB2830477"
+																 ],
+												  "HotFixID":  "KB3125574",
+												  "Reboot":  "true",
+												  "Source":  {
+																 "64-bit":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2016/05/windows6.1-kb3125574-v4-x64_2dafb1d203c8964239af3048b5dd4b1264cd93b9.msu",
+																 "32-bit":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2016/05/windows6.1-kb3125574-v4-x86_ba1ff5537312561795cc04db0b02fbb0a74b2cbd.msu"
+															 }
+											  },
+											  {
+												  "Name":  "Rollup Mar 2019 (NIC Fix)",
+												  "HotFixID":  "KB4489878",
+												  "Source":  {
+																 "64-bit":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/03/windows6.1-kb4489878-x64_ad02ba6500855333621fecf1b95cc15a8950f2e8.msu",
+																 "32-bit":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/03/windows6.1-kb4489878-x86_4850c313f7149cbebe5cd718d4efa0e426aebc81.msu"
+															 }
+											  },
+											  {
+												  "Name":  "Rollup Jun 2019",
+												  "HotFixID":  "KB4503292",
+												  "Source":  {
+																 "64-bit":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/06/windows6.1-kb4503292-x64_a35bb4ea16d1d529fde9abfe8a0c16e9061f74cd.msu",
+																 "32-bit":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/06/windows6.1-kb4503292-x86_932f3cccb6343fa2339648b391b80d28f8134870.msu"
+															 }
+											  },
+											  {
+												  "Name":  ".NET 4.7.2",
+												  "HotFixID":  "",
+												  "Source":  {
+																 "64-bit":  "http://download.microsoft.com/download/0/5/C/05C1EC0E-D5EE-463B-BFE3-9311376A6809/NDP472-KB4054531-Web.exe",
+																 "32-bit":  "http://download.microsoft.com/download/0/5/C/05C1EC0E-D5EE-463B-BFE3-9311376A6809/NDP472-KB4054531-Web.exe"
+															 },
+												  "Arguments":  "/q /norestart",
+												  "ExitCodes":  [
+																	"0",
+																	"1641",
+																	"3010"
+																]
+											  },
+											  {
+												  "Name":  "WMF 4",
+												  "HotFixID":  "KB2819745",
+												  "Source":  {
+																 "64-bit":  "https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x64-MultiPkg.msu",
+																 "32-bit":  "https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x86-MultiPkg.msu"
+															 }
+											  }
+										  ]
+						  },
+						  {
+							  "OS":  {
+										 "Caption":  "Microsoft Windows 8.1"
+									 },
+							  "Updates":  [
+											  {
+												  "Name":  "2020-03 Servicing Stack Update",
+												  "HotFixID":  "KB4540725",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows8.1-kb4540725-x64_d855cbd2dbffee6bdcf9688a29d24308dad12afa.msu"
+											  },
+											  {
+												  "Name":  "Windows 8.1 Update April 2014",
+												  "HotFixID":  "KB2919355",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/crup/2014/02/windows8.1-kb2919355-x64_e6f4da4d33564419065a7370865faacf9b40ff72.msu"
+											  },
+											  {
+												  "Name":  "Update for Windows 8.1 April 2015",
+												  "HotFixID":  "KB3000850",
+												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2014/11/windows8.1-kb3000850-x64_94a08e535c004b860e9434fbd1e2d293583620a2.msu"
+											  },
+											  {
+												  "Name":  ".NET Framework 4.8",
+												  "HotFixID":  "KB4486105",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu"
+											  }
+										  ]
+						  },
+						  {
+							  "OS":  {
+										 "Caption":  "Microsoft Windows 10"
+									 },
+							  "Selectors":  {
+												"Source":  "$($ThisOS.BuildNumber)"
+											},
+							  "__Comment":  {
+												"10.0.10240":  "1507 - UNSUPPORTED",
+												"10.0.10586":  "1511 - UNSUPPORTED",
+												"10.0.14393":  "1607",
+												"10.0.15063":  "1703 - UNSUPPORTED",
+												"10.0.16299":  "1709 - UNSUPPORTED",
+												"10.0.17134":  "1803",
+												"10.0.17763":  "1809",
+												"10.0.18362":  "1903",
+												"10.0.18363":  "1909/19H2",
+												"10.0.19041":  "2004/20H1"
+											},
+							  "Updates":  [
+											  {
+												  "Name":  "2020-03 Service Stack Update",
+												  "HotFixID":  [
+																   "KB4541338",
+																   "KB4539571",
+																   "KB4540724",
+																   "KB4541731",
+																   "KB4540723"
+															   ],
+												  "Source":  {
+																 "14393":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4540723-x64_78af3b1cfbd08cebf6fc95c337f78a16a024311f.msu",
+																 "16299":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4541731-x64_44cc1fa8f73e359f1a21d4948c67765241e9899f.msu",
+																 "17134":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4540724-x64_0b6897fb9a65608a472f5b51185a78e281cab1f9.msu",
+																 "17763":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4539571-x64_24d9621cc81434610770c25f5ba38082f8d12065.msu",
+																 "18362":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4541338-x64_5db6cfc57a8bda4d13107ad24b3fe8fd790219cf.msu",
+																 "18363":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4541338-x64_5db6cfc57a8bda4d13107ad24b3fe8fd790219cf.msu"
+															 }
+											  },
+											  {
+												  "Name":  "2020-04 Cumulative Update",
+												  "HotFixID":  [
+																   "KB4550947",
+																   "KB4550944",
+																   "KB4550969",
+																   "KB4550945"
+															   ],
+												  "Source":  {
+																 "14393":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/04/windows10.0-kb4550947-x64_f2ec932f8fb2be82d2f430b5dcd1ec4b92a7611c.msu",
+																 "17134":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/04/windows10.0-kb4550944-x64_2582cf5c27f139dba154360c752a026f898aec9d.msu",
+																 "17763":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/04/windows10.0-kb4550969-x64_7d0a6efbe9e4d44253babdc161873513f88fc1e4.msu",
+																 "18362":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/04/windows10.0-kb4550945-x64_8bc93fe5c681ddf741120602899a730c65c155d6.msu",
+																 "18363":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/04/windows10.0-kb4550945-x64_8bc93fe5c681ddf741120602899a730c65c155d6.msu"
+															 }
+											  },
+											  {
+												  "Name":  ".NET Framework 4.8",
+												  "HotFixID":  [
+																   "KB4486129",
+																   "KB4486153"
+															   ],
+												  "Source":  {
+																 "14393":  "http://download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu",
+																 "16299":  "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu",
+																 "17134":  "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu",
+																 "17763":  "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu"
+															 }
+											  }
+										  ]
+						  }
+					  ]
 }
