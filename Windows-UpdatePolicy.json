@@ -5,6 +5,24 @@
 	"WindowsUpdate": [
 		{
 			"OS": {
+				"Caption": "Microsoft Windows Server 2012",
+				"Version": "6.2.9200"
+			},
+			"Updates": [
+				{
+					"Name": "Microsoft .NET Framework 4.8 for Windows Server 2012 for x64",
+					"HotFixID": "KB4486081",
+					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8-rt-kb4486081-x64_b3e0bdffee1cf7a1c718de205034eb05737014cb.msu"
+				},
+				{
+					"Name": "Update for Windows Server 2012 (Windows Management Framework 5.1)",
+					"HotFixID": "KB3191565",
+					"Source": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu"
+				}
+			]
+		},
+		{
+			"OS": {
 				"Caption": "Microsoft Windows Server 2012 R2",
 				"Version": "6.3"
 			},
@@ -49,17 +67,17 @@
 			},
 			"Updates": [
 				{
-					"Name": "2020-03 Service Stack Update",
+					"Name": "2020-03 Servicing Stack Update for Windows Server 2016",
 					"HotFixID": "KB4540723",
 					"source": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4540723-x64_78af3b1cfbd08cebf6fc95c337f78a16a024311f.msu"
 				},
 				{
-					"Name": "2020-04 Cumulative Update",
-					"HotFixID": "KB4550947",
+					"Name": "2020-05 Cumulative Update for Windows Server 2016",
+					"HotFixID": "KB4556813",
 					"source": "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/04/windows10.0-kb4550947-x64_f2ec932f8fb2be82d2f430b5dcd1ec4b92a7611c.msu"
 				},
 				{
-					"Name": ".NET Framework 4.8",
+					"Name": "Microsoft .NET Framework 4.8",
 					"HotFixID": "KB4486129",
 					"source": "http://download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu"
 				}
@@ -72,15 +90,15 @@
 			},
 			"Updates": [
 				{
-					"Name": "2019-11 SSU",
-					"HotFixID": "KB4523204",
-					"source": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2019/11/windows10.0-kb4523204-x64_57098d9954748b2d7d767f73f60493bc592ff286.msu",
-					"Hash": "SHA1|57098d9954748b2d7d767f73f60493bc592ff286"
+					"Name": "2020-03 Servicing Stack Update for Windows Server 2019",
+					"HotFixID": "KB4539571",
+					"source": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4539571-x64_24d9621cc81434610770c25f5ba38082f8d12065.msu",
+					"Hash": "SHA1|24D9621CC81434610770C25F5BA38082F8D12065"
 				},
 				{
-					"Name": "2020-02 Cumulative Update",
-					"HotFixID": "KB4532691",
-					"source": "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/02/windows10.0-kb4532691-x64_6cc9bd762dba5f7f692321efae5386700de3bf94.msu"
+					"Name": "2020-05 Cumulative Update for Windows Server 2019",
+					"HotFixID": "KB4551853",
+					"source": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/05/windows10.0-kb4551853-x64_ce1ea7def481ee2eb8bba6db49ddb42e45cba54f.msu"
 				},
 				{
 					"Name": ".NET Framework 4.8",

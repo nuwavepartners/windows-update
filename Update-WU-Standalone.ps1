@@ -1,4 +1,4 @@
-#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.136 2020-05-06T13:57:18.486Z
+#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.138 2020-05-18T17:01:04.301Z
 
 Param (
 	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json'
@@ -228,7 +228,7 @@ Param (
 	[switch]	$Progress
 )
 
-	$TempFile = Invoke-DownloadFile $SoftwareSpec.Installer.Source -Progress:$Progress.IsPresent
+	$TempFile = Invoke-DownloadFile ($SoftwareSpec.Installer.Source | Select -ExpandProperty $ExecutionContext.InvokeCommand.ExpandString("$($SoftwareSpec.Installer.Selectors.Source)")) -Progress:$Progress.IsPresent
 
 	Switch ( $SoftwareSpec.Installer.Type ) {
 		"MSI" {
