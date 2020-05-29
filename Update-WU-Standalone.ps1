@@ -1,4 +1,4 @@
-#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.138 2020-05-18T17:01:04.301Z
+#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.144 2020-05-27T19:09:18.722Z
 
 Param (
 	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json'
@@ -261,6 +261,12 @@ $RebootRequired = $false
 # Load Configuration(s)
 Write-Host ("Loading configurations")
 $Conf = Load-JsonConfig -Uri $Configs
+
+Write-Host "Verifying configurations"
+$PatchTuesday = (0..6 | % {$(Get-Date -Day 7).AddDays($_) } |? {$_.DayOfWeek -like "Tue*"})
+If (((Get-Date) -gt $PatchTuesday) -and ((Get-Date -Date $Conf.WindowsUpdate._meta.Date_Modified) -lt $PatchTuesday)) {
+	Write-Host -ForegroundColor Red "WARNING - Patch policy data may be Outdated - WARNING"
+}
 
 Write-Host 'Collecting current computer configuration'
 $ThisOS = GWMI Win32_OperatingSystem
