@@ -1,4 +1,4 @@
-#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.144 2020-05-27T19:09:18.722Z
+#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.146 2020-06-05T17:42:25.586Z
 
 Param (
 	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json'
@@ -290,7 +290,7 @@ Write-Host "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.ProductT
 
 	Foreach ($Update in $UpdateCollection.Updates) {
 		Write-Host "Searching for $($Update.Name)"
-		If ((Compare-Object -ReferenceObject $ThisHF.HotFixID -DifferenceObject $Update.HotFixID -IncludeEqual).SideIndicator -contains '==') {
+		If (($null -ne $ThisHF.HotFixID) -and ((Compare-Object -ReferenceObject $ThisHF.HotFixID -DifferenceObject $Update.HotFixID -IncludeEqual).SideIndicator -contains '==')) {
 			Write-Host "`tFound" -ForegroundColor Green
 		} else {
 			Write-Host "`tNot Installed" -ForegroundColor Yellow
