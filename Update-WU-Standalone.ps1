@@ -1,4 +1,4 @@
-#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.146 2020-06-05T17:42:25.586Z
+#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.147 2020-06-05T17:45:32.877Z
 
 Param (
 	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json'
@@ -13,12 +13,8 @@ If (!(New-Object Security.Principal.WindowsPrincipal([Security.Principal.Windows
 
 function Convert-DisplayBytes($num)
 {
-    [System.Collections.ArrayList]$unit = @("B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB")
-    while ($num -gt 1kb) {
-        $num = $num / 1kb
-        $unit.Remove($unit[0])
-    }
-    Return "{0:N1} {1}" -f $num, $unit[0]
+	$exp = [Math]::Floor([Math]::Log10($num)/3)
+	Return "{0:G3} {1}" -f ($num/[Math]::Pow(1000,$exp)), @("B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB")[$exp]
 }
 
 function Invoke-DownloadFile {

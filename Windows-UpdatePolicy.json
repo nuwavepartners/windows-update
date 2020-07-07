@@ -1,6 +1,6 @@
 {
 	"_meta":  {
-				  "Date_Modified":  "2020-05-29T21:01:55Z"
+				  "Date_Modified":  "2020-07-07T15:50:03Z"
 			  },
 	"WindowsUpdate":  [
 						  {
@@ -359,53 +359,53 @@
 											  {
 												  "Name":  "2020-03 Service Stack Update",
 												  "HotFixID":  [
-																   "kb4523200",
+																   "KB4562249",
 																   "kb4015220",
-																   "kb4540723",
-																   "kb4523201",
-																   "kb4541731",
-																   "kb4540724",
-																   "kb4539571",
-																   "kb4541338",
-																   "kb4541338"
+																   "KB4562561",
+																   "KB4562250",
+																   "KB4562560",
+																   "KB4562251",
+																   "KB4562562",
+																   "KB4560959",
+																   "KB4560366"
 															   ],
 												  "Source":  {
-																 "10240":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/11/windows10.0-kb4523200-x64_8b9d9f7930dee5a052981864b86025ac832c2b21.msu",
+																 "10240":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/06/windows10.0-kb4562249-x64_5b13c6a64e5d98b7033455bbe81119ba7a52a0ec.msu",
 																 "10586":  "http://download.windowsupdate.com/d/msdownload/update/software/crup/2017/04/windows10.0-kb4015220-x64_35f9ff546184e8166a264090c3e38468ffddb51e.msu",
-																 "14393":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4540723-x64_78af3b1cfbd08cebf6fc95c337f78a16a024311f.msu",
-																 "15063":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/11/windows10.0-kb4523201-x64_17967a34fccff610ee3629c606171f9f9ba934a9.msu",
-																 "16299":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4541731-x64_44cc1fa8f73e359f1a21d4948c67765241e9899f.msu",
-																 "17134":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4540724-x64_0b6897fb9a65608a472f5b51185a78e281cab1f9.msu",
-																 "17763":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/03/windows10.0-kb4539571-x64_24d9621cc81434610770c25f5ba38082f8d12065.msu",
-																 "18362":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4541338-x64_5db6cfc57a8bda4d13107ad24b3fe8fd790219cf.msu",
-																 "18363":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/03/windows10.0-kb4541338-x64_5db6cfc57a8bda4d13107ad24b3fe8fd790219cf.msu"
+																 "14393":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/06/windows10.0-kb4562561-x64_f9a27668c8727deb0bc6645916eb6197d51f4358.msu",
+																 "15063":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/06/windows10.0-kb4562250-x64_1bd7a4adc1c6a3a54ca512626874cbce6b5c7146.msu",
+																 "16299":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/06/windows10.0-kb4562560-x64_a1e5bad802a5cf2abbb03e5248ec4313e765da62.msu",
+																 "17134":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/06/windows10.0-kb4562251-x64_b08a3cb33fe71ce06f856c95429e9f3a513df09c.msu",
+																 "17763":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/06/windows10.0-kb4562562-x64_85f4082ff8a2f8bd870495fe864b00306322d0ea.msu",
+																 "18362":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/06/windows10.0-kb4560959-x64_fa9ef89ecea4001891b24f103689cff8ae87d2f1.msu",
+																 "18363":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/06/windows10.0-kb4560959-x64_fa9ef89ecea4001891b24f103689cff8ae87d2f1.msu",
+																 "19041":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/06/windows10.0-kb4560366-x64_653c88cde27a1adff38843c1b054fbbcef380b6f.msu"
 															 }
 											  },
 											  {
 												  "Name":  "2020-04 Cumulative Update",
 												  "HotFixID":  [
-																   "kb4556826",
-																   "kb4093109",
-																   "kb4556813",
-																   "kb4556804",
-																   "kb4556812",
-																   "kb4556807",
-																   "kb4551853",
-																   "KB4556799",
-																   "kb4556799",
-																   "kb4556803"
+																   "KB4567518",
+																   "KB4075200",
+																   "KB4567517",
+																   "KB4567516",
+																   "KB4567515",
+																   "KB4567514",
+																   "KB4567513",
+																   "KB4567512",
+																   "KB4567523"
 															   ],
 												  "Source":  {
-																 "10240":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/05/windows10.0-kb4556826-x64_ab0aa3d155768b94d8e95075a0d7faaf52cf8ce6.msu",
-																 "10586":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2018/03/windows10.0-kb4093109-x64_23878b35ac2f25483092cd28fb75b5c75b5d4ae1.msu",
-																 "14393":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/05/windows10.0-kb4556813-x64_074956aa9f895643ea0768d516375d4a1cd732a2.msu",
-																 "15063":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/05/windows10.0-kb4556804-x64_70ef7777d60bf78d5764d550620a1d0e389f02c7.msu",
-																 "16299":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/05/windows10.0-kb4556812-x64_c4789933ac543544346c838dd766dae55571929e.msu",
-																 "17134":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/05/windows10.0-kb4556807-x64_5b35f9bceb20607eb2604acd020a4a7c512676d7.msu",
-																 "17763":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/05/windows10.0-kb4551853-x64_ce1ea7def481ee2eb8bba6db49ddb42e45cba54f.msu",
-																 "18362":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/05/windows10.0-kb4556799-x64_9de920d8738612baa81a751b003ff98f0ce7156b.msu",
-																 "18363":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/05/windows10.0-kb4556799-x64_9de920d8738612baa81a751b003ff98f0ce7156b.msu",
-																 "19041":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/05/windows10.0-kb4556803-x64_325b68d77f9df73618d62b60b1e1265bdcb1f649.msu"
+																 "10240":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/06/windows10.0-kb4567518-x64_c6d7398c1b35da47734fa2e3074f2795fcbe517d.msu",
+																 "10586":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2018/01/windows10.0-kb4075200-x64_9075daf0aeaff37d73297252e4d983bc2e92e5ce.msu",
+																 "14393":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/06/windows10.0-kb4567517-x64_64308fcaef9aa7189b7c7d48a35533fda33b51de.msu",
+																 "15063":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/06/windows10.0-kb4567516-x64_31d950a34fefedacce91f619c7958df837d99c79.msu",
+																 "16299":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/06/windows10.0-kb4567515-x64_5c189c3cc842a262ec8b51b69771365850cfc450.msu",
+																 "17134":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/06/windows10.0-kb4567514-x64_da2511fb71031824a47c61327ad9cd3450805b17.msu",
+																 "17763":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/06/windows10.0-kb4567513-x64_64dba2ab8d4335fe82a5494bed86f20fd0de3b37.msu",
+																 "18362":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/06/windows10.0-kb4567512-x64_2ea636c671529de2154d48a1181c0f02cd919da5.msu",
+																 "18363":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/06/windows10.0-kb4567512-x64_2ea636c671529de2154d48a1181c0f02cd919da5.msu",
+																 "19041":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/06/windows10.0-kb4567523-x64_34b4dbb86f35d25ce4cb839aa4007079323507d3.msu"
 															 }
 											  },
 											  {
