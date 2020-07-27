@@ -1,11 +1,18 @@
-#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.147 2020-06-05T17:45:32.877Z
+#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.154 2020-07-13 13:14:28
 
 Param (
-	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json'
+	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy-SSU.json'
 )
 
+# Check for Administrative Rights
 If (!(New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
 	Write-Host -ForegroundColor Red "Script must be run as Administrator"
+	Return
+}
+
+# Check for PowerShell Version 3.0+
+If ($PSVersionTable.PSVersion.Major -lt 3) {
+	Write-Host -ForegroundColor Red "Script requires PowerShell v3.0 or Higher"
 	Return
 }
 
@@ -23,7 +30,8 @@ Param (
 									[string] $Path = $Env:TEMP,
 									[Switch] $Progress,
 	[Parameter(Mandatory=$false)]	[uri] $Proxy,
-	[Parameter(Mandatory=$false)]	[System.Net.ICredentials] $ProxyCred
+	[Parameter(Mandatory=$false)]	[System.Net.ICredentials] $ProxyCred,
+	[Parameter(Mandatory=$false)]	[Int]	$Retries = 3
 )
 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12, [Net.SecurityProtocolType]::Tls11;
 	$WebReq = [System.Net.WebRequest]::Create($Uri)
@@ -45,8 +53,12 @@ Param (
 			# Server provided file name
 			$FileName = $Path + '\' + ($WebResp.GetResponseHeader("Content-Disposition").Split('=')[-1] -replace '"','')
 		} else {
-			# Server did not provide name, random
-			$FileName = $Path + '\' + [System.IO.Path]::GetRandomFileName() + '.' + $Uri.ToString().Split('.')[-1]
+			# Server did not provide name, split or random
+			If ($PSVersionTable.PSVersion -ge [version]"3.0") {
+				$FileName = $Path + '\' + (Split-Path -Path $Uri -Leaf)
+			} else {
+				$FileName = $Path + '\' + [System.IO.Path]::GetRandomFileName() + '.' + $Uri.ToString().Split('.')[-1]
+			}
 		}
 	} elseif (Test-Path -Path (Split-Path -Path $Path -Parent) -Type Container) {
 		# Function called with destination file name and valid folder
@@ -71,8 +83,6 @@ Param (
 				-PercentComplete ($bDownloaded / $bLengthTotal * 100) `
 				-SecondsRemaining (($bLengthTotal - $bDownloaded) / $bDownloaded * (New-TimeSpan -Start $tStart).TotalSeconds)
 		}
-		# Assert
-		If ($bDownloaded -gt ($bLengthTotal * 2)) { Throw "Downloaded file significantly bigger than expected" }
 	} While (($bRead -gt 0) -and ($WebStream.CanRead))
 
 	$FileStream.Flush(); $FileStream.Close(); $FileStream.Dispose(); $WebStream.Dispose(); $WebResp.Close()	# Cleanup
@@ -94,159 +104,34 @@ Param (
 	return $R
 }
 
+function Merge-JsonConfig {
+Param (
+	[Object] $InputObject,
+	[Object] $MergeObject
+)
+	Foreach ($P in ($MergeObject.PSObject.Properties.Name |? {$_ -notmatch "^_"})) {
+		Add-Member -InputObject $InputObject -MemberType NoteProperty -Name $P -Value $MergeObject.$P -Force
+		If ($MergeObject._meta -ne $null) {
+			Add-Member -InputObject $InputObject.$P -MemberType NoteProperty -Name '_meta' -Value $MergeObject._meta -Force
+		}
+	}
+}
+
 Function Load-JsonConfig {
 Param (
-	[Parameter(Mandatory=$true, ValueFromPipeline=$true)]
-	[Uri[]]	$Uri
+	[Uri[]]	$Uri,
+	[String[]] $Path,
+	[String] $Raw,
+	[Object] $InputObject = (New-Object Object)
 )
-	Begin {
-		$Ret = New-Object PSCustomObject
-	}
 	Process {
-		Foreach ($u in $Uri) {
-			# Get the JSON
-			Switch -Regex ($u.Scheme) {
-				'http|https' 	{	$t = Invoke-DownloadJson $u; Break }
-				'file'			{	$t = $(Get-Content -Raw -Path $u.OriginalString | ConvertFrom-Json); Break }
-				Default			{	Throw "Unsupport Uri Scheme $_" }
-			}
-			# Add to the Return Object
-			Foreach ($P in ($t.PSObject.Properties.Name -notmatch "^_")) {
-				Add-Member -InputObject $Ret -MemberType NoteProperty -Name $P -Value $t.$P -Force
-				If ($t._meta -ne $null) {
-					Add-Member -InputObject $Ret.$P -MemberType NoteProperty -Name '_meta' -Value $t._meta -Force
-				}
-			}
-		}
+		If ($null -ne $Path)	{ Foreach ($P in $Path) { Merge-JsonConfig -InputObject $InputObject -MergeObject (Get-Content -Raw -Path $P | ConvertFrom-Json) } }
+		If ($null -ne $Uri)		{ Foreach ($U in $Uri)	{ Merge-JsonConfig -InputObject $InputObject -MergeObject (Invoke-DownloadJson $U) } }
+		If ($null -ne $Raw)		{ Merge-JsonConfig -InputObject $InputObject -MergeObject (ConvertFrom-Json -InputObject $Raw) }
 	}
 	End {
-		Return $Ret
+		Return $InputObject
 	}
-}
-
-function Get-CustomerSiteProperty {
-Param (
-	[Object[]]			$Sites,
-	[string]			$Property
-)
-Begin {
-	$LocalIPs = Get-WmiObject Win32_NetworkAdapterConfiguration |?{$_.IPAddress} | Select -Expand IPAddress |? {$_ -match '(\d+\.){3}\d+'}
-}
-Process {
-	Foreach ($Site in ($Sites |? {($_.Subnet -match '(\d+\.){3}\d+/\d+') -and ($_.$Property -ne $null)})) {
-		#Site Info
-		$SubnetMask = [System.Net.IPAddress]::HostToNetworkOrder(-1 -shl ( 32 - ($Site.Subnet.Split('/')[1] -as [int])))
-		$SiteIPAddr = [System.BitConverter]::ToInt32((([System.Net.IPAddress]::Parse($Site.Subnet.Split('/')[0])).GetAddressBytes()), 0)
-
-		# Check each Local IP against the Site
-		Foreach ($LocalIP in $LocalIPs) {
-			$LocalIPAddr = [System.BitConverter]::ToInt32(([System.Net.IPAddress]::Parse($LocalIP).GetAddressBytes()), 0)
-
-			If (($SiteIPAddr -band $SubnetMask) -eq ($LocalIPAddr -band $SubnetMask)) {
-				$Ret = $Site.$Property
-			}
-		}
-	}
-}
-End {
-	If ($Ret -eq $null) {
-		$Ret = ($Sites |? {$_.Default -eq $true}).$Property
-	}
-	Return $Ret
-}
-}
-
-function Test-SoftwareVerify {
-Param (
-	[object] $SoftwareSpec
-)
-	If ($SoftwareSpec.Verify -eq $null) { Return 0 }
-	$self = $SoftwareSpec #For reflection in Json
-	Foreach ($SoftVerf in $SoftwareSpec.Verify.PSObject.Properties) {
-		Switch -regex ($SoftVerf.Name) {
-			'^Service$'	{
-				#Check if service exists...
-				$Service = Get-Service -Name $SoftVerf.Value -ErrorAction SilentlyContinue
-				If ($Service -ne $null) {
-					If ($Service.Status -eq 'Running') {
-						Continue
-					} else {
-						If ((Start-Service $Service -ErrorAction SilentlyContinue -PassThru).Status -ne 'Running') {
-							Return -1
-						} else {
-							Continue
-						}
-					}
-				} else {
-					Return -1
-				}
-			}
-			'GPV' {
-				#Get Item Property Value...
-				$SoftVerf.Value.PSObject.Properties |% {
-					# TODO Fix string expansion?
-					$SoftVerf.Value.$($_.Name) = $ExecutionContext.InvokeCommand.ExpandString($_.Value)
-				}
-
-				# TODO Implement support for multiple dereferencing
-				$PropSpec = ($SoftVerf.Value.Property -split '\.')
-				If ($PropSpec.Count -le 1) {
-					$Prop = (Get-ItemProperty -Path $SoftVerf.Value.Path).$($PropSpec[0])
-				} else {
-					$Prop = (Get-ItemProperty -Path $SoftVerf.Value.Path).$($PropSpec[0]) | Select -Expand $PropSpec[1]
-				}
-
-				# TODO Implement better Datatyping
-				If ($null -ne $SoftVerf.Value.Datatype) {
-					iex ('$r = $Prop ' + $SoftVerf.Value.Operator + ' ' + $SoftVerf.Value.Value)
-				} else {
-					iex ('$r = $Prop ' + ' -as [' + $SoftVerf.Value.Datatype + '] ' + $SoftVerf.Value.Operator + ' ' + $SoftVerf.Value.Value)
-				}
-
-				If ($r) {
-					Continue
-				} else {
-					Return -1
-				}
-
-			}
-			Default {
-				throw "Unsupported or Malformed Software Verification Method: $($SoftVerf.Name)"
-			}
-		}
-	}
-	Return 0
-}
-
-function Install-Software {
-Param (
-	[object]	$SoftwareSpec,
-	[switch]	$Progress
-)
-
-	$TempFile = Invoke-DownloadFile ($SoftwareSpec.Installer.Source | Select -ExpandProperty $ExecutionContext.InvokeCommand.ExpandString("$($SoftwareSpec.Installer.Selectors.Source)")) -Progress:$Progress.IsPresent
-
-	Switch ( $SoftwareSpec.Installer.Type ) {
-		"MSI" {
-			$R = Install-MSIProduct -PassThru -Path $TempFile -Properties $SoftwareSpec.Installer.Arguments
-		}
-		"EXE" {
-			$R = Start-Process -PassThru -Wait -FilePath $TempFile -ArgumentList $SoftwareSpec.Installer.Arguments
-		}
-		"MSU" {
-			if (!(Test-Path $env:systemroot\SysWOW64\wusa.exe)) {
-			  $pWusa = "$env:systemroot\System32\wusa.exe"
-			} else {
-			  $pWusa = "$env:systemroot\SysWOW64\wusa.exe"
-			}
-			$R = Start-Process -FilePath $pWusa -ArgumentList ($TempFile, '/quiet', '/norestart', $SoftwareSpec.Installer.Arguments) -Wait
-		}
-		default {
-			throw "Unsupported Installer"
-		}
-	}
-
-	return $R
 }
 
 ################################## THE SCRIPT ##################################
