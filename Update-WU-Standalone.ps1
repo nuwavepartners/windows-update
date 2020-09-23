@@ -1,4 +1,4 @@
-#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.171 2020-08-26 12:49:43
+#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.176 2020-09-23 16:43:33
 
 Param (
 	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy-SSU.json'
@@ -6,14 +6,12 @@ Param (
 
 # Check for Administrative Rights
 If (!(New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-	Write-Output -ForegroundColor Red "Script must be run as Administrator"
-	Return
+	Throw "Script must be run as Administrator"
 }
 
 # Check for PowerShell Version 3.0+
 If ($PSVersionTable.PSVersion.Major -lt 3) {
-	Write-Output -ForegroundColor Red "Script requires PowerShell v3.0 or Higher"
-	Return
+	Throw "Script requires PowerShell v3.0 or Higher"
 }
 
 ################################## FUNCTIONS ##################################
@@ -152,7 +150,7 @@ $Conf = Import-JsonConfig -Uri $Configs
 Write-Output "Verifying configurations"
 $PatchTuesday = (0..6 | ForEach-Object { $(Get-Date -Day 7).AddDays($_) } | Where-Object { $_.DayOfWeek -like "Tue*" })
 If (((Get-Date) -gt $PatchTuesday) -and ((Get-Date -Date $Conf.WindowsUpdate._meta.Date_Modified) -lt $PatchTuesday)) {
-	Write-Warning "Patch policy data may be Outdated!"
+	Write-Warning ("Patch policy data may be Outdated! {0}" -f $Conf.WindowsUpdate._meta.Date_Modified)
 }
 
 Write-Output 'Collecting current computer configuration'
@@ -178,9 +176,9 @@ Write-Output "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.Produc
 	Foreach ($Update in $UpdateCollection.Updates) {
 		Write-Output "Searching for $($Update.Name)"
 		If (($null -ne $ThisHF.HotFixID) -and ((Compare-Object -ReferenceObject $ThisHF.HotFixID -DifferenceObject $Update.HotFixID -IncludeEqual).SideIndicator -contains '==')) {
-			Write-Output "`tFound" -ForegroundColor Green
+			Write-Output "`tFound"
 		} else {
-			Write-Output "`tNot Installed" -ForegroundColor Yellow
+			Write-Output "`tNot Installed"
 			Write-Output "`tDownloading"
 			If ($null -eq $UpdateCollection.Selectors.Source) {
 				$Source = $Update.Source
@@ -188,8 +186,8 @@ Write-Output "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.Produc
 				$Source = $Update.Source.$($ExecutionContext.InvokeCommand.ExpandString("$($UpdateCollection.Selectors.Source)"))
 			}
 			If ($null -eq $Source) {
-				Write-Output "`tSource not found - Possibly Unsupported" -ForegroundColor Red
-				Continue
+				Write-Output "`tSource not found - Possibly Unsupported"
+				Continued
 			}
 			$f = Invoke-DownloadFile -Uri $Source
 			Write-Output "`tInstalling"
@@ -200,7 +198,7 @@ Write-Output "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.Produc
 				0x00240005	{ Write-Output "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
 				0x0BC2		{ Write-Output "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
 				{$_ -gt 0 }	{
-					Write-Output "`t`t`Installation returned $($r.ExitCode) 0x$('{0:X8}' -f $r.ExitCode)" -ForegroundColor Yellow
+					Write-Output "`t`t`Installation returned $($r.ExitCode) 0x$('{0:X8}' -f $r.ExitCode)"
 					Throw "Installation Failed."
 				}
 			}
