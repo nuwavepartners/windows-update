@@ -1,4 +1,4 @@
-#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.154 2020-07-13 13:14:28
+#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.171 2020-08-26 12:49:43
 
 Param (
 	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy-SSU.json'
@@ -6,19 +6,19 @@ Param (
 
 # Check for Administrative Rights
 If (!(New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-	Write-Host -ForegroundColor Red "Script must be run as Administrator"
+	Write-Output -ForegroundColor Red "Script must be run as Administrator"
 	Return
 }
 
 # Check for PowerShell Version 3.0+
 If ($PSVersionTable.PSVersion.Major -lt 3) {
-	Write-Host -ForegroundColor Red "Script requires PowerShell v3.0 or Higher"
+	Write-Output -ForegroundColor Red "Script requires PowerShell v3.0 or Higher"
 	Return
 }
 
 ################################## FUNCTIONS ##################################
 
-function Convert-DisplayBytes($num)
+function Convert-DisplayByte($num)
 {
 	$exp = [Math]::Floor([Math]::Log10($num)/3)
 	Return "{0:G3} {1}" -f ($num/[Math]::Pow(1000,$exp)), @("B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB")[$exp]
@@ -30,8 +30,8 @@ Param (
 									[string] $Path = $Env:TEMP,
 									[Switch] $Progress,
 	[Parameter(Mandatory=$false)]	[uri] $Proxy,
-	[Parameter(Mandatory=$false)]	[System.Net.ICredentials] $ProxyCred,
-	[Parameter(Mandatory=$false)]	[Int]	$Retries = 3
+	[Parameter(Mandatory=$false)]	[System.Net.ICredentials] $ProxyCred
+	#[Parameter(Mandatory=$false)]	[Int]	$Retries = 3
 )
 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12, [Net.SecurityProtocolType]::Tls11;
 	$WebReq = [System.Net.WebRequest]::Create($Uri)
@@ -79,7 +79,7 @@ Param (
 		$FileStream.Write($Buf, 0, $bRead)
 		# Progress update
 		If ($Progress.IsPresent) {
-			Write-Progress -Activity "Downloading File" -Status ("{0} of {1}" -f $(Convert-DisplayBytes($bDownloaded)), $(Convert-DisplayBytes($bLengthTotal))) `
+			Write-Progress -Activity "Downloading File" -Status ("{0} of {1}" -f $(Convert-DisplayByte($bDownloaded)), $(Convert-DisplayByte($bLengthTotal))) `
 				-PercentComplete ($bDownloaded / $bLengthTotal * 100) `
 				-SecondsRemaining (($bLengthTotal - $bDownloaded) / $bDownloaded * (New-TimeSpan -Start $tStart).TotalSeconds)
 		}
@@ -88,20 +88,26 @@ Param (
 	$FileStream.Flush(); $FileStream.Close(); $FileStream.Dispose(); $WebStream.Dispose(); $WebResp.Close()	# Cleanup
 	If ($Progress.IsPresent) { Write-Progress -Activity "Downloading File" -Completed }
 
-	return $FileName
+	Return $FileName
 }
 
 function Invoke-DownloadJson {
 Param (
-	[Parameter(Mandatory=$true, ValueFromPipeline=$true)]	[uri] $Uri
+	[Parameter(Mandatory=$true)]	[uri] $Uri
 )
+Begin {
 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12, [Net.SecurityProtocolType]::Tls11;
+}
+Process {
 	$R = (New-Object System.Net.WebClient).DownloadString($Uri) | ConvertFrom-Json
-	If ($R._meta -ne $null) {
+	If ($null -ne $R._meta) {
 		Add-Member -InputObject $R._meta -MemberType NoteProperty -Name 'Source' -Value $Uri.AbsoluteUri -Force
 		Add-Member -InputObject $R._meta -MemberType NoteProperty -Name 'Date_Accessed' -Value $(Get-Date -Format 's') -Force
 	}
-	return $R
+}
+End {
+	Return $R
+}
 }
 
 function Merge-JsonConfig {
@@ -109,15 +115,15 @@ Param (
 	[Object] $InputObject,
 	[Object] $MergeObject
 )
-	Foreach ($P in ($MergeObject.PSObject.Properties.Name |? {$_ -notmatch "^_"})) {
+	Foreach ($P in ($MergeObject.PSObject.Properties.Name | Where-Object {$_ -notmatch "^_"})) {
 		Add-Member -InputObject $InputObject -MemberType NoteProperty -Name $P -Value $MergeObject.$P -Force
-		If ($MergeObject._meta -ne $null) {
+		If ($null -ne $MergeObject._meta) {
 			Add-Member -InputObject $InputObject.$P -MemberType NoteProperty -Name '_meta' -Value $MergeObject._meta -Force
 		}
 	}
 }
 
-Function Load-JsonConfig {
+Function Import-JsonConfig {
 Param (
 	[Uri[]]	$Uri,
 	[String[]] $Path,
@@ -136,23 +142,23 @@ Param (
 
 ################################## THE SCRIPT ##################################
 
-Write-Host ('Script Started ').PadRight(80,'-')
+Write-Output ('Script Started ').PadRight(80,'-')
 $RebootRequired = $false
 
 # Load Configuration(s)
-Write-Host ("Loading configurations")
-$Conf = Load-JsonConfig -Uri $Configs
+Write-Output ("Loading configurations")
+$Conf = Import-JsonConfig -Uri $Configs
 
-Write-Host "Verifying configurations"
-$PatchTuesday = (0..6 | % {$(Get-Date -Day 7).AddDays($_) } |? {$_.DayOfWeek -like "Tue*"})
+Write-Output "Verifying configurations"
+$PatchTuesday = (0..6 | ForEach-Object { $(Get-Date -Day 7).AddDays($_) } | Where-Object { $_.DayOfWeek -like "Tue*" })
 If (((Get-Date) -gt $PatchTuesday) -and ((Get-Date -Date $Conf.WindowsUpdate._meta.Date_Modified) -lt $PatchTuesday)) {
-	Write-Host -ForegroundColor Red "WARNING - Patch policy data may be Outdated - WARNING"
+	Write-Warning "Patch policy data may be Outdated!"
 }
 
-Write-Host 'Collecting current computer configuration'
-$ThisOS = GWMI Win32_OperatingSystem
+Write-Output 'Collecting current computer configuration'
+$ThisOS = Get-CimInstance -ClassName Win32_OperatingSystem
 $ThisHF = Get-HotFix
-Write-Host "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.ProductType)>"
+Write-Output "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.ProductType)>"
 
 :lCollection Foreach ($UpdateCollection in $Conf.WindowsUpdate) {
 
@@ -163,38 +169,38 @@ Write-Host "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.ProductT
 		}
 	}
 
-	Write-Host ('Found Updates for ' + $UpdateCollection.OS.Caption)
+	Write-Output ('Found Updates for ' + $UpdateCollection.OS.Caption)
 
 	Foreach ($Selector in $UpdateCollection.Selectors.PSobject.Properties) {
 		$UpdateCollection.Selectors.$($Selector.Name) = $ExecutionContext.InvokeCommand.ExpandString($Selector.Value)
 	}
 
 	Foreach ($Update in $UpdateCollection.Updates) {
-		Write-Host "Searching for $($Update.Name)"
+		Write-Output "Searching for $($Update.Name)"
 		If (($null -ne $ThisHF.HotFixID) -and ((Compare-Object -ReferenceObject $ThisHF.HotFixID -DifferenceObject $Update.HotFixID -IncludeEqual).SideIndicator -contains '==')) {
-			Write-Host "`tFound" -ForegroundColor Green
+			Write-Output "`tFound" -ForegroundColor Green
 		} else {
-			Write-Host "`tNot Installed" -ForegroundColor Yellow
-			Write-Host "`tDownloading"
+			Write-Output "`tNot Installed" -ForegroundColor Yellow
+			Write-Output "`tDownloading"
 			If ($null -eq $UpdateCollection.Selectors.Source) {
 				$Source = $Update.Source
 			} else {
 				$Source = $Update.Source.$($ExecutionContext.InvokeCommand.ExpandString("$($UpdateCollection.Selectors.Source)"))
 			}
 			If ($null -eq $Source) {
-				Write-Host "`tSource not found - Unsupported?" -ForegroundColor Red
+				Write-Output "`tSource not found - Possibly Unsupported" -ForegroundColor Red
 				Continue
 			}
 			$f = Invoke-DownloadFile -Uri $Source
-			Write-Host "`tInstalling"
+			Write-Output "`tInstalling"
 			$r = Start-Process -FilePath 'C:\Windows\System32\wusa.exe' -ArgumentList $f,'/quiet','/norestart' -Wait -PassThru
 			Switch ($r.ExitCode) {
-				0x0			{ Write-Host "`tInstalled successfully"; Break }
-				0x00240006	{ Write-Host "`tUpdate already installed"; Break }
-				0x00240005	{ Write-Host "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
-				0x0BC2		{ Write-Host "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
+				0x0			{ Write-Output "`tInstalled successfully"; Break }
+				0x00240006	{ Write-Output "`tUpdate already installed"; Break }
+				0x00240005	{ Write-Output "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
+				0x0BC2		{ Write-Output "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
 				{$_ -gt 0 }	{
-					Write-Host "`t`t`Installation returned $($r.ExitCode) 0x$('{0:X8}' -f $r.ExitCode)" -ForegroundColor Yellow
+					Write-Output "`t`t`Installation returned $($r.ExitCode) 0x$('{0:X8}' -f $r.ExitCode)" -ForegroundColor Yellow
 					Throw "Installation Failed."
 				}
 			}
@@ -203,5 +209,5 @@ Write-Host "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.ProductT
 	Break;
 }
 
-If ($RebootRequired) { Write-Host "Reboot Needed!" }
-Write-Host ('Script Finished ').PadRight(80,'-')
+If ($RebootRequired) { Write-Output "Reboot Needed!" }
+Write-Output ('Script Finished ').PadRight(80,'-')
