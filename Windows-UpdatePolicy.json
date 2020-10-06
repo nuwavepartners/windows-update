@@ -1,6 +1,6 @@
 {
 	"_meta":  {
-				  "Date_Modified":  "2020-09-23T20:34:54Z"
+				  "Date_Modified":  "2020-10-06T14:24:12Z"
 			  },
 	"Windows":  [
 					{
@@ -95,6 +95,11 @@
 												  "Name":  "Update for Windows Server 2012 (Windows Management Framework 5.1)",
 												  "HotFixID":  "KB3191565",
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu"
+											  },
+											  {
+												  "Name":  "2020-09 Security Monthly Quality Rollup for Windows Server 2012",
+												  "HotFixID":  "KB4577038",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/09/windows8-rt-kb4577038-x64_4a3fff78e4b1ff22d6abfb6be812489ff6a39858.msu"
 											  }
 										  ]
 						  },
@@ -134,6 +139,11 @@
 												  "Name":  "Update for Windows Server 2012 R2 (Windows Management Framework 5.1)",
 												  "HotFixID":  "KB3191564",
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu"
+											  },
+											  {
+												  "Name":  "2020-09 Security Monthly Quality Rollup for Windows Server 2012 R2",
+												  "HotFixID":  "KB4577066",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/09/windows8.1-kb4577066-x64_640bbb7de82c25f72f14272d61bd6f9a52a3840f.msu"
 											  }
 										  ]
 						  },
