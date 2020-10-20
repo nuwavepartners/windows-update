@@ -169,8 +169,14 @@ Write-Output "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.Produc
 
 	Write-Output ('Found Updates for ' + $UpdateCollection.OS.Caption)
 
-	Foreach ($Selector in $UpdateCollection.Selectors.PSobject.Properties) {
-		$UpdateCollection.Selectors.$($Selector.Name) = $ExecutionContext.InvokeCommand.ExpandString($Selector.Value)
+	If ([version]"10.0" -le $ThisOS.Version) {
+		Foreach ($Selector in $UpdateCollection.Selectors.PSobject.Properties) {
+			$UpdateCollection.Selectors.$($Selector.Name) = $ExecutionContext.InvokeCommand.ExpandString($Selector.Value)
+		}
+	} Else {
+		Foreach ($Selector in $UpdateCollection.Selectors.PSobject.Properties) {
+			$UpdateCollection.Selectors.$($Selector.Name) = $Selector.Value | Invoke-Expression
+		}
 	}
 
 	Foreach ($Update in $UpdateCollection.Updates) {
@@ -183,7 +189,7 @@ Write-Output "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.Produc
 			If ($null -eq $UpdateCollection.Selectors.Source) {
 				$Source = $Update.Source
 			} else {
-				$Source = $Update.Source.$($ExecutionContext.InvokeCommand.ExpandString("$($UpdateCollection.Selectors.Source)"))
+				$Source = $Update.Source.$($UpdateCollection.Selectors.Source)
 			}
 			If ($null -eq $Source) {
 				Write-Output "`tSource not found - Possibly Unsupported"
