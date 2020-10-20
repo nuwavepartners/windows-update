@@ -210,7 +210,7 @@
 										 "Version":  "6.1.7601"
 									 },
 							  "Selectors":  {
-												"Source":  "Source.$($ThisOS.OSArchitecture)"
+												"Source":  "$($ThisOS.OSArchitecture)"
 											},
 							  "Updates":  [
 											  {
