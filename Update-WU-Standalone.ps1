@@ -187,7 +187,7 @@ Write-Output "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.Produc
 			}
 			If ($null -eq $Source) {
 				Write-Output "`tSource not found - Possibly Unsupported"
-				Continued
+				Continue
 			}
 			$f = Invoke-DownloadFile -Uri $Source
 			Write-Output "`tInstalling"
