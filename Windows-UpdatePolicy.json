@@ -1,6 +1,6 @@
 {
 	"_meta":  {
-				  "Date_Modified":  "2020-10-06T14:24:12Z"
+				  "Date_Modified":  "2020-11-12T22:28:31Z"
 			  },
 	"Windows":  [
 					{
@@ -159,9 +159,9 @@
 												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/08/windows10.0-kb4576750-x64_c4e0b5e0f0835db971a40058aa17ae9a0d2f1e2a.msu"
 											  },
 											  {
-												  "Name":  "2020-10 Cumulative Update for Windows Server 2016 for x64-based Systems",
-												  "HotFixID":  "KB4580346",
-												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/10/windows10.0-kb4580346-x64_1b5d07a6251f5794fe6a6c0069d39d302c5412d3.msu"
+												  "Name":  "2020-11 Cumulative Update for Windows Server 2016 for x64-based Systems",
+												  "HotFixID":  "KB4586830",
+												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/11/windows10.0-kb4586830-x64_30c6444c0319caa72579a4c59e2e93d756dc9f21.msu"
 											  },
 											  {
 												  "Name":  "Microsoft .NET Framework 4.8",
@@ -169,9 +169,9 @@
 												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu"
 											  },
 											  {
-												  "Name":  "2020-10 Cumulative Update for .NET Framework 4.8 for Windows Server 2016 for x64",
-												  "HotFixID":  "KB4578969",
-												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/10/windows10.0-kb4578969-x64-ndp48_0859a061b1a15dcdf3533381c3b0fcf06790d143.msu"
+												  "Name":  "2020-11 Cumulative Update for .NET Framework 4.8 for Windows Server 2016 for x64",
+												  "HotFixID":  "KB4585207",
+												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/10/windows10.0-kb4585207-x64-ndp48_62f54bedd78999c5da431111d869fc9f273b991f.msu"
 											  }
 										  ]
 						  },
