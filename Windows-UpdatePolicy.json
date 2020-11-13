@@ -4,6 +4,13 @@
 			  },
 	"Windows":  [
 					{
+						"Name":  "Windows 10, version 20H2",
+						"Version":  "10.0.19042",
+						"Date_Available":  "",
+						"Date_EoS_Mainline":  "",
+						"Date_EoS_Extended":  ""
+					},
+					{
 						"Name":  "Windows 10, version 2004",
 						"Version":  "10.0.19041",
 						"Date_Available":  "2020-05-27",
@@ -67,7 +74,7 @@
 						"Date_EoS_Extended":  "2017-10-10"
 					},
 					{
-						"Name":  "Windows 10, released July 2015 (version 1507)",
+						"Name":  "Windows 10, version 1507",
 						"Version":  "10.0.10240",
 						"Date_Available":  "2015-07-29",
 						"Date_EoS_Mainline":  "2017-05-09",
@@ -97,9 +104,9 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu"
 											  },
 											  {
-												  "Name":  "2020-10 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems",
-												  "HotFixID":  "KB4580382",
-												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/10/windows8-rt-kb4580382-x64_b624bfd21af0d565a46aae66c878847e02d316ad.msu"
+												  "Name":  "2020-11 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems",
+												  "HotFixID":  "KB4586834",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/11/windows8-rt-kb4586834-x64_b92e4a71eeedbf29bfa57d9f46fcc880c688ee90.msu"
 											  }
 										  ]
 						  },
@@ -141,9 +148,9 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu"
 											  },
 											  {
-												  "Name":  "2020-10 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems",
-												  "HotFixID":  "KB4580347",
-												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/10/windows8.1-kb4580347-x64_81615383a9bf9127bfac14519990c195c562724d.msu"
+												  "Name":  "2020-11 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems",
+												  "HotFixID":  "KB4586845",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/11/windows8.1-kb4586845-x64_59301f86b9acdd733fa57dda9c0434f527afd848.msu"
 											  }
 										  ]
 						  },
@@ -187,9 +194,9 @@
 												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/10/windows10.0-kb4577667-x64_a5abb78aa80bfc785f5a3e5aeddcecfeda59bb2c.msu"
 											  },
 											  {
-												  "Name":  "2020-10 Cumulative Update for Windows Server 2019 for x64-based Systems",
-												  "HotFixID":  "KB4577668",
-												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/10/windows10.0-kb4577668-x64_4a9a178dfbfa403684e52c48cab118969f4e7cba.msu"
+												  "Name":  "2020-11 Cumulative Update for Windows Server 2019 for x64-based Systems",
+												  "HotFixID":  "KB4586793",
+												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/11/windows10.0-kb4586793-x64_99d3826119288e28a7d7e0b61c3c112476ddc87a.msu"
 											  },
 											  {
 												  "Name":  ".NET Framework 4.8",
@@ -197,9 +204,14 @@
 												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu"
 											  },
 											  {
-												  "Name":  "2020-10 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows Server 2019 for x64",
-												  "HotFixID":  "KB4578973",
-												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/10/windows10.0-kb4578973-x64-ndp48_2a28aefe484b038b0720da5afde89f41aa50eea7.msu"
+												  "Name":  "2020-11 Cumulative Update for .NET Framework 4.8 for Windows Server 2019 for x64",
+												  "HotFixID":  "KB4586082",
+												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/10/windows10.0-kb4580979-x64-ndp48_24793c7b24af666026c2e60b7870a1034834c8e3.msu"
+											  },
+											  {
+												  "Name":  "2020-11 Cumulative Update for .NET Framework 3.5 and 4.7.2 for Windows Server 2019 for x64",
+												  "HotFixID":  "KB4580422",
+												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/10/windows10.0-kb4580422-x64_86829f308772f33bab3ada0190346dab8e15d084.msu"
 											  }
 										  ]
 						  },
@@ -466,29 +478,30 @@
 															 }
 											  },
 											  {
-												  "Name":  "2020-07 Cumulative Update for Windows 10 for x64-based Systems",
+												  "Name":  "Latest Cumulative Update for Windows 10 for x64-based Systems",
 												  "HotFixID":  [
-																   "kb4565513",
-																   "kb4075200",
-																   "kb4565511",
-																   "kb4565499",
-																   "kb4565508",
-																   "kb4565489",
-																   "kb4558998",
-																   "kb4565483",
-																   "kb4565503"
+																   "KB4586787",
+																   "KB4093109",
+																   "KB4586830",
+																   "KB4586782",
+																   "KB4580328",
+																   "KB4586785",
+																   "KB4586793",
+																   "KB4586786",
+																   "KB4586781"
 															   ],
 												  "Source":  {
-																 "10240":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/07/windows10.0-kb4565513-x64_1487b53b9dba00e6ba227cd6a9d436b61312777c.msu",
-																 "10586":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2018/01/windows10.0-kb4075200-x64_9075daf0aeaff37d73297252e4d983bc2e92e5ce.msu",
-																 "14393":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/07/windows10.0-kb4565511-x64_5d2481cbc9319147ad3c8f42e07a0ee182909be9.msu",
-																 "15063":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/07/windows10.0-kb4565499-x64_d63c6b5e134cbea8e1eb2b242e76bfccab0a80ee.msu",
-																 "16299":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/07/windows10.0-kb4565508-x64_7c2fdad9c0e7caa23c96c24a0a7129659c7f66eb.msu",
-																 "17134":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/07/windows10.0-kb4565489-x64_c79c926453b85267fb5cc5f969f172f6250b086c.msu",
-																 "17763":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/07/windows10.0-kb4558998-x64_6da68fe659dacb747458ab3a431c3546ce7765b5.msu",
-																 "18362":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/07/windows10.0-kb4565483-x64_1f6258cf4f9d8d7986e676c47f3d380003711a61.msu",
-																 "18363":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/07/windows10.0-kb4565483-x64_1f6258cf4f9d8d7986e676c47f3d380003711a61.msu",
-																 "19041":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/07/windows10.0-kb4565503-x64_db6e183196b0c394a7fa3be6e8fd26544c6dc9ce.msu"
+																 "10240":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/11/windows10.0-kb4586787-x64_23217389a58df211b451c7fb026e0286c474f45a.msu",
+																 "10586":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2018/03/windows10.0-kb4093109-x64_23878b35ac2f25483092cd28fb75b5c75b5d4ae1.msu",
+																 "14393":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/11/windows10.0-kb4586830-x64_30c6444c0319caa72579a4c59e2e93d756dc9f21.msu",
+																 "15063":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/11/windows10.0-kb4586782-x64_9a44a3feb6963ae7c1b1716307de3fbc46ee6444.msu",
+																 "16299":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/10/windows10.0-kb4580328-x64_b0565c3b26e77c3ce230a19121e30dccfb756235.msu",
+																 "17134":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/11/windows10.0-kb4586785-x64_4fc35b4b6be33bf1dcdf9573bf5a8156f2027365.msu",
+																 "17763":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/11/windows10.0-kb4586793-x64_99d3826119288e28a7d7e0b61c3c112476ddc87a.msu",
+																 "18362":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/11/windows10.0-kb4586786-x64_21c0216e37c7a07dbd069252733746e4414a6c88.msu",
+																 "18363":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/11/windows10.0-kb4586786-x64_21c0216e37c7a07dbd069252733746e4414a6c88.msu",
+																 "19041":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/11/windows10.0-kb4586781-x64_bd543ce012ec1695201cdb2d324a2206bd445132.msu",
+																 "19042":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/11/windows10.0-kb4586781-x64_bd543ce012ec1695201cdb2d324a2206bd445132.msu"
 															 }
 											  },
 											  {
