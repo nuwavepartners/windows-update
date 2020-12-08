@@ -1,5 +1,5 @@
 #### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.177 2020-09-23 16:46:04
-
+[CmdletBinding()]
 Param (
 	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json'
 )
@@ -130,7 +130,9 @@ Param (
 )
 	Process {
 		If ($null -ne $Path)	{ Foreach ($P in $Path) { Merge-JsonConfig -InputObject $InputObject -MergeObject (Get-Content -Raw -Path $P | ConvertFrom-Json) } }
-		If ($null -ne $Uri)		{ Foreach ($U in $Uri)	{ Merge-JsonConfig -InputObject $InputObject -MergeObject (Invoke-DownloadJson $U) } }
+		If ($null -ne $Uri)		{ Foreach ($U in $Uri)	{ 
+			Write-Information "Import-JsonConfig: Uri: $U"
+			Merge-JsonConfig -InputObject $InputObject -MergeObject (Invoke-DownloadJson $U) } }
 		If ($null -ne $Raw)		{ Merge-JsonConfig -InputObject $InputObject -MergeObject (ConvertFrom-Json -InputObject $Raw) }
 	}
 	End {
