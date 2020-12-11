@@ -130,9 +130,7 @@ Param (
 )
 	Process {
 		If ($null -ne $Path)	{ Foreach ($P in $Path) { Merge-JsonConfig -InputObject $InputObject -MergeObject (Get-Content -Raw -Path $P | ConvertFrom-Json) } }
-		If ($null -ne $Uri)		{ Foreach ($U in $Uri)	{ 
-			Write-Information "Import-JsonConfig: Uri: $U"
-			Merge-JsonConfig -InputObject $InputObject -MergeObject (Invoke-DownloadJson $U) } }
+		If ($null -ne $Uri)		{ Foreach ($U in $Uri)	{ Merge-JsonConfig -InputObject $InputObject -MergeObject (Invoke-DownloadJson $U) } }
 		If ($null -ne $Raw)		{ Merge-JsonConfig -InputObject $InputObject -MergeObject (ConvertFrom-Json -InputObject $Raw) }
 	}
 	End {
@@ -151,7 +149,7 @@ $Conf = Import-JsonConfig -Uri $Configs
 
 Write-Output "Verifying configurations"
 $PatchTuesday = (0..6 | ForEach-Object { $(Get-Date -Day 7).AddDays($_) } | Where-Object { $_.DayOfWeek -like "Tue*" })
-If (((Get-Date) -gt $PatchTuesday) -and ((Get-Date -Date $Conf.WindowsUpdate._meta.Date_Modified) -lt $PatchTuesday)) {
+If (((Get-Date) -gt $PatchTuesday) -and ((Get-Date -Date $Conf.WindowsUpdate._meta.Date_Modified -) -lt $PatchTuesday)) {
 	Write-Warning ("Patch policy data may be Outdated! {0}" -f $Conf.WindowsUpdate._meta.Date_Modified)
 }
 

@@ -1,6 +1,6 @@
 {
 	"_meta":  {
-				  "Date_Modified":  "2020-11-12T22:28:31Z"
+				  "Date_Modified":  "2020-12-11T15:22:17Z"
 			  },
 	"Windows":  [
 					{
@@ -104,9 +104,9 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu"
 											  },
 											  {
-												  "Name":  "2020-11 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems",
-												  "HotFixID":  "KB4586834",
-												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/11/windows8-rt-kb4586834-x64_b92e4a71eeedbf29bfa57d9f46fcc880c688ee90.msu"
+												  "Name":  "2020-12 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems",
+												  "HotFixID":  "KB4592468",
+												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows8-rt-kb4592468-x64_7de67f9d4ad647bcbc92a0d51443359d278bc02a.msu"
 											  }
 										  ]
 						  },
@@ -119,7 +119,8 @@
 											  {
 												  "Name":  "Update for Windows Server 2012 R2",
 												  "HotFixID":  "KB3021910",
-												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2015/04/windows8.1-kb3021910-x64_e291c0c339586e79c36ebfc0211678df91656c3d.msu"
+												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2015/04/windows8.1-kb3021910-x64_e291c0c339586e79c36ebfc0211678df91656c3d.msu",
+												  "Comment":  "Prerequisite, SSU"
 											  },
 											  {
 												  "Name":  "Windows Server 2012 R2 Update",
@@ -148,9 +149,9 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu"
 											  },
 											  {
-												  "Name":  "2020-11 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems",
-												  "HotFixID":  "KB4586845",
-												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/11/windows8.1-kb4586845-x64_59301f86b9acdd733fa57dda9c0434f527afd848.msu"
+												  "Name":  "2020-12 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems",
+												  "HotFixID":  "KB4592484",
+												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows8.1-kb4592484-x64_de40107ba0282603bbeb96f655bb06334ee41e6a.msu"
 											  }
 										  ]
 						  },
@@ -166,9 +167,9 @@
 												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/08/windows10.0-kb4576750-x64_c4e0b5e0f0835db971a40058aa17ae9a0d2f1e2a.msu"
 											  },
 											  {
-												  "Name":  "2020-11 Cumulative Update for Windows Server 2016 for x64-based Systems",
-												  "HotFixID":  "KB4586830",
-												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/11/windows10.0-kb4586830-x64_30c6444c0319caa72579a4c59e2e93d756dc9f21.msu"
+												  "Name":  "2020-12 Cumulative Update for Windows Server 2016 for x64-based Systems",
+												  "HotFixID":  "KB4593226",
+												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/12/windows10.0-kb4593226-x64_d58938ce2e7c111c8e8f0c0bdc80f0e57defbf4d.msu"
 											  },
 											  {
 												  "Name":  "Microsoft .NET Framework 4.8",
@@ -189,14 +190,14 @@
 									 },
 							  "Updates":  [
 											  {
-												  "Name":  "2020-10 Servicing Stack Update for Windows Server 2019 for x64-based Systems",
-												  "HotFixID":  "KB4577667",
-												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/10/windows10.0-kb4577667-x64_a5abb78aa80bfc785f5a3e5aeddcecfeda59bb2c.msu"
+												  "Name":  "2020-11 Servicing Stack Update for Windows Server 2019 for x64-based Systems",
+												  "HotFixID":  "KB4587735",
+												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/11/windows10.0-kb4587735-x64_e6767b1837f73e61f5e8be2b73d314c10c23f259.msu"
 											  },
 											  {
-												  "Name":  "2020-11 Cumulative Update for Windows Server 2019 for x64-based Systems",
-												  "HotFixID":  "KB4586793",
-												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/11/windows10.0-kb4586793-x64_99d3826119288e28a7d7e0b61c3c112476ddc87a.msu"
+												  "Name":  "2020-12 Cumulative Update for Windows Server 2019 for x64-based Systems",
+												  "HotFixID":  "KB4592440",
+												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/12/windows10.0-kb4592440-x64_e4897b096fb33c7608a18b54d6e9b0a142536683.msu"
 											  },
 											  {
 												  "Name":  ".NET Framework 4.8",
@@ -207,11 +208,6 @@
 												  "Name":  "2020-11 Cumulative Update for .NET Framework 4.8 for Windows Server 2019 for x64",
 												  "HotFixID":  "KB4586082",
 												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/10/windows10.0-kb4580979-x64-ndp48_24793c7b24af666026c2e60b7870a1034834c8e3.msu"
-											  },
-											  {
-												  "Name":  "2020-11 Cumulative Update for .NET Framework 3.5 and 4.7.2 for Windows Server 2019 for x64",
-												  "HotFixID":  "KB4580422",
-												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/10/windows10.0-kb4580422-x64_86829f308772f33bab3ada0190346dab8e15d084.msu"
 											  }
 										  ]
 						  },
