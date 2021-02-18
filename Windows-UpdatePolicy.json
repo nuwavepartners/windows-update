@@ -1,6 +1,6 @@
 {
 	"_meta":  {
-				  "Date_Modified":  "2020-12-23T15:21:33Z"
+				  "Date_Modified":  "2021-02-18T17:39:58Z"
 			  },
 	"Windows":  [
 					{
@@ -50,7 +50,8 @@
 						"Version":  "10.0.16299",
 						"Date_Available":  "2017-10-17",
 						"Date_EoS_Mainline":  "2019-04-09",
-						"Date_EoS_Extended":  "2020-10-13"
+						"Date_EoS_Extended":  "2020-10-13",
+						"Unpatchable":  true
 					},
 					{
 						"Name":  "Windows 10, version 1703",
@@ -106,9 +107,9 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu"
 											  },
 											  {
-												  "Name":  "2020-12 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems",
-												  "HotFixID":  "KB4592468",
-												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows8-rt-kb4592468-x64_7de67f9d4ad647bcbc92a0d51443359d278bc02a.msu"
+												  "Name":  "2021-01 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems",
+												  "HotFixID":  "KB4598278",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/01/windows8-rt-kb4598278-x64_7883eded1e26e988beeb55808b20f28ea38324bd.msu"
 											  }
 										  ]
 						  },
@@ -151,9 +152,9 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu"
 											  },
 											  {
-												  "Name":  "2020-12 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems",
-												  "HotFixID":  "KB4592484",
-												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows8.1-kb4592484-x64_de40107ba0282603bbeb96f655bb06334ee41e6a.msu"
+												  "Name":  "2021-01 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems",
+												  "HotFixID":  "KB4598285",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/01/windows8.1-kb4598285-x64_7ee28aa249afc9b4ebf3d491e5fa529a31bc29e7.msu"
 											  }
 										  ]
 						  },
@@ -164,14 +165,14 @@
 									 },
 							  "Updates":  [
 											  {
-												  "Name":  "2020-09 Servicing Stack Update for Windows Server 2016 for x64-based Systems",
-												  "HotFixID":  "KB4576750",
-												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/08/windows10.0-kb4576750-x64_c4e0b5e0f0835db971a40058aa17ae9a0d2f1e2a.msu"
+												  "Name":  "2021-02 Servicing Stack Update for Windows Server 2016 for x64-based Systems",
+												  "HotFixID":  "KB5001078",
+												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/02/windows10.0-kb5001078-x64_6bdd193b6f54fa8d068f031775b1932e26703f73.msu"
 											  },
 											  {
-												  "Name":  "2020-12 Cumulative Update for Windows Server 2016 for x64-based Systems",
-												  "HotFixID":  "KB4593226",
-												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/12/windows10.0-kb4593226-x64_d58938ce2e7c111c8e8f0c0bdc80f0e57defbf4d.msu"
+												  "Name":  "2021-02 Cumulative Update for Windows Server 2016 for x64-based Systems",
+												  "HotFixID":  "KB4601318",
+												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/02/windows10.0-kb4601318-x64_0e3c1261a7405cf824f2ab40c2cfc0efff18214b.msu"
 											  },
 											  {
 												  "Name":  "Microsoft .NET Framework 4.8",
@@ -179,9 +180,9 @@
 												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu"
 											  },
 											  {
-												  "Name":  "2020-11 Cumulative Update for .NET Framework 4.8 for Windows Server 2016 for x64",
-												  "HotFixID":  "KB4585207",
-												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/10/windows10.0-kb4585207-x64-ndp48_62f54bedd78999c5da431111d869fc9f273b991f.msu"
+												  "Name":  "2021-01 Cumulative Update for .NET Framework 4.8 for Windows Server 2016 for x64",
+												  "HotFixID":  "KB4597247",
+												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/updt/2020/12/windows10.0-kb4597247-x64-ndp48_c943fabca81cf4383d04efae51e417387f137ee1.msu"
 											  }
 										  ]
 						  },
@@ -192,14 +193,14 @@
 									 },
 							  "Updates":  [
 											  {
-												  "Name":  "2020-11 Servicing Stack Update for Windows Server 2019 for x64-based Systems",
-												  "HotFixID":  "KB4587735",
-												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/11/windows10.0-kb4587735-x64_e6767b1837f73e61f5e8be2b73d314c10c23f259.msu"
+												  "Name":  "2021-02 Servicing Stack Update for Windows Server 2019 for x64-based Systems",
+												  "HotFixID":  "KB4601393",
+												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/02/windows10.0-kb4601393-x64_010c229fddd5d60a8a41d2e5bb95308671196b03.msu"
 											  },
 											  {
-												  "Name":  "2020-12 Cumulative Update for Windows Server 2019 for x64-based Systems",
-												  "HotFixID":  "KB4592440",
-												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/12/windows10.0-kb4592440-x64_e4897b096fb33c7608a18b54d6e9b0a142536683.msu"
+												  "Name":  "2021-02 Cumulative Update for Windows Server 2019 for x64-based Systems",
+												  "HotFixID":  "KB4601345",
+												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/02/windows10.0-kb4601345-x64_6dfee9d6f028678d7988eb35cd5c0867bf96e4c6.msu"
 											  },
 											  {
 												  "Name":  ".NET Framework 4.8",
@@ -207,9 +208,9 @@
 												  "source":  "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu"
 											  },
 											  {
-												  "Name":  "2020-11 Cumulative Update for .NET Framework 4.8 for Windows Server 2019 for x64",
-												  "HotFixID":  "KB4586082",
-												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/10/windows10.0-kb4580979-x64-ndp48_24793c7b24af666026c2e60b7870a1034834c8e3.msu"
+												  "Name":  "2021-01 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows Server 2019 for x64",
+												  "HotFixID":  "KB4598499",
+												  "source":  "http://download.windowsupdate.com/c/msdownload/update/software/updt/2020/11/windows10.0-kb4586877-x64-ndp48_7ea9b3a0c33531117c9833b26e1e72462defb6c4.msu"
 											  }
 										  ]
 						  },
@@ -453,47 +454,38 @@
 											  {
 												  "Name":  "Latest Servicing Stack Update for Windows 10",
 												  "HotFixID":  [
-																   "KB4565911",
-																   "KB4576750",
-																   "KB4565553",
-																   "KB4580398",
-																   "KB4587735",
-																   "KB4586863",
-																   "KB4593175"
+																   "KB5001079",
+																   "KB5001078",
+																   "KB4601393",
+																   "KB4601395",
+																   "KB4598481"
 															   ],
 												  "Source":  {
-																 "10240":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/07/windows10.0-kb4565911-x64_eb0bf0925994e28453df3aba002116168e4e3708.msu",
-																 "14393":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/08/windows10.0-kb4576750-x64_c4e0b5e0f0835db971a40058aa17ae9a0d2f1e2a.msu",
-																 "16299":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/07/windows10.0-kb4565553-x64_37666386a4858aed971874a72cb8c07155c26a87.msu",
-																 "17134":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/10/windows10.0-kb4580398-x64_50e837b4fcb78b364954e199b6b88c354cbed550.msu",
-																 "17763":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/11/windows10.0-kb4587735-x64_e6767b1837f73e61f5e8be2b73d314c10c23f259.msu",
-																 "18362":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/11/windows10.0-kb4586863-x64_320630e7f8765a00c86d2669399889b2363d6d05.msu",
-																 "18363":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/11/windows10.0-kb4586863-x64_320630e7f8765a00c86d2669399889b2363d6d05.msu",
-																 "19041":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows10.0-kb4593175-x64_49d6fbe1ad4b01b53daee97fd2cbf8652bc313bc.msu",
-																 "19042":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows10.0-kb4593175-x64_49d6fbe1ad4b01b53daee97fd2cbf8652bc313bc.msu"
+																 "10240":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/02/windows10.0-kb5001079-x64_e51970081f054924bb93397e906fce22977e66a6.msu",
+																 "14393":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/02/windows10.0-kb5001078-x64_6bdd193b6f54fa8d068f031775b1932e26703f73.msu",
+																 "17763":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/02/windows10.0-kb4601393-x64_010c229fddd5d60a8a41d2e5bb95308671196b03.msu",
+																 "18362":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/02/windows10.0-kb4601395-x64_4e16fc7e7f52ea51753a0775adfe1f894bd89707.msu",
+																 "18363":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/02/windows10.0-kb4601395-x64_4e16fc7e7f52ea51753a0775adfe1f894bd89707.msu",
+																 "19041":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/01/windows10.0-kb4598481-x64_749fe79fd2e31b145de37c2f9ebf4f711d174dc2.msu",
+																 "19042":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/01/windows10.0-kb4598481-x64_749fe79fd2e31b145de37c2f9ebf4f711d174dc2.msu"
 															 }
 											  },
 											  {
 												  "Name":  "Latest Cumulative Update for Windows 10 for x64-based Systems",
 												  "HotFixID":  [
-																   "KB4592464",
-																   "KB4593226",
-																   "KB4592473",
-																   "KB4592446",
-																   "KB4592440",
-																   "KB4592449",
-																   "KB4592438"
+																   "KB4601331",
+																   "KB4601318",
+																   "KB4601345",
+																   "KB5001028",
+																   "KB4601319"
 															   ],
 												  "Source":  {
-																 "10240":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/12/windows10.0-kb4592464-x64_498b0ab58ad836fa565b8a55d8aa12ee33c5cf16.msu",
-																 "14393":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/12/windows10.0-kb4593226-x64_d58938ce2e7c111c8e8f0c0bdc80f0e57defbf4d.msu",
+																 "10240":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/02/windows10.0-kb4601331-x64_a75ee81dd77fffba947916d6b3b9429f3f376282.msu",
+																 "14393":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/02/windows10.0-kb4601318-x64_0e3c1261a7405cf824f2ab40c2cfc0efff18214b.msu",
 																 "15063":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows10.0-kb4592473-x64_6cffd70c813cfaef94f61f7e9e5beb2cb0203eeb.msu",
-																 "17134":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows10.0-kb4592446-x64_15d6394dff1aec541e4ba5fc085f94ca412a4a39.msu",
-																 "17763":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/12/windows10.0-kb4592440-x64_e4897b096fb33c7608a18b54d6e9b0a142536683.msu",
-																 "18362":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows10.0-kb4592449-x64_aa193efa8432018464d6173c497ce3de71a581e2.msu",
-																 "18363":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows10.0-kb4592449-x64_aa193efa8432018464d6173c497ce3de71a581e2.msu",
-																 "19041":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/12/windows10.0-kb4592438-x64_b6914251264f8f973c3f82f99b894935f33c38e6.msu",
-																 "19042":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2020/12/windows10.0-kb4592438-x64_b6914251264f8f973c3f82f99b894935f33c38e6.msu"
+																 "18363":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/02/windows10.0-kb5001028-x64_c374452775197732048616bf010e1fc573ededaa.msu",
+																 "19041":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/02/windows10.0-kb4601319-x64_fa56d86b14e97133976a808e521f891ee180e101.msu",
+																 "19042":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/02/windows10.0-kb4601319-x64_fa56d86b14e97133976a808e521f891ee180e101.msu"
 															 }
 											  },
 											  {

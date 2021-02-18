@@ -1,4 +1,8 @@
-#### By Chris Stone <chris.stone@nuwavepartners.com> v0.2.177 2020-09-23 16:46:04
+<# 
+.NOTES 
+	Author:			Chris Stone <chris.stone@nuwavepartners.com>
+	Date-Modified:	2020-12-23 14:34:42
+#>
 [CmdletBinding()]
 Param (
 	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json'
