@@ -1,11 +1,12 @@
 <# 
 .NOTES 
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2020-12-23 14:34:42
+	Date-Modified:	2021-03-23 17:47:32
 #>
 [CmdletBinding()]
 Param (
-	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json'
+	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json',
+	$CacheDir = ''
 )
 
 # Check for Administrative Rights
@@ -189,7 +190,7 @@ Write-Output "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.Produc
 			Write-Output "`tFound"
 		} else {
 			Write-Output "`tNot Installed"
-			Write-Output "`tDownloading"
+
 			If ($null -eq $UpdateCollection.Selectors.Source) {
 				$Source = $Update.Source
 			} else {
@@ -199,7 +200,44 @@ Write-Output "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.Produc
 				Write-Output "`tSource not found - Possibly Unsupported"
 				Continue
 			}
-			$f = Invoke-DownloadFile -Uri $Source
+
+			# Try Cache Location
+			If ($CacheDir.Trim().Length -gt 0) {
+				$CachePath = @($CacheDir, $Source.ToString().Split('/')[-1]) -join '\'
+				$LocalPath = @($Env:TEMP, [System.IO.Path]::GetRandomFileName()) -join '\'
+				If (Test-Path -Path $CachePath -PathType Leaf) {
+					# Copy to local
+					Copy-Item -Path $CachePath -Destination $LocalPath
+
+					# Calculate Hash
+					$stream = New-Object system.IO.FileStream($LocalPath, "Open", "Read", "ReadWrite")
+					$csp = New-Object -TypeName System.Security.Cryptography.SHA1Cng
+					$hash = [System.BitConverter]::ToString($csp.ComputeHash($stream)).Replace("-", [String]::Empty).ToLower();
+					$stream.Dispose(); $stream.Close(); $csp.Dispose()
+					
+					# Verify Hash
+					$UpdateHash = $Source.Split('/')[-1].Split('_')[-1].Substring(0,40)
+					If ($hash -eq $UpdateHash) {
+						Write-Output "`tCache Found"
+					} else {
+						Remove-Item -Path $LocalPath
+						$LocalPath = $null
+					}
+				} else {
+					Write-Output "`tCache Unpopulated"
+				}
+			} else {
+				Write-Output "`tCache Unspecified"
+			}
+
+			# Download from Source
+			If ($null -eq $LocalPath) {
+				Write-Output "`tDownloading"
+				$f = Invoke-DownloadFile -Uri $Source
+			} else {
+				$f = $LocalPath
+			}
+			
 			Write-Output "`tInstalling"
 			$r = Start-Process -FilePath 'C:\Windows\System32\wusa.exe' -ArgumentList $f,'/quiet','/norestart' -Wait -PassThru
 			Switch ($r.ExitCode) {
