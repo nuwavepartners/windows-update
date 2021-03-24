@@ -1,7 +1,7 @@
 <# 
 .NOTES 
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2021-03-23 17:47:32
+	Date-Modified:	2021-03-24 15:51:32
 #>
 [CmdletBinding()]
 Param (
@@ -94,6 +94,39 @@ Param (
 	Return $FileName
 }
 
+function Invoke-CacheGet {
+Param (
+	[Parameter(Mandatory=$true)]	[string]	$CacheDir,
+	[Parameter(Mandatory=$true)]	[string]	$FileName,
+	[Parameter(Mandatory=$false)]	[string]	$FileHash
+)
+	$CachePath = @($CacheDir, $Source.ToString().Split('/')[-1]) -join '\'
+	$LocalPath = @($Env:TEMP, [System.IO.Path]::GetRandomFileName()) -join '\'
+	If (Test-Path -Path $CachePath -PathType Leaf) {
+		# Copy to local
+		Copy-Item -Path $CachePath -Destination $LocalPath
+
+		# Calculate Hash
+		If ($PSBoundParameters.ContainsKey('FileHash')) {
+			$stream = New-Object system.IO.FileStream($LocalPath, "Open", "Read", "ReadWrite")
+			$csp = New-Object -TypeName System.Security.Cryptography.SHA1Cng
+			$hash = [System.BitConverter]::ToString($csp.ComputeHash($stream)).Replace("-", [String]::Empty).ToLower();
+			$stream.Dispose(); $stream.Close(); $csp.Dispose()
+
+
+			If ($hash -ne ($FileHash).ToLower()) {
+				Write-Verbose "`tCache Invalid"
+				Return $null
+			}
+		}
+		Write-Verbose "`tCache Found"
+		Return $LocalPath
+		
+	} 
+	Write-Verbose "`tCache Unpopulated"
+	Return $null
+}
+
 function Invoke-DownloadJson {
 Param (
 	[Parameter(Mandatory=$true)]	[uri] $Uri
@@ -149,19 +182,26 @@ Write-Output ('Script Started ').PadRight(80,'-')
 $RebootRequired = $false
 
 # Load Configuration(s)
-Write-Output ("Loading configurations")
+Write-Output "Configuration"
+Write-Output ("`tLoading")
 $Conf = Import-JsonConfig -Uri $Configs
 
-Write-Output "Verifying configurations"
+Write-Output "`tVerifying"
 $PatchTuesday = (0..6 | ForEach-Object { $(Get-Date -Day 7).AddDays($_) } | Where-Object { $_.DayOfWeek -like "Tue*" })
 If (((Get-Date) -gt $PatchTuesday) -and ((Get-Date -Date $Conf.WindowsUpdate._meta.Date_Modified) -lt $PatchTuesday)) {
 	Write-Warning ("Patch policy data may be Outdated! {0}" -f $Conf.WindowsUpdate._meta.Date_Modified)
+}
+If ($CacheDir.Trim().Length -gt 0) {
+	Write-Output ("`tCache: {0}" -f $CacheDir)
+} else {
+	Write-Output "`tCache: Unspecified"
 }
 
 Write-Output 'Collecting current computer configuration'
 $ThisOS = Get-CimInstance -ClassName Win32_OperatingSystem
 $ThisHF = Get-HotFix
-Write-Output "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.ProductType)>"
+Write-Output ("`tOS: {0} {1} <{2}>" -f $ThisOS.Caption, $ThisOS.Version, $ThisOS.ProductType)
+Write-Output ("`tHF: {0} Installed, Most recent {1}" -f $ThisHF.Count, ($ThisHF.InstalledOn | Measure-Object -Maximum).Maximum)
 
 :lCollection Foreach ($UpdateCollection in $Conf.WindowsUpdate) {
 
@@ -201,41 +241,20 @@ Write-Output "This OS: $($ThisOS.Caption) ($($ThisOS.Version)) <$($ThisOS.Produc
 				Continue
 			}
 
+			$f = $null
+
 			# Try Cache Location
 			If ($CacheDir.Trim().Length -gt 0) {
-				$CachePath = @($CacheDir, $Source.ToString().Split('/')[-1]) -join '\'
-				$LocalPath = @($Env:TEMP, [System.IO.Path]::GetRandomFileName()) -join '\'
-				If (Test-Path -Path $CachePath -PathType Leaf) {
-					# Copy to local
-					Copy-Item -Path $CachePath -Destination $LocalPath
-
-					# Calculate Hash
-					$stream = New-Object system.IO.FileStream($LocalPath, "Open", "Read", "ReadWrite")
-					$csp = New-Object -TypeName System.Security.Cryptography.SHA1Cng
-					$hash = [System.BitConverter]::ToString($csp.ComputeHash($stream)).Replace("-", [String]::Empty).ToLower();
-					$stream.Dispose(); $stream.Close(); $csp.Dispose()
-					
-					# Verify Hash
-					$UpdateHash = $Source.Split('/')[-1].Split('_')[-1].Substring(0,40)
-					If ($hash -eq $UpdateHash) {
-						Write-Output "`tCache Found"
-					} else {
-						Remove-Item -Path $LocalPath
-						$LocalPath = $null
-					}
-				} else {
-					Write-Output "`tCache Unpopulated"
-				}
-			} else {
-				Write-Output "`tCache Unspecified"
+				$f = Invoke-CacheGet -CacheDir $CacheDir -FileName $Source.Split('\')[-1] -FileHash $Source.Split('\')[-1].Split('_')[-1].Substring(0,40)
+				Write-Verbose ("Invoke-CacheGet Returned: {0}" -f $f)
 			}
 
 			# Download from Source
-			If ($null -eq $LocalPath) {
+			If ($null -eq $f) {
 				Write-Output "`tDownloading"
 				$f = Invoke-DownloadFile -Uri $Source
 			} else {
-				$f = $LocalPath
+				
 			}
 			
 			Write-Output "`tInstalling"
