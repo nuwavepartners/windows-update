@@ -1,7 +1,7 @@
 <# 
 .NOTES 
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2021-03-24 15:51:32
+	Date-Modified:	2021-04-16 12:16:44
 #>
 [CmdletBinding()]
 Param (
@@ -214,28 +214,14 @@ Write-Output ("`tHF: {0} Installed, Most recent {1}" -f $ThisHF.Count, ($ThisHF.
 
 	Write-Output ('Found Updates for ' + $UpdateCollection.OS.Caption)
 
-	If ([version]"10.0" -le $ThisOS.Version) {
-		Foreach ($Selector in $UpdateCollection.Selectors.PSobject.Properties) {
-			$UpdateCollection.Selectors.$($Selector.Name) = $ExecutionContext.InvokeCommand.ExpandString($Selector.Value)
-		}
-	} Else {
-		Foreach ($Selector in $UpdateCollection.Selectors.PSobject.Properties) {
-			$UpdateCollection.Selectors.$($Selector.Name) = $Selector.Value | Invoke-Expression
-		}
-	}
-
-	Foreach ($Update in $UpdateCollection.Updates) {
-		Write-Output "Searching for $($Update.Name)"
-		If (($null -ne $ThisHF.HotFixID) -and ((Compare-Object -ReferenceObject $ThisHF.HotFixID -DifferenceObject $Update.HotFixID -IncludeEqual).SideIndicator -contains '==')) {
+		Foreach ($Update in $UpdateCollection.Updates) {
+		Write-Output "Searching for $($Update.Title)"
+		If (($null -ne $ThisHF.HotFixID) -and ((Compare-Object -ReferenceObject $ThisHF.HotFixID -DifferenceObject $Update.KBArticleID -IncludeEqual).SideIndicator -contains '==')) {
 			Write-Output "`tFound"
 		} else {
 			Write-Output "`tNot Installed"
 
-			If ($null -eq $UpdateCollection.Selectors.Source) {
-				$Source = $Update.Source
-			} else {
-				$Source = $Update.Source.$($UpdateCollection.Selectors.Source)
-			}
+			$Source = $Update.Source
 			If ($null -eq $Source) {
 				Write-Output "`tSource not found - Possibly Unsupported"
 				Continue
@@ -253,8 +239,6 @@ Write-Output ("`tHF: {0} Installed, Most recent {1}" -f $ThisHF.Count, ($ThisHF.
 			If ($null -eq $f) {
 				Write-Output "`tDownloading"
 				$f = Invoke-DownloadFile -Uri $Source
-			} else {
-				
 			}
 			
 			Write-Output "`tInstalling"
