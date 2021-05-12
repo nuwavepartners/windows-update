@@ -26,7 +26,7 @@ Param (
 	LEFT JOIN tbKBArticleForRevision AS kbafr ON kbafr.RevisionID = lpfr.RevisionID
 	WHERE lp.Title like '#' AND lpfr.LanguageID = 1033
 	ORDER BY KBArticleID DESC" 
-	$R = Invoke-Sqlcmd -Query $Query.Replace('#', $QV) -ServerInstance "localhost\SQLEXPRESS" -Database "SUSDB" -WUsputAs DataRows | Select-Object * -ExcludeProperty ItemArray, Table, RowError, RowState, HasErrors
+	$R = Invoke-Sqlcmd -Query $Query.Replace('#', $QV) -ServerInstance "localhost\SQLEXPRESS" -Database "SUSDB" -OutputAs DataRows | Select-Object * -ExcludeProperty ItemArray, Table, RowError, RowState, HasErrors
 	If ($null -ne $R) {
 		$URL = (((Invoke-WebRequest -Uri "https://www.catalog.update.microsoft.com/DownloadDialog.aspx" -Method "POST" -Body ('updateIDs=[{"updateID":"'+ $R.UpdateID + '"}]')).Content -split '\r?\n').Trim() -match '^downloadInformation\[0\].files\[0\].url' -split ' ')[-1].Replace("'","").Replace(";","")
 		Add-Member -InputObject $R -MemberType NoteProperty -Name Source -Value $URL
@@ -36,7 +36,7 @@ Param (
 
 ################################## THE SCRIPT ##################################
 
-Write-WUsput ('Script Started ').PadRight(80,'-')
+Write-Output ('Script Started ').PadRight(80,'-')
 $WUs = @()
 
 # Windows 10, Server 2016/2019
@@ -57,7 +57,7 @@ $ModernOSs = @(
 )
 
 Foreach ($OS in $ModernOSs) {
-	Write-WUsput ("Finding updates for {0}" -f $OS.WUName)
+	Write-Output ("Finding updates for {0}" -f $OS.WUName)
 	$WUs += @{
 		OS = @{
 			Caption = $OS.Caption;
@@ -79,7 +79,7 @@ $Win63OSs = @(
 )
 
 Foreach ($OS in $Win63OSs) {
-	Write-WUsput ("Finding updates for {0}" -f $OS.WUName)
+	Write-Output ("Finding updates for {0}" -f $OS.WUName)
 	$WUs += @{
 		OS = @{
 			Caption = $OS.Caption;
@@ -101,7 +101,7 @@ $Win62OSs = @(
 )
 
 Foreach ($OS in $Win62OSs) {
-	Write-WUsput ("Finding updates for {0}" -f $OS.WUName)
+	Write-Output ("Finding updates for {0}" -f $OS.WUName)
 	$WUs += @{
 		OS = @{
 			Caption = $OS.Caption;
@@ -118,7 +118,7 @@ Foreach ($OS in $Win62OSs) {
 }
 
 
-# Generate Output
+# Generate "
 
 $Out = @{
 	_meta= @{
