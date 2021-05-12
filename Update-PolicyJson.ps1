@@ -65,7 +65,7 @@ Foreach ($OS in $ModernOSs) {
 		}
 		Updates = @(
 			(Get-UpdateInfo -QV ("%Servicing Stack Update for " + $OS.WUName + " for x64-based Systems%")),
-			(Get-UpdateInfo -QV ("%Cumulative Update for " + $OS.WUName + " for x64-based Systems%")),
+			(Get-UpdateInfo -QV ("%[0-9] Cumulative Update for " + $OS.WUName + " for x64-based Systems%")),
 			(Get-UpdateInfo -QV ("Microsoft .NET Framework 4.8 for%" + $OS.WUName + "%")),
 			(Get-UpdateInfo -QV ("%Cumulative Update for .NET Framework%" + $OS.WUName + " for x64%"))
 		) | Where-Object { $_ }
