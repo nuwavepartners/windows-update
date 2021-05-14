@@ -74,7 +74,7 @@ Foreach ($OS in $ModernOSs) {
 
 # Server 2012 R2 / 8.1
 $Win63OSs = @(
-	@{WUName="Windows Server 2012 R2"; Caption="Microsoft Windows Server 2008 R2"; Version="6.3.9600"},
+	@{WUName="Windows Server 2012 R2"; Caption="Microsoft Windows Server 2012 R2"; Version="6.3.9600"},
 	@{WUName="Windows 8.1"; Caption="Microsoft Windows 8.1"; Version="6.3.9600"}
 )
 
@@ -97,7 +97,7 @@ Foreach ($OS in $Win63OSs) {
 
 # Server 2012 / 8
 $Win62OSs = @(
-	@{WUName="Windows Server 2012"; Caption="Microsoft Windows Server 2008"; Version="6.2.9200"}
+	@{WUName="Windows Server 2012"; Caption="Microsoft Windows Server 2012"; Version="6.2.9200"}
 )
 
 Foreach ($OS in $Win62OSs) {
