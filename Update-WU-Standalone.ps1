@@ -1,7 +1,7 @@
 <# 
 .NOTES 
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2021-04-16 12:16:44
+	Date-Modified:	2021-09-20 15:58:06
 #>
 [CmdletBinding()]
 Param (
@@ -216,7 +216,7 @@ Write-Output ("`tHF: {0} Installed, Most recent {1}" -f $ThisHF.Count, ($ThisHF.
 
 		Foreach ($Update in $UpdateCollection.Updates) {
 		Write-Output "Searching for $($Update.Title)"
-		If (($null -ne $ThisHF.HotFixID) -and ((Compare-Object -ReferenceObject $ThisHF.HotFixID -DifferenceObject $Update.KBArticleID -IncludeEqual).SideIndicator -contains '==')) {
+		If (($null -ne $ThisHF.HotFixID) -and ((Compare-Object -ReferenceObject ($ThisHF.HotFixID -replace '\D', '') -DifferenceObject $Update.KBArticleID -IncludeEqual).SideIndicator -contains '==')) {
 			Write-Output "`tFound"
 		} else {
 			Write-Output "`tNot Installed"
