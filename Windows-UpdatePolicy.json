@@ -13,10 +13,10 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/04/windows10.0-kb5001399-x64_d33c5bf98f9c323bdfd3d7103a5215cb874221a1.msu"
 											  },
 											  {
-												  "UpdateID":  "495d21a1-25b5-4e26-9f36-6334444e53ca",
-												  "Title":  "2021-09 Cumulative Update for Windows 10 Version 1507 for x64-based Systems (KB5005569)",
-												  "KBArticleID":  "5005569",
-												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/09/windows10.0-kb5005569-x64_22380c63d028f47b4f405d1ed958c94ae70bafbe.msu"
+												  "UpdateID":  "3fd779e9-359c-4fb0-a1a0-250be49c58bb",
+												  "Title":  "2021-10 Cumulative Update for Windows 10 Version 1507 for x64-based Systems (KB5006675)",
+												  "KBArticleID":  "5006675",
+												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/10/windows10.0-kb5006675-x64_99e05e714f5a44fedc9be749786bc3eceb603fb3.msu"
 											  }
 										  ]
 						  },
@@ -45,10 +45,10 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/09/windows10.0-kb5005698-x64_ff882b0a9dccc0c3f52673ba3ecf4a2a3b2386ca.msu"
 											  },
 											  {
-												  "UpdateID":  "43d5a72f-641e-4484-b50c-b9b6aa6af4a2",
-												  "Title":  "2021-09 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5005573)",
-												  "KBArticleID":  "5005573",
-												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/09/windows10.0-kb5005573-x64_68ae94716592a0f0585b0741ab94840d5b9957de.msu"
+												  "UpdateID":  "9e9f7802-8e6f-431b-8b9d-5bb6ec636084",
+												  "Title":  "2021-10 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5006669)",
+												  "KBArticleID":  "5006669",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/10/windows10.0-kb5006669-x64_aa5c931de237226eae4f333915750dbd998a8534.msu"
 											  },
 											  {
 												  "UpdateID":  "a95db49d-342f-412b-8ef7-c8b1aff6ad05",
@@ -173,10 +173,10 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/08/windows10.0-kb5005112-x64_81d09dc6978520e1a6d44b3b15567667f83eba2c.msu"
 											  },
 											  {
-												  "UpdateID":  "1a6612ec-697e-4e82-8210-c47062001930",
-												  "Title":  "2021-09 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5005568)",
-												  "KBArticleID":  "5005568",
-												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/09/windows10.0-kb5005568-x64_417d4c6ae0067fcbe682dec671d0111a731a0550.msu"
+												  "UpdateID":  "a6365759-cbad-4aeb-8c0c-693dcd49913b",
+												  "Title":  "2021-10 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5006672)",
+												  "KBArticleID":  "5006672",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/10/windows10.0-kb5006672-x64_7044166433a0a9e2ffefe7608ad7d1fe05383c81.msu"
 											  },
 											  {
 												  "UpdateID":  "b885d48a-be89-4b3b-9e02-66896c88b568",
@@ -231,10 +231,10 @@
 												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/08/windows10.0-kb5005412-x64_228ca7ad27c8f60174513607839c07686490e1e4.msu"
 											  },
 											  {
-												  "UpdateID":  "c7f2b8e9-641b-4a9d-bc10-6e17174d0038",
-												  "Title":  "2021-09 Cumulative Update for Windows 10 Version 1909 for x64-based Systems (KB5005566)",
-												  "KBArticleID":  "5005566",
-												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/09/windows10.0-kb5005566-x64_1e90a4d346602e6b65c6b04d9c0033138f4dd651.msu"
+												  "UpdateID":  "0ca00274-ea28-4221-9f8c-698374a3d072",
+												  "Title":  "2021-10 Cumulative Update for Windows 10 Version 1909 for x64-based Systems (KB5006667)",
+												  "KBArticleID":  "5006667",
+												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/10/windows10.0-kb5006667-x64_202bc0d5c7a8ffe626ff09ddb3b3f81e757a9d37.msu"
 											  },
 											  {
 												  "UpdateID":  "7b71c4d9-037f-47c0-83e7-4c224a1e2536",
@@ -266,10 +266,10 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/08/ssu-19041.1161-x64_e7e052f5cbe97d708ee5f56a8b575262d02cfaa4.msu"
 											  },
 											  {
-												  "UpdateID":  "9a11c8f1-525f-4088-8fb7-33d7b56dd6dc",
-												  "Title":  "2021-09 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5005565)",
-												  "KBArticleID":  "5005565",
-												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/09/windows10.0-kb5005565-x64_5b36501e18065cb2ef54d4bb02b0e2b27cd683d0.msu"
+												  "UpdateID":  "54a12391-343c-49c2-9da9-84ef4b293057",
+												  "Title":  "2021-10 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5006670)",
+												  "KBArticleID":  "5006670",
+												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/10/windows10.0-kb5006670-x64_51b78c3627885149a65b09dc92a936935017ff58.msu"
 											  }
 										  ]
 						  },
@@ -286,10 +286,10 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/08/ssu-19041.1161-x64_e7e052f5cbe97d708ee5f56a8b575262d02cfaa4.msu"
 											  },
 											  {
-												  "UpdateID":  "64c82c4f-1fd6-4bb3-b8ed-894483baf994",
-												  "Title":  "2021-09 Cumulative Update for Windows 10 Version 21H1 for x64-based Systems (KB5005565)",
-												  "KBArticleID":  "5005565",
-												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/09/windows10.0-kb5005565-x64_5b36501e18065cb2ef54d4bb02b0e2b27cd683d0.msu"
+												  "UpdateID":  "fc8be9c6-092f-4d19-acbe-50370471e978",
+												  "Title":  "2021-10 Cumulative Update for Windows 10 Version 21H1 for x64-based Systems (KB5006670)",
+												  "KBArticleID":  "5006670",
+												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/10/windows10.0-kb5006670-x64_51b78c3627885149a65b09dc92a936935017ff58.msu"
 											  }
 										  ]
 						  },
@@ -306,10 +306,10 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/09/windows10.0-kb5005698-x64_ff882b0a9dccc0c3f52673ba3ecf4a2a3b2386ca.msu"
 											  },
 											  {
-												  "UpdateID":  "c0f4232a-cc39-4aee-9e1b-cd94c82fe95b",
-												  "Title":  "2021-09 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5005573)",
-												  "KBArticleID":  "5005573",
-												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/09/windows10.0-kb5005573-x64_68ae94716592a0f0585b0741ab94840d5b9957de.msu"
+												  "UpdateID":  "ff623435-c638-4c25-a907-843fa16c22b3",
+												  "Title":  "2021-10 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5006669)",
+												  "KBArticleID":  "5006669",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/10/windows10.0-kb5006669-x64_aa5c931de237226eae4f333915750dbd998a8534.msu"
 											  },
 											  {
 												  "UpdateID":  "a95db49d-342f-412b-8ef7-c8b1aff6ad05",
@@ -338,10 +338,10 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/08/windows10.0-kb5005112-x64_81d09dc6978520e1a6d44b3b15567667f83eba2c.msu"
 											  },
 											  {
-												  "UpdateID":  "bc52c25d-60b7-49c7-8a5c-7cc56a6bb85b",
-												  "Title":  "2021-09 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5005568)",
-												  "KBArticleID":  "5005568",
-												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/09/windows10.0-kb5005568-x64_417d4c6ae0067fcbe682dec671d0111a731a0550.msu"
+												  "UpdateID":  "e27c818b-f914-4bd3-8722-f6f33c0e063e",
+												  "Title":  "2021-10 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5006672)",
+												  "KBArticleID":  "5006672",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/10/windows10.0-kb5006672-x64_7044166433a0a9e2ffefe7608ad7d1fe05383c81.msu"
 											  },
 											  {
 												  "UpdateID":  "6b34ac14-4b34-4d0a-a640-1133e9e5baa7",
@@ -370,10 +370,10 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/04/windows8.1-kb5001403-x64_7f15c4b281f38d43475abb785a32dbaf0355bad5.msu"
 											  },
 											  {
-												  "UpdateID":  "e2eb2ecd-0d0e-4583-961e-cbd8365a14a0",
-												  "Title":  "2021-09 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5005613)",
-												  "KBArticleID":  "5005613",
-												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/09/windows8.1-kb5005613-x64_52d05012aa71c9d14f218559dba1baa82e4515c9.msu"
+												  "UpdateID":  "24e2a8c4-d35f-4f90-881b-21d483e2c86b",
+												  "Title":  "2021-10 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5006714)",
+												  "KBArticleID":  "5006714",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/10/windows8.1-kb5006714-x64_403d2e21ee3f257f2127563ee5ea11a34093ec5d.msu"
 											  },
 											  {
 												  "UpdateID":  "d1fe2427-174b-4b7b-ba04-69aa90060d12",
@@ -396,10 +396,10 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/04/windows8.1-kb5001403-x64_7f15c4b281f38d43475abb785a32dbaf0355bad5.msu"
 											  },
 											  {
-												  "UpdateID":  "ec05d7a2-5f2f-425d-8298-ba5667b1166e",
-												  "Title":  "2021-09 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5005613)",
-												  "KBArticleID":  "5005613",
-												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/09/windows8.1-kb5005613-x64_52d05012aa71c9d14f218559dba1baa82e4515c9.msu"
+												  "UpdateID":  "ac39b6d1-6dcc-4de6-8ea0-1687d86f9988",
+												  "Title":  "2021-10 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5006714)",
+												  "KBArticleID":  "5006714",
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/10/windows8.1-kb5006714-x64_403d2e21ee3f257f2127563ee5ea11a34093ec5d.msu"
 											  },
 											  {
 												  "UpdateID":  "4eab4f34-282e-4da2-bdf0-badd3b32e858",
@@ -428,10 +428,10 @@
 												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/secu/2021/04/windows8-rt-kb5001401-x64_1027ae2c9888c2dfe0caadeafc506b3012789c56.msu"
 											  },
 											  {
-												  "UpdateID":  "2d9528b6-dd36-4b88-b2ec-a6a45eb8549d",
-												  "Title":  "2021-09 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5005623)",
-												  "KBArticleID":  "5005623",
-												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/09/windows8-rt-kb5005623-x64_27657b7dd5e80d8d99219b501e2bc3d13197b980.msu"
+												  "UpdateID":  "955677b5-f98b-4585-94bc-555ac5dd0307",
+												  "Title":  "2021-10 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5006739)",
+												  "KBArticleID":  "5006739",
+												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/10/windows8-rt-kb5006739-x64_3d984253b421c404b2fbd71ba5728c2194774142.msu"
 											  },
 											  {
 												  "UpdateID":  "d1fe2427-174b-4b7b-ba04-69aa90060d12",
@@ -449,6 +449,6 @@
 						  }
 					  ],
 	"_meta":  {
-				  "Date_Modified":  "2021-09-21T07:08:57Z"
+				  "Date_Modified":  "2021-10-13T07:09:38Z"
 			  }
 }
