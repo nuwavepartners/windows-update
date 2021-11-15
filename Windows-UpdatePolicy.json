@@ -179,10 +179,10 @@
 												  "Source":  "http://download.windowsupdate.com/c/msdownload/update/software/secu/2021/11/windows10.0-kb5007206-x64_f8ccc7d4574581576e74d86ccacc7fbf47d050f6.msu"
 											  },
 											  {
-												  "UpdateID":  "b885d48a-be89-4b3b-9e02-66896c88b568",
-												  "Title":  "Microsoft .NET Framework 4.8 for Windows 10 Version 1809 for x64 (KB4486153)",
+												  "UpdateID":  "8482a9f1-5e66-40eb-b339-c0ec4e289fdf",
+												  "Title":  "Microsoft .NET Framework 4.8 for Windows 10 Version 1809 (KB4486153)",
 												  "KBArticleID":  "4486153",
-												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu"
+												  "Source":  "http://download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x86_de1c8a0152b298f88ff42dc9114eabfa61d5e957.msu"
 											  },
 											  {
 												  "UpdateID":  "4b647633-7dac-443d-81b8-b590f2a6e7f6",
@@ -449,6 +449,6 @@
 						  }
 					  ],
 	"_meta":  {
-				  "Date_Modified":  "2021-11-11T07:09:41Z"
+				  "Date_Modified":  "2021-11-15T07:09:55Z"
 			  }
 }
