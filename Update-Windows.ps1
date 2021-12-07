@@ -1,7 +1,7 @@
 <# 
 .NOTES 
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2021-09-20 15:58:06
+	Date-Modified:	2021-12-07 11:18:27
 #>
 [CmdletBinding()]
 Param (
@@ -187,7 +187,7 @@ Write-Output ("`tLoading")
 $Conf = Import-JsonConfig -Uri $Configs
 
 Write-Output "`tVerifying"
-$PatchTuesday = (0..6 | ForEach-Object { $(Get-Date -Day 7).AddDays($_) } | Where-Object { $_.DayOfWeek -like "Tue*" })
+$PatchTuesday = (1..7 | ForEach-Object { $(Get-Date -Day 7).AddDays($_) } | Where-Object { $_.DayOfWeek -like "Tue*" })
 If (((Get-Date) -gt $PatchTuesday) -and ((Get-Date -Date $Conf.WindowsUpdate._meta.Date_Modified) -lt $PatchTuesday)) {
 	Write-Warning ("Patch policy data may be Outdated! {0}" -f $Conf.WindowsUpdate._meta.Date_Modified)
 }
