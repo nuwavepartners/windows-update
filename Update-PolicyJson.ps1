@@ -99,7 +99,8 @@ Foreach ($OS in $Win63OSs) {
 
 # Server 2012 / 8
 $Win62OSs = @(
-	@{WUName="Windows Server 2012"; Caption="Microsoft Windows Server 2012"; Version="6.2.9200"}
+	@{WUName="Windows Server 2012"; Caption="Microsoft Windows Server 2012"; Version="6.2.9200"},
+	@{WUName="Windows 8"; Caption="Microsoft Windows 8"; Version="6.2.9200"}
 )
 
 Foreach ($OS in $Win62OSs) {
@@ -119,8 +120,30 @@ Foreach ($OS in $Win62OSs) {
 	}
 }
 
+# Server 2008 R2 / 7 (w/SP Only)
+$Win6OSs = @(
+	@{WUName="Windows Server 2008 R2"; Caption="Microsoft Windows Server 2008 R2"; Version="6.1.7601"},
+	@{WUName="Windows 7"; Caption="Microsoft Windows 7"; Version="6.1.7601"}
+)
 
-# Generate "
+Foreach ($OS in $Win62OSs) {
+	Write-Output ("Finding updates for {0}" -f $OS.WUName)
+	$WUs += @{
+		OS = @{
+			Caption = $OS.Caption;
+			Version = $OS.Version
+		}
+		Updates = @(
+			(Get-UpdateInfo -QV ("%Servicing Stack Update for " + $OS.WUName + " for x64-based Systems%")),
+			(Get-UpdateInfo -QV ("%Security Monthly Quality Rollup for " + $OS.WUName + " for x64-based Systems%")),
+			(Get-UpdateInfo -QV ("Microsoft .NET Framework 4.8 for%" + $OS.WUName + "%")),
+			(Get-UpdateInfo -QV ("%Cumulative Update for .NET Framework%" + $OS.WUName + " for x64%")),
+			(Get-UpdateInfo -QV ("%" + $OS.WUName + "%KB3191565%"))		# WMF5.1
+		) | Where-Object { $_ }
+	}
+}
+
+# Generate
 
 $Out = @{
 	_meta= @{
