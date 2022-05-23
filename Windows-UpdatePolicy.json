@@ -55,6 +55,12 @@
 												  "Title":  "Microsoft .NET Framework 4.8 for Windows 10 Version 1607 and Windows Server 2016 for x64 (KB4486129)",
 												  "KBArticleID":  "4486129",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu"
+											  },
+											  {
+												  "UpdateID":  "9bde2806-0883-408e-a367-297989533cc1",
+												  "Title":  "2022-05 Cumulative Update for .NET Framework 4.8 for Windows 10 Version 1607 for x64 (KB5013625)",
+												  "KBArticleID":  "5013625",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/04/windows10.0-kb5013625-x64-ndp48_40571d308318752756c72529207e43e30ed1ae01.msu"
 											  }
 										  ]
 						  },
@@ -113,6 +119,12 @@
 												  "Title":  "Microsoft .NET Framework 4.8 for Windows 10 Version 1709 (KB4486153)",
 												  "KBArticleID":  "4486153",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x86_de1c8a0152b298f88ff42dc9114eabfa61d5e957.msu"
+											  },
+											  {
+												  "UpdateID":  "77d2f6b9-54b3-4491-92c1-133e7cfc799d",
+												  "Title":  "2020-10 Cumulative Update for .NET Framework 4.8 for Windows 10 Version 1709 for x64 (KB4578971)",
+												  "KBArticleID":  "4578971",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2020/10/windows10.0-kb4578971-x64-ndp48_1bd9e5ed7b87267585a6c6979150a82abf7cdde2.msu"
 											  }
 										  ]
 						  },
@@ -139,6 +151,12 @@
 												  "Title":  "Microsoft .NET Framework 4.8 for Windows 10 Version 1803 (KB4486153)",
 												  "KBArticleID":  "4486153",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x86_de1c8a0152b298f88ff42dc9114eabfa61d5e957.msu"
+											  },
+											  {
+												  "UpdateID":  "071783f5-359a-4901-8a48-89e80eccfd00",
+												  "Title":  "2021-02 Cumulative Update for .NET Framework 4.8 for Windows 10 Version 1803 for x64 (KB4601054)",
+												  "KBArticleID":  "4601054",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2021/01/windows10.0-kb4601054-x64-ndp48_fbe981dae0756a18e0ff03955acbd3aaf76e2cbf.msu"
 											  }
 										  ]
 						  },
@@ -165,6 +183,12 @@
 												  "Title":  "Microsoft .NET Framework 4.8 for Windows 10 Version 1809 for x64 (KB4486153)",
 												  "KBArticleID":  "4486153",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu"
+											  },
+											  {
+												  "UpdateID":  "970e188e-aca7-4190-a92f-e57c2ef33068",
+												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows 10 Version 1809 for x64 (KB5013868)",
+												  "KBArticleID":  "5013868",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/04/windows10.0-kb5013626-x64-ndp48_e2b4283a00b2e97030507f071c3ecc6a2a352064.msu"
 											  }
 										  ]
 						  },
@@ -185,6 +209,12 @@
 												  "Title":  "2020-12 Cumulative Update for Windows 10 Version 1903 for x64-based Systems (KB4592449)",
 												  "KBArticleID":  "4592449",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows10.0-kb4592449-x64_aa193efa8432018464d6173c497ce3de71a581e2.msu"
+											  },
+											  {
+												  "UpdateID":  "bcdd12d9-e56a-46be-88f6-8a97a9f9ad18",
+												  "Title":  "2020-10 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 1903 for x64 (KB4578974)",
+												  "KBArticleID":  "4578974",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2020/10/windows10.0-kb4578974-x64-ndp48_9b53584e22090a55a9efb8f94bf9c8264c56b2cc.msu"
 											  }
 										  ]
 						  },
@@ -205,6 +235,12 @@
 												  "Title":  "2022-05 Cumulative Update for Windows 10 Version 1909 for x64-based Systems (KB5013945)",
 												  "KBArticleID":  "5013945",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/05/windows10.0-kb5013945-x64_6572e52ed97e1a51f533187f5250487e91e46e3a.msu"
+											  },
+											  {
+												  "UpdateID":  "f76d50ca-63da-463a-a99d-86e4126425d3",
+												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 1909 for x64 (KB5013627)",
+												  "KBArticleID":  "5013627",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/04/windows10.0-kb5013627-x64-ndp48_270d8666191d4965eb13883cd19c9e8c91ee5a90.msu"
 											  }
 										  ]
 						  },
@@ -234,6 +270,12 @@
 												  "Title":  "2022-05 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5013942)",
 												  "KBArticleID":  "5013942",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/05/windows10.0-kb5013942-x64_6dc7730c205a77a68542e68a70e683b079662226.msu"
+											  },
+											  {
+												  "UpdateID":  "9e7329b6-40f2-40f5-8136-572a5c3525b1",
+												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5013624)",
+												  "KBArticleID":  "5013624",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/04/windows10.0-kb5013624-x64-ndp48_2f95326cbd559d1c581d095fe07444fda030df0c.msu"
 											  }
 										  ]
 						  },
@@ -280,6 +322,12 @@
 												  "Title":  "2022-05 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5013942)",
 												  "KBArticleID":  "5013942",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/05/windows10.0-kb5013942-x64_6dc7730c205a77a68542e68a70e683b079662226.msu"
+											  },
+											  {
+												  "UpdateID":  "59078fab-2346-43be-a97c-c8cebe8b43f3",
+												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 21H2 for x64 (KB5013624)",
+												  "KBArticleID":  "5013624",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/04/windows10.0-kb5013624-x64-ndp48_2f95326cbd559d1c581d095fe07444fda030df0c.msu"
 											  }
 										  ]
 						  },
@@ -343,7 +391,7 @@
 												  "UpdateID":  "fbe80e42-8f5f-4f11-ae5f-d7ed74533276",
 												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows Server 2019 for x64 (KB5013868)",
 												  "KBArticleID":  "5013868",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/04/windows10.0-kb5013641-x64_5cf245f52876a8a50a7155fada0245c6d0533bfb.msu"
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/04/windows10.0-kb5013626-x64-ndp48_e2b4283a00b2e97030507f071c3ecc6a2a352064.msu"
 											  }
 										  ]
 						  },
@@ -489,6 +537,6 @@
 						  }
 					  ],
 	"_meta":  {
-				  "Date_Modified":  "2022-05-19T17:24:56Z"
+				  "Date_Modified":  "2022-05-23T07:19:26Z"
 			  }
 }
