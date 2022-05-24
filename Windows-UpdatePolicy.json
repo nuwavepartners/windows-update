@@ -188,7 +188,7 @@
 												  "UpdateID":  "970e188e-aca7-4190-a92f-e57c2ef33068",
 												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows 10 Version 1809 for x64 (KB5013868)",
 												  "KBArticleID":  "5013868",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/04/windows10.0-kb5013626-x64-ndp48_e2b4283a00b2e97030507f071c3ecc6a2a352064.msu"
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/04/windows10.0-kb5013641-x64_5cf245f52876a8a50a7155fada0245c6d0533bfb.msu"
 											  }
 										  ]
 						  },
@@ -209,12 +209,6 @@
 												  "Title":  "2020-12 Cumulative Update for Windows 10 Version 1903 for x64-based Systems (KB4592449)",
 												  "KBArticleID":  "4592449",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows10.0-kb4592449-x64_aa193efa8432018464d6173c497ce3de71a581e2.msu"
-											  },
-											  {
-												  "UpdateID":  "bcdd12d9-e56a-46be-88f6-8a97a9f9ad18",
-												  "Title":  "2020-10 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 1903 for x64 (KB4578974)",
-												  "KBArticleID":  "4578974",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2020/10/windows10.0-kb4578974-x64-ndp48_9b53584e22090a55a9efb8f94bf9c8264c56b2cc.msu"
 											  }
 										  ]
 						  },
@@ -344,10 +338,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/05/windows10.0-kb5014026-x64_df6de35fd472512e628c2acc6e8d58f3e6139ac9.msu"
 											  },
 											  {
-												  "UpdateID":  "4c2e40d9-1607-4a6c-a9ef-e73eeb2f5074",
-												  "Title":  "2022-05 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5013952)",
-												  "KBArticleID":  "5013952",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/05/windows10.0-kb5013952-x64_c9c29b4a81897db5545e284f04490c0659dc8b06.msu"
+												  "UpdateID":  "7e2b50fd-db19-4784-b966-e3a9d3995b69",
+												  "Title":  "2022-05 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5015019)",
+												  "KBArticleID":  "5015019",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2022/05/windows10.0-kb5015019-x64_df310a1f53ff14237dbaaea8d9751a577b3d7cc3.msu"
 											  },
 											  {
 												  "UpdateID":  "a95db49d-342f-412b-8ef7-c8b1aff6ad05",
@@ -376,10 +370,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2021/08/windows10.0-kb5005112-x64_81d09dc6978520e1a6d44b3b15567667f83eba2c.msu"
 											  },
 											  {
-												  "UpdateID":  "59152f2c-dbc8-4ae8-b878-8f600a953869",
-												  "Title":  "2022-05 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5013941)",
-												  "KBArticleID":  "5013941",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/05/windows10.0-kb5013941-x64_8df2c89490d6cd19f5086728dbc3c991decefad7.msu"
+												  "UpdateID":  "4df17d58-afca-4ec1-ba46-7fca81705a13",
+												  "Title":  "2022-05 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5015018)",
+												  "KBArticleID":  "5015018",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2022/05/windows10.0-kb5015018-x64_e790c270e6078a9a21bb2e0615c14e353a8b71ba.msu"
 											  },
 											  {
 												  "UpdateID":  "6b34ac14-4b34-4d0a-a640-1133e9e5baa7",
@@ -391,7 +385,7 @@
 												  "UpdateID":  "fbe80e42-8f5f-4f11-ae5f-d7ed74533276",
 												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows Server 2019 for x64 (KB5013868)",
 												  "KBArticleID":  "5013868",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/04/windows10.0-kb5013626-x64-ndp48_e2b4283a00b2e97030507f071c3ecc6a2a352064.msu"
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/04/windows10.0-kb5013641-x64_5cf245f52876a8a50a7155fada0245c6d0533bfb.msu"
 											  }
 										  ]
 						  },
@@ -537,6 +531,6 @@
 						  }
 					  ],
 	"_meta":  {
-				  "Date_Modified":  "2022-05-23T07:19:26Z"
+				  "Date_Modified":  "2022-05-24T07:20:02Z"
 			  }
 }
