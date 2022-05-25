@@ -1,7 +1,7 @@
 <# 
 .NOTES 
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2021-12-07 11:18:27
+	Date-Modified:	2022-05-25 11:44:19
 #>
 [CmdletBinding()]
 Param (
@@ -210,6 +210,11 @@ Write-Output ("`tHF: {0} Installed, Most recent {1}" -f $ThisHF.Count, ($ThisHF.
 		If ($ThisOS.$Qualifier -inotmatch $UpdateCollection.OS.$Qualifier) {
 			Continue lCollection
 		}
+	}
+
+	If ($UpdateCollection.Updates.Count -lt 1) {
+		Write-Output ('Updates unavailable for {0}, this version may be unsupported' -f $UpdateCollection.OS.Caption)
+		Continue lCollection
 	}
 
 	Write-Output ('Found Updates for ' + $UpdateCollection.OS.Caption)
