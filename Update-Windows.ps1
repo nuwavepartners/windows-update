@@ -1,7 +1,7 @@
 <# 
 .NOTES 
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2022-05-25 11:44:19
+	Date-Modified:	2022-05-31 12:33:23
 #>
 [CmdletBinding()]
 Param (
@@ -21,77 +21,84 @@ If ($PSVersionTable.PSVersion.Major -lt 3) {
 
 ################################## FUNCTIONS ##################################
 
-function Convert-DisplayByte($num)
-{
-	$exp = [Math]::Floor([Math]::Log10($num)/3)
-	Return "{0:G3} {1}" -f ($num/[Math]::Pow(1000,$exp)), @("B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB")[$exp]
-}
-
 function Invoke-DownloadFile {
-Param (
-	[Parameter(Mandatory=$true)]	[uri] $Uri,
-									[string] $Path = $Env:TEMP,
-									[Switch] $Progress,
-	[Parameter(Mandatory=$false)]	[uri] $Proxy,
-	[Parameter(Mandatory=$false)]	[System.Net.ICredentials] $ProxyCred
-	#[Parameter(Mandatory=$false)]	[Int]	$Retries = 3
-)
-	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12, [Net.SecurityProtocolType]::Tls11;
-	$WebReq = [System.Net.WebRequest]::Create($Uri)
-	$WebReq.Timeout = 5000 # 5 Seconds
-	If ($Proxy -ne $null) {
-		$WebProxy = New-Object System.Net.WebProxy($Proxy)
-		If ($ProxyCred -ne $null) { $WebProxy.Credentials = $ProxyCred }
-		$WebReq.Proxy = $WebProxy
-	}
-	$WebResp = $WebReq.GetResponse()
-	If ($WebResp.StatusCode -ne 'OK') {
-		throw $WebResp.StatusDescription
-	}
-	$bLengthTotal = $WebResp.get_ContentLength() # File Size
+	Param (
+		[Parameter(Mandatory=$true)]				[uri] $Uri,
+													[string] $Path = $Env:TEMP,
+		[ValidateScript({$_ -match '\w+|.\w{32}'})]	[string] $Hash
+	)
 
-	# File name and stream
-	If (Test-Path -Path $Path -Type Container) {
-		If ($WebResp.Headers.Keys -contains 'Content-Disposition') {
-			# Server provided file name
-			$FileName = $Path + '\' + ($WebResp.GetResponseHeader("Content-Disposition").Split('=')[-1] -replace '"','')
-		} else {
-			# Server did not provide name, split or random
-			If ($PSVersionTable.PSVersion -ge [version]"3.0") {
-				$FileName = $Path + '\' + (Split-Path -Path $Uri -Leaf)
-			} else {
-				$FileName = $Path + '\' + [System.IO.Path]::GetRandomFileName() + '.' + $Uri.ToString().Split('.')[-1]
+	Process {
+		# Check Cache for file
+		If (!([Environment]::UserInteractive) -and ($null -ne $Hash)) {
+						$UriFileName = $Uri.Segments[-1]
+			[uri]$CacheDir = ($script:CacheDir, [System.IO.Path]::GetDirectoryName($PSScriptRoot), $Env:TEMP -ne $null)[0]
+			#$CachePath = [System.IO.Path]::Combine($CacheDir, $UriFileName)
+			$CachePath = [Uri]::New($CacheDir, $UriFileName)
+			Write-Verbose ("Checking {0} {1} {2}" -f $UriFileName, $CacheDir, $CachePath)
+			If (Test-Path -Path $CachePath) {
+				$HashAlg = [System.Security.Cryptography.HashAlgorithm]::Create(($Hash -split '\|')[0])
+				$FileStream = [System.IO.FileStream]::New($CachePath, [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read)
+				$CacheHash = [System.BitConverter]::ToString($HashAlg.ComputeHash($FileStream)).Replace('-', [String]::Empty).ToLower()
+				$HashAlg.Dispose(); $FileStream.Dispose()
+				If($CacheHash -eq ($Hash -split '\|')[-1].ToLower()) {
+					Write-Verbose 'Using Cached File, Hash Verified'
+					Return $CachePath
+				}
+				Write-Verbose ('{0} with {1} hash does not match {2}' -f $CachePath, $CacheHash, $Hash)
 			}
 		}
-	} elseif (Test-Path -Path (Split-Path -Path $Path -Parent) -Type Container) {
-		# Function called with destination file name and valid folder
-		$FileName = $Path
-	} else {
-		# Function called with invalid path
-		throw "Invalid path provided to $($MyInvocation.MyCommand.Name)"
-	}
-	$FileStream = New-Object -TypeName System.IO.FileStream -ArgumentList $FileName, Create
 
-	# Setup for download
-	$Buf = New-Object byte[] ([Math]::Min([Math]::Max(($bLengthTotal / 100), 2KB), 256KB))
-	$bDownloaded = 0; $bRead = 0; $tStart = Get-Date
-	$WebStream = $WebResp.GetResponseStream()
+		# Setup Connections
+		[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12, [Net.SecurityProtocolType]::Tls11;
+		$WebReq = [System.Net.WebRequest]::Create($Uri)
+		$WebReq.Timeout = 5000 # 5 Seconds
 
-	Do {	# Do the download
-		$bDownloaded += ($bRead = $WebStream.Read($Buf, 0, $Buf.Length))
-		$FileStream.Write($Buf, 0, $bRead)
-		# Progress update
-		If ($Progress.IsPresent) {
-			Write-Progress -Activity "Downloading File" -Status ("{0} of {1}" -f $(Convert-DisplayByte($bDownloaded)), $(Convert-DisplayByte($bLengthTotal))) `
-				-PercentComplete ($bDownloaded / $bLengthTotal * 100) `
-				-SecondsRemaining (($bLengthTotal - $bDownloaded) / $bDownloaded * (New-TimeSpan -Start $tStart).TotalSeconds)
+		$WebResp = $WebReq.GetResponse()
+		If ($WebResp.StatusCode -ne 'OK') {
+			throw $WebResp.StatusDescription
 		}
-	} While (($bRead -gt 0) -and ($WebStream.CanRead))
+		$bLengthTotal = $WebResp.get_ContentLength() # File Size
 
-	$FileStream.Flush(); $FileStream.Close(); $FileStream.Dispose(); $WebStream.Dispose(); $WebResp.Close()	# Cleanup
-	If ($Progress.IsPresent) { Write-Progress -Activity "Downloading File" -Completed }
+		# File name and stream
+		If (Test-Path -Path $Path -Type Container) {
+			If ($WebResp.Headers.Keys -contains 'Content-Disposition') {
+				# Server provided file name
+				$FileName = $Path + '\' + ($WebResp.GetResponseHeader("Content-Disposition").Split('=')[-1] -replace '"','')
+			} else {
+				# Server did not provide name, random
+				$FileName = $Path + '\' + [System.IO.Path]::GetRandomFileName() + '.' + $Uri.ToString().Split('.')[-1]
+			}
+		} elseif (Test-Path -Path (Split-Path -Path $Path -Parent) -Type Container) {
+			# Function called with destination file name and valid folder
+			$FileName = $Path
+		} else {
+			# Function called with invalid path
+			throw "Invalid path provided to $($MyInvocation.MyCommand.Name)"
+		}
+		$FileStream = New-Object -TypeName System.IO.FileStream -ArgumentList $FileName, Create
 
-	Return $FileName
+		# Setup for download
+		$Buf = New-Object byte[] ([Math]::Min([Math]::Max(($bLengthTotal / 100), 2KB), 256KB))
+		$bDownloaded = 0; $bRead = 0; $tStart = Get-Date
+		$WebStream = $WebResp.GetResponseStream()
+
+		Do {	# Do the download
+			$bDownloaded += ($bRead = $WebStream.Read($Buf, 0, $Buf.Length))
+			$FileStream.Write($Buf, 0, $bRead)
+			# Progress update
+			If ($Progress.IsPresent) {
+				Write-Progress -Activity "Downloading File" -Status ("{0} of {1}" -f $(Convert-DisplayBytes($bDownloaded)), $(Convert-DisplayBytes($bLengthTotal))) `
+					-PercentComplete ($bDownloaded / $bLengthTotal * 100) `
+					-SecondsRemaining (($bLengthTotal - $bDownloaded) / $bDownloaded * (New-TimeSpan -Start $tStart).TotalSeconds)
+			}
+		} While (($bRead -gt 0) -and ($WebStream.CanRead))
+
+		$FileStream.Flush(); $FileStream.Close(); $FileStream.Dispose(); $WebStream.Dispose(); $WebResp.Close()	# Cleanup
+		If ($Progress.IsPresent) { Write-Progress -Activity "Downloading File" -Completed }
+
+		return $FileName
+	}
 }
 
 function Invoke-CacheGet {

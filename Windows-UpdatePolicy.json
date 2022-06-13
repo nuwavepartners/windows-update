@@ -209,6 +209,12 @@
 												  "Title":  "2020-12 Cumulative Update for Windows 10 Version 1903 for x64-based Systems (KB4592449)",
 												  "KBArticleID":  "4592449",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows10.0-kb4592449-x64_aa193efa8432018464d6173c497ce3de71a581e2.msu"
+											  },
+											  {
+												  "UpdateID":  "bcdd12d9-e56a-46be-88f6-8a97a9f9ad18",
+												  "Title":  "2020-10 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 1903 for x64 (KB4578974)",
+												  "KBArticleID":  "4578974",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2020/10/windows10.0-kb4578974-x64-ndp48_9b53584e22090a55a9efb8f94bf9c8264c56b2cc.msu"
 											  }
 										  ]
 						  },
@@ -531,6 +537,6 @@
 						  }
 					  ],
 	"_meta":  {
-				  "Date_Modified":  "2022-05-24T07:20:02Z"
+				  "Date_Modified":  "2022-06-13T07:20:49Z"
 			  }
 }
