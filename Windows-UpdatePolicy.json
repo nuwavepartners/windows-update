@@ -188,7 +188,7 @@
 												  "UpdateID":  "970e188e-aca7-4190-a92f-e57c2ef33068",
 												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows 10 Version 1809 for x64 (KB5013868)",
 												  "KBArticleID":  "5013868",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/04/windows10.0-kb5013641-x64_5cf245f52876a8a50a7155fada0245c6d0533bfb.msu"
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/04/windows10.0-kb5013626-x64-ndp48_e2b4283a00b2e97030507f071c3ecc6a2a352064.msu"
 											  }
 										  ]
 						  },
@@ -537,6 +537,6 @@
 						  }
 					  ],
 	"_meta":  {
-				  "Date_Modified":  "2022-06-15T07:21:05Z"
+				  "Date_Modified":  "2022-07-06T07:21:09Z"
 			  }
 }
