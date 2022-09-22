@@ -13,10 +13,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/05/windows10.0-kb5014024-x64_970f10c7f9b2ae96a34373daee6f6981e7567bc2.msu"
 											  },
 											  {
-												  "UpdateID":  "774e0238-fc2f-4fad-9793-3558c55885b3",
-												  "Title":  "2022-08 Cumulative Update for Windows 10 Version 1507 for x64-based Systems (KB5016639)",
-												  "KBArticleID":  "5016639",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/08/windows10.0-kb5016639-x64_5b75d7030270c57ab269e6d030fa57773d8b696e.msu"
+												  "UpdateID":  "6e1c1e29-5c6e-44bd-9e10-ee0f35e0e431",
+												  "Title":  "2022-09 Cumulative Update for Windows 10 Version 1507 for x64-based Systems (KB5017327)",
+												  "KBArticleID":  "5017327",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/09/windows10.0-kb5017327-x64_ad22a0abbe414b3a0a98dabcc4e4e689aa135197.msu"
 											  }
 										  ]
 						  },
@@ -39,16 +39,16 @@
 									 },
 							  "Updates":  [
 											  {
-												  "UpdateID":  "bfb29625-4aed-4db5-9101-aceaa928a5fe",
-												  "Title":  "2022-08 Servicing Stack Update for Windows 10 Version 1607 for x64-based Systems (KB5017095)",
-												  "KBArticleID":  "5017095",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/08/windows10.0-kb5017095-x64_62314b87d461b2e0005bc272b637be4b86a2753b.msu"
+												  "UpdateID":  "64441b6c-46bf-496f-9c2d-0c6192610215",
+												  "Title":  "2022-09 Servicing Stack Update for Windows 10 Version 1607 for x64-based Systems (KB5017396)",
+												  "KBArticleID":  "5017396",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows10.0-kb5017396-x64_8db1a993e6115cf3b92d0159f562861ab16ee88d.msu"
 											  },
 											  {
-												  "UpdateID":  "9adbc53e-6989-47db-8196-39572a5ad7c6",
-												  "Title":  "2022-08 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5016622)",
-												  "KBArticleID":  "5016622",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/08/windows10.0-kb5016622-x64_77ff4c1d896b008e41f7804648f64ae9bd467f4c.msu"
+												  "UpdateID":  "2d2b5397-4ebe-4e7f-9dd2-bf5ed0e71fdf",
+												  "Title":  "2022-09 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5017305)",
+												  "KBArticleID":  "5017305",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/09/windows10.0-kb5017305-x64_2c07f36c2861125ecea1098dc29cd03d42c3781b.msu"
 											  },
 											  {
 												  "UpdateID":  "a95db49d-342f-412b-8ef7-c8b1aff6ad05",
@@ -173,10 +173,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2021/08/windows10.0-kb5005112-x64_81d09dc6978520e1a6d44b3b15567667f83eba2c.msu"
 											  },
 											  {
-												  "UpdateID":  "3911ff81-80a6-49f3-b1e7-e7fbc1e67feb",
-												  "Title":  "2022-08 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5016623)",
-												  "KBArticleID":  "5016623",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/08/windows10.0-kb5016623-x64_c16c09c9b779b8db25b9570a765599f0869b7ee5.msu"
+												  "UpdateID":  "01c4477d-7f68-4b45-844a-b4e1d855b2b1",
+												  "Title":  "2022-09 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5017315)",
+												  "KBArticleID":  "5017315",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/09/windows10.0-kb5017315-x64_611c310985bee4d193a714e702a47b5422918914.msu"
 											  },
 											  {
 												  "UpdateID":  "b885d48a-be89-4b3b-9e02-66896c88b568",
@@ -188,7 +188,7 @@
 												  "UpdateID":  "970e188e-aca7-4190-a92f-e57c2ef33068",
 												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows 10 Version 1809 for x64 (KB5013868)",
 												  "KBArticleID":  "5013868",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/04/windows10.0-kb5013641-x64_5cf245f52876a8a50a7155fada0245c6d0533bfb.msu"
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/04/windows10.0-kb5013626-x64-ndp48_e2b4283a00b2e97030507f071c3ecc6a2a352064.msu"
 											  }
 										  ]
 						  },
@@ -266,16 +266,16 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/05/ssu-19041.1704-x64_70e350118b85fdae082ab7fde8165a947341ba1a.msu"
 											  },
 											  {
-												  "UpdateID":  "20475448-8a02-4d47-94b4-466c50bf506c",
-												  "Title":  "2022-08 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5016616)",
-												  "KBArticleID":  "5016616",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/08/windows10.0-kb5016616-x64_94a65010a34b5bae2324c9433d1cae0b9d906d8c.msu"
+												  "UpdateID":  "9032602c-f701-47ee-953b-0072066669f2",
+												  "Title":  "2022-09 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5017308)",
+												  "KBArticleID":  "5017308",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows10.0-kb5017308-x64_2027053968a06948b45d139d95475ab4feee5654.msu"
 											  },
 											  {
-												  "UpdateID":  "9e7329b6-40f2-40f5-8136-572a5c3525b1",
-												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5013624)",
-												  "KBArticleID":  "5013624",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/04/windows10.0-kb5013624-x64-ndp48_2f95326cbd559d1c581d095fe07444fda030df0c.msu"
+												  "UpdateID":  "d6aa985c-b999-458d-b4c6-d54078ff679f",
+												  "Title":  "2022-09 Cumulative Update for .NET Framework 3.5, 4.8 and 4.8.1 for Windows 10 Version 20H2 for x64 (KB5017498)",
+												  "KBArticleID":  "5017498",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/08/windows10.0-kb5017022-x64-ndp48_ad405b6a81668b45dc4421e154a87ac9023517b5.msu"
 											  }
 										  ]
 						  },
@@ -292,16 +292,16 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/05/ssu-19041.1704-x64_70e350118b85fdae082ab7fde8165a947341ba1a.msu"
 											  },
 											  {
-												  "UpdateID":  "d4c1774e-c52b-442a-9a98-bb02c0931fef",
-												  "Title":  "2022-08 Cumulative Update for Windows 10 Version 21H1 for x64-based Systems (KB5016616)",
-												  "KBArticleID":  "5016616",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/08/windows10.0-kb5016616-x64_94a65010a34b5bae2324c9433d1cae0b9d906d8c.msu"
+												  "UpdateID":  "be96cd39-6a79-47bf-a7f9-27c9f337673d",
+												  "Title":  "2022-09 Cumulative Update for Windows 10 Version 21H1 for x64-based Systems (KB5017308)",
+												  "KBArticleID":  "5017308",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows10.0-kb5017308-x64_2027053968a06948b45d139d95475ab4feee5654.msu"
 											  },
 											  {
-												  "UpdateID":  "23b6d7c9-5110-4733-bc8c-d9e1d63febe1",
-												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 21H1 for x64 (KB5013624)",
-												  "KBArticleID":  "5013624",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/04/windows10.0-kb5013624-x64-ndp48_2f95326cbd559d1c581d095fe07444fda030df0c.msu"
+												  "UpdateID":  "bd7f14e2-be21-44d3-beb1-22c8cb188088",
+												  "Title":  "2022-09 Cumulative Update for .NET Framework 3.5, 4.8 and 4.8.1 for Windows 10 Version 21H1 for x64 (KB5017499)",
+												  "KBArticleID":  "5017499",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/08/windows10.0-kb5017022-x64-ndp48_ad405b6a81668b45dc4421e154a87ac9023517b5.msu"
 											  }
 										  ]
 						  },
@@ -318,16 +318,16 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/05/ssu-19041.1704-x64_70e350118b85fdae082ab7fde8165a947341ba1a.msu"
 											  },
 											  {
-												  "UpdateID":  "48792918-1264-4953-9b4c-d27bf6bc27a3",
-												  "Title":  "2022-08 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5016616)",
-												  "KBArticleID":  "5016616",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/08/windows10.0-kb5016616-x64_94a65010a34b5bae2324c9433d1cae0b9d906d8c.msu"
+												  "UpdateID":  "45a9ddef-3e4d-453f-8c41-524411f71285",
+												  "Title":  "2022-09 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5017308)",
+												  "KBArticleID":  "5017308",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows10.0-kb5017308-x64_2027053968a06948b45d139d95475ab4feee5654.msu"
 											  },
 											  {
-												  "UpdateID":  "59078fab-2346-43be-a97c-c8cebe8b43f3",
-												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 21H2 for x64 (KB5013624)",
-												  "KBArticleID":  "5013624",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/04/windows10.0-kb5013624-x64-ndp48_2f95326cbd559d1c581d095fe07444fda030df0c.msu"
+												  "UpdateID":  "431c2fce-4467-4d33-9b6d-38d29b194757",
+												  "Title":  "2022-09 Cumulative Update for .NET Framework 3.5, 4.8 and 4.8.1 for Windows 10 Version 21H2 for x64 (KB5017500)",
+												  "KBArticleID":  "5017500",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/08/windows10.0-kb5017022-x64-ndp48_ad405b6a81668b45dc4421e154a87ac9023517b5.msu"
 											  }
 										  ]
 						  },
@@ -338,16 +338,16 @@
 									 },
 							  "Updates":  [
 											  {
-												  "UpdateID":  "c12cc287-2935-4baa-ae0a-5a7861756871",
-												  "Title":  "2022-08 Servicing Stack Update for Windows Server 2016 for x64-based Systems (KB5017095)",
-												  "KBArticleID":  "5017095",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/08/windows10.0-kb5017095-x64_62314b87d461b2e0005bc272b637be4b86a2753b.msu"
+												  "UpdateID":  "e0951aaf-faa3-4ebc-96b8-23933343aa0c",
+												  "Title":  "2022-09 Servicing Stack Update for Windows Server 2016 for x64-based Systems (KB5017396)",
+												  "KBArticleID":  "5017396",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows10.0-kb5017396-x64_8db1a993e6115cf3b92d0159f562861ab16ee88d.msu"
 											  },
 											  {
-												  "UpdateID":  "7fd8971b-436f-4b6d-8aae-e36a2b9886a5",
-												  "Title":  "2022-08 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5016622)",
-												  "KBArticleID":  "5016622",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/08/windows10.0-kb5016622-x64_77ff4c1d896b008e41f7804648f64ae9bd467f4c.msu"
+												  "UpdateID":  "533d2080-a7ac-46c3-9f0c-7c73dff77d24",
+												  "Title":  "2022-09 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5017305)",
+												  "KBArticleID":  "5017305",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/09/windows10.0-kb5017305-x64_2c07f36c2861125ecea1098dc29cd03d42c3781b.msu"
 											  },
 											  {
 												  "UpdateID":  "a95db49d-342f-412b-8ef7-c8b1aff6ad05",
@@ -376,10 +376,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2021/08/windows10.0-kb5005112-x64_81d09dc6978520e1a6d44b3b15567667f83eba2c.msu"
 											  },
 											  {
-												  "UpdateID":  "b3f4dad6-4572-4957-ae8f-81df5a2870e2",
-												  "Title":  "2022-08 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5016623)",
-												  "KBArticleID":  "5016623",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/08/windows10.0-kb5016623-x64_c16c09c9b779b8db25b9570a765599f0869b7ee5.msu"
+												  "UpdateID":  "5d1c66f1-03d6-4847-8a12-550207334a2b",
+												  "Title":  "2022-09 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5017315)",
+												  "KBArticleID":  "5017315",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/09/windows10.0-kb5017315-x64_611c310985bee4d193a714e702a47b5422918914.msu"
 											  },
 											  {
 												  "UpdateID":  "6b34ac14-4b34-4d0a-a640-1133e9e5baa7",
@@ -402,16 +402,16 @@
 									 },
 							  "Updates":  [
 											  {
-												  "UpdateID":  "1f442c97-5276-44ba-b758-a6d343c843af",
-												  "Title":  "2022-07 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5016264)",
-												  "KBArticleID":  "5016264",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/07/windows8.1-kb5016264-x64_fed01d0d42d8c451f132a8a3f3693f701f0cd744.msu"
+												  "UpdateID":  "dd001547-ea2b-4073-bc99-664378a96631",
+												  "Title":  "2022-09 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5017398)",
+												  "KBArticleID":  "5017398",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows8.1-kb5017398-x64_bfa4a7dce9865df88aa681ec25c82946dd8bbd2e.msu"
 											  },
 											  {
-												  "UpdateID":  "ee04ef4a-fee1-486e-918c-b72d15fc4502",
-												  "Title":  "2022-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5016681)",
-												  "KBArticleID":  "5016681",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/08/windows8.1-kb5016681-x64_0cd6926c934e163a825b9f18032a5c37f8df7857.msu"
+												  "UpdateID":  "f1f41c77-32d3-4dbb-9470-c87a494ca089",
+												  "Title":  "2022-09 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5017367)",
+												  "KBArticleID":  "5017367",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/09/windows8.1-kb5017367-x64_bb0042f20714b02406713a20e9dc97809d26b538.msu"
 											  },
 											  {
 												  "UpdateID":  "d1fe2427-174b-4b7b-ba04-69aa90060d12",
@@ -428,16 +428,16 @@
 									 },
 							  "Updates":  [
 											  {
-												  "UpdateID":  "f301f4a6-71be-4071-bea6-d847820bdb65",
-												  "Title":  "2022-07 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5016264)",
-												  "KBArticleID":  "5016264",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/07/windows8.1-kb5016264-x64_fed01d0d42d8c451f132a8a3f3693f701f0cd744.msu"
+												  "UpdateID":  "62272856-2fc1-4ce2-ac92-374c00a6a622",
+												  "Title":  "2022-09 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5017398)",
+												  "KBArticleID":  "5017398",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows8.1-kb5017398-x64_bfa4a7dce9865df88aa681ec25c82946dd8bbd2e.msu"
 											  },
 											  {
-												  "UpdateID":  "d36b14af-84d5-4e4b-b827-844b1b3d5dc8",
-												  "Title":  "2022-08 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5016681)",
-												  "KBArticleID":  "5016681",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/08/windows8.1-kb5016681-x64_0cd6926c934e163a825b9f18032a5c37f8df7857.msu"
+												  "UpdateID":  "dca0fa60-2a1b-4c3c-af69-ca18007ba890",
+												  "Title":  "2022-09 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5017367)",
+												  "KBArticleID":  "5017367",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/09/windows8.1-kb5017367-x64_bb0042f20714b02406713a20e9dc97809d26b538.msu"
 											  },
 											  {
 												  "UpdateID":  "4eab4f34-282e-4da2-bdf0-badd3b32e858",
@@ -466,10 +466,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/07/windows8-rt-kb5016263-x64_d36362db68c0cec5042fdf5a4ff2e91bcd0779dc.msu"
 											  },
 											  {
-												  "UpdateID":  "8aa031db-ffe0-46e0-b425-613aebf825eb",
-												  "Title":  "2022-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5016672)",
-												  "KBArticleID":  "5016672",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/08/windows8-rt-kb5016672-x64_f13bc0cddc6cc9ddcf3a62d46217613f898b5366.msu"
+												  "UpdateID":  "a97105e3-24c7-46f1-8aaa-7798332a1657",
+												  "Title":  "2022-09 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5017370)",
+												  "KBArticleID":  "5017370",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/09/windows8-rt-kb5017370-x64_6ce5063c7c36d7345b5ba6f22664b3fbbc176f5c.msu"
 											  },
 											  {
 												  "UpdateID":  "d1fe2427-174b-4b7b-ba04-69aa90060d12",
@@ -507,10 +507,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/07/windows8-rt-kb5016263-x64_d36362db68c0cec5042fdf5a4ff2e91bcd0779dc.msu"
 											  },
 											  {
-												  "UpdateID":  "8aa031db-ffe0-46e0-b425-613aebf825eb",
-												  "Title":  "2022-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5016672)",
-												  "KBArticleID":  "5016672",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/08/windows8-rt-kb5016672-x64_f13bc0cddc6cc9ddcf3a62d46217613f898b5366.msu"
+												  "UpdateID":  "a97105e3-24c7-46f1-8aaa-7798332a1657",
+												  "Title":  "2022-09 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5017370)",
+												  "KBArticleID":  "5017370",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/09/windows8-rt-kb5017370-x64_6ce5063c7c36d7345b5ba6f22664b3fbbc176f5c.msu"
 											  },
 											  {
 												  "UpdateID":  "d1fe2427-174b-4b7b-ba04-69aa90060d12",
@@ -537,6 +537,6 @@
 						  }
 					  ],
 	"_meta":  {
-				  "Date_Modified":  "2022-09-09T07:20:58Z"
+				  "Date_Modified":  "2022-09-22T07:21:47Z"
 			  }
 }
