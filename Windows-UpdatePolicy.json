@@ -87,12 +87,6 @@
 												  "Title":  "Microsoft .NET Framework 4.8 for Windows 10 Version 1703 (KB4486129)",
 												  "KBArticleID":  "4486129",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x86_d38ebe43baeabaef927675c7ff2295843f19a077.msu"
-											  },
-											  {
-												  "UpdateID":  "5542dc5a-227e-4a19-a58d-7009d52a5f81",
-												  "Title":  "2021-02 Cumulative Update for .NET Framework 4.8 for Windows 10 Version 1703 for x64 (KB4601052)",
-												  "KBArticleID":  "4601052",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2021/01/windows10.0-kb4601052-x64-ndp48_f21cd247824487099ce240ada724aa29e3cbf6c9.msu"
 											  }
 										  ]
 						  },
@@ -209,12 +203,6 @@
 												  "Title":  "2020-12 Cumulative Update for Windows 10 Version 1903 for x64-based Systems (KB4592449)",
 												  "KBArticleID":  "4592449",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows10.0-kb4592449-x64_aa193efa8432018464d6173c497ce3de71a581e2.msu"
-											  },
-											  {
-												  "UpdateID":  "bcdd12d9-e56a-46be-88f6-8a97a9f9ad18",
-												  "Title":  "2020-10 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 1903 for x64 (KB4578974)",
-												  "KBArticleID":  "4578974",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2020/10/windows10.0-kb4578974-x64-ndp48_9b53584e22090a55a9efb8f94bf9c8264c56b2cc.msu"
 											  }
 										  ]
 						  },
@@ -296,12 +284,6 @@
 												  "Title":  "2022-09 Cumulative Update for Windows 10 Version 21H1 for x64-based Systems (KB5017308)",
 												  "KBArticleID":  "5017308",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows10.0-kb5017308-x64_2027053968a06948b45d139d95475ab4feee5654.msu"
-											  },
-											  {
-												  "UpdateID":  "bd7f14e2-be21-44d3-beb1-22c8cb188088",
-												  "Title":  "2022-09 Cumulative Update for .NET Framework 3.5, 4.8 and 4.8.1 for Windows 10 Version 21H1 for x64 (KB5017499)",
-												  "KBArticleID":  "5017499",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/08/windows10.0-kb5017022-x64-ndp48_ad405b6a81668b45dc4421e154a87ac9023517b5.msu"
 											  }
 										  ]
 						  },
@@ -322,12 +304,6 @@
 												  "Title":  "2022-09 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5017308)",
 												  "KBArticleID":  "5017308",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows10.0-kb5017308-x64_2027053968a06948b45d139d95475ab4feee5654.msu"
-											  },
-											  {
-												  "UpdateID":  "431c2fce-4467-4d33-9b6d-38d29b194757",
-												  "Title":  "2022-09 Cumulative Update for .NET Framework 3.5, 4.8 and 4.8.1 for Windows 10 Version 21H2 for x64 (KB5017500)",
-												  "KBArticleID":  "5017500",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/08/windows10.0-kb5017022-x64-ndp48_ad405b6a81668b45dc4421e154a87ac9023517b5.msu"
 											  }
 										  ]
 						  },
@@ -354,12 +330,6 @@
 												  "Title":  "Microsoft .NET Framework 4.8 for Windows 10 Version 1607 and Windows Server 2016 for x64 (KB4486129)",
 												  "KBArticleID":  "4486129",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu"
-											  },
-											  {
-												  "UpdateID":  "71747baf-0d9d-477e-938e-df62272f2f44",
-												  "Title":  "2022-05 Cumulative Update for .NET Framework 4.8 for Windows Server 2016 for x64 (KB5013625)",
-												  "KBArticleID":  "5013625",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/04/windows10.0-kb5013625-x64-ndp48_40571d308318752756c72529207e43e30ed1ae01.msu"
 											  }
 										  ]
 						  },
@@ -386,12 +356,6 @@
 												  "Title":  "Microsoft .NET Framework 4.8 for Windows 10 Version 1809 and Windows Server 2019 for x64 (KB4486153)",
 												  "KBArticleID":  "4486153",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu"
-											  },
-											  {
-												  "UpdateID":  "fbe80e42-8f5f-4f11-ae5f-d7ed74533276",
-												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows Server 2019 for x64 (KB5013868)",
-												  "KBArticleID":  "5013868",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/04/windows10.0-kb5013641-x64_5cf245f52876a8a50a7155fada0245c6d0533bfb.msu"
 											  }
 										  ]
 						  },
@@ -476,12 +440,6 @@
 												  "Title":  "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
 												  "KBArticleID":  "4486105",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu"
-											  },
-											  {
-												  "UpdateID":  "dd23462d-1196-4d50-a255-c109e6fb4139",
-												  "Title":  "Update for Windows Server 2012 (KB3191565)",
-												  "KBArticleID":  "3191565",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu"
 											  }
 										  ]
 						  },
@@ -517,12 +475,6 @@
 												  "Title":  "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
 												  "KBArticleID":  "4486105",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu"
-											  },
-											  {
-												  "UpdateID":  "dd23462d-1196-4d50-a255-c109e6fb4139",
-												  "Title":  "Update for Windows Server 2012 (KB3191565)",
-												  "KBArticleID":  "3191565",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu"
 											  }
 										  ]
 						  },
@@ -537,6 +489,6 @@
 						  }
 					  ],
 	"_meta":  {
-				  "Date_Modified":  "2022-09-22T07:21:47Z"
+				  "Date_Modified":  "2022-10-11T07:22:19Z"
 			  }
 }
