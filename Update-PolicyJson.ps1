@@ -54,6 +54,9 @@ $ModernOSs = @(
 	@{WUName="Windows 10 Version 20H2"; Caption="Microsoft Windows 10"; Version="10.0.19042"},
 	@{WUName="Windows 10 Version 21H1"; Caption="Microsoft Windows 10"; Version="10.0.19043"},
 	@{WUName="Windows 10 Version 21H2"; Caption="Microsoft Windows 10"; Version="10.0.19044"},
+	@{WUName="Windows 10 Version 22H2"; Caption="Microsoft Windows 10"; Version="10.0.19045"},
+	@{WUName="Windows 11";				Caption="Microsoft Windows 11"; Version="10.0.22000"},
+	@{WUName="Windows 11 Version 22H2"; Caption="Microsoft Windows 11"; Version="10.0.22621"},
 	@{WUName="Windows Server 2016"; Caption="Microsoft Windows Server 2016"; Version="10.0.14393"},
 	@{WUName="Windows Server 2019"; Caption="Microsoft Windows Server 2019"; Version="10.0.17763"}
 )
