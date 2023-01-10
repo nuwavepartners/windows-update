@@ -273,6 +273,50 @@
 						  },
 						  {
 							  "OS":  {
+										 "Version":  "10.0.19045",
+										 "Caption":  "Microsoft Windows 10"
+									 },
+							  "Updates":  {
+											  "UpdateID":  "10fc11b7-fbff-4c24-a7e7-8794952626c7",
+											  "Title":  "2022-12 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5021233)",
+											  "KBArticleID":  "5021233",
+											  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/12/windows10.0-kb5021233-x64_00bbf75a829a2cb4f37e4a2b876ea9503acfaf4d.msu"
+										  }
+						  },
+						  {
+							  "OS":  {
+										 "Version":  "10.0.22000",
+										 "Caption":  "Microsoft Windows 11"
+									 },
+							  "Updates":  [
+											  {
+												  "UpdateID":  "c4917dbf-5f73-44be-86f6-f8c366d65f20",
+												  "Title":  "2021-09 Servicing Stack Update for Windows 11 for x64-based Systems (KB5005703)",
+												  "KBArticleID":  "5005703",
+												  "Source":  null
+											  },
+											  {
+												  "UpdateID":  "5ba9a409-4284-4739-96b9-c7d49878c138",
+												  "Title":  "2022-12 Cumulative Update for Windows 11 for x64-based Systems (KB5021234)",
+												  "KBArticleID":  "5021234",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/12/windows10.0-kb5021234-x64_f6d3f9b2dd1eafa3d1be5d7470717f230199c0a8.msu"
+											  }
+										  ]
+						  },
+						  {
+							  "OS":  {
+										 "Version":  "10.0.22621",
+										 "Caption":  "Microsoft Windows 11"
+									 },
+							  "Updates":  {
+											  "UpdateID":  "a2ad31d6-a64b-452a-b100-577ff49846bc",
+											  "Title":  "2022-12 Cumulative Update for Windows 11 Version 22H2 for x64-based Systems (KB5021255)",
+											  "KBArticleID":  "5021255",
+											  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/12/windows11.0-kb5021255-x64_2830fb558a628b0a1847a0025d3da14928f82a5e.msu"
+										  }
+						  },
+						  {
+							  "OS":  {
 										 "Version":  "10.0.14393",
 										 "Caption":  "Microsoft Windows Server 2016"
 									 },
@@ -447,6 +491,6 @@
 						  }
 					  ],
 	"_meta":  {
-				  "Date_Modified":  "2023-01-10T07:23:59Z"
+				  "Date_Modified":  "2023-01-10T21:12:01Z"
 			  }
 }
