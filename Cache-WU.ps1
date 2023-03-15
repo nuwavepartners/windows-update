@@ -6,7 +6,7 @@
 [CmdletBinding()]
 Param (
 	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json',
-	$CacheDir = ''
+	$CacheDir = 'C:\Temp\'
 )
 
 # Check for PowerShell Version 3.0+
@@ -121,9 +121,7 @@ If ($CacheDir.Trim().Length -gt 0) {
 
 Write-Output 'Collecting current computer configuration'
 $ThisOS = Get-CimInstance -ClassName Win32_OperatingSystem
-$ThisHF = Get-HotFix
 Write-Output ("`tOS: {0} {1} <{2}>" -f $ThisOS.Caption, $ThisOS.Version, $ThisOS.ProductType)
-Write-Output ("`tHF: {0} Installed, Most recent {1}" -f $ThisHF.Count, ($ThisHF.InstalledOn | Measure-Object -Maximum).Maximum)
 
 :lCollection Foreach ($UpdateCollection in $Conf.WindowsUpdate) {
 
