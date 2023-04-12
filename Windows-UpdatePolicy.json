@@ -13,10 +13,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/03/windows10.0-kb5023787-x64_9f6ba404ac2ec7618e5fb0b475c9022649f9526a.msu"
 											  },
 											  {
-												  "UpdateID":  "90fe9c90-8f25-4165-a97e-2e2ebb81239f",
-												  "Title":  "2023-03 Cumulative Update for Windows 10 Version 1507 for x64-based Systems (KB5023713)",
-												  "KBArticleID":  "5023713",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/03/windows10.0-kb5023713-x64_6b195d8035095bbb6c3b7e16153f5db21338019d.msu"
+												  "UpdateID":  "51b03015-3616-44f8-895e-f51367b3d75a",
+												  "Title":  "2023-04 Cumulative Update for Windows 10 Version 1507 for x64-based Systems (KB5025234)",
+												  "KBArticleID":  "5025234",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/04/windows10.0-kb5025234-x64_7d4669082dbf2c12469297a171a1e98f3a71e169.msu"
 											  }
 										  ]
 						  },
@@ -45,10 +45,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/03/windows10.0-kb5023788-x64_33ea5888c89d2888b845cf02e8d3950d13d1d1f9.msu"
 											  },
 											  {
-												  "UpdateID":  "c1f7f2a1-6c0b-4e31-94f1-f2b20cd2786b",
-												  "Title":  "2023-03 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5023697)",
-												  "KBArticleID":  "5023697",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/03/windows10.0-kb5023697-x64_0cde92f5aaba06c1a1bfd64615010c90180dcb86.msu"
+												  "UpdateID":  "6fa20c6b-a053-4cb7-87fd-b4c8a579c79b",
+												  "Title":  "2023-04 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5025228)",
+												  "KBArticleID":  "5025228",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/04/windows10.0-kb5025228-x64_cd9da61ebd73a46181ba5839bdd59f1fe8e55890.msu"
 											  },
 											  {
 												  "UpdateID":  "a95db49d-342f-412b-8ef7-c8b1aff6ad05",
@@ -149,10 +149,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2021/08/windows10.0-kb5005112-x64_81d09dc6978520e1a6d44b3b15567667f83eba2c.msu"
 											  },
 											  {
-												  "UpdateID":  "a4140119-df12-4d27-a355-a1b3754fc1bf",
-												  "Title":  "2023-03 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5023702)",
-												  "KBArticleID":  "5023702",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/03/windows10.0-kb5023702-x64_25c0d04726b1f92c46e76d371ca58875051506c5.msu"
+												  "UpdateID":  "3449b6ac-5438-4cb3-8c42-ede570f760a5",
+												  "Title":  "2023-04 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5025229)",
+												  "KBArticleID":  "5025229",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/04/windows10.0-kb5025229-x64_51315f30dd290d51ba049760d7c107c4b90b27c7.msu"
 											  },
 											  {
 												  "UpdateID":  "b885d48a-be89-4b3b-9e02-66896c88b568",
@@ -199,12 +199,6 @@
 												  "Title":  "2022-05 Cumulative Update for Windows 10 Version 1909 for x64-based Systems (KB5013945)",
 												  "KBArticleID":  "5013945",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/05/windows10.0-kb5013945-x64_6572e52ed97e1a51f533187f5250487e91e46e3a.msu"
-											  },
-											  {
-												  "UpdateID":  "f76d50ca-63da-463a-a99d-86e4126425d3",
-												  "Title":  "2022-05 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 1909 for x64 (KB5013627)",
-												  "KBArticleID":  "5013627",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/04/windows10.0-kb5013627-x64-ndp48_270d8666191d4965eb13883cd19c9e8c91ee5a90.msu"
 											  }
 										  ]
 						  },
@@ -230,10 +224,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/05/ssu-19041.1704-x64_70e350118b85fdae082ab7fde8165a947341ba1a.msu"
 											  },
 											  {
-												  "UpdateID":  "c52eebf4-8344-4537-b7a9-e2a58178ecd0",
-												  "Title":  "2023-03 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5023696)",
-												  "KBArticleID":  "5023696",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/03/windows10.0-kb5023696-x64_84833717ac6fdecea30cc3d235479a65a68069b0.msu"
+												  "UpdateID":  "76d67fdc-159c-4c9f-af2f-8331339fde4b",
+												  "Title":  "2023-04 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5025221)",
+												  "KBArticleID":  "5025221",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/04/windows10.0-kb5025221-x64_4cd9fd91665e48fc9a7941376973e2e41c4308e2.msu"
 											  }
 										  ]
 						  },
@@ -270,10 +264,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/05/ssu-19041.1704-x64_70e350118b85fdae082ab7fde8165a947341ba1a.msu"
 											  },
 											  {
-												  "UpdateID":  "e7a08f7c-92ad-4de7-a635-f2aec44b5b77",
-												  "Title":  "2023-03 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5023696)",
-												  "KBArticleID":  "5023696",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/03/windows10.0-kb5023696-x64_84833717ac6fdecea30cc3d235479a65a68069b0.msu"
+												  "UpdateID":  "91b1c1fc-d129-45aa-8679-41bf3bda66ed",
+												  "Title":  "2023-04 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5025221)",
+												  "KBArticleID":  "5025221",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/04/windows10.0-kb5025221-x64_4cd9fd91665e48fc9a7941376973e2e41c4308e2.msu"
 											  }
 										  ]
 						  },
@@ -283,10 +277,10 @@
 										 "Caption":  "Microsoft Windows 10"
 									 },
 							  "Updates":  {
-											  "UpdateID":  "517bab01-2498-4172-9d5e-a59e508fc71a",
-											  "Title":  "2023-03 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5023696)",
-											  "KBArticleID":  "5023696",
-											  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/03/windows10.0-kb5023696-x64_84833717ac6fdecea30cc3d235479a65a68069b0.msu"
+											  "UpdateID":  "ba940568-41c1-4b43-97ff-3adbc8214ebb",
+											  "Title":  "2023-04 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5025221)",
+											  "KBArticleID":  "5025221",
+											  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/04/windows10.0-kb5025221-x64_4cd9fd91665e48fc9a7941376973e2e41c4308e2.msu"
 										  }
 						  },
 						  {
@@ -302,10 +296,10 @@
 												  "Source":  null
 											  },
 											  {
-												  "UpdateID":  "9319f39b-eda9-456d-9f7b-ca849715d1d1",
-												  "Title":  "2023-03 Cumulative Update for Windows 11 for x64-based Systems (KB5023698)",
-												  "KBArticleID":  "5023698",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/03/windows10.0-kb5023698-x64_ca331a5383fba432861d13a5565eeae434a4ba44.msu"
+												  "UpdateID":  "36af0906-558d-4705-bd7e-24cf412d9e51",
+												  "Title":  "2023-04 Cumulative Update for Windows 11 for x64-based Systems (KB5025224)",
+												  "KBArticleID":  "5025224",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/04/windows10.0-kb5025224-x64_3522b1b562ed44bc949541dd1c7d08e1e967d925.msu"
 											  }
 										  ]
 						  },
@@ -315,9 +309,9 @@
 										 "Caption":  "Microsoft Windows 11"
 									 },
 							  "Updates":  {
-											  "UpdateID":  "635f9e95-6e66-4336-bd64-55e4a5bdbcf5",
-											  "Title":  "2023-03 Cumulative Update for Windows 11 Version 22H2 for x64-based Systems (KB5023706)",
-											  "KBArticleID":  "5023706",
+											  "UpdateID":  "3157dbaf-04f5-49fc-baef-300bbd6d121a",
+											  "Title":  "2023-04 Cumulative Update for Windows 11 Version 22H2 for x64-based Systems (KB5025239)",
+											  "KBArticleID":  "5025239",
 											  "Source":  null
 										  }
 						  },
@@ -334,10 +328,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/03/windows10.0-kb5023788-x64_33ea5888c89d2888b845cf02e8d3950d13d1d1f9.msu"
 											  },
 											  {
-												  "UpdateID":  "4bfaa570-6987-44db-af8e-54e866146200",
-												  "Title":  "2023-03 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5023697)",
-												  "KBArticleID":  "5023697",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/03/windows10.0-kb5023697-x64_0cde92f5aaba06c1a1bfd64615010c90180dcb86.msu"
+												  "UpdateID":  "97ab5eba-74ba-4d85-8a5e-28db67733520",
+												  "Title":  "2023-04 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5025228)",
+												  "KBArticleID":  "5025228",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/04/windows10.0-kb5025228-x64_cd9da61ebd73a46181ba5839bdd59f1fe8e55890.msu"
 											  },
 											  {
 												  "UpdateID":  "a95db49d-342f-412b-8ef7-c8b1aff6ad05",
@@ -360,22 +354,16 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2021/08/windows10.0-kb5005112-x64_81d09dc6978520e1a6d44b3b15567667f83eba2c.msu"
 											  },
 											  {
-												  "UpdateID":  "9b840004-bb3d-4805-971f-6d7c0ec31441",
-												  "Title":  "2023-03 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5023702)",
-												  "KBArticleID":  "5023702",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/03/windows10.0-kb5023702-x64_25c0d04726b1f92c46e76d371ca58875051506c5.msu"
+												  "UpdateID":  "118c03fd-df84-4106-aa00-6d0a8f403e53",
+												  "Title":  "2023-04 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5025229)",
+												  "KBArticleID":  "5025229",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/04/windows10.0-kb5025229-x64_51315f30dd290d51ba049760d7c107c4b90b27c7.msu"
 											  },
 											  {
 												  "UpdateID":  "6b34ac14-4b34-4d0a-a640-1133e9e5baa7",
 												  "Title":  "Microsoft .NET Framework 4.8 for Windows 10 Version 1809 and Windows Server 2019 for x64 (KB4486153)",
 												  "KBArticleID":  "4486153",
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu"
-											  },
-											  {
-												  "UpdateID":  "d15b98a1-b1a2-40f9-974d-29568f7c0a17",
-												  "Title":  "2023-02 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows Server 2019 for x64 (KB5022782)",
-												  "KBArticleID":  "5022782",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/01/windows10.0-kb5022511-x64_19dcbf71169b01c6337e5f6b98b937156d6a7a70.msu"
 											  }
 										  ]
 						  },
@@ -392,10 +380,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/03/windows8.1-kb5023790-x64_2bf6f0bb4f46f08e15a4223831d545cd125d8ae6.msu"
 											  },
 											  {
-												  "UpdateID":  "d6dbd8ae-6bce-411b-8e5a-56edbfa5251d",
-												  "Title":  "2023-03 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5023765)",
-												  "KBArticleID":  "5023765",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/03/windows8.1-kb5023765-x64_18c14ac47cdee2cf2329a3f80e176862fe3e4ccb.msu"
+												  "UpdateID":  "83167ccd-c20a-459f-bb78-b0ed1a690a1c",
+												  "Title":  "2023-04 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5025285)",
+												  "KBArticleID":  "5025285",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/04/windows8.1-kb5025285-x64_f6df5e1bb2e6d0f6a94f12d383e7c1b381406024.msu"
 											  },
 											  {
 												  "UpdateID":  "d1fe2427-174b-4b7b-ba04-69aa90060d12",
@@ -444,10 +432,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/03/windows8-rt-kb5023791-x64_818030bbd438efb8a1b536fa2ac589d552b1fea7.msu"
 											  },
 											  {
-												  "UpdateID":  "d684737a-b236-49a5-b87a-cb7d59129ad5",
-												  "Title":  "2023-03 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5023756)",
-												  "KBArticleID":  "5023756",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/03/windows8-rt-kb5023756-x64_9e820dab2cc59b0582aec4078a9a121c4b835fb3.msu"
+												  "UpdateID":  "8d685d26-a180-4652-9b2b-e7d7dd7d1393",
+												  "Title":  "2023-04 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5025287)",
+												  "KBArticleID":  "5025287",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/04/windows8-rt-kb5025287-x64_07b0435b253fb1a780bd6306c517d38e5a3e23bf.msu"
 											  },
 											  {
 												  "UpdateID":  "d1fe2427-174b-4b7b-ba04-69aa90060d12",
@@ -479,10 +467,10 @@
 												  "Source":  "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/03/windows8-rt-kb5023791-x64_818030bbd438efb8a1b536fa2ac589d552b1fea7.msu"
 											  },
 											  {
-												  "UpdateID":  "d684737a-b236-49a5-b87a-cb7d59129ad5",
-												  "Title":  "2023-03 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5023756)",
-												  "KBArticleID":  "5023756",
-												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/03/windows8-rt-kb5023756-x64_9e820dab2cc59b0582aec4078a9a121c4b835fb3.msu"
+												  "UpdateID":  "8d685d26-a180-4652-9b2b-e7d7dd7d1393",
+												  "Title":  "2023-04 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5025287)",
+												  "KBArticleID":  "5025287",
+												  "Source":  "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/04/windows8-rt-kb5025287-x64_07b0435b253fb1a780bd6306c517d38e5a3e23bf.msu"
 											  },
 											  {
 												  "UpdateID":  "d1fe2427-174b-4b7b-ba04-69aa90060d12",
@@ -503,6 +491,6 @@
 						  }
 					  ],
 	"_meta":  {
-				  "Date_Modified":  "2023-04-03T07:28:49Z"
+				  "Date_Modified":  "2023-04-12T07:28:39Z"
 			  }
 }
