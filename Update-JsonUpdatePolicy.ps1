@@ -1,7 +1,7 @@
-<# 
-.NOTES 
+<#
+.NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2021-12-07 12:25:36
+	Date-Modified:	2023-05-30 14:47:05
 #>
 [CmdletBinding()]
 Param (
@@ -25,7 +25,7 @@ Param (
 	LEFT JOIN tbUpdate AS u ON u.LocalUpdateID = r.LocalUpdateID
 	LEFT JOIN tbKBArticleForRevision AS kbafr ON kbafr.RevisionID = lpfr.RevisionID
 	WHERE lp.Title like '#' AND lpfr.LanguageID = 1033
-	ORDER BY KBArticleID DESC" 
+	ORDER BY KBArticleID DESC"
 	$R = Invoke-Sqlcmd -Query $Query.Replace('#', $QV) -ServerInstance "localhost\SQLEXPRESS" -Database "SUSDB" -OutputAs DataRows | Select-Object * -ExcludeProperty ItemArray, Table, RowError, RowState, HasErrors
 	If ($null -ne $R) {
 		$URL = (((Invoke-WebRequest -Uri "https://www.catalog.update.microsoft.com/DownloadDialog.aspx" -Method "POST" -Body ('updateIDs=[{"updateID":"'+ $R.UpdateID + '"}]')).Content -split '\r?\n').Trim() -match '^downloadInformation\[0\].files\[0\].url' -split ' ')[-1].Replace("'","").Replace(";","")
@@ -58,7 +58,9 @@ $ModernOSs = @(
 	@{WUName="Windows 11";				Caption="Microsoft Windows 11"; Version="10.0.22000"},
 	@{WUName="Windows 11 Version 22H2"; Caption="Microsoft Windows 11"; Version="10.0.22621"},
 	@{WUName="Windows Server 2016"; Caption="Microsoft Windows Server 2016"; Version="10.0.14393"},
-	@{WUName="Windows Server 2019"; Caption="Microsoft Windows Server 2019"; Version="10.0.17763"}
+	@{WUName="Windows Server 2019"; Caption="Microsoft Windows Server 2019"; Version="10.0.17763"},
+	@{WUName="Microsoft server operating system version 21H2"; Caption="Microsoft Windows Server 2022"; Version="10.0.20348"}
+#	@{WUName="Microsoft server operating system, version 22H2"; Caption="Microsoft Windows Server 2022"; Version="10.0.20348"}
 )
 
 Foreach ($OS in $ModernOSs) {
