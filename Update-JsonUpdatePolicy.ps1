@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2023-05-30 14:47:05
+	Date-Modified:	2024-02-02 14:12:02
 #>
 [CmdletBinding()]
 Param (
@@ -37,6 +37,19 @@ Param (
 ################################## THE SCRIPT ##################################
 
 Write-Output ('Script Started ').PadRight(80,'-')
+
+Write-Output ('Checking WSUS')
+$WsusServer = Get-WsusServer
+Write-Output ('Server: {0}' -f $WsusServer.Name)
+$LastSync = $WsusServer.GetSubscription().GetLastSynchronizationInfo()
+Write-Output ('Last Sync: {0} {1}' -f $LastSync.EndTime, $LastSync.Result)
+if ($LastSync.EndTime -lt (Get-Date).AddDays(-3)) {
+	Throw 'Outdated WSUS Synchronization'
+}
+if ($lastSync.Result -ne 'Succeeded') {
+	Throw 'Last WSUS Synchronization not Succeeded'
+}
+
 $WUs = @()
 
 # Windows 10, Server 2016/2019
@@ -57,10 +70,12 @@ $ModernOSs = @(
 	@{WUName="Windows 10 Version 22H2"; Caption="Microsoft Windows 10"; Version="10.0.19045"},
 	@{WUName="Windows 11";				Caption="Microsoft Windows 11"; Version="10.0.22000"},
 	@{WUName="Windows 11 Version 22H2"; Caption="Microsoft Windows 11"; Version="10.0.22621"},
+	@{WUName="Windows 11 Version 23H2"; Caption="Microsoft Windows 11"; Version="10.0.22631"},
 	@{WUName="Windows Server 2016"; Caption="Microsoft Windows Server 2016"; Version="10.0.14393"},
 	@{WUName="Windows Server 2019"; Caption="Microsoft Windows Server 2019"; Version="10.0.17763"},
 	@{WUName="Microsoft server operating system version 21H2"; Caption="Microsoft Windows Server 2022"; Version="10.0.20348"}
 #	@{WUName="Microsoft server operating system, version 22H2"; Caption="Microsoft Windows Server 2022"; Version="10.0.20348"}
+	@{WUName="Microsoft server operating system version 23H2"; Caption="Microsoft Windows Server 2022"; Version="10.0.20348"}
 )
 
 Foreach ($OS in $ModernOSs) {
