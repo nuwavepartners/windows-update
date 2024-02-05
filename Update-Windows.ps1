@@ -1,11 +1,12 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-05 13:33:08
+	Date-Modified:	2024-02-05 13:54:49
 #>
 [CmdletBinding()]
 Param (
-	$Configs = 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json'
+	[string] $Configs	= 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json',
+	[string] $CacheDir	= ''
 )
 
 # Check for Administrative Rights
@@ -20,7 +21,7 @@ If ($PSVersionTable.PSVersion.Major -lt 3) {
 
 ################################## THE SCRIPT ##################################
 
-Write-Output ('Script Started ').PadRight(80,'-')
+Write-Output ('Script Started ').PadRight(80, '-')
 $RebootRequired = $false
 
 # Load Configuration(s)
@@ -56,7 +57,7 @@ Write-Output ("`tHF: {0} Installed, Most recent {1}" -f $ThisHF.Count, ($ThisHF.
 
 	Write-Output ('Found Updates for ' + $UpdateCollection.OS.Caption)
 
-		Foreach ($Update in $UpdateCollection.Updates) {
+	Foreach ($Update in $UpdateCollection.Updates) {
 		Write-Output "Searching for $($Update.Title)"
 		If (($null -ne $ThisHF.HotFixID) -and ((Compare-Object -ReferenceObject ($ThisHF.HotFixID -replace '\D', '') -DifferenceObject $Update.KBArticleID -IncludeEqual).SideIndicator -contains '==')) {
 			Write-Output "`tFound"
@@ -77,13 +78,13 @@ Write-Output ("`tHF: {0} Installed, Most recent {1}" -f $ThisHF.Count, ($ThisHF.
 			}
 
 			Write-Output "`tInstalling"
-			$r = Start-Process -FilePath 'C:\Windows\System32\wusa.exe' -ArgumentList $f,'/quiet','/norestart' -Wait -PassThru
+			$r = Start-Process -FilePath 'C:\Windows\System32\wusa.exe' -ArgumentList $f, '/quiet', '/norestart' -Wait -PassThru
 			Switch ($r.ExitCode) {
-				0x0			{ Write-Output "`tInstalled successfully"; Break }
+				0x0 { Write-Output "`tInstalled successfully"; Break }
 				0x00240006	{ Write-Output "`tUpdate already installed"; Break }
 				0x00240005	{ Write-Output "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
-				0x0BC2		{ Write-Output "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
-				{$_ -gt 0 }	{
+				0x0BC2 { Write-Output "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
+				{ $_ -gt 0 }	{
 					Write-Output "`t`t`Installation returned $($r.ExitCode) 0x$('{0:X8}' -f $r.ExitCode)"
 					Throw "Installation Failed."
 				}
@@ -96,4 +97,4 @@ Write-Output ("`tHF: {0} Installed, Most recent {1}" -f $ThisHF.Count, ($ThisHF.
 }
 
 If ($RebootRequired) { Write-Output "Reboot Needed!" }
-Write-Output ('Script Finished ').PadRight(80,'-')
+Write-Output ('Script Finished ').PadRight(80, '-')
