@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-05 13:31:58
+	Date-Modified:	2024-02-05 13:33:08
 #>
 [CmdletBinding()]
 Param (
@@ -67,14 +67,6 @@ Write-Output ("`tHF: {0} Installed, Most recent {1}" -f $ThisHF.Count, ($ThisHF.
 			If ($null -eq $Source) {
 				Write-Output "`tSource not found - Possibly Unsupported"
 				Continue
-			}
-
-			$f = $null
-
-			# Try Cache Location
-			If ($CacheDir.Trim().Length -gt 0) {
-				$f = Invoke-CacheGet -CacheDir $CacheDir -FileName $Source.Split('\')[-1] -FileHash $Source.Split('\')[-1].Split('_')[-1].Substring(0,40)
-				Write-Verbose ("Invoke-CacheGet Returned: {0}" -f $f)
 			}
 
 			# Download from Source
