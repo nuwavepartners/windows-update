@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-05 13:22:18
+	Date-Modified:	2024-02-05 13:31:58
 #>
 [CmdletBinding()]
 Param (
@@ -26,7 +26,7 @@ $RebootRequired = $false
 # Load Configuration(s)
 Write-Output "Script Configuration"
 Write-Output ("`tLoading")
-$Conf = (Invoke-WebRequest -Uri $Configs).Content | ConvertFrom-Json
+$Conf = (New-Object System.Net.WebClient).DownloadString($Configs) | ConvertFrom-Json
 
 Write-Output "`tVerifying"
 $PatchTuesday = (1..7 | ForEach-Object { $(Get-Date -Day 7).AddDays($_) } | Where-Object { $_.DayOfWeek -like "Tue*" })
