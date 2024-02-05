@@ -1,4 +1,4 @@
-# NuWave Windows Update Sciprts
+# NuWave Windows Update Scripts
 
 A collection of scripts to make updating a computer more convenient.
 
@@ -9,4 +9,6 @@ A collection of scripts to make updating a computer more convenient.
 & ([scriptblock]::Create((New-Object System.Net.WebClient).DownloadString('https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Update-Windows.ps1')))
 ```
 
+## Client Upgrade
 
+TBA
