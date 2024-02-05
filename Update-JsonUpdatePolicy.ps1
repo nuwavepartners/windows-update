@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-05 12:59:24
+	Date-Modified:	2024-02-05 13:45:04
 #>
 #Requires -Version 7
 
@@ -26,7 +26,7 @@ function Get-WUCSearch {
 			Title       = $Title
 			KBArticleID = $KBN
 			Source      = $Source
-		} }
+		} } | Sort-Object -Property 'KBArticleID' -Descending
 }
 
 function Get-WUCDownload {
