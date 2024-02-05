@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-05 13:20:24
+	Date-Modified:	2024-02-05 13:22:18
 #>
 [CmdletBinding()]
 Param (
@@ -80,7 +80,7 @@ Write-Output ("`tHF: {0} Installed, Most recent {1}" -f $ThisHF.Count, ($ThisHF.
 			# Download from Source
 			If ($null -eq $f) {
 				Write-Output "`tDownloading"
-				$f = Join-Path $env:TEMP [System.IO.Path]::GetRandomFileName()
+				$f = Join-Path $env:TEMP ([System.IO.Path]::GetRandomFileName())
 				Start-BitsTransfer -Source $Source -Destination $f
 			}
 
