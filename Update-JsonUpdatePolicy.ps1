@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-02 14:12:02
+	Date-Modified:	2024-02-02 15:42:00
 #>
 [CmdletBinding()]
 Param (
@@ -74,7 +74,7 @@ $ModernOSs = @(
 	@{WUName="Windows Server 2016"; Caption="Microsoft Windows Server 2016"; Version="10.0.14393"},
 	@{WUName="Windows Server 2019"; Caption="Microsoft Windows Server 2019"; Version="10.0.17763"},
 	@{WUName="Microsoft server operating system version 21H2"; Caption="Microsoft Windows Server 2022"; Version="10.0.20348"}
-#	@{WUName="Microsoft server operating system, version 22H2"; Caption="Microsoft Windows Server 2022"; Version="10.0.20348"}
+	@{WUName="Microsoft server operating system, version 22H2"; Caption="Microsoft Windows Server 2022"; Version="10.0.20348"}
 	@{WUName="Microsoft server operating system version 23H2"; Caption="Microsoft Windows Server 2022"; Version="10.0.20348"}
 )
 
