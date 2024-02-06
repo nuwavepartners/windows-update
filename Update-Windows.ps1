@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-06 11:04:57
+	Date-Modified:	2024-02-06 11:18:55
 #>
 [CmdletBinding()]
 Param (
@@ -42,7 +42,12 @@ Write-Output ("`tOS: {0} {1} <{2}>" -f $ThisOS.Caption, $ThisOS.Version, $ThisOS
 Write-Output ("`tHF: {0} Installed, Most recent {1}" -f $ThisHF.Count, ($ThisHF.InstalledOn | Measure-Object -Maximum).Maximum)
 
 If ($Conf.WindowsEoL) {
-	$Conf.WindowsEoL | Where-Object { $ThisOS.Version -match $_.latest } | ForEach-Object { If ($_.eol -lt (Get-Date)) { Write-Output ('Warning! This Operating System is End of Life and may be insecure.') } }
+	$Conf.WindowsEoL | Where-Object { $ThisOS.Version -match $_.latest } | ForEach-Object {
+		If ($_.eol -lt (Get-Date)) {
+			Write-Output ("`tWarning! This Operating System is End of Life and may be insecure.")
+		} else {
+			Write-Output ("`tOperating System Supported until {0}" -f $_.eol )
+		} }
 }
 
 :lCollection Foreach ($UpdateCollection in $Conf.WindowsUpdate) {
