@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-05 13:54:49
+	Date-Modified:	2024-02-06 11:04:57
 #>
 [CmdletBinding()]
 Param (
@@ -40,6 +40,10 @@ $ThisOS = Get-CimInstance -ClassName Win32_OperatingSystem
 $ThisHF = Get-HotFix
 Write-Output ("`tOS: {0} {1} <{2}>" -f $ThisOS.Caption, $ThisOS.Version, $ThisOS.ProductType)
 Write-Output ("`tHF: {0} Installed, Most recent {1}" -f $ThisHF.Count, ($ThisHF.InstalledOn | Measure-Object -Maximum).Maximum)
+
+If ($Conf.WindowsEoL) {
+	$Conf.WindowsEoL | Where-Object { $ThisOS.Version -match $_.latest } | ForEach-Object { If ($_.eol -lt (Get-Date)) { Write-Output ('Warning! This Operating System is End of Life and may be insecure.') } }
+}
 
 :lCollection Foreach ($UpdateCollection in $Conf.WindowsUpdate) {
 

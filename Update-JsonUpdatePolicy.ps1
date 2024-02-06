@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-05 13:45:04
+	Date-Modified:	2024-02-06 10:58:54
 #>
 #Requires -Version 7
 
@@ -114,13 +114,19 @@ Foreach ($OS in $Win63OSs) {
 	}
 }
 
+# EoL Information
+
+$EoLURI = 'https://endoflife.date/api/windows.json'
+$EoL = (New-Object System.Net.WebClient).DownloadString($EoLURI) | ConvertFrom-Json
+
 # Generate
 
 $Out = @{
 	_meta         = @{
 		Date_Modified = (((Get-Date).ToUniversalTime() | Get-Date -f 's') + 'Z')
 	};
-	WindowsUpdate = $WUs
+	WindowsUpdate = $WUs;
+	WindowsEoL = $EoL
 }
 
 $Out | ConvertTo-Json -Depth 99 | Out-File -FilePath ".\Windows-UpdatePolicy.json"
