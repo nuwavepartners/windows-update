@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-06 11:18:55
+	Date-Modified:	2024-02-26 10:27:28
 #>
 [CmdletBinding()]
 Param (
@@ -29,10 +29,12 @@ Write-Output "Script Configuration"
 Write-Output ("`tLoading")
 $Conf = (New-Object System.Net.WebClient).DownloadString($Configs) | ConvertFrom-Json
 
-Write-Output "`tVerifying"
-$PatchTuesday = (1..7 | ForEach-Object { $(Get-Date -Day 7).AddDays($_) } | Where-Object { $_.DayOfWeek -like "Tue*" })
-If (((Get-Date) -gt $PatchTuesday) -and ((Get-Date -Date $Conf.WindowsUpdate._meta.Date_Modified) -lt $PatchTuesday)) {
-	Write-Warning ("Patch policy data may be Outdated! {0}" -f $Conf.WindowsUpdate._meta.Date_Modified)
+If ($null -ne $Conf._meta.Date_Modified) {
+	Write-Output "`tVerifying"
+	$PatchTuesday = (1..7 | ForEach-Object { $(Get-Date -Day 7).AddDays($_) } | Where-Object { $_.DayOfWeek -like "Tue*" })
+	If (((Get-Date) -gt $PatchTuesday) -and ((Get-Date -Date $Conf._meta.Date_Modified) -lt $PatchTuesday)) {
+		Write-Warning ("Patch policy data may be Outdated! {0}" -f $Conf._meta.Date_Modified)
+	}
 }
 
 Write-Output 'Collecting current computer configuration'
@@ -60,7 +62,7 @@ If ($Conf.WindowsEoL) {
 	}
 
 	If ($UpdateCollection.Updates.Count -lt 1) {
-		Write-Output ('No updates unavailable for {0}, your version of Windows may be unsupported' -f $UpdateCollection.OS.Caption)
+		Write-Output ('No update policy available for {0}, your version of Windows may be unsupported' -f $UpdateCollection.OS.Caption)
 		Continue lCollection
 	}
 
