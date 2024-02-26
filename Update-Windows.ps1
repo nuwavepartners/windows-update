@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-26 10:27:28
+	Date-Modified:	2024-02-26 11:45:18
 #>
 [CmdletBinding()]
 Param (
@@ -66,11 +66,11 @@ If ($Conf.WindowsEoL) {
 		Continue lCollection
 	}
 
-	Write-Output ('Found Updates for ' + $UpdateCollection.OS.Caption)
+	Write-Output ('Found Update Policy for ' + $UpdateCollection.OS.Caption)
 
 	Foreach ($Update in $UpdateCollection.Updates) {
 		Write-Output "Searching for $($Update.Title)"
-		If (($null -ne $ThisHF.HotFixID) -and ((Compare-Object -ReferenceObject ($ThisHF.HotFixID -replace '\D', '') -DifferenceObject $Update.KBArticleID -IncludeEqual).SideIndicator -contains '==')) {
+		If (($null -ne $ThisHF.HotFixID) -and ($ThisHF.HotFixID -contains $Update.KBArticleID)) {
 			Write-Output "`tFound"
 		} else {
 			Write-Output "`tNot Installed"
