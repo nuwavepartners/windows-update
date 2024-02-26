@@ -1,11 +1,11 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-26 11:45:18
+	Date-Modified:	2024-02-26 12:49:47
 #>
 [CmdletBinding()]
 Param (
-	[string] $Configs	= 'https://vcs.nuwave.link/git/windows/update/blob_plain/master:/Windows-UpdatePolicy.json',
+	[string] $Configs	= 'https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Windows-UpdatePolicy.json',
 	[string] $CacheDir	= ''
 )
 
