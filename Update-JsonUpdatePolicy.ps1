@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-06 10:58:54
+	Date-Modified:	2024-02-26 11:34:31
 #>
 #Requires -Version 7
 
@@ -44,7 +44,7 @@ Write-Output ('Script Started ').PadRight(80, '-')
 
 $WUs = @()
 
-# Windows 10, Server 2016/2019
+# Windows 10.x
 $ModernOSs = @(
 	@{WUName = "Windows 10 Version 1507"; Caption = "Microsoft Windows 10"; Version = "10.0.10240" },
 	@{WUName = "Windows 10 Version 1511"; Caption = "Microsoft Windows 10"; Version = "10.0.10586" },
@@ -66,27 +66,29 @@ $ModernOSs = @(
 	@{WUName = "Windows Server 2016"; Caption = "Microsoft Windows Server 2016"; Version = "10.0.14393" },
 	@{WUName = "Windows Server 2019"; Caption = "Microsoft Windows Server 2019"; Version = "10.0.17763" },
 	@{WUName = "Microsoft server operating system version 21H2"; Caption = "Microsoft Windows Server 2022"; Version = "10.0.20348" }
-	@{WUName = "Microsoft server operating system, version 22H2"; Caption = "Microsoft Windows Server 2022"; Version = "10.0.20348" }
-	@{WUName = "Microsoft server operating system version 23H2"; Caption = "Microsoft Windows Server 2022"; Version = "10.0.20348" }
+	#	@{WUName = "Microsoft server operating system, version 22H2"; Caption = "Microsoft Windows Server 2022"; Version = "10.0.20348" }
+	@{WUName = "Microsoft server operating system version 23H2"; Caption = "Microsoft Windows Server 2022"; Version = "10.0.25398" }
 )
 
 Foreach ($OS in $ModernOSs) {
 	Write-Output ("Finding updates for {0}" -f $OS.WUName)
+	[System.Collections.Generic.List[Hashtable]]$SearchUpdates = @(
+			(Get-WUCSearch ('"Servicing Stack Update for {0} for x64-based Systems" -Preview' -f $OS.WUName) | Select-Object -First 1),
+			(Get-WUCSearch ('"Cumulative Update for {0} for x64-based Systems" -Dynamic' -f $OS.WUName) | Select-Object -First 1),
+			(Get-WUCSearch ('"Microsoft .NET Framework" 4.8 for "{0}"' -f $OS.WUName) | Select-Object -First 1),
+			(Get-WUCSearch ('"Cumulative Update for .NET Framework {0} for x64"' -f $OS.WUName) | Select-Object -First 1)
+	)
+	$SearchUpdates.RemoveAll({ $args[0] -eq $null }) | Out-Null
 	$WUs += @{
 		OS      = @{
 			Caption = $OS.Caption;
 			Version = $OS.Version
 		}
-		Updates = @(
-			(Get-WUCSearch ('"Servicing Stack Update for {0} for x64-based Systems" -Preview' -f $OS.WUName) | Select-Object -First 1),
-			(Get-WUCSearch ('"Cumulative Update for {0} for x64-based Systems" -Dynamic' -f $OS.WUName) | Select-Object -First 1),
-			(Get-WUCSearch ('"Microsoft .NET Framework" 4.8 for "{0}"' -f $OS.WUName) | Select-Object -First 1),
-			(Get-WUCSearch ('"Cumulative Update for .NET Framework {0} for x64"' -f $OS.WUName) | Select-Object -First 1)
-		) | Where-Object { $_ }
+		Updates = $SearchUpdates.ToArray()
 	}
 }
 
-# Server 2012 R2 / 8.1
+# Windows 6.x
 $Win63OSs = @(
 	@{WUName = "Windows Server 2012 R2"; Caption = "Microsoft Windows Server 2012 R2"; Version = "6.3.9600" },
 	@{WUName = "Windows 8.1"; Caption = "Microsoft Windows 8.1"; Version = "6.3.9600" },
@@ -98,19 +100,21 @@ $Win63OSs = @(
 
 Foreach ($OS in $Win63OSs) {
 	Write-Output ("Finding updates for {0}" -f $OS.WUName)
+	[System.Collections.Generic.List[Hashtable]]$SearchUpdates = @(
+		(Get-WUCSearch ('"Servicing Stack Update for {0} for x64-based Systems" -Preview' -f $OS.WUName) | Select-Object -First 1),
+		(Get-WUCSearch ('"Security Monthly Quality Rollup for {0} for x64-based Systems" -Dynamic' -f $OS.WUName) | Select-Object -First 1),
+		(Get-WUCSearch ('"Microsoft .NET Framework" 4.8 for "{0}"' -f $OS.WUName) | Select-Object -First 1),
+		(Get-WUCSearch ('"Cumulative Update for .NET Framework {0} for x64"' -f $OS.WUName) | Select-Object -First 1)
+		(Get-WUCSearch ('{0} "KB3191564"' -f $OS.WUName) | Select-Object -First 1)
+		(Get-WUCSearch ('{0} "KB3191565"' -f $OS.WUName) | Select-Object -First 1)
+	)
+	$SearchUpdates.RemoveAll({ $args[0] -eq $null }) | Out-Null
 	$WUs += @{
 		OS      = @{
 			Caption = $OS.Caption;
 			Version = $OS.Version
 		}
-		Updates = @(
-			(Get-WUCSearch ('"Servicing Stack Update for {0} for x64-based Systems" -Preview' -f $OS.WUName) | Select-Object -First 1),
-			(Get-WUCSearch ('"Security Monthly Quality Rollup for {0} for x64-based Systems" -Dynamic' -f $OS.WUName) | Select-Object -First 1),
-			(Get-WUCSearch ('"Microsoft .NET Framework" 4.8 for "{0}"' -f $OS.WUName) | Select-Object -First 1),
-			(Get-WUCSearch ('"Cumulative Update for .NET Framework {0} for x64"' -f $OS.WUName) | Select-Object -First 1)
-			(Get-WUCSearch ('{0} "KB3191564"' -f $OS.WUName) | Select-Object -First 1)
-			(Get-WUCSearch ('{0} "KB3191565"' -f $OS.WUName) | Select-Object -First 1)
-		) | Where-Object { $_ }
+		Updates = $SearchUpdates.ToArray()
 	}
 }
 
@@ -126,8 +130,9 @@ $Out = @{
 		Date_Modified = (((Get-Date).ToUniversalTime() | Get-Date -f 's') + 'Z')
 	};
 	WindowsUpdate = $WUs;
-	WindowsEoL = $EoL
+	WindowsEoL    = $EoL
 }
 
-$Out | ConvertTo-Json -Depth 99 | Out-File -FilePath ".\Windows-UpdatePolicy.json"
+$Out | ConvertTo-Json -Depth 9 -AsArray | Out-File -FilePath ".\Windows-UpdatePolicy.json"
 
+$M
