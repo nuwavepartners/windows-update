@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-26 11:34:31
+	Date-Modified:	2025-06-11 11:44:08
 #>
 #Requires -Version 7
 
@@ -63,11 +63,13 @@ $ModernOSs = @(
 	@{WUName = "Windows 11"; Caption = "Microsoft Windows 11"; Version = "10.0.22000" },
 	@{WUName = "Windows 11 Version 22H2"; Caption = "Microsoft Windows 11"; Version = "10.0.22621" },
 	@{WUName = "Windows 11 Version 23H2"; Caption = "Microsoft Windows 11"; Version = "10.0.22631" },
+	@{WUName = "Windows 11 Version 24H2"; Caption = "Microsoft Windows 11"; Version = "10.0.26100" },
 	@{WUName = "Windows Server 2016"; Caption = "Microsoft Windows Server 2016"; Version = "10.0.14393" },
 	@{WUName = "Windows Server 2019"; Caption = "Microsoft Windows Server 2019"; Version = "10.0.17763" },
 	@{WUName = "Microsoft server operating system version 21H2"; Caption = "Microsoft Windows Server 2022"; Version = "10.0.20348" }
 	#	@{WUName = "Microsoft server operating system, version 22H2"; Caption = "Microsoft Windows Server 2022"; Version = "10.0.20348" }
 	@{WUName = "Microsoft server operating system version 23H2"; Caption = "Microsoft Windows Server 2022"; Version = "10.0.25398" }
+	@{WUName = "Microsoft server operating system version 24H2"; Caption = "Microsoft Windows Server 2025"; Version = "10.0.26100"}
 )
 
 Foreach ($OS in $ModernOSs) {
