@@ -1,0 +1,147 @@
+[
+    {
+        "WUName": "Windows 10 Version 1507",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.10240"
+    },
+    {
+        "WUName": "Windows 10 Version 1511",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.10586"
+    },
+    {
+        "WUName": "Windows 10 Version 1607",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.14393"
+    },
+    {
+        "WUName": "Windows 10 Version 1703",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.15063"
+    },
+    {
+        "WUName": "Windows 10 Version 1709",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.16299"
+    },
+    {
+        "WUName": "Windows 10 Version 1803",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.17134"
+    },
+    {
+        "WUName": "Windows 10 Version 1809",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.17763"
+    },
+    {
+        "WUName": "Windows 10 Version 1903",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.18362"
+    },
+    {
+        "WUName": "Windows 10 Version 1909",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.18363"
+    },
+    {
+        "WUName": "Windows 10 Version 20H1",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.19041"
+    },
+    {
+        "WUName": "Windows 10 Version 20H2",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.19042"
+    },
+    {
+        "WUName": "Windows 10 Version 21H1",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.19043"
+    },
+    {
+        "WUName": "Windows 10 Version 21H2",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.19044"
+    },
+    {
+        "WUName": "Windows 10 Version 22H2",
+        "Caption": "Microsoft Windows 10",
+        "Version": "10.0.19045"
+    },
+    {
+        "WUName": "Windows 11",
+        "Caption": "Microsoft Windows 11",
+        "Version": "10.0.22000"
+    },
+    {
+        "WUName": "Windows 11 Version 22H2",
+        "Caption": "Microsoft Windows 11",
+        "Version": "10.0.22621"
+    },
+    {
+        "WUName": "Windows 11 Version 23H2",
+        "Caption": "Microsoft Windows 11",
+        "Version": "10.0.22631"
+    },
+    {
+        "WUName": "Windows 11 Version 24H2",
+        "Caption": "Microsoft Windows 11",
+        "Version": "10.0.26100"
+    },
+    {
+        "WUName": "Windows Server 2016",
+        "Caption": "Microsoft Windows Server 2016",
+        "Version": "10.0.14393"
+    },
+    {
+        "WUName": "Windows Server 2019",
+        "Caption": "Microsoft Windows Server 2019",
+        "Version": "10.0.17763"
+    },
+    {
+        "WUName": "Microsoft server operating system version 21H2",
+        "Caption": "Microsoft Windows Server 2022",
+        "Version": "10.0.20348"
+    },
+    {
+        "WUName": "Microsoft server operating system version 23H2",
+        "Caption": "Microsoft Windows Server 2022",
+        "Version": "10.0.25398"
+    },
+    {
+        "WUName": "Microsoft server operating system version 24H2",
+        "Caption": "Microsoft Windows Server 2025",
+        "Version": "10.0.26100"
+    },
+    {
+        "WUName": "Windows Server 2012 R2",
+        "Caption": "Microsoft Windows Server 2012 R2",
+        "Version": "6.3.9600"
+    },
+    {
+        "WUName": "Windows 8.1",
+        "Caption": "Microsoft Windows 8.1",
+        "Version": "6.3.9600"
+    },
+    {
+        "WUName": "Windows Server 2012",
+        "Caption": "Microsoft Windows Server 2012",
+        "Version": "6.2.9200"
+    },
+    {
+        "WUName": "Windows 8",
+        "Caption": "Microsoft Windows 8",
+        "Version": "6.2.9200"
+    },
+    {
+        "WUName": "Windows Server 2008 R2",
+        "Caption": "Microsoft Windows Server 2008 R2",
+        "Version": "6.1.7601"
+    },
+    {
+        "WUName": "Windows 7",
+        "Caption": "Microsoft Windows 7",
+        "Version": "6.1.7601"
+    }
+]
