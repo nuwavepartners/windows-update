@@ -2,20 +2,12 @@
 
 A collection of scripts to make updating a computer more convenient.
 
-## Client Quick Start
+## Install Updates on a Client
+
+Open a Windows PowerShell prompt as Administrator, paste this:
 
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [System.Enum]::GetValues([System.Net.SecurityProtocolType]) | Where-Object { $_ -match 'Tls' };
 & ([scriptblock]::Create((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Update-Windows.ps1')))
 ```
 
-## Client Upgrade
-
-TBA
-
-## Policy Update
-
-```powershell
-[Net.ServicePointManager]::SecurityProtocol = [System.Enum]::GetValues([System.Net.SecurityProtocolType]) | Where-Object { $_ -match 'Tls' };
-& ([scriptblock]::Create((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Update-JsonUpdatePolicy.ps1')))
-```

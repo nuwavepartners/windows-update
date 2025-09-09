@@ -1,12 +1,11 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2024-02-26 12:49:47
+	Date-Modified:	2025-09-09 10:49:33
 #>
 [CmdletBinding()]
 Param (
-	[string] $Configs	= 'https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Windows-UpdatePolicy.json',
-	[string] $CacheDir	= ''
+	[string] $Configs	= 'https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Windows-UpdatePolicy.json'
 )
 
 # Check for Administrative Rights
@@ -81,20 +80,17 @@ If ($Conf.WindowsEoL) {
 				Continue
 			}
 
-			# Download from Source
-			If ($null -eq $f) {
-				Write-Output "`tDownloading"
-				$f = Join-Path $env:TEMP ([System.IO.Path]::GetRandomFileName())
-				Start-BitsTransfer -Source $Source -Destination $f
-			}
+			Write-Output "`tDownloading"
+			$f = Join-Path $env:TEMP ([System.IO.Path]::GetRandomFileName())
+			(New-Object System.Net.WebClient).DownloadFile($Source, $f)
 
 			Write-Output "`tInstalling"
 			$r = Start-Process -FilePath 'C:\Windows\System32\wusa.exe' -ArgumentList $f, '/quiet', '/norestart' -Wait -PassThru
 			Switch ($r.ExitCode) {
-				0x0 { Write-Output "`tInstalled successfully"; Break }
+				0x0 		{ Write-Output "`tInstalled successfully"; Break }
 				0x00240006	{ Write-Output "`tUpdate already installed"; Break }
 				0x00240005	{ Write-Output "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
-				0x0BC2 { Write-Output "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
+				0x0BC2 		{ Write-Output "`tInstalled, Pending reboot"; $RebootRequired = $true; Break }
 				{ $_ -gt 0 }	{
 					Write-Output "`t`t`Installation returned $($r.ExitCode) 0x$('{0:X8}' -f $r.ExitCode)"
 					Throw "Installation Failed."
