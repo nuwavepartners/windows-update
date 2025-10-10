@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2025-09-09 14:10:55
+	Date-Modified:	2025-10-10 11:54:21
 #>
 #Requires -Version 7
 
@@ -10,9 +10,10 @@
 function Get-WUCSearch {
 	Param (
 		[string]	$Query,
+		[int]		$Limit = 1,
 		[Uri]		$Uri = 'https://www.catalog.update.microsoft.com/Search.aspx'
 	)
-	$SearchResults = (Invoke-WebRequest -Uri $Uri -Method Post -Body ('q={0}' -f $Query)).Links | Where-Object id -Like '*_link'
+	$SearchResults = (Invoke-WebRequest -Uri $Uri -Method Post -Body ('q={0}' -f $Query)).Links | Where-Object id -Like '*_link' | Select-Object -First $Limit
 
 	If (!$SearchResults.Count) { return $null }
 
@@ -138,7 +139,7 @@ Foreach ($OS in $OSs) {
 
 		If ($VersionCheck) {
 			$Query = $Spec.QueryString -f $OS.WUName
-			$SearchUpdates.Add((Get-WUCSearch -Query $Query | Select-Object -First 1))
+			$SearchUpdates.Add((Get-WUCSearch -Query $Query))
 		}
 	}
 
