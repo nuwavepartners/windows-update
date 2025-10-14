@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2025-10-10 11:54:21
+	Date-Modified:	2025-10-10 13:07:24
 #>
 #Requires -Version 7
 
@@ -62,15 +62,7 @@ $WUSpec = @'
 [
     {
         "VersionSpec": ">=10.0.0",
-        "QueryString": "'\"Servicing Stack Update for {0} for x64-based Systems\" -Preview'"
-    },
-    {
-        "VersionSpec": ">=10.0.0",
         "QueryString": "'\"Cumulative Update for {0} for x64-based Systems\" -Dynamic'"
-    },
-    {
-        "VersionSpec": "<10.0.0",
-        "QueryString": "'\"Servicing Stack Update for {0} for x64-based Systems\" -Preview'"
     },
     {
         "VersionSpec": "<10.0.0",
