@@ -1,60 +1,56 @@
 [
   {
     "_meta": {
-      "Date_Modified": "2025-10-14T20:15:57Z"
+      "Date_Modified": "2025-11-11T14:50:13Z"
     },
     "WindowsUpdate": [
       {
-        "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.10240"
-        },
         "Updates": [
           {
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/10/windows10.0-kb5066837-x64_8850aa27c06aee37ca18242bf43c4586c8ce8704.msu",
             "UpdateID": "a9d4eba2-c458-4a07-a0c6-4690f70f2678",
-            "Title": "2025-10 Cumulative Update for Windows 10 Version 1507 for x64-based Systems (KB5066837)",
-            "KBArticleID": "KB5066837"
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/10/windows10.0-kb5066837-x64_8850aa27c06aee37ca18242bf43c4586c8ce8704.msu",
+            "KBArticleID": "KB5066837",
+            "Title": "2025-10 Cumulative Update for Windows 10 Version 1507 for x64-based Systems (KB5066837)"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.10240",
+          "Caption": "Microsoft Windows 10"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.10586"
-        },
         "Updates": {
           "Title": "2018-04 Cumulative Update for Windows 10 Version 1511 for x64-based Systems (KB4093109)",
           "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2018/03/windows10.0-kb4093109-x64_23878b35ac2f25483092cd28fb75b5c75b5d4ae1.msu",
           "UpdateID": "98ac416f-e0b8-4ced-9de8-d229b75b4d7a",
           "KBArticleID": "KB4093109"
+        },
+        "OS": {
+          "Version": "10.0.10586",
+          "Caption": "Microsoft Windows 10"
         }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.14393"
-        },
         "Updates": [
           {
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/10/windows10.0-kb5066836-x64_f190747df5cdd3a136cbcfae8331b37fba306baf.msu",
             "UpdateID": "a1894e5b-d844-4f29-8342-ac928ff794e3",
-            "Title": "2025-10 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5066836)",
-            "KBArticleID": "KB5066836"
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/10/windows10.0-kb5066836-x64_f190747df5cdd3a136cbcfae8331b37fba306baf.msu",
+            "KBArticleID": "KB5066836",
+            "Title": "2025-10 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5066836)"
           },
           {
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu",
             "UpdateID": "a95db49d-342f-412b-8ef7-c8b1aff6ad05",
-            "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1607 and Windows Server 2016 for x64 (KB4486129)",
-            "KBArticleID": "KB4486129"
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu",
+            "KBArticleID": "KB4486129",
+            "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1607 and Windows Server 2016 for x64 (KB4486129)"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.14393",
+          "Caption": "Microsoft Windows 10"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.15063"
-        },
         "Updates": [
           {
             "Title": "2020-07 Servicing Stack Update for Windows 10 Version 1703 for x64-based Systems (KB4565551)",
@@ -74,13 +70,13 @@
             "UpdateID": "e524bf73-7c0f-4947-bb1c-d5713e071dc6",
             "KBArticleID": "KB4486129"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.15063",
+          "Caption": "Microsoft Windows 10"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.16299"
-        },
         "Updates": [
           {
             "Title": "2020-07 Servicing Stack Update for Windows 10 Version 1709 for x64-based Systems (KB4565553)",
@@ -100,13 +96,13 @@
             "UpdateID": "59cfc217-d21b-4547-a439-fe846ded53e0",
             "KBArticleID": "KB4486153"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.16299",
+          "Caption": "Microsoft Windows 10"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.17134"
-        },
         "Updates": [
           {
             "Title": "2021-05 Servicing Stack Update for Windows 10 Version 1803 for x64-based Systems (KB5003364)",
@@ -126,33 +122,33 @@
             "UpdateID": "3f888c77-5e40-46f8-9677-d148afdcb232",
             "KBArticleID": "KB4486153"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.17134",
+          "Caption": "Microsoft Windows 10"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.17763"
-        },
         "Updates": [
           {
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/10/windows10.0-kb5066586-x64_062fcc3be6982521409b3c7021f8c99b9975eb18.msu",
             "UpdateID": "08320fa8-75d2-4a71-8c68-5991b56b7625",
-            "Title": "2025-10 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5066586)",
-            "KBArticleID": "KB5066586"
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/10/windows10.0-kb5066586-x64_062fcc3be6982521409b3c7021f8c99b9975eb18.msu",
+            "KBArticleID": "KB5066586",
+            "Title": "2025-10 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5066586)"
           },
           {
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x86_de1c8a0152b298f88ff42dc9114eabfa61d5e957.msu",
             "UpdateID": "a4af463c-13b2-448a-badc-b117df61ca13",
-            "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1809 (KB4486153)",
-            "KBArticleID": "KB4486153"
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x86_de1c8a0152b298f88ff42dc9114eabfa61d5e957.msu",
+            "KBArticleID": "KB4486153",
+            "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1809 (KB4486153)"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.17763",
+          "Caption": "Microsoft Windows 10"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.18362"
-        },
         "Updates": [
           {
             "Title": "2020-11 Servicing Stack Update for Windows 10 Version 1903 for x64-based Systems (KB4586863)",
@@ -166,13 +162,13 @@
             "UpdateID": "69d78272-6f22-4be2-9aba-a376409db5e5",
             "KBArticleID": "KB4594443"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.18362",
+          "Caption": "Microsoft Windows 10"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.18363"
-        },
         "Updates": [
           {
             "Title": "2021-08 Servicing Stack Update for Windows 10 Version 1909 for x64-based Systems (KB5005412)",
@@ -186,20 +182,20 @@
             "UpdateID": "d8bb0228-075e-4258-868d-1d4d008ebd6c",
             "KBArticleID": "KB5010792"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.18363",
+          "Caption": "Microsoft Windows 10"
+        }
       },
       {
+        "Updates": null,
         "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.19041"
-        },
-        "Updates": null
+          "Version": "10.0.19041",
+          "Caption": "Microsoft Windows 10"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.19042"
-        },
         "Updates": [
           {
             "Title": "2022-05 Servicing Stack Update for Windows 10 Version 20H2 for x64-based Systems (KB5014032)",
@@ -213,13 +209,13 @@
             "UpdateID": "30587323-eed8-4a09-b3a9-0d3324c382c5",
             "KBArticleID": "KB5026361"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.19042",
+          "Caption": "Microsoft Windows 10"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.19043"
-        },
         "Updates": [
           {
             "Title": "2022-05 Servicing Stack Update for Windows 10 Version 21H1 for x64-based Systems (KB5014032)",
@@ -233,177 +229,177 @@
             "UpdateID": "f39116ae-d925-4d35-b3f7-191f3382e4b0",
             "KBArticleID": "KB5021233"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.19043",
+          "Caption": "Microsoft Windows 10"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.19044"
-        },
         "Updates": [
           {
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/10/windows10.0-kb5066791-x64_3210d264091be5effb3253d05397c4daefba44c8.msu",
             "UpdateID": "41cc75c3-0277-41f7-af1d-dbbff9f21b4f",
-            "Title": "2025-10 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5066791)",
-            "KBArticleID": "KB5066791"
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/10/windows10.0-kb5066791-x64_3210d264091be5effb3253d05397c4daefba44c8.msu",
+            "KBArticleID": "KB5066791",
+            "Title": "2025-10 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5066791)"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.19044",
+          "Caption": "Microsoft Windows 10"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 10",
-          "Version": "10.0.19045"
-        },
         "Updates": [
           {
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/10/windows10.0-kb5066791-x64_3210d264091be5effb3253d05397c4daefba44c8.msu",
             "UpdateID": "65f4045e-4767-4941-81b4-44280d8e54cc",
-            "Title": "2025-10 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5066791)",
-            "KBArticleID": "KB5066791"
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/10/windows10.0-kb5066791-x64_3210d264091be5effb3253d05397c4daefba44c8.msu",
+            "KBArticleID": "KB5066791",
+            "Title": "2025-10 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5066791)"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.19045",
+          "Caption": "Microsoft Windows 10"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 11",
-          "Version": "10.0.22000"
-        },
         "Updates": {
           "Title": "2024-10 Cumulative Update for Windows 11 for x64-based Systems (KB5044280)",
           "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/10/windows10.0-kb5044280-x64_1ae3e328b1e44c196c57b4989d71f7919e0131c5.msu",
           "UpdateID": "3f26da43-d0b4-4d82-9223-068bfa0958a7",
           "KBArticleID": "KB5044280"
+        },
+        "OS": {
+          "Version": "10.0.22000",
+          "Caption": "Microsoft Windows 11"
         }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 11",
-          "Version": "10.0.22621"
-        },
         "Updates": [
           {
-            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/7a3fc5e6-826c-47a3-918f-82e6dd585929/public/windows11.0-kb5066793-x64_c2161f7373f0c06757ff5abdb607f2399d86d466.msu",
             "UpdateID": "7d2bf0a7-9f97-4717-b7fc-68b53ec65cfa",
-            "Title": "2025-10 Cumulative Update for Windows 11 Version 22H2 for x64-based Systems (KB5066793)",
-            "KBArticleID": "KB5066793"
-          }
-        ]
-      },
-      {
-        "OS": {
-          "Caption": "Microsoft Windows 11",
-          "Version": "10.0.22631"
-        },
-        "Updates": [
-          {
             "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/7a3fc5e6-826c-47a3-918f-82e6dd585929/public/windows11.0-kb5066793-x64_c2161f7373f0c06757ff5abdb607f2399d86d466.msu",
+            "KBArticleID": "KB5066793",
+            "Title": "2025-10 Cumulative Update for Windows 11 Version 22H2 for x64-based Systems (KB5066793)"
+          }
+        ],
+        "OS": {
+          "Version": "10.0.22621",
+          "Caption": "Microsoft Windows 11"
+        }
+      },
+      {
+        "Updates": [
+          {
             "UpdateID": "8f63ef47-74f1-4579-b09e-9ad3414e36ff",
-            "Title": "2025-10 Cumulative Update for Windows 11 Version 23H2 for x64-based Systems (KB5066793)",
-            "KBArticleID": "KB5066793"
+            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/7a3fc5e6-826c-47a3-918f-82e6dd585929/public/windows11.0-kb5066793-x64_c2161f7373f0c06757ff5abdb607f2399d86d466.msu",
+            "KBArticleID": "KB5066793",
+            "Title": "2025-10 Cumulative Update for Windows 11 Version 23H2 for x64-based Systems (KB5066793)"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.22631",
+          "Caption": "Microsoft Windows 11"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 11",
-          "Version": "10.0.26100"
-        },
         "Updates": [
           {
-            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/d8b7f92b-bd35-4b4c-96e5-46ce984b31e0/public/windows11.0-kb5043080-x64_953449672073f8fb99badb4cc6d5d7849b9c83e8.msu",
             "UpdateID": "73ed1a07-9926-4122-9ae0-6629e887596d",
-            "Title": "2025-10 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5066835) (26100.6899)",
-            "KBArticleID": "KB5066835"
-          }
-        ]
-      },
-      {
-        "OS": {
-          "Caption": "Microsoft Windows Server 2016",
-          "Version": "10.0.14393"
-        },
-        "Updates": [
-          {
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/10/windows10.0-kb5066836-x64_f190747df5cdd3a136cbcfae8331b37fba306baf.msu",
-            "UpdateID": "f613f841-3167-4d09-800a-4658ecd8a7bb",
-            "Title": "2025-10 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5066836)",
-            "KBArticleID": "KB5066836"
-          },
-          {
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu",
-            "UpdateID": "a95db49d-342f-412b-8ef7-c8b1aff6ad05",
-            "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1607 and Windows Server 2016 for x64 (KB4486129)",
-            "KBArticleID": "KB4486129"
-          }
-        ]
-      },
-      {
-        "OS": {
-          "Caption": "Microsoft Windows Server 2019",
-          "Version": "10.0.17763"
-        },
-        "Updates": [
-          {
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/10/windows10.0-kb5066586-x64_062fcc3be6982521409b3c7021f8c99b9975eb18.msu",
-            "UpdateID": "2213d28c-b8a3-4155-90c3-e2d097c8d1d6",
-            "Title": "2025-10 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5066586)",
-            "KBArticleID": "KB5066586"
-          },
-          {
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu",
-            "UpdateID": "6b34ac14-4b34-4d0a-a640-1133e9e5baa7",
-            "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1809 and Windows Server 2019 for x64 (KB4486153)",
-            "KBArticleID": "KB4486153"
-          }
-        ]
-      },
-      {
-        "OS": {
-          "Caption": "Microsoft Windows Server 2022",
-          "Version": "10.0.20348"
-        },
-        "Updates": [
-          {
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/10/windows10.0-kb5066782-x64_4fe4cee23074ef33fd87c449ffc82985e0557c2f.msu",
-            "UpdateID": "43bcbcdf-2e05-4e89-b6cd-e44f54f85f35",
-            "Title": "2025-10 Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5066782)",
-            "KBArticleID": "KB5066782"
-          }
-        ]
-      },
-      {
-        "OS": {
-          "Caption": "Microsoft Windows Server 2022",
-          "Version": "10.0.25398"
-        },
-        "Updates": [
-          {
-            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/4b01cd8e-a842-4352-a8cd-abb37cd8ff3a/public/windows11.0-kb5066780-x64_80f785bf09e3b5d85ad5c3317c7b763126be6282.msu",
-            "UpdateID": "fe03b99e-6cec-4a40-be43-df83603ff0d8",
-            "Title": "2025-10 Cumulative Update for Microsoft server operating system version 23H2 for x64-based Systems (KB5066780)",
-            "KBArticleID": "KB5066780"
-          }
-        ]
-      },
-      {
-        "OS": {
-          "Caption": "Microsoft Windows Server 2025",
-          "Version": "10.0.26100"
-        },
-        "Updates": [
-          {
             "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/7c0d1a12-9944-4b26-bed7-a722c040d631/public/windows11.0-kb5066835-x64_2f193bc50987a9c27e42eceeb90648af19cc813a.msu",
-            "UpdateID": "cdf7a3bf-1602-471f-8451-4372979e8ddb",
-            "Title": "2025-10 Cumulative Update for Microsoft server operating system version 24H2 for x64-based Systems (KB5066835) (26100.6899)",
-            "KBArticleID": "KB5066835"
+            "KBArticleID": "KB5066835",
+            "Title": "2025-10 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5066835) (26100.6899)"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "10.0.26100",
+          "Caption": "Microsoft Windows 11"
+        }
       },
       {
+        "Updates": [
+          {
+            "UpdateID": "e2e040fb-c0a6-42ba-aa94-6013be189760",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/10/windows10.0-kb5070882-x64_8be784b4bb9c02fc03e8c1fe4d5de74ff3425c44.msu",
+            "KBArticleID": "KB5070882",
+            "Title": "2025-10 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5070882)"
+          },
+          {
+            "UpdateID": "a95db49d-342f-412b-8ef7-c8b1aff6ad05",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu",
+            "KBArticleID": "KB4486129",
+            "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1607 and Windows Server 2016 for x64 (KB4486129)"
+          }
+        ],
         "OS": {
-          "Caption": "Microsoft Windows Server 2012 R2",
-          "Version": "6.3.9600"
-        },
+          "Version": "10.0.14393",
+          "Caption": "Microsoft Windows Server 2016"
+        }
+      },
+      {
+        "Updates": [
+          {
+            "UpdateID": "626a0daf-c386-4f2d-aa9a-4bbe234fd6db",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/10/windows10.0-kb5070883-x64_273089a45fdf9b37f3eac2c3146ec7f5f33b9504.msu",
+            "KBArticleID": "KB5070883",
+            "Title": "2025-10 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5070883)"
+          },
+          {
+            "UpdateID": "6b34ac14-4b34-4d0a-a640-1133e9e5baa7",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu",
+            "KBArticleID": "KB4486153",
+            "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1809 and Windows Server 2019 for x64 (KB4486153)"
+          }
+        ],
+        "OS": {
+          "Version": "10.0.17763",
+          "Caption": "Microsoft Windows Server 2019"
+        }
+      },
+      {
+        "Updates": [
+          {
+            "UpdateID": "2ec291f8-7c9d-48d9-947b-6543b6a1a3b5",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/10/windows10.0-kb5070884-x64_33466d5fb7007ecb8a778524439271745e950ed5.msu",
+            "KBArticleID": "KB5070884",
+            "Title": "2025-10 Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5070884)"
+          }
+        ],
+        "OS": {
+          "Version": "10.0.20348",
+          "Caption": "Microsoft Windows Server 2022"
+        }
+      },
+      {
+        "Updates": [
+          {
+            "UpdateID": "46923af4-5854-49e6-bce9-e37c0063b699",
+            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/e0efc772-8916-4752-b2f3-bd4bf6f48ceb/public/windows11.0-kb5070879-x64_1e51debf22e9e9041e8e6c144336b334e15c7956.msu",
+            "KBArticleID": "KB5070879",
+            "Title": "2025-10 Cumulative Update for Microsoft server operating system version 23H2 for x64-based Systems (KB5070879)"
+          }
+        ],
+        "OS": {
+          "Version": "10.0.25398",
+          "Caption": "Microsoft Windows Server 2022"
+        }
+      },
+      {
+        "Updates": [
+          {
+            "UpdateID": "7abbf03a-45d7-4ab3-aaca-75d91a37be25",
+            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/d8b7f92b-bd35-4b4c-96e5-46ce984b31e0/public/windows11.0-kb5043080-x64_953449672073f8fb99badb4cc6d5d7849b9c83e8.msu",
+            "KBArticleID": "KB5070881",
+            "Title": "2025-10 Cumulative Update for Microsoft server operating system version 24H2 for x64-based Systems (KB5070881) (26100.6905)"
+          }
+        ],
+        "OS": {
+          "Version": "10.0.26100",
+          "Caption": "Microsoft Windows Server 2025"
+        }
+      },
+      {
         "Updates": [
           {
             "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
@@ -788,14 +784,398 @@
             "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
             "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
             "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "6.3.9600",
+          "Caption": "Microsoft Windows Server 2012 R2"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 8.1",
-          "Version": "6.3.9600"
-        },
         "Updates": [
           {
             "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
@@ -1180,14 +1560,398 @@
             "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
             "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
             "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5058529)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/05/windows8.1-kb5058529-x64_1d137b8edef44b970adcd971bf09483e7e16d767.msu",
+            "UpdateID": "ccec0d38-249b-4574-992f-aa9f231304e7",
+            "KBArticleID": "KB5058529"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5063950)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8.1-kb5063950-x64_d743be306a7c9840e7c41cf2355564e3fea6d7e7.msu",
+            "UpdateID": "347e557f-e891-40a1-ba7b-69ed25c0ee93",
+            "KBArticleID": "KB5063950"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
+            "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "KBArticleID": "KB5018922"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
+            "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "KBArticleID": "KB5022352"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows 8.1 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
+            "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "KBArticleID": "KB3191564"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "6.3.9600",
+          "Caption": "Microsoft Windows 8.1"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows Server 2012",
-          "Version": "6.2.9200"
-        },
         "Updates": [
           {
             "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
@@ -1476,14 +2240,302 @@
             "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
             "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
             "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "6.2.9200",
+          "Caption": "Microsoft Windows Server 2012"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 8",
-          "Version": "6.2.9200"
-        },
         "Updates": [
           {
             "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
@@ -1772,14 +2824,302 @@
             "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
             "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
             "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
+          },
+          {
+            "Title": "2025-05 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5058530)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/05/windows8-rt-kb5058530-x64_d4038f22fef499833514ded6e1a0328ac68f481d.msu",
+            "UpdateID": "ec108151-bf3d-4ed6-970b-9930e1152e7b",
+            "KBArticleID": "KB5058530"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5063906)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows8-rt-kb5063906-x64_947c614d541b6fe2016dc6559affb8de0f136cb5.msu",
+            "UpdateID": "3161b9e6-c817-43d7-b9dd-a075c24f0af8",
+            "KBArticleID": "KB5063906"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
+            "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "KBArticleID": "KB4486105"
+          },
+          {
+            "Title": "Update for Windows Server 2012 R2 (KB3191564)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
+            "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "KBArticleID": "KB3191564"
+          },
+          {
+            "Title": "Update for Windows Server 2012 (KB3191565)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
+            "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "KBArticleID": "KB3191565"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
+            "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "KBArticleID": "KB4486081"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "6.2.9200",
+          "Caption": "Microsoft Windows 8"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows Server 2008 R2",
-          "Version": "6.1.7601"
-        },
         "Updates": [
           {
             "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
@@ -2068,14 +3408,302 @@
             "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
             "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
             "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "6.1.7601",
+          "Caption": "Microsoft Windows Server 2008 R2"
+        }
       },
       {
-        "OS": {
-          "Caption": "Microsoft Windows 7",
-          "Version": "6.1.7601"
-        },
         "Updates": [
           {
             "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
@@ -2364,8 +3992,300 @@
             "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
             "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
             "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2025-04 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5056456)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/03/windows6.1-kb5056456-x64_cb706e08632f8b768a68f8f3c30392582245aa3e.msu",
+            "UpdateID": "171cf066-b0af-42fc-a4ef-c868f08f68b9",
+            "KBArticleID": "KB5056456"
+          },
+          {
+            "Title": "2025-08 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5063947)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/08/windows6.1-kb5063947-x64_cdb6675e791e249a85aafe844b6bacf463ac31fc.msu",
+            "UpdateID": "26aee491-1103-4cdd-af8c-0838c223e2ca",
+            "KBArticleID": "KB5063947"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "KBArticleID": "KB4503548"
+          },
+          {
+            "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
+            "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "KBArticleID": "KB5017397"
+          },
+          {
+            "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
+            "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "KBArticleID": "KB5022338"
+          },
+          {
+            "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "KBArticleID": "KB4503548"
           }
-        ]
+        ],
+        "OS": {
+          "Version": "6.1.7601",
+          "Caption": "Microsoft Windows 7"
+        }
       }
     ],
     "WindowsEoL": [
