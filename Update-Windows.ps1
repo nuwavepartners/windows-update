@@ -1,13 +1,13 @@
 <#
 .NOTES
 	Author:			Chris Stone
-	Date-Modified:	2025-11-11 10:22:24
+	Date-Modified:	2025-11-18 15:29:51
 .VERSION
-    2.0.3
+    2.0.7
 #>
 [CmdletBinding(DefaultParameterSetName = 'Policy')]
 param (
-	[Parameter(Mandatory = $true, ParameterSetName = 'Policy')]
+	[Parameter(Mandatory = $false, ParameterSetName = 'Policy')]
 	[string] $PolicyUri = 'https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Windows-UpdatePolicy.json',
 
 	[Parameter(Mandatory = $true, ParameterSetName = 'Native')]
@@ -71,7 +71,9 @@ if ($Mode -eq 'Policy') {
 	$HttpClient = $null
 	$Conf = $null
 
-	try {
+		if (-not ("System.Net.Http.HttpClient" -as [Type])) {
+			Add-Type -AssemblyName System.Net.Http
+		}
 		$HttpClient = New-Object System.Net.Http.HttpClient
 		Write-Log -Message 'Script Configuration' -Level 'INFO'
 		Write-Log -Message 'Loading configuration' -Level 'TRACE'
@@ -187,9 +189,7 @@ if ($Mode -eq 'Policy') {
 
 		#endregion
 
-	} finally {
-		if ($HttpClient) { $HttpClient.Dispose() }
-	}
+
 
 } else {
 	#region Main Script: 2. Preparation (Native)
