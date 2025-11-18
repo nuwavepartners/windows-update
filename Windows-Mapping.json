@@ -89,6 +89,11 @@
         "Caption": "Microsoft Windows 11",
         "Version": "10.0.26100"
     },
+	{
+        "WUName": "Windows 11 Version 25H2",
+        "Caption": "Microsoft Windows 11",
+        "Version": "10.0.26200"
+    },
     {
         "WUName": "Windows Server 2016",
         "Caption": "Microsoft Windows Server 2016",

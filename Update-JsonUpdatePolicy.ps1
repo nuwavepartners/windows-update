@@ -1,7 +1,7 @@
 <#
 .NOTES
 	Author:			Chris Stone <chris.stone@nuwavepartners.com>
-	Date-Modified:	2025-10-10 13:07:24
+	Date-Modified:	2025-11-18 15:22:23
 #>
 #Requires -Version 7
 
@@ -51,9 +51,11 @@ If (Test-Path -Path ".\Windows-UpdatePolicy.json") {
 }
 
 # Load OS Mapping Data from external JSON file
+Write-Output 'Loading Windows Mapping'
 $OSs = Get-Content -Path ".\Windows-Mapping.json" | ConvertFrom-Json
 
 # EoL Information
+Write-Output 'Loading Windows End of Life'
 $EoLURI = 'https://endoflife.date/api/windows.json'
 $EoL = (New-Object System.Net.WebClient).DownloadString($EoLURI) | ConvertFrom-Json
 
