@@ -18,18 +18,18 @@ function Write-Log {
 		[Parameter(Mandatory = $true)]
 		[string]$Message,
 		[ValidateSet('TRACE', 'INFO', 'WARN', 'ERROR')]
-		[string]$Level = 'INFO'
-	)
-	$FormattedMessage = "$(Get-Date -Format 's') [$Level] $Message"
-	if ([Environment]::GetCommandLineArgs().Contains('-NonInteractive')) {
-		Write-Output $FormattedMessage
-	} else {
-		$ColorMap = @{
+		[string]$Level = 'INFO',
+		[hashtable]$ColorMap = @{
 			TRACE = 'DarkGray'
 			INFO  = 'Green'
 			WARN  = 'Yellow'
 			ERROR = 'Red'
 		}
+	)
+	$FormattedMessage = "$(Get-Date -Format 's') [$Level] $Message"
+	if ([Environment]::GetCommandLineArgs().Contains('-NonInteractive')) {
+		Write-Output $FormattedMessage
+	} else {
 		Write-Host $FormattedMessage -ForegroundColor $ColorMap[$Level]
 	}
 }

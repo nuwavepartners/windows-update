@@ -12,6 +12,27 @@ param (
 
 ################################## FUNCTIONS ###################################
 
+function Write-Log {
+	param(
+		[Parameter(Mandatory = $true)]
+		[string]$Message,
+		[ValidateSet('TRACE', 'INFO', 'WARN', 'ERROR')]
+		[string]$Level = 'INFO',
+		[hashtable]$ColorMap = @{
+			TRACE = 'DarkGray'
+			INFO  = 'Green'
+			WARN  = 'Yellow'
+			ERROR = 'Red'
+		}
+	)
+	$FormattedMessage = "$(Get-Date -Format 's') [$Level] $Message"
+	if ([Environment]::GetCommandLineArgs().Contains('-NonInteractive')) {
+		Write-Output $FormattedMessage
+	} else {
+		Write-Host $FormattedMessage -ForegroundColor $ColorMap[$Level]
+	}
+}
+
 function Get-WUCSearch {
 	param (
 		[string]	$Query,
@@ -46,21 +67,21 @@ function Get-WUCDownload {
 
 ################################## THE SCRIPT ##################################
 
-Write-Output ('Script Started ').PadRight(80, '-')
+Write-Log -Message ('Script Started ').PadRight(80, '-') -Level 'INFO'
 
 # Load existing policy file if it exists
 $ExistingPolicy = $null
 if (Test-Path -Path ".\Windows-UpdatePolicy.json") {
-	Write-Output "Loading existing policy file"
+	Write-Log -Message "Loading existing policy file" -Level 'INFO'
 	$ExistingPolicy = Get-Content -Path ".\Windows-UpdatePolicy.json" | ConvertFrom-Json
 }
 
 # Load OS Mapping Data from external JSON file
-Write-Output 'Loading Windows Mapping'
+Write-Log -Message 'Loading Windows Mapping' -Level 'INFO'
 $OSs = Get-Content -Path ".\Windows-Mapping.json" | ConvertFrom-Json
 
 # EoL Information
-Write-Output 'Loading Windows End of Life'
+Write-Log -Message 'Loading Windows End of Life' -Level 'INFO'
 $EoLURI = 'https://endoflife.date/api/windows.json'
 $EoL = (New-Object System.Net.WebClient).DownloadString($EoLURI) | ConvertFrom-Json
 
@@ -102,7 +123,7 @@ foreach ($OS in $OSs) {
 	# Check End of Life status before searching for updates
 	$EoLInfo = $EoL | Where-Object { $_.latest -eq $OS.Version } | Sort-Object { [datetime]$_.eol } -Descending | Select-Object -First 1
 	if ($SkipEoL -and ($null -ne $EoLInfo) -and ([datetime]$EoLInfo.eol -lt (Get-Date).AddDays(-30))) {
-		Write-Output ("WARN: {0} past End of Life ({1}). Copying from existing policy." -f $OS.WUName, ([datetime]$EoLInfo.eol).ToString('yyyy-MM-dd'))
+		Write-Log -Message ("{0} past End of Life ({1}). Copying from existing policy." -f $OS.WUName, ([datetime]$EoLInfo.eol).ToString('yyyy-MM-dd')) -Level 'WARN'
 
 		$ExistingOSUpdates = $null
 		if ($null -ne $ExistingPolicy) {
@@ -119,7 +140,7 @@ foreach ($OS in $OSs) {
 		continue
 	}
 
-	Write-Output ("INFO: Finding updates for {0}" -f $OS.WUName)
+	Write-Log -Message ("Finding updates for {0}" -f $OS.WUName) -Level 'INFO'
 
 	[System.Collections.Generic.List[Hashtable]]$SearchUpdates = @()
 	$OSVersion = [version]$OS.Version
@@ -163,4 +184,4 @@ $Out = @{
 
 $Out | ConvertTo-Json -Depth 9 -AsArray | Out-File -FilePath ".\Windows-UpdatePolicy.json"
 
-Write-Output ('Script Finished ').PadRight(80, '-')
+Write-Log -Message ('Script Finished ').PadRight(80, '-') -Level 'INFO'
