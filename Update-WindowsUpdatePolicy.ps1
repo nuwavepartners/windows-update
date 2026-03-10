@@ -5,17 +5,22 @@
 #>
 #Requires -Version 7
 
+[CmdletBinding()]
+param (
+	[switch]$SkipEoL = $true
+)
+
 ################################## FUNCTIONS ###################################
 
 function Get-WUCSearch {
-	Param (
+	param (
 		[string]	$Query,
 		[int]		$Limit = 1,
 		[Uri]		$Uri = 'https://www.catalog.update.microsoft.com/Search.aspx'
 	)
 	$SearchResults = (Invoke-WebRequest -Uri $Uri -Method Post -Body ('q={0}' -f $Query)).Links | Where-Object id -Like '*_link' | Select-Object -First $Limit
 
-	If (!$SearchResults.Count) { return $null }
+	if (!$SearchResults.Count) { return $null }
 
 	return $SearchResults | ForEach-Object {
 		$UpdateID = $_.id -replace '_link', ''
@@ -31,12 +36,12 @@ function Get-WUCSearch {
 }
 
 function Get-WUCDownload {
-	Param (
+	param (
 		[string]	$updateId,
 		[Uri]		$Uri = 'https://www.catalog.update.microsoft.com/DownloadDialog.aspx'
 	)
 	$DownloadResults = Invoke-WebRequest -Uri $Uri -Method "POST" -Body ('updateIDs=[{"updateID":"#"}]' -replace '#', $updateId)
-	Return (($DownloadResults.Content -split '\r?\n').Trim() -match '^downloadInformation\[0\].files\[0\].url' -split ' ')[-1].Replace("'", "").Replace(";", "")
+	return (($DownloadResults.Content -split '\r?\n').Trim() -match '^downloadInformation\[0\].files\[0\].url' -split ' ')[-1].Replace("'", "").Replace(";", "")
 }
 
 ################################## THE SCRIPT ##################################
@@ -45,9 +50,9 @@ Write-Output ('Script Started ').PadRight(80, '-')
 
 # Load existing policy file if it exists
 $ExistingPolicy = $null
-If (Test-Path -Path ".\Windows-UpdatePolicy.json") {
-    Write-Output "Loading existing policy file"
-    $ExistingPolicy = Get-Content -Path ".\Windows-UpdatePolicy.json" | ConvertFrom-Json
+if (Test-Path -Path ".\Windows-UpdatePolicy.json") {
+	Write-Output "Loading existing policy file"
+	$ExistingPolicy = Get-Content -Path ".\Windows-UpdatePolicy.json" | ConvertFrom-Json
 }
 
 # Load OS Mapping Data from external JSON file
@@ -92,17 +97,17 @@ $WUSpec = @'
 $WUs = @()
 
 # Single loop to process all operating systems
-Foreach ($OS in $OSs) {
+foreach ($OS in $OSs) {
 
 	# Check End of Life status before searching for updates
 	$EoLInfo = $EoL | Where-Object { $_.latest -eq $OS.Version } | Sort-Object { [datetime]$_.eol } -Descending | Select-Object -First 1
-	If (($null -ne $EoLInfo) -and ([datetime]$EoLInfo.eol -lt (Get-Date).AddDays(-30))) {
-		Write-Output ("`t{0} past End of Life ({1}). Copying from existing policy." -f $OS.WUName, ([datetime]$EoLInfo.eol).ToString('yyyy-MM-dd'))
+	if ($SkipEoL -and ($null -ne $EoLInfo) -and ([datetime]$EoLInfo.eol -lt (Get-Date).AddDays(-30))) {
+		Write-Output ("WARN: {0} past End of Life ({1}). Copying from existing policy." -f $OS.WUName, ([datetime]$EoLInfo.eol).ToString('yyyy-MM-dd'))
 
-        $ExistingOSUpdates = $null
-        if ($null -ne $ExistingPolicy) {
-            $ExistingOSUpdates = ($ExistingPolicy.WindowsUpdate | Where-Object { $_.OS.Version -eq $OS.Version }).Updates
-        }
+		$ExistingOSUpdates = $null
+		if ($null -ne $ExistingPolicy) {
+			$ExistingOSUpdates = ($ExistingPolicy.WindowsUpdate | Where-Object { $_.OS.Version -eq $OS.Version }).Updates
+		}
 
 		$WUs += @{
 			OS      = @{
@@ -111,27 +116,27 @@ Foreach ($OS in $OSs) {
 			}
 			Updates = if ($null -ne $ExistingOSUpdates) { $ExistingOSUpdates } else { @() }
 		}
-		Continue
+		continue
 	}
 
-	Write-Output ("Finding updates for {0}" -f $OS.WUName)
+	Write-Output ("INFO: Finding updates for {0}" -f $OS.WUName)
 
 	[System.Collections.Generic.List[Hashtable]]$SearchUpdates = @()
 	$OSVersion = [version]$OS.Version
 
 	# Find applicable updates based on version specification
-	Foreach ($Spec in $WUSpec) {
+	foreach ($Spec in $WUSpec) {
 		$VersionCheck = switch -Regex ($Spec.VersionSpec) {
-			'^\*'          { $true }
+			'^\*' { $true }
 			'^>=([0-9.]+)' { $OSVersion -ge [version]$Matches[1] }
-			'^>([0-9.]+)'  { $OSVersion -gt [version]$Matches[1] }
+			'^>([0-9.]+)' { $OSVersion -gt [version]$Matches[1] }
 			'^<=([0-9.]+)' { $OSVersion -le [version]$Matches[1] }
-			'^<([0-9.]+)'  { $OSVersion -lt [version]$Matches[1] }
+			'^<([0-9.]+)' { $OSVersion -lt [version]$Matches[1] }
 			'^==([0-9.]+)' { $OSVersion -eq [version]$Matches[1] }
-			default        { $false }
+			default { $false }
 		}
 
-		If ($VersionCheck) {
+		if ($VersionCheck) {
 			$Query = $Spec.QueryString -f $OS.WUName
 			$SearchUpdates.Add((Get-WUCSearch -Query $Query))
 		}

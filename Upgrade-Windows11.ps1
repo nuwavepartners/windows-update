@@ -68,19 +68,19 @@ function Write-Log {
 		[Parameter(Mandatory = $true)]
 		[string]$Message,
 		[ValidateSet('TRACE', 'INFO', 'WARN', 'ERROR')]
-		[string]$Level = 'INFO'
+		[string]$Level = 'INFO',
+		[hashtable]$ColorMap = @{
+			TRACE = 'DarkGray'
+			INFO  = 'Green'
+			WARN  = 'Yellow'
+			ERROR = 'Red'
+		}
 	)
 	$FormattedMessage = ('{0} [{1}] {2}' -f (Get-Date -Format 's'), $Level, $Message)
 
 	if ([Environment]::GetCommandLineArgs().Contains('-NonInteractive')) {
 		Write-Output $FormattedMessage
 	} else {
-		$ColorMap = @{
-			TRACE = 'DarkGray'
-			INFO  = 'Green'
-			WARN  = 'Yellow'
-			ERROR = 'Red'
-		}
 		Write-Host $FormattedMessage -ForegroundColor $ColorMap[$Level]
 	}
 }
@@ -763,7 +763,7 @@ if (-not $SkipReadinessCheck.IsPresent) {
 		if ($r.returnCode -ne 0) {
 			Write-Log -Message ('Hardware readiness check failed with code {0}. {1}' -f $r.returnCode, $r.returnReason) -Level ERROR
 			return
-  		}
+		}
 	} catch {
 		Write-Log -Message ('The readiness check function (Test-Win11Readiness) failed to run. Error: {0}' -f $_.Exception.Message) -Level ERROR
 		return
@@ -783,7 +783,7 @@ if (-not $SkipSKUCheck.IsPresent) {
 	} catch {
 		Write-Log -Message 'Checking Operating System SKU failed.' -Level ERROR
 	}
-}else {
+} else {
 	Write-Log -Message '  [SKIP] -SkipSKUCheck was specified. Skipping.' -Level WARN
 }
 
@@ -791,15 +791,15 @@ if (-not $SkipSKUCheck.IsPresent) {
 Write-Log -Message 'Checking for Windows 10 Extended Security Updates License' -Level INFO
 if (-not $SkipESUCheck.IsPresent) {
 	try {
-		$licenseProduct = Get-CimInstance -ClassName SoftwareLicensingProduct -Property ("ID", "ApplicationId", "PartialProductKey", "LicenseIsAddon", "Description", "Name", "LicenseStatus", "VLActivationTypeEnabled") -Filter 'PartialProductKey <> null AND ApplicationId = "55c92734-d682-4d71-983e-d6ec3f16059f"' | Where-Object {($_.Name -match 'ESU') -and ($_.LicenseStatus -eq 1)}
+		$licenseProduct = Get-CimInstance -ClassName SoftwareLicensingProduct -Property ("ID", "ApplicationId", "PartialProductKey", "LicenseIsAddon", "Description", "Name", "LicenseStatus", "VLActivationTypeEnabled") -Filter 'PartialProductKey <> null AND ApplicationId = "55c92734-d682-4d71-983e-d6ec3f16059f"' | Where-Object { ($_.Name -match 'ESU') -and ($_.LicenseStatus -eq 1) }
 		if ($null -ne $licenseProduct) {
 			Write-Log -Message ('Windows ESU License ID: {0}' -f $licenseProduct.ID) -Level ERROR
 			return
 		}
-	}catch {
+	} catch {
 		Write-Log -Message 'Checking Operating System ESU failed.' -Level ERROR
 	}
-}else {
+} else {
 	Write-Log -Message '  [SKIP] -SkipESUCheck was specified. Skipping.' -Level WARN
 }
 
