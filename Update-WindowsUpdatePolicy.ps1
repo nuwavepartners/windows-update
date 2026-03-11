@@ -89,6 +89,10 @@ $EoL = (New-Object System.Net.WebClient).DownloadString($EoLURI) | ConvertFrom-J
 $WUSpec = @'
 [
     {
+        "VersionSpec": "<=10.0.14393",
+        "QueryString": "'\"Servicing Stack Update for {0} for x64-based Systems\" -Dynamic'"
+    },
+    {
         "VersionSpec": ">=10.0.0",
         "QueryString": "'\"Cumulative Update for {0} for x64-based Systems\" -Dynamic'"
     },
