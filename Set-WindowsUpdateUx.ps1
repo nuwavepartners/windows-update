@@ -21,7 +21,7 @@
 .NOTES
     Author:     Chris Stone
     Date:       2026-01-16
-    Version:    1.3.1
+    Version:    1.4.2
     Requires:   Administrative privileges (HKLM).
     PSVersion:  5.0+
 #>
