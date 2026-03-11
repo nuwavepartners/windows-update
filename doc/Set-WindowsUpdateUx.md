@@ -13,6 +13,9 @@ The script checks for the existence of required registry paths and handles creat
 
 ## Parameters
 
+### `-SkipServiceRestart`
+If specified, skips restarting the Windows Update (`wuauserv`) service after registry changes are applied. By default, the service is restarted to immediately apply any effective modifications.
+
 ### `-UxMode`
 Determines if UX restrictions (Settings access, Tray icon, Auto-Reboot) are applied.
 *   **Disable** (Default): Updates the registry to hide the System Tray icon, suppress reboot notifications, and prevent access to Windows Update settings.
@@ -42,5 +45,5 @@ Determines if overall Windows Update access is allowed.
 
 ## Additional Information
 *   **Author**: Chris Stone
-*   **Version**: 1.3.0
+*   **Version**: 1.4.2
 *   **Requirements**: Administrative privileges (HKLM access needed).
