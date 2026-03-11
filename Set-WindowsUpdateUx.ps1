@@ -28,6 +28,8 @@
 
 [CmdletBinding()]
 param (
+	[switch]$SkipServiceRestart,
+
 	[ValidateSet('Enable', 'Disable')]
 	[string]$UxMode = 'Disable',
 
@@ -116,6 +118,7 @@ $WuModeResg = @{
 
 ################################## THE SCRIPT ##################################
 Write-Log -Message ('Script Started ').PadRight(80, '-') -Level 'INFO'
+$Changed = 0
 
 if ($UxMode -eq 'Disable') {
 	Write-Log -Message 'UxMode Disable' -Level 'INFO'
@@ -123,21 +126,28 @@ if ($UxMode -eq 'Disable') {
 		# Ensure the Registry Key exists before attempting to set the property
 		if (-not (Test-Path -Path $Config.Path)) {
 			Write-Log -Message "Key not found. Creating: $($Config.Path)" -Level 'TRACE'
-			$null = New-Item -Path $Config.Path -ItemType Directory -Force -ErrorAction Stop
+			New-Item -Path $Config.Path -ItemType Directory -Force -ErrorAction Stop | Out-Null
 		}
-
-		Write-Log -Message "Set-ItemProperty for $($Config.Name) in $($Config.Path)" -Level 'TRACE'
-		Set-ItemProperty @Config -ErrorAction Stop
+		$ExistingValue = Get-ItemProperty -Path $Config.Path -Name $Config.Name -ErrorAction SilentlyContinue
+		if ($ExistingValue.($Config.Name) -eq $Config.Value) {
+			Write-Log -Message "Property $($Config.Name) already set to $($Config.Value)" -Level 'TRACE'
+		} else {
+			Write-Log -Message "Setting $($Config.Name) from $($ExistingValue.($Config.Name)) to $($Config.Value)" -Level 'TRACE'
+			Set-ItemProperty @Config -ErrorAction Stop
+			$Changed++
+		}
 	}
 } else {
 	Write-Log -Message 'UxMode Enable' -Level 'INFO'
 	foreach ($Config in $UxModeRegs) {
 		if (Test-Path -Path $Config.Path) {
-			Write-Log -Message "Get-ItemProperty for $($Config.Name) from $($Config.Path)" -Level 'TRACE'
-			$prop = Get-ItemProperty -Path $Config.Path -Name $Config.Name -ErrorAction SilentlyContinue
-			if ($null -ne $prop) {
-				Write-Log -Message "Remove-ItemProperty for $($Config.Name) from $($Config.Path)" -Level 'TRACE'
+			$ExistingValue = Get-ItemProperty -Path $Config.Path -Name $Config.Name -ErrorAction SilentlyContinue
+			if ($null -ne $ExistingValue) {
+				Write-Log -Message "Removing $($Config.Name)" -Level 'TRACE'
 				Remove-ItemProperty -Path $Config.Path -Name $Config.Name -ErrorAction Stop
+				$Changed++
+			} else {
+				Write-Log -Message "Property $($Config.Name) not found." -Level 'TRACE'
 			}
 		}
 	}
@@ -145,22 +155,37 @@ if ($UxMode -eq 'Disable') {
 
 if ($WuMode -eq 'Disable') {
 	Write-Log -Message 'WuMode Disable' -Level 'INFO'
+
 	if (-not (Test-Path -Path $WuModeResg.Path)) {
 		Write-Log -Message "Key not found. Creating: $($WuModeResg.Path)" -Level 'TRACE'
-		Write-Log -Message "New-Item -Path $($WuModeResg.Path)" -Level 'TRACE'
-		$null = New-Item -Path $WuModeResg.Path -ItemType Directory -Force -ErrorAction Stop
+		New-Item -Path $WuModeResg.Path -ItemType Directory -Force -ErrorAction Stop | Out-Null
 	}
 
-	Write-Log -Message "Set-ItemProperty for $($WuModeResg.Name) in $($WuModeResg.Path)" -Level 'TRACE'
-	Set-ItemProperty @WuModeResg -ErrorAction Stop
+	$ExistingValue = Get-ItemProperty -Path $WuModeResg.Path -Name $WuModeResg.Name -ErrorAction SilentlyContinue
+	if ($ExistingValue.($WuModeResg.Name) -eq $WuModeResg.Value) {
+		Write-Log -Message "Property $($WuModeResg.Name) already set to $($WuModeResg.Value)" -Level 'TRACE'
+	} else {
+		Write-Log -Message "Setting $($WuModeResg.Name) from $($ExistingValue.($WuModeResg.Name)) to $($WuModeResg.Value)" -Level 'TRACE'
+		Set-ItemProperty @WuModeResg -ErrorAction Stop
+		$Changed++
+	}
 } else {
 	Write-Log -Message 'WuMode Enable' -Level 'INFO'
 	if (Test-Path -Path $WuModeResg.Path) {
-		Write-Log -Message "Get-ItemProperty for $($WuModeResg.Name) from $($WuModeResg.Path)" -Level 'TRACE'
-		$prop = Get-ItemProperty -Path $WuModeResg.Path -Name $WuModeResg.Name -ErrorAction SilentlyContinue
-		if ($null -ne $prop) {
-			Write-Log -Message "Remove-ItemProperty for $($WuModeResg.Name) from $($WuModeResg.Path)" -Level 'TRACE'
+		$ExistingValue = Get-ItemProperty -Path $WuModeResg.Path -Name $WuModeResg.Name -ErrorAction SilentlyContinue
+		if ($null -ne $ExistingValue) {
+			Write-Log -Message "Removing $($WuModeResg.Name)" -Level 'TRACE'
 			Remove-ItemProperty -Path $WuModeResg.Path -Name $WuModeResg.Name -ErrorAction Stop
+			$Changed++
+		} else {
+			Write-Log -Message "Property $($WuModeResg.Name) not found." -Level 'TRACE'
 		}
 	}
 }
+
+if ((-not $SkipServiceRestart) -and ($Changed -gt 0)) {
+	Write-Log -Message 'Restarting Windows Update Service' -Level 'INFO'
+	Restart-Service -Name wuauserv -Force -ErrorAction Stop
+}
+
+Write-Log -Message ('Script Finished ').PadRight(80, '-') -Level 'INFO'
