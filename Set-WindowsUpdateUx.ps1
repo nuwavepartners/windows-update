@@ -123,18 +123,11 @@ if ($UxMode -eq 'Disable') {
 		# Ensure the Registry Key exists before attempting to set the property
 		if (-not (Test-Path -Path $Config.Path)) {
 			Write-Log -Message "Key not found. Creating: $($Config.Path)" -Level 'TRACE'
-			Write-Log -Message "New-Item -Path $($Config.Path)" -Level 'TRACE'
 			$null = New-Item -Path $Config.Path -ItemType Directory -Force -ErrorAction Stop
 		}
 
-		# Apply the registry value using splatting
 		Write-Log -Message "Set-ItemProperty for $($Config.Name) in $($Config.Path)" -Level 'TRACE'
 		Set-ItemProperty @Config -ErrorAction Stop
-
-		# Verify the change
-		Write-Log -Message "Get-ItemProperty for $($Config.Name) from $($Config.Path)" -Level 'TRACE'
-		$Readback = (Get-ItemProperty -Path $Config.Path -Name $Config.Name -ErrorAction Stop).($Config.Name)
-		Write-Log -Message ('[{0}] "{1}" is now: {2}' -f $Config.Path, $Config.Name, $Readback) -Level 'INFO'
 	}
 } else {
 	Write-Log -Message 'UxMode Enable' -Level 'INFO'
@@ -145,7 +138,6 @@ if ($UxMode -eq 'Disable') {
 			if ($null -ne $prop) {
 				Write-Log -Message "Remove-ItemProperty for $($Config.Name) from $($Config.Path)" -Level 'TRACE'
 				Remove-ItemProperty -Path $Config.Path -Name $Config.Name -ErrorAction Stop
-				Write-Log -Message ('Removed "{0}" from [{1}]' -f $Config.Name, $Config.Path) -Level 'INFO'
 			}
 		}
 	}
@@ -161,10 +153,6 @@ if ($WuMode -eq 'Disable') {
 
 	Write-Log -Message "Set-ItemProperty for $($WuModeResg.Name) in $($WuModeResg.Path)" -Level 'TRACE'
 	Set-ItemProperty @WuModeResg -ErrorAction Stop
-
-	Write-Log -Message "Get-ItemProperty for $($WuModeResg.Name) from $($WuModeResg.Path)" -Level 'TRACE'
-	$Readback = (Get-ItemProperty -Path $WuModeResg.Path -Name $WuModeResg.Name -ErrorAction Stop).($WuModeResg.Name)
-	Write-Log -Message ('[{0}] "{1}" is now: {2}' -f $WuModeResg.Path, $WuModeResg.Name, $Readback) -Level 'INFO'
 } else {
 	Write-Log -Message 'WuMode Enable' -Level 'INFO'
 	if (Test-Path -Path $WuModeResg.Path) {
@@ -173,7 +161,6 @@ if ($WuMode -eq 'Disable') {
 		if ($null -ne $prop) {
 			Write-Log -Message "Remove-ItemProperty for $($WuModeResg.Name) from $($WuModeResg.Path)" -Level 'TRACE'
 			Remove-ItemProperty -Path $WuModeResg.Path -Name $WuModeResg.Name -ErrorAction Stop
-			Write-Log -Message ('Removed "{0}" from [{1}]' -f $WuModeResg.Name, $WuModeResg.Path) -Level 'INFO'
 		}
 	}
 }
