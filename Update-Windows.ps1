@@ -77,7 +77,7 @@ try {
 
 if ($null -ne $Conf._meta.Date_Modified) {
 	Write-Log -Message 'Verifying configuration' -Level 'TRACE'
-	$PatchTuesday = (1..7 | ForEach-Object { $(Get-Date -Day 7).AddDays($_) } | Where-Object { $_.DayOfWeek -like 'Tue*' })
+	$PatchTuesday = (1..7 | ForEach-Object { $(Get-Date -Day 7 -Hour 0 -Minute 0 -Second 0).AddDays($_) } | Where-Object { $_.DayOfWeek -like 'Tue*' })
 	if (((Get-Date) -gt $PatchTuesday) -and ((Get-Date -Date $Conf._meta.Date_Modified) -lt $PatchTuesday)) {
 		Write-Log -Message ('Patch policy data may be Outdated! {0}' -f $Conf._meta.Date_Modified) -Level 'WARN'
 	}
