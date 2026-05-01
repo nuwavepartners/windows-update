@@ -1,17 +1,19 @@
 <#
 .NOTES
 	Author:			Chris Stone
-	Date-Modified:	2025-11-18 15:29:51
+	Date-Modified:	2026-05-01 14:33:06
 .VERSION
-    2.0.7
+    2.1.0
 #>
 [CmdletBinding()]
 param (
 	[Parameter(Mandatory = $false)]
+	[ValidateSet('List', 'Install')]
+	[string] $Action = 'Install',
+
+	[Parameter(Mandatory = $false)]
 	[string] $PolicyUri = 'https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Windows-UpdatePolicy.json'
 )
-
-#region Helper Functions
 
 function Write-Log {
 	param(
@@ -34,9 +36,7 @@ function Write-Log {
 	}
 }
 
-#endregion
-
-#region Main Script: 1. Prerequisites
+# 1. Prerequisites
 
 Write-Log -Message ('Script Started ').PadRight(80, '-') -Level 'INFO'
 $RebootRequired = $false
@@ -53,9 +53,7 @@ if ($PSVersionTable.PSVersion.Major -lt 3) {
 	return
 }
 
-#endregion
-
-#region Main Script: 2. Preparation (Policy)
+# 2. Preparation (Policy)
 
 Write-Log -Message 'Running in Policy Mode' -Level 'INFO'
 $HttpClient = $null
@@ -85,9 +83,14 @@ if ($null -ne $Conf._meta.Date_Modified) {
 
 Write-Log -Message 'Collecting current computer configuration' -Level 'INFO'
 $ThisOS = Get-CimInstance -ClassName Win32_OperatingSystem
-$ThisHF = Get-HotFix
+$ThisCBS = Get-HotFix
+$WUSession = New-Object -ComObject "Microsoft.Update.Session"
+$WUSearcher = $WUSession.CreateUpdateSearcher()
+$historyCount = $WUSearcher.GetTotalHistoryCount()
+$ThisWUS = @($WUSearcher.QueryHistory(0, $historyCount))
 Write-Log -Message ('OS: {0} {1} <{2}>' -f $ThisOS.Caption, $ThisOS.Version, $ThisOS.ProductType) -Level 'TRACE'
-Write-Log -Message ('HF: {0} Installed, Most recent {1}' -f $ThisHF.Count, ($ThisHF.InstalledOn | Measure-Object -Maximum).Maximum) -Level 'TRACE'
+Write-Log -Message ('CBS: {0} Installed, Most recent {1}' -f $ThisCBS.Count, ($ThisCBS.InstalledOn | Measure-Object -Maximum).Maximum) -Level 'TRACE'
+Write-Log -Message ('WUS: {0} updates installed, Most recent {1}' -f $ThisWUS.Count, ($ThisWUS.Date | Measure-Object -Maximum).Maximum) -Level 'TRACE'
 
 if ($Conf.WindowsEoL) {
 	$Conf.WindowsEoL | Where-Object { $ThisOS.Version -match $_.latest } | ForEach-Object {
@@ -99,9 +102,7 @@ if ($Conf.WindowsEoL) {
 	}
 }
 
-#endregion
-
-#region Main Script: 3. Execution (Policy)
+# 3. Execution (Policy)
 
 :lCollection foreach ($UpdateCollection in $Conf.WindowsUpdate) {
 
@@ -121,63 +122,63 @@ if ($Conf.WindowsEoL) {
 
 	foreach ($Update in $UpdateCollection.Updates) {
 		Write-Log -Message ('Searching for {0}' -f $Update.Title) -Level 'INFO'
-		if (($null -ne $ThisHF.HotFixID) -and ($ThisHF.HotFixID -contains $Update.KBArticleID)) {
+		if ((($null -ne $ThisCBS.HotFixID) -and ($ThisCBS.HotFixID -contains $Update.KBArticleID)) -or (($null -ne $ThisWUS.Title) -and ($ThisWUS.Title -match $Update.KBArticleID))) {
 			Write-Log -Message 'Found' -Level 'TRACE'
 		} else {
 			Write-Log -Message 'Not Installed' -Level 'TRACE'
 
-			$Source = $Update.Source
-			if ($null -eq $Source) {
-				Write-Log -Message 'Source not found - Possibly Unsupported' -Level 'WARN'
-				continue
-			}
-
-			# Download
-			$f = Join-Path $env:TEMP ([System.IO.Path]::GetRandomFileName())
-			$Stream = $null
-			$FileStream = $null
-			try {
-				Write-Log -Message 'Downloading' -Level 'TRACE'
-				$Stream = $HttpClient.GetStreamAsync($Source).GetAwaiter().GetResult()
-				$FileStream = [System.IO.File]::Create($f)
-				$Stream.CopyTo($FileStream)
-			} catch {
-				Write-Log -Message ('Failed to download update {0} from {1}. Error: {2}' -f $Update.KBArticleID, $Source, $_.Exception.Message) -Level 'ERROR'
-				continue # Skip this update
-			} finally {
-				if ($FileStream) { $FileStream.Dispose() }
-				if ($Stream) { $Stream.Dispose() }
-			}
-
-			# Install
-			$r = $null
-			try {
-				Write-Log -Message 'Installing' -Level 'TRACE'
-				$r = Start-Process -FilePath 'C:\Windows\System32\wusa.exe' -ArgumentList $f, '/quiet', '/norestart' -Wait -PassThru -ErrorAction Stop
-			} catch {
-				Write-Log -Message ('Failed to start installer (wusa.exe) for {0}. Error: {1}' -f $Update.KBArticleID, $_.Exception.Message) -Level 'ERROR'
-				Remove-Item -Path $f -ErrorAction SilentlyContinue
-				continue # Skip this update
-			}
-
-			switch ($r.ExitCode) {
-				0x0 { Write-Log -Message 'Installed successfully' -Level 'TRACE'; break }
-				0x00240006	{ Write-Log -Message 'Update already installed' -Level 'TRACE'; break }
-				0x00240005	{ Write-Log -Message 'Installed, Pending reboot' -Level 'TRACE'; $RebootRequired = $true; break }
-				0x0BC2 { Write-Log -Message 'Installed, Pending reboot' -Level 'TRACE'; $RebootRequired = $true; break }
-				{ $_ -gt 0 } {
-					Write-Log -Message ('Installation returned {0} (0x{1:X8})' -f $r.ExitCode, $r.ExitCode) -Level 'ERROR'
-					continue # Don't throw, just log and continue to the next update
+			if ($Action -eq 'Install') {
+				$Source = $Update.Source
+				if ($null -eq $Source) {
+					Write-Log -Message 'Source not found - Possibly Unsupported' -Level 'WARN'
+					continue
 				}
-			}
 
-			Remove-Item -Path $f -ErrorAction SilentlyContinue
+				# Download
+				$f = Join-Path $env:TEMP ([System.IO.Path]::GetRandomFileName())
+				$Stream = $null
+				$FileStream = $null
+				try {
+					Write-Log -Message 'Downloading' -Level 'TRACE'
+					$Stream = $HttpClient.GetStreamAsync($Source).GetAwaiter().GetResult()
+					$FileStream = [System.IO.File]::Create($f)
+					$Stream.CopyTo($FileStream)
+				} catch {
+					Write-Log -Message ('Failed to download update {0} from {1}. Error: {2}' -f $Update.KBArticleID, $Source, $_.Exception.Message) -Level 'ERROR'
+					continue # Skip this update
+				} finally {
+					if ($FileStream) { $FileStream.Dispose() }
+					if ($Stream) { $Stream.Dispose() }
+				}
+
+				# Install
+				$r = $null
+				try {
+					Write-Log -Message 'Installing' -Level 'TRACE'
+					$r = Start-Process -FilePath 'C:\Windows\System32\wusa.exe' -ArgumentList $f, '/quiet', '/norestart' -Wait -PassThru -ErrorAction Stop
+				} catch {
+					Write-Log -Message ('Failed to start installer (wusa.exe) for {0}. Error: {1}' -f $Update.KBArticleID, $_.Exception.Message) -Level 'ERROR'
+					Remove-Item -Path $f -ErrorAction SilentlyContinue
+					continue # Skip this update
+				}
+
+				switch ($r.ExitCode) {
+					0x0 { Write-Log -Message 'Installed successfully' -Level 'TRACE'; break }
+					0x00240006	{ Write-Log -Message 'Update already installed' -Level 'TRACE'; break }
+					0x00240005	{ Write-Log -Message 'Installed, Pending reboot' -Level 'TRACE'; $RebootRequired = $true; break }
+					0x0BC2 { Write-Log -Message 'Installed, Pending reboot' -Level 'TRACE'; $RebootRequired = $true; break }
+					{ $_ -gt 0 } {
+						Write-Log -Message ('Installation returned {0} (0x{1:X8})' -f $r.ExitCode, $r.ExitCode) -Level 'ERROR'
+						continue # Don't throw, just log and continue to the next update
+					}
+				}
+
+				Remove-Item -Path $f -ErrorAction SilentlyContinue
+			}
 		}
 	}
 	break;
 }
-
-#endregion
 
 if ($RebootRequired) { Write-Log -Message 'Reboot Needed!' -Level 'WARN' }
 Write-Log -Message ('Script Finished ').PadRight(80, '-') -Level 'INFO'
