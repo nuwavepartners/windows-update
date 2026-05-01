@@ -15,13 +15,17 @@ This script is designed to simplify the process of keeping a Windows machine up-
 * **System Analysis**: Gathers information about the local operating system, including the caption, version, and a list of installed hotfixes.
 * **End-of-Life Check**: Cross-references the OS version with a list of end-of-life dates to warn if the operating system is no longer supported.
 * **Update Discovery**: Matches the system's OS details with the update policies in the configuration file to find relevant updates.
-* **Installation**: Downloads and installs any missing updates using `wusa.exe`. The script will notify you if a reboot is required.
+* **Installation**: Depending on the `-Action` parameter, it will either list the applicable updates or download and install them using `wusa.exe`. The script will notify you if a reboot is required after an installation.
 
 ## PARAMETERS
 
-* **`-PolicyUri <string>`**: Specifies the URL of the JSON configuration file that contains the update policies.
-  * **Required**: False
-  * **Default**: `https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Windows-UpdatePolicy.json`
+*   **`-Action <string>`**: Modifies the behavior of the update policy application.
+    *   **Valid Values**: `List`, `Install`
+    *   **Required**: False
+    *   **Default**: `Install`
+*   **`-PolicyUri <string>`**: Specifies the URL of the JSON configuration file that contains the update policies.
+    *   **Required**: False
+    *   **Default**: `https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Windows-UpdatePolicy.json`
 
 ## EXAMPLES
 
@@ -30,6 +34,12 @@ This script is designed to simplify the process of keeping a Windows machine up-
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [System.Enum]::GetValues([System.Net.SecurityProtocolType]) | Where-Object { $_ -match 'Tls' };
 & ([scriptblock]::Create((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Update-Windows.ps1')))
+```
+
+### Example 2: Finding Available Updates via Policy
+
+```powershell
+.\Update-Windows.ps1 -Action List
 ```
 
 ## NOTES
