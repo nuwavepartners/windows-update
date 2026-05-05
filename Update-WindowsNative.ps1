@@ -158,7 +158,7 @@ function Find-AvailableUpdate {
 		Write-Log -Message 'Searching for available updates...' -Level 'TRACE'
 		$MSUpdateSearcher = New-Object -ComObject 'Microsoft.Update.Searcher' -ErrorAction Stop
 		$MSUpdateSearcher.Online = $true
-		return $MSUpdateSearcher.Search($Criteria).Updates
+		return ,$MSUpdateSearcher.Search($Criteria).Updates
 	} catch {
 		$ErrorMessage = Get-WuaErrorMessage -Exception $_.Exception
 		Write-Log -Message ("Failed to search for updates. Error: $ErrorMessage") -Level 'ERROR'
@@ -176,7 +176,7 @@ function New-UpdateCollection {
 		foreach ($Update in $Updates) {
 			$MSUpdateCollection.Add($Update) | Out-Null
 		}
-		return $MSUpdateCollection
+		return ,$MSUpdateCollection
 	} catch {
 		$ErrorMessage = Get-WuaErrorMessage -Exception $_.Exception
 		Write-Log -Message ("Failed to create update collection. Error: $ErrorMessage") -Level 'ERROR'
