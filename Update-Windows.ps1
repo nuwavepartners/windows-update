@@ -12,7 +12,10 @@ param (
 	[string] $Action = 'Install',
 
 	[Parameter(Mandatory = $false)]
-	[string] $PolicyUri = 'https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Windows-UpdatePolicy.json'
+	[string] $PolicyUri = 'https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Windows-UpdatePolicy.json',
+
+	[Parameter(Mandatory = $false)]
+	[int] $SkipRecentlyUpdated = 0
 )
 
 function Write-Log {
@@ -98,6 +101,17 @@ if ($Conf.WindowsEoL) {
 			Write-Log -Message 'This Operating System is End of Life and may be insecure.' -Level 'WARN'
 		} else {
 			Write-Log -Message ('Operating System Supported until {0}' -f $_.eol) -Level 'TRACE'
+		}
+	}
+}
+
+if ($SkipRecentlyUpdated -gt 0) {
+	$MostRecentCBS = ($ThisCBS.InstalledOn | Measure-Object -Maximum).Maximum
+	if ($null -ne $MostRecentCBS) {
+		$DaysSinceLastUpdate = ((Get-Date) - [datetime]$MostRecentCBS).TotalDays
+		if ($DaysSinceLastUpdate -lt $SkipRecentlyUpdated) {
+			Write-Log -Message ('Skipped: Most recently installed update was {0:N1} days ago (Threshold: {1} days)' -f $DaysSinceLastUpdate, $SkipRecentlyUpdated) -Level 'INFO'
+			return 0
 		}
 	}
 }

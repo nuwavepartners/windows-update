@@ -14,6 +14,7 @@ This script is designed to simplify the process of keeping a Windows machine up-
 * **Loads Configuration**: Downloads a JSON file containing the update policies. By default, it uses the configuration from the NuWave Partners GitHub repository.
 * **System Analysis**: Gathers information about the local operating system, including the caption, version, and a list of installed hotfixes.
 * **End-of-Life Check**: Cross-references the OS version with a list of end-of-life dates to warn if the operating system is no longer supported.
+* **Early Exit Check**: If the `-SkipRecentlyUpdated` parameter is provided, checks the date of the most recently installed update and exits early if it was installed within the specified number of days.
 * **Update Discovery**: Matches the system's OS details with the update policies in the configuration file to find relevant updates.
 * **Installation**: Depending on the `-Action` parameter, it will either list the applicable updates or download and install them using `wusa.exe`. The script will notify you if a reboot is required after an installation.
 
@@ -26,6 +27,9 @@ This script is designed to simplify the process of keeping a Windows machine up-
 *   **`-PolicyUri <string>`**: Specifies the URL of the JSON configuration file that contains the update policies.
     *   **Required**: False
     *   **Default**: `https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Windows-UpdatePolicy.json`
+*   **`-SkipRecentlyUpdated <int>`**: Skips the update execution process if the most recently installed update occurred within the specified number of days.
+    *   **Required**: False
+    *   **Default**: `0` (Disabled)
 
 ## EXAMPLES
 
@@ -41,6 +45,14 @@ This script is designed to simplify the process of keeping a Windows machine up-
 ```powershell
 .\Update-Windows.ps1 -Action List
 ```
+
+### Example 3: Skip Updates if Recently Installed
+
+```powershell
+.\Update-Windows.ps1 -SkipRecentlyUpdated 90
+```
+
+Convenient for running the script on a regular schedule, and catching up a server that has fallen behind on updates.
 
 ## NOTES
 
