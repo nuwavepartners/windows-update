@@ -9,6 +9,10 @@ This file is for Internal Use only. It is used to generate the `Windows-UpdatePo
 * By default (`$true`), the script skips End-of-Life checks on older systems and directly copies their previous known configuration from an existing `Windows-UpdatePolicy.json`.
 * Running with `-SkipEoL:$false` will force the script to search the Microsoft Update Catalog for updates for ALL operating systems, ignoring their support lifecycle.
 
+### `-UpdateChangelog <switch>`
+* When present, creates or updates the `CHANGELOG.POLICY.md` file in the current directory.
+* The changelog is formatted with the current date, listing the operating systems and their corresponding updates.
+
 ## Policy Update Usage
 
 ```powershell

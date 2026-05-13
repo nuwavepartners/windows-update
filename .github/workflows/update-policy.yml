@@ -1,0 +1,32 @@
+name: Update Windows Update Policy
+
+on:
+  schedule:
+    # Runs at 00:00 UTC on later Wednesdays (21st-31st)
+    - cron: '0 0 21-31 * 3'
+  workflow_dispatch: # Allows manual triggering
+
+permissions:
+  contents: write
+
+jobs:
+  update-policy:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Update-WindowsUpdatePolicy
+        shell: pwsh
+        run: |
+          ./Update-WindowsUpdatePolicy.ps1 -UpdateChangelog -SkipEoL:$false
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update Windows Update Policy and Changelog"
+          file_pattern: "Windows-UpdatePolicy.json CHANGELOG.POLICY.md"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"

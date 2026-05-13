@@ -297,7 +297,7 @@
           {
             "UpdateID": "f26dd29b-355a-4d27-aeac-edb2b8403a73",
             "Title": "2026-05 Cumulative Update for Windows 11, version 25H2 for x64-based Systems (KB5089549) (26200.8457)",
-            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/53914338-2058-4b75-95a6-6d674648107c/public/windows11.0-kb5089549-x64_9a542b5813b003374532dceeba49b7e07c3fc2fb.msu",
+            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/d8b7f92b-bd35-4b4c-96e5-46ce984b31e0/public/windows11.0-kb5043080-x64_953449672073f8fb99badb4cc6d5d7849b9c83e8.msu",
             "KBArticleID": "KB5089549"
           }
         ]
@@ -501,7 +501,7 @@
           {
             "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
             "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8-rt-kb4486081-x64_b3e0bdffee1cf7a1c718de205034eb05737014cb.msu",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
             "KBArticleID": "KB4486081"
           }
         ]
@@ -527,7 +527,7 @@
           {
             "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
             "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows6.1-kb4019990-x64_35cc310e81ef23439ba0ec1f11d7b71dd34adfe5.msu",
             "KBArticleID": "KB4503548"
           }
         ]
@@ -1079,7 +1079,7 @@
       }
     ],
     "_meta": {
-      "Date_Modified": "2026-05-13T15:46:20Z"
+      "Date_Modified": "2026-05-13T16:26:33Z"
     }
   }
 ]

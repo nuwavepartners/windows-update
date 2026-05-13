@@ -7,7 +7,8 @@
 
 [CmdletBinding()]
 param (
-	[switch]$SkipEoL = $true
+	[switch]$SkipEoL = $true,
+	[switch]$UpdateChangelog
 )
 
 ################################## FUNCTIONS ###################################
@@ -187,5 +188,38 @@ $Out = @{
 }
 
 $Out | ConvertTo-Json -Depth 9 -AsArray | Out-File -FilePath ".\Windows-UpdatePolicy.json"
+
+if ($UpdateChangelog) {
+	Write-Log -Message 'Generating Changelog' -Level 'INFO'
+	$ChangelogPath = '.\CHANGELOG.POLICY.md'
+	$Today = Get-Date -Format 'yyyy-MM-dd'
+	
+	$NewEntry = New-Object System.Text.StringBuilder
+	$null = $NewEntry.AppendLine()
+	$null = $NewEntry.AppendLine("## $Today")
+	$null = $NewEntry.AppendLine()
+	
+	foreach ($Item in $WUs) {
+		if ($Item.Updates.Count -gt 0) {
+			$null = $NewEntry.AppendLine("### $($Item.OS.Caption)")
+			$null = $NewEntry.AppendLine()
+			foreach ($Update in $Item.Updates) {
+				$null = $NewEntry.AppendLine("* $($Update.Title)")
+			}
+			$null = $NewEntry.AppendLine()
+		}
+	}
+	
+	if (Test-Path -Path $ChangelogPath) {
+		$ExistingContent = Get-Content -Path $ChangelogPath -Raw
+		# Remove the header if it exists so we can easily prepend
+		$ExistingContent = $ExistingContent -replace '(?s)^# Changelog\r?\n?', ''
+		$NewContent = "# Changelog`n" + $NewEntry.ToString() + $ExistingContent
+		Set-Content -Path $ChangelogPath -Value $NewContent -NoNewline
+	} else {
+		$NewContent = "# Changelog`n" + $NewEntry.ToString()
+		Set-Content -Path $ChangelogPath -Value $NewContent -NoNewline
+	}
+}
 
 Write-Log -Message ('Script Finished ').PadRight(80, '-') -Level 'INFO'
