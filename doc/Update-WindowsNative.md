@@ -21,9 +21,19 @@ This script leverages the native Windows Update API (`Microsoft.Update.Session`)
     *   **Valid Values**: `Search`, `List`, `Install`
     *   **Required**: False
     *   **Default**: `Install`
-*   **`-Criteria <string>`**: The query string used to search for updates.
+*   **`-Criteria <string>`**: The query string used to search for updates (CustomCriteria Parameter Set).
     *   **Required**: False
     *   **Default**: `IsInstalled=0 AND IsHidden=0`
+*   **`-IsInstalled <switch>`**: Filters to return only installed updates (BuiltCriteria Parameter Set). If omitted, searches for uninstalled updates.
+    *   **Required**: False
+*   **`-IsHidden <switch>`**: Filters to return only hidden updates (BuiltCriteria Parameter Set). If omitted, searches for non-hidden updates.
+    *   **Required**: False
+*   **`-Categories <string[]>`**: Filters updates by specified category names, e.g., 'Security Updates' (BuiltCriteria Parameter Set). Supports tab-completion in PowerShell.
+    *   **Required**: False
+*   **`-IsAssigned <switch>`**: Filters updates to include only those assigned for deployment (BuiltCriteria Parameter Set).
+    *   **Required**: False
+*   **`-UpdateId <string[]>`**: Filters updates by their specific unique GUIDs (BuiltCriteria Parameter Set).
+    *   **Required**: False
 
 ## EXAMPLES
 

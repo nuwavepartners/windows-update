@@ -1,18 +1,85 @@
 <#
+.SYNOPSIS
+    Manages Windows Updates using the Windows Update Agent (WUA) API.
+
+.DESCRIPTION
+    This script provides a native PowerShell way to search for, list, and install Windows Updates by interacting directly with the Microsoft.Update.Session COM objects. It handles initiating scans, downloading updates, accepting EULAs, and installing them.
+
+.PARAMETER Action
+    Specifies the action to perform. Valid options are:
+    - Search: Initiates a new background update detection scan.
+    - List: Lists available updates based on the provided Criteria.
+    - Install: Searches for, downloads, and installs available updates.
+
+.PARAMETER Criteria
+    The raw search criteria string used to filter updates. The default is 'IsInstalled=0 AND IsHidden=0'.
+
+.PARAMETER IsInstalled
+    Filters to return only installed updates. If omitted, returns uninstalled updates.
+
+.PARAMETER IsHidden
+    Filters to return only hidden updates. If omitted, returns non-hidden updates.
+
+.PARAMETER Categories
+    Filters updates by specified category names (e.g., 'Security Updates'). Supports tab completion.
+
+.PARAMETER IsAssigned
+    Filters updates to include only those assigned for deployment.
+
+.PARAMETER UpdateId
+    Filters updates by their specific unique GUIDs.
+
+.EXAMPLE
+    .\Update-WindowsNative.ps1 -Action List
+    Lists all available updates that are not installed and not hidden.
+
+.EXAMPLE
+    .\Update-WindowsNative.ps1 -Action Install
+    Installs all available updates that are not installed and not hidden.
+
 .NOTES
-	Author:			Chris Stone
-	Date-Modified:	2025-11-18 15:29:51
-.VERSION
-    2.0.7
+    Author: Chris Stone
+    Version: 2.0.7
 #>
-[CmdletBinding()]
+[CmdletBinding(DefaultParameterSetName = 'CustomCriteria')]
 param (
 	[Parameter(Mandatory = $false)]
 	[ValidateSet('Search', 'List', 'Install')]
 	[string] $Action = 'Install',
 
-	[Parameter(Mandatory = $false)]
-	[string] $Criteria = 'IsInstalled=0 AND IsHidden=0'
+	[Parameter(ParameterSetName = 'CustomCriteria', Mandatory = $false)]
+	[string] $Criteria = 'IsInstalled=0 AND IsHidden=0',
+
+	[Parameter(ParameterSetName = 'BuiltCriteria')]
+	[switch] $IsInstalled,
+
+	[Parameter(ParameterSetName = 'BuiltCriteria')]
+	[switch] $IsHidden,
+
+	[Parameter(ParameterSetName = 'BuiltCriteria')]
+	[ValidateSet(
+		'Application',
+		'Connectors',
+		'Critical Updates',
+		'Definition Updates',
+		'Developer Kits',
+		'Drivers',
+		'Feature Packs',
+		'Guidance',
+		'Security Updates',
+		'Service Packs',
+		'Tools',
+		'Update Rollups',
+		'Updates',
+		'Upgrades'
+	)]
+	[string[]] $Categories,
+
+	[Parameter(ParameterSetName = 'BuiltCriteria')]
+	[switch] $IsAssigned,
+
+	[Parameter(ParameterSetName = 'BuiltCriteria')]
+	[string[]] $UpdateId
 )
 
 #region Helper Functions
@@ -92,7 +159,7 @@ function Get-WuaErrorMessage {
 		'0x8024002F' = 'WU_E_NETWORK_COST_EXCEEDS_POLICY'
 		'0x80240030' = 'WU_E_ENDPOINT_DISCONNECTED'
 		'0x80240031' = 'WU_E_INVALID_FORMAT'
-		'0x80240032' = 'WU_E_INVALID_FORMAT_SIZE'
+		'0x80240032' = 'WU_E_INVALID_CRITERIA'
 		'0x80240033' = 'WU_E_EULA_UNAVAILABLE'
 		'0x80240034' = 'WU_E_DOWNLOAD_FAILED'
 		'0x80240035' = 'WU_E_UPDATE_NOT_PROCESSED'
@@ -158,7 +225,7 @@ function Find-AvailableUpdate {
 		Write-Log -Message 'Searching for available updates...' -Level 'TRACE'
 		$MSUpdateSearcher = New-Object -ComObject 'Microsoft.Update.Searcher' -ErrorAction Stop
 		$MSUpdateSearcher.Online = $true
-		return ,$MSUpdateSearcher.Search($Criteria).Updates
+		return , $MSUpdateSearcher.Search($Criteria).Updates
 	} catch {
 		$ErrorMessage = Get-WuaErrorMessage -Exception $_.Exception
 		Write-Log -Message ("Failed to search for updates. Error: $ErrorMessage") -Level 'ERROR'
@@ -176,7 +243,7 @@ function New-UpdateCollection {
 		foreach ($Update in $Updates) {
 			$MSUpdateCollection.Add($Update) | Out-Null
 		}
-		return ,$MSUpdateCollection
+		return , $MSUpdateCollection
 	} catch {
 		$ErrorMessage = Get-WuaErrorMessage -Exception $_.Exception
 		Write-Log -Message ("Failed to create update collection. Error: $ErrorMessage") -Level 'ERROR'
@@ -259,6 +326,83 @@ if ($PSVersionTable.PSVersion.Major -lt 3) {
 	return
 }
 
+if ($PSCmdlet.ParameterSetName -eq 'BuiltCriteria') {
+	$BaseCriteriaList = @()
+	$BaseCriteriaList += "IsInstalled=$([int]$IsInstalled.IsPresent)"
+	$BaseCriteriaList += "IsHidden=$([int]$IsHidden.IsPresent)"
+
+	if ($PSBoundParameters.ContainsKey('IsAssigned')) {
+		$BaseCriteriaList += "IsAssigned=$([int]$IsAssigned.IsPresent)"
+	}
+
+	$BaseCriteriaString = $BaseCriteriaList -join ' AND '
+
+	$CategoryCriteria = @()
+	if ($Categories) {
+		$CategoryMap = @{
+			'Application'        = '5c9376ab-8ce6-464a-b136-22113dd69801'
+			'Connectors'         = '434de588-ed14-48f5-8eec-b151cb56120b'
+			'Critical Updates'   = 'e6cf1350-c01b-414d-a61f-263d14d133b4'
+			'Definition Updates' = 'e0789628-ce08-4437-be74-2495b842f43b'
+			'Developer Kits'     = 'e140075d-8433-45c3-ad87-e72345b36078'
+			'Drivers'            = 'ebfc1fc5-71a4-4f7b-9aca-3b9a503104a0'
+			'Feature Packs'      = 'b54e7d24-7114-41d5-a92c-613a53ca9e66'
+			'Guidance'           = '9511d615-35b2-47bb-927f-f73d8e9260bb'
+			'Security Updates'   = '0fa1201d-4330-4fa8-8ae9-ce148a2136e0'
+			'Service Packs'      = '68c5b0a3-d1a6-4553-ae49-01d3a7827828'
+			'Tools'              = 'b4832bd8-e735-4761-8daf-37f882276ce3'
+			'Update Rollups'     = '28bc880e-0592-4cbf-8f95-c79b17911d5f'
+			'Updates'            = 'cd5ffd1e-e932-4e3a-bf74-18bf0b1bbd83'
+			'Upgrades'           = '3689bdc8-b205-4af4-8d4a-a63924c5e9d5'
+		}
+
+		foreach ($Category in $Categories) {
+			$MappedId = $CategoryMap[$Category]
+			if ($null -ne $MappedId) {
+				$CategoryCriteria += "CategoryIDs contains '$MappedId'"
+			} else {
+				Write-Log -Message "Unknown Category: $Category" -Level 'WARN'
+			}
+		}
+	}
+
+	$UpdateIdCriteria = @()
+	if ($UpdateId) {
+		foreach ($Id in $UpdateId) {
+			$UpdateIdCriteria += "UpdateID='$Id'"
+		}
+	}
+
+	$OrGroups = @()
+	if ($CategoryCriteria.Count -gt 0 -and $UpdateIdCriteria.Count -gt 0) {
+		foreach ($Cat in $CategoryCriteria) {
+			foreach ($Id in $UpdateIdCriteria) {
+				$OrGroups += '{0} AND {1} AND {2}' -f $BaseCriteriaString, $Cat, $Id
+			}
+		}
+	} elseif ($CategoryCriteria.Count -gt 0) {
+		foreach ($Cat in $CategoryCriteria) {
+			$OrGroups += '{0} AND {1}' -f $BaseCriteriaString, $Cat
+		}
+	} elseif ($UpdateIdCriteria.Count -gt 0) {
+		foreach ($Id in $UpdateIdCriteria) {
+			$OrGroups += '{0} AND {1}' -f $BaseCriteriaString, $Id
+		}
+	} else {
+		$OrGroups += $BaseCriteriaString
+	}
+
+	if ($OrGroups.Count -gt 1) {
+		$Criteria = '({0})' -f ($OrGroups -join ') OR (')
+	} else {
+		$Criteria = $OrGroups[0]
+	}
+
+	Write-Log -Message "Built Search Criteria: $Criteria" -Level 'TRACE'
+} else {
+	Write-Log -Message "Using Parameter Criteria: $Criteria" -Level 'TRACE'
+}
+
 switch ($Action) {
 	'Search' {
 		Invoke-UpdateDetection
@@ -316,7 +460,10 @@ switch ($Action) {
 				$Update = $MSUpdateCollection.Item($i)
 				$Result = $InstallResult.GetUpdateResult($i)
 				$ResultCodeMap = @{ 0 = 'Not Started'; 1 = 'In Progress'; 2 = 'Succeeded'; 3 = 'Succeeded with Errors'; 4 = 'Failed'; 5 = 'Aborted' }
-				Write-Log -Message ('  - {0}: {1}' -f $Update.Title, $ResultCodeMap[$Result.ResultCode]) -Level 'TRACE'
+				Write-Log -Message ('  - {0}: Installation Status: {1}' -f $Update.Title, $ResultCodeMap[$Result.ResultCode]) -Level 'TRACE'
+				if ($Result.ResultCode -eq 4) {
+					Write-Log -Message ('  - {0}: Installation Failed. Error: {1}' -f $Update.Title, $Result.HResult) -Level 'ERROR'
+				}
 			}
 		} catch {
 			Write-Log -Message 'Could not retrieve per-update results.' -Level 'WARN'

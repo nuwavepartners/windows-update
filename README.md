@@ -2,6 +2,8 @@
 
 A collection of scripts to make updating a computer more convenient.
 
+[![Update Windows Update Policy](https://github.com/nuwavepartners/windows-update/actions/workflows/update-policy.yml/badge.svg)](https://github.com/nuwavepartners/windows-update/actions/workflows/update-policy.yml)
+
 ## Scripts Overview
 
 *   `Update-Windows.ps1`: Updates a computer based on a customized update configuration policy. Takes an optional `-PolicyUri` parameter.
