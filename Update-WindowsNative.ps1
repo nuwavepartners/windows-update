@@ -99,7 +99,7 @@ function Write-Log {
 	)
 	$FormattedMessage = "$(Get-Date -Format 's') [$Level] $Message"
 	if ([Environment]::GetCommandLineArgs().Contains('-NonInteractive')) {
-		Write-Output $FormattedMessage
+		[Console]::WriteLine($FormattedMessage)
 	} else {
 		Write-Host $FormattedMessage -ForegroundColor $ColorMap[$Level]
 	}
@@ -223,7 +223,15 @@ function Find-AvailableUpdate {
 	)
 	try {
 		Write-Log -Message 'Searching for available updates...' -Level 'TRACE'
-		$MSUpdateSearcher = New-Object -ComObject 'Microsoft.Update.Searcher' -ErrorAction Stop
+		$MSUpdateSession = New-Object -ComObject 'Microsoft.Update.Session' -ErrorAction Stop
+		$MSUpdateSession.ClientApplicationID = 'Update-WindowsNative'
+		try {
+			$MSUpdateSession.UserLocale = [cultureinfo]::InstalledUICulture.LCID
+		} catch {
+			$MSUpdateSession.UserLocale = 1033
+		}
+		
+		$MSUpdateSearcher = $MSUpdateSession.CreateUpdateSearcher()
 		$MSUpdateSearcher.Online = $true
 		return , $MSUpdateSearcher.Search($Criteria).Updates
 	} catch {
@@ -240,8 +248,9 @@ function New-UpdateCollection {
 	)
 	try {
 		$MSUpdateCollection = New-Object -ComObject 'Microsoft.Update.UpdateColl' -ErrorAction Stop
-		foreach ($Update in $Updates) {
-			$MSUpdateCollection.Add($Update) | Out-Null
+		for ($i = 0; $i -lt $Updates.Count; $i++) {
+			$Update = $Updates.Item($i)
+			if ($null -ne $Update) { $MSUpdateCollection.Add($Update) | Out-Null }
 		}
 		return , $MSUpdateCollection
 	} catch {
@@ -258,8 +267,9 @@ function Accept-UpdateEula {
 	)
 	try {
 		Write-Log -Message 'Accepting EULAs, if necessary...' -Level 'TRACE'
-		foreach ($Update in $UpdateCollection) {
-			if (-not $Update.EulaAccepted) {
+		for ($i = 0; $i -lt $UpdateCollection.Count; $i++) {
+			$Update = $UpdateCollection.Item($i)
+			if ($null -ne $Update -and -not $Update.EulaAccepted) {
 				$Update.AcceptEula()
 			}
 		}
@@ -279,6 +289,7 @@ function Receive-UpdateDownload {
 	try {
 		Write-Log -Message 'Downloading selected updates...' -Level 'INFO'
 		$MSUpdateSession = New-Object -ComObject 'Microsoft.Update.Session' -ErrorAction Stop
+		$MSUpdateSession.ClientApplicationID = 'Update-WindowsNative'
 		$MSUpdateDownloader = $MSUpdateSession.CreateUpdateDownloader()
 		$MSUpdateDownloader.Updates = $UpdateCollection
 		$DownloadResult = $MSUpdateDownloader.Download()
@@ -298,7 +309,9 @@ function Install-UpdateCollection {
 	)
 	try {
 		Write-Log -Message 'Installing downloaded updates...' -Level 'INFO'
-		$MSUpdateInstaller = New-Object -ComObject 'Microsoft.Update.Installer' -ErrorAction Stop
+		$MSUpdateSession = New-Object -ComObject 'Microsoft.Update.Session' -ErrorAction Stop
+		$MSUpdateSession.ClientApplicationID = 'Update-WindowsNative'
+		$MSUpdateInstaller = $MSUpdateSession.CreateUpdateInstaller()
 		$MSUpdateInstaller.Updates = $UpdateCollection
 		return $MSUpdateInstaller.Install()
 	} catch {
@@ -325,6 +338,7 @@ if ($PSVersionTable.PSVersion.Major -lt 3) {
 	Write-Log -Message 'Script requires PowerShell v3.0 or Higher' -Level 'ERROR'
 	return
 }
+
 
 if ($PSCmdlet.ParameterSetName -eq 'BuiltCriteria') {
 	$BaseCriteriaList = @()
@@ -418,14 +432,19 @@ switch ($Action) {
 			Write-Log -Message 'No available updates found.' -Level 'INFO'
 		} else {
 			Write-Log -Message ('Found {0} available updates:' -f $Updates.Count) -Level 'INFO'
-			foreach ($Update in $Updates) {
-				Write-Log -Message ('  - {0}' -f $Update.Title) -Level 'TRACE'
+			for ($i = 0; $i -lt $Updates.Count; $i++) {
+				$Update = $Updates.Item($i)
+				$Title = $Update.Title
+				if ([string]::IsNullOrWhiteSpace($Title)) { $Title = '[Blank Title]' }
+				$UpdateId = 'Unknown ID'
+				try { $UpdateId = $Update.Identity.UpdateID } catch {}
+				Write-Log -Message ('  - {0} (UpdateID: {1})' -f $Title, $UpdateId) -Level 'TRACE'
 			}
 		}
 	}
 
 	'Install' {
-		Write-Log -Message 'Starting update search and installation...' -Level 'INFO'
+		Write-Log -Message 'Starting update search...' -Level 'INFO'
 
 		# 1. Search for Updates
 		$Updates = Find-AvailableUpdate -Criteria $Criteria
@@ -437,6 +456,14 @@ switch ($Action) {
 		}
 
 		Write-Log -Message ('Found {0} updates to install.' -f $Updates.Count) -Level 'INFO'
+		for ($i = 0; $i -lt $Updates.Count; $i++) {
+			$Update = $Updates.Item($i)
+			$Title = $Update.Title
+			if ([string]::IsNullOrWhiteSpace($Title)) { $Title = '[Blank Title]' }
+			$UpdateId = 'Unknown ID'
+			try { $UpdateId = $Update.Identity.UpdateID } catch {}
+			Write-Log -Message ('  - {0} (UpdateID: {1})' -f $Title, $UpdateId) -Level 'TRACE'
+		}
 
 		# 2. Create Update Collection
 		$MSUpdateCollection = New-UpdateCollection -Updates $Updates
@@ -460,13 +487,15 @@ switch ($Action) {
 				$Update = $MSUpdateCollection.Item($i)
 				$Result = $InstallResult.GetUpdateResult($i)
 				$ResultCodeMap = @{ 0 = 'Not Started'; 1 = 'In Progress'; 2 = 'Succeeded'; 3 = 'Succeeded with Errors'; 4 = 'Failed'; 5 = 'Aborted' }
-				Write-Log -Message ('  - {0}: Installation Status: {1}' -f $Update.Title, $ResultCodeMap[$Result.ResultCode]) -Level 'TRACE'
+				$Title = $Update.Title
+				if ([string]::IsNullOrWhiteSpace($Title)) { $Title = '[Blank Title]' }
+				Write-Log -Message ('  - {0}: Installation Status: {1}' -f $Title, $ResultCodeMap[$Result.ResultCode]) -Level 'TRACE'
 				if ($Result.ResultCode -eq 4) {
-					Write-Log -Message ('  - {0}: Installation Failed. Error: {1}' -f $Update.Title, $Result.HResult) -Level 'ERROR'
+					Write-Log -Message ('  - {0}: Installation Failed. Error: {1}' -f $Title, $Result.HResult) -Level 'ERROR'
 				}
 			}
 		} catch {
-			Write-Log -Message 'Could not retrieve per-update results.' -Level 'WARN'
+			Write-Log -Message ('Could not retrieve per-update results. Error: {0}' -f $_.Exception.Message) -Level 'ERROR'
 		}
 
 		# 7. Check for Reboot

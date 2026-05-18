@@ -79,7 +79,7 @@ function Write-Log {
 	$FormattedMessage = ('{0} [{1}] {2}' -f (Get-Date -Format 's'), $Level, $Message)
 
 	if ([Environment]::GetCommandLineArgs().Contains('-NonInteractive')) {
-		Write-Output $FormattedMessage
+		[Console]::WriteLine($FormattedMessage)
 	} else {
 		Write-Host $FormattedMessage -ForegroundColor $ColorMap[$Level]
 	}
