@@ -321,6 +321,26 @@ function Install-UpdateCollection {
 	}
 }
 
+function Log-AvailableUpdates {
+	param(
+		[Parameter(Mandatory = $true)]
+		$Updates
+	)
+	for ($i = 0; $i -lt $Updates.Count; $i++) {
+		$Update = $Updates.Item($i)
+		$Title = $Update.Title
+		if ([string]::IsNullOrWhiteSpace($Title)) { $Title = '[Blank Title]' }
+		$Category = 'Unknown Category'
+		try {
+			$Classification = $Update.Categories | Where-Object { $_.Type -eq 'UpdateClassification' } | Select-Object -First 1
+			if ($null -ne $Classification -and -not [string]::IsNullOrWhiteSpace($Classification.Name)) {
+				$Category = $Classification.Name
+			}
+		} catch {}
+		Write-Log -Message ('  - {0} (Category: {1})' -f $Title, $Category) -Level 'TRACE'
+	}
+}
+
 #endregion
 ##################################### MAIN SCRIPT ##############################
 
@@ -432,14 +452,7 @@ switch ($Action) {
 			Write-Log -Message 'No available updates found.' -Level 'INFO'
 		} else {
 			Write-Log -Message ('Found {0} available updates:' -f $Updates.Count) -Level 'INFO'
-			for ($i = 0; $i -lt $Updates.Count; $i++) {
-				$Update = $Updates.Item($i)
-				$Title = $Update.Title
-				if ([string]::IsNullOrWhiteSpace($Title)) { $Title = '[Blank Title]' }
-				$UpdateId = 'Unknown ID'
-				try { $UpdateId = $Update.Identity.UpdateID } catch {}
-				Write-Log -Message ('  - {0} (UpdateID: {1})' -f $Title, $UpdateId) -Level 'TRACE'
-			}
+			Log-AvailableUpdates -Updates $Updates
 		}
 	}
 
@@ -456,14 +469,7 @@ switch ($Action) {
 		}
 
 		Write-Log -Message ('Found {0} updates to install.' -f $Updates.Count) -Level 'INFO'
-		for ($i = 0; $i -lt $Updates.Count; $i++) {
-			$Update = $Updates.Item($i)
-			$Title = $Update.Title
-			if ([string]::IsNullOrWhiteSpace($Title)) { $Title = '[Blank Title]' }
-			$UpdateId = 'Unknown ID'
-			try { $UpdateId = $Update.Identity.UpdateID } catch {}
-			Write-Log -Message ('  - {0} (UpdateID: {1})' -f $Title, $UpdateId) -Level 'TRACE'
-		}
+		Log-AvailableUpdates -Updates $Updates
 
 		# 2. Create Update Collection
 		$MSUpdateCollection = New-UpdateCollection -Updates $Updates
