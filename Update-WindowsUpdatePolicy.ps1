@@ -189,36 +189,60 @@ $Out = @{
 
 $Out | ConvertTo-Json -Depth 9 -AsArray | Out-File -FilePath ".\Windows-UpdatePolicy.json"
 
+# Update Changelog if requested
 if ($UpdateChangelog) {
 	Write-Log -Message 'Generating Changelog' -Level 'INFO'
 	$ChangelogPath = '.\CHANGELOG.POLICY.md'
 	$Today = Get-Date -Format 'yyyy-MM-dd'
-	
-	$NewEntry = New-Object System.Text.StringBuilder
-	$null = $NewEntry.AppendLine()
-	$null = $NewEntry.AppendLine("## $Today")
-	$null = $NewEntry.AppendLine()
-	
+
+	$ExistingWUs = if ($ExistingPolicy -is [array]) { $ExistingPolicy[0].WindowsUpdate } else { $ExistingPolicy.WindowsUpdate }
+
+	$HasChanges = $false
+	$ChangeLogBuffer = New-Object System.Text.StringBuilder
+
 	foreach ($Item in $WUs) {
-		if ($Item.Updates.Count -gt 0) {
-			$null = $NewEntry.AppendLine("### $($Item.OS.Caption)")
-			$null = $NewEntry.AppendLine()
-			foreach ($Update in $Item.Updates) {
-				$null = $NewEntry.AppendLine("* $($Update.Title)")
+		$ExistingIDs = @()
+		if ($null -ne $ExistingWUs) {
+			$ExistingOS = $ExistingWUs | Where-Object { $_.OS.Version -eq $Item.OS.Version }
+			if ($null -ne $ExistingOS) {
+				$ExistingIDs = @($ExistingOS.Updates | ForEach-Object { $_.UpdateID })
 			}
-			$null = $NewEntry.AppendLine()
+		}
+		
+		# Only include updates whose UpdateID is not in the existing policy's updates for this OS
+		$NewUpdates = $Item.Updates | Where-Object { $_.UpdateID -notin $ExistingIDs }
+
+		if ($NewUpdates.Count -gt 0) {
+			$HasChanges = $true
+			$null = $ChangeLogBuffer.AppendLine("### $($Item.OS.Caption)")
+			$null = $ChangeLogBuffer.AppendLine()
+			foreach ($Update in $NewUpdates) {
+				$null = $ChangeLogBuffer.AppendLine("* $($Update.Title)")
+			}
+			$null = $ChangeLogBuffer.AppendLine()
 		}
 	}
-	
-	if (Test-Path -Path $ChangelogPath) {
-		$ExistingContent = Get-Content -Path $ChangelogPath -Raw
-		# Remove the header if it exists so we can easily prepend
-		$ExistingContent = $ExistingContent -replace '(?s)^# Changelog\r?\n?', ''
-		$NewContent = "# Changelog`n" + $NewEntry.ToString() + $ExistingContent
-		Set-Content -Path $ChangelogPath -Value $NewContent -NoNewline
+
+	if ($HasChanges) {
+		$NewEntry = New-Object System.Text.StringBuilder
+		$null = $NewEntry.AppendLine()
+		$null = $NewEntry.AppendLine("## $Today")
+		$null = $NewEntry.AppendLine()
+		$null = $NewEntry.Append($ChangeLogBuffer.ToString())
+
+		if (Test-Path -Path $ChangelogPath) {
+			$ExistingContent = Get-Content -Path $ChangelogPath -Raw
+			# Remove the header if it exists so we can easily prepend
+			$ExistingContent = $ExistingContent -replace '(?s)^# Changelog\r?\n?', ''
+			$NewContent = "# Changelog`n" + $NewEntry.ToString() + $ExistingContent
+			Set-Content -Path $ChangelogPath -Value $NewContent -NoNewline
+		} else {
+			$NewContent = "# Changelog`n" + $NewEntry.ToString()
+			Set-Content -Path $ChangelogPath -Value $NewContent -NoNewline
+		}
+		Write-Log -Message 'Changelog updated successfully with new changes.' -Level 'INFO'
 	} else {
-		$NewContent = "# Changelog`n" + $NewEntry.ToString()
-		Set-Content -Path $ChangelogPath -Value $NewContent -NoNewline
+		Write-Log -Message 'No new updates found compared to the existing policy file; skipping Changelog generation' -Level 'INFO'
 	}
 }
 

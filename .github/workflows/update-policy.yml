@@ -2,8 +2,8 @@ name: Update Windows Update Policy
 
 on:
   schedule:
-    # Runs at 00:00 UTC on later Wednesdays (21st-31st)
-    - cron: '0 0 21-31 * 3'
+    # Runs at 00:00 UTC every Wednesday
+    - cron: '0 0 * * 3'
   workflow_dispatch: # Allows manual triggering
 
 permissions:
