@@ -1,5 +1,66 @@
 # Changelog
 
+## 2026-06-10
+
+### Microsoft Windows 10
+
+* 2026-06 Servicing Stack Update for Windows 10 Version 1607 for x64-based Systems (KB5094141)
+* 2026-06 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5094122)
+
+### Microsoft Windows 10
+
+* 2026-06 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5094123)
+
+### Microsoft Windows 10
+
+* 2026-06 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5094127)
+
+### Microsoft Windows 10
+
+* 2026-06 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5094127)
+
+### Microsoft Windows 11
+
+* 2026-06 Cumulative Update for Windows 11, version 23H2 for x64-based Systems (KB5093998)
+
+### Microsoft Windows 11
+
+* 2026-06 Cumulative Update for Windows 11, version 24H2 for x64-based Systems (KB5094126) (26100.8655)
+
+### Microsoft Windows 11
+
+* 2026-06 Cumulative Update for Windows 11, version 25H2 for x64-based Systems (KB5094126) (26200.8655)
+
+### Microsoft Windows 11
+
+* 2026-06 Cumulative Update for Windows 11, version 26H1 for x64-based Systems (KB5095051) (28000.2269)
+
+### Microsoft Windows Server 2016
+
+* 2026-06 Servicing Stack Update for Windows Server 2016 for x64-based Systems (KB5094141)
+* 2026-06 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5094122)
+
+### Microsoft Windows Server 2019
+
+* 2026-06 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5094123)
+
+### Microsoft Windows Server 2022
+
+* 2026-06 Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5094128)
+
+### Microsoft Windows Server 2025
+
+* 2026-06 Cumulative Update for Microsoft server operating system version 24H2 for x64-based Systems (KB5094125) (26100.32995)
+
+### Microsoft Windows Server 2012 R2
+
+* 2026-06 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5094041)
+
+### Microsoft Windows Server 2012
+
+* 2026-06 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5094042)
+
+
 
 ## 2026-05-20
 
