@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-06-24
+
+### Microsoft Windows 10
+
+* 2026-06 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5094122)
+
+### Microsoft Windows Server 2016
+
+* 2026-06 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5094122)
+
+
 ## 2026-06-17
 
 ### Microsoft Windows 10
