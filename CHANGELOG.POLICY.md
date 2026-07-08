@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-07-08
+
+### Microsoft Windows 10
+
+* Microsoft .NET Framework 4.8 for Windows 10 Version 1803 for x64 (KB4486153)
+
+
 ## 2026-07-01
 
 ### Microsoft Windows 10
