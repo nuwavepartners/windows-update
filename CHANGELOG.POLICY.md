@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-07-22
+
+### Microsoft Windows 11
+
+* 2026-07 Cumulative Update for Windows 11, version 24H2 for x64-based Systems (KB5121767) (26100.8894)
+
+### Microsoft Windows 11
+
+* 2026-07 Cumulative Update for Windows 11, version 25H2 for x64-based Systems (KB5121767) (26200.8894)
+
+
 ## 2026-07-15
 
 ### Microsoft Windows 10
