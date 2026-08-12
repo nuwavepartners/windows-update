@@ -1,5 +1,66 @@
 # Changelog
 
+## 2026-08-12
+
+### Microsoft Windows 10
+
+* 2026-08 Servicing Stack Update for Windows 10 Version 1607 for x64-based Systems (KB5120236)
+* 2026-08 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5120418)
+
+### Microsoft Windows 10
+
+* 2026-08 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5120238)
+
+### Microsoft Windows 10
+
+* 2026-08 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5120249)
+
+### Microsoft Windows 10
+
+* 2026-08 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5120249)
+
+### Microsoft Windows 11
+
+* 2026-08 Cumulative Update for Windows 11, version 23H2 for x64-based Systems (KB5120240)
+
+### Microsoft Windows 11
+
+* 2026-08 Cumulative Update for Windows 11, version 24H2 for x64-based Systems (KB5121003) (26100.9168)
+
+### Microsoft Windows 11
+
+* 2026-08 Cumulative Update for Windows 11, version 25H2 for x64-based Systems (KB5121003) (26200.9168)
+
+### Microsoft Windows 11
+
+* 2026-08 Cumulative Update for Windows 11, version 26H1 for x64-based Systems (KB5121000) (28000.2704)
+
+### Microsoft Windows Server 2016
+
+* 2026-08 Servicing Stack Update for Windows Server 2016 for x64-based Systems (KB5120236)
+* 2026-08 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5120418)
+
+### Microsoft Windows Server 2019
+
+* 2026-08 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5120238)
+
+### Microsoft Windows Server 2022
+
+* 2026-08 Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5120242)
+
+### Microsoft Windows Server 2025
+
+* 2026-08 Cumulative Update for Microsoft server operating system version 24H2 for x64-based Systems (KB5120233) (26100.33296)
+
+### Microsoft Windows Server 2012 R2
+
+* 2026-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5120385)
+
+### Microsoft Windows Server 2012
+
+* 2026-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5120386)
+
+
 ## 2026-07-22
 
 ### Microsoft Windows 11
