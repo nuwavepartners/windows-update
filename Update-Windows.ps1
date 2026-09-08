@@ -1,9 +1,9 @@
 <#
 .NOTES
 	Author:			Chris Stone
-	Date-Modified:	2026-05-01 14:33:06
+	Date-Modified:	2026-09-08 11:22:00
 .VERSION
-    2.1.0
+    2.1.1
 #>
 [CmdletBinding()]
 param (
@@ -79,18 +79,25 @@ try {
 if ($null -ne $Conf._meta.Date_Modified) {
 	Write-Log -Message 'Verifying configuration' -Level 'TRACE'
 	$PatchTuesday = (1..7 | ForEach-Object { $(Get-Date -Day 7 -Hour 0 -Minute 0 -Second 0).AddDays($_) } | Where-Object { $_.DayOfWeek -like 'Tue*' })
-	if (((Get-Date) -gt $PatchTuesday) -and ((Get-Date -Date $Conf._meta.Date_Modified) -lt $PatchTuesday)) {
+	if (((Get-Date) -ge $PatchTuesday.AddDays(1)) -and ((Get-Date -Date $Conf._meta.Date_Modified) -lt $PatchTuesday)) {
 		Write-Log -Message ('Patch policy data may be Outdated! {0}' -f $Conf._meta.Date_Modified) -Level 'WARN'
 	}
 }
 
 Write-Log -Message 'Collecting current computer configuration' -Level 'INFO'
 $ThisOS = Get-CimInstance -ClassName Win32_OperatingSystem
-$ThisCBS = Get-HotFix
-$WUSession = New-Object -ComObject "Microsoft.Update.Session"
-$WUSearcher = $WUSession.CreateUpdateSearcher()
-$historyCount = $WUSearcher.GetTotalHistoryCount()
-$ThisWUS = @($WUSearcher.QueryHistory(0, $historyCount))
+$ThisCBS = @(Get-HotFix -ErrorAction SilentlyContinue)
+$ThisWUS = @()
+try {
+	$WUSession = New-Object -ComObject "Microsoft.Update.Session"
+	$WUSearcher = $WUSession.CreateUpdateSearcher()
+	$historyCount = $WUSearcher.GetTotalHistoryCount()
+	if ($historyCount -gt 0) {
+		$ThisWUS = @($WUSearcher.QueryHistory(0, $historyCount))
+	}
+} catch {
+	Write-Log -Message ('Unable to query Windows Update history: {0}' -f $_.Exception.Message) -Level 'TRACE'
+}
 Write-Log -Message ('OS: {0} {1} <{2}>' -f $ThisOS.Caption, $ThisOS.Version, $ThisOS.ProductType) -Level 'TRACE'
 Write-Log -Message ('CBS: {0} Installed, Most recent {1}' -f $ThisCBS.Count, ($ThisCBS.InstalledOn | Measure-Object -Maximum).Maximum) -Level 'TRACE'
 Write-Log -Message ('WUS: {0} updates installed, Most recent {1}' -f $ThisWUS.Count, ($ThisWUS.Date | Measure-Object -Maximum).Maximum) -Level 'TRACE'
