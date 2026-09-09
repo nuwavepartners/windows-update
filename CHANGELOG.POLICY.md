@@ -1,5 +1,300 @@
 # Changelog
 
+## 2026-09-09
+
+### Microsoft Windows 10
+
+* 2026-09 Servicing Stack Update for Windows 10 Version 1607 for x64-based Systems (KB5122874)
+* 2026-09 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5123099)
+
+### Microsoft Windows 10
+
+* 2026-09 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5122876)
+
+### Microsoft Windows 10
+
+* 2026-09 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5122878)
+
+### Microsoft Windows 10
+
+* 2026-09 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5122878)
+
+### Microsoft Windows 11
+
+* 2026-09 Cumulative Update for Windows 11, version 23H2 for x64-based Systems (KB5122880)
+
+### Microsoft Windows 11
+
+* 2026-09 Cumulative Update for Windows 11, version 24H2 for x64-based Systems (KB5124008) (26100.9445)
+
+### Microsoft Windows 11
+
+* 2026-09 Cumulative Update for Windows 11, version 25H2 for x64-based Systems (KB5124008) (26200.9445)
+
+### Microsoft Windows 11
+
+* 2026-09 Cumulative Update for Windows 11, version 26H1 for x64-based Systems (KB5124012) (28000.2954)
+
+### Microsoft Windows Server 2016
+
+* 2026-09 Servicing Stack Update for Windows Server 2016 for x64-based Systems (KB5122874)
+* 2026-09 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5123099)
+
+### Microsoft Windows Server 2019
+
+* 2026-09 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5122876)
+
+### Microsoft Windows Server 2022
+
+* 2026-09 Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5122882)
+
+### Microsoft Windows Server 2025
+
+* 2026-09 Cumulative Update for Microsoft server operating system version 24H2 for x64-based Systems (KB5122871) (26100.33438)
+
+### Microsoft Windows Server 2012 R2
+
+* 2026-09 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5123499)
+* 2026-09 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5123066)
+
+### Microsoft Windows Server 2012
+
+* 2026-09 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5123602)
+* 2026-09 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5123065)
+
+
+## 2026-08-12
+
+### Microsoft Windows 10
+
+* 2026-08 Servicing Stack Update for Windows 10 Version 1607 for x64-based Systems (KB5120236)
+* 2026-08 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5120418)
+
+### Microsoft Windows 10
+
+* 2026-08 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5120238)
+
+### Microsoft Windows 10
+
+* 2026-08 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5120249)
+
+### Microsoft Windows 10
+
+* 2026-08 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5120249)
+
+### Microsoft Windows 11
+
+* 2026-08 Cumulative Update for Windows 11, version 23H2 for x64-based Systems (KB5120240)
+
+### Microsoft Windows 11
+
+* 2026-08 Cumulative Update for Windows 11, version 24H2 for x64-based Systems (KB5121003) (26100.9168)
+
+### Microsoft Windows 11
+
+* 2026-08 Cumulative Update for Windows 11, version 25H2 for x64-based Systems (KB5121003) (26200.9168)
+
+### Microsoft Windows 11
+
+* 2026-08 Cumulative Update for Windows 11, version 26H1 for x64-based Systems (KB5121000) (28000.2704)
+
+### Microsoft Windows Server 2016
+
+* 2026-08 Servicing Stack Update for Windows Server 2016 for x64-based Systems (KB5120236)
+* 2026-08 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5120418)
+
+### Microsoft Windows Server 2019
+
+* 2026-08 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5120238)
+
+### Microsoft Windows Server 2022
+
+* 2026-08 Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5120242)
+
+### Microsoft Windows Server 2025
+
+* 2026-08 Cumulative Update for Microsoft server operating system version 24H2 for x64-based Systems (KB5120233) (26100.33296)
+
+### Microsoft Windows Server 2012 R2
+
+* 2026-08 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5120385)
+
+### Microsoft Windows Server 2012
+
+* 2026-08 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5120386)
+
+
+## 2026-07-22
+
+### Microsoft Windows 11
+
+* 2026-07 Cumulative Update for Windows 11, version 24H2 for x64-based Systems (KB5121767) (26100.8894)
+
+### Microsoft Windows 11
+
+* 2026-07 Cumulative Update for Windows 11, version 25H2 for x64-based Systems (KB5121767) (26200.8894)
+
+
+## 2026-07-15
+
+### Microsoft Windows 10
+
+* 2026-07 Servicing Stack Update for Windows 10 Version 1607 for x64-based Systems (KB5099542)
+* 2026-07 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5099535)
+
+### Microsoft Windows 10
+
+* Microsoft .NET Framework 4.8 for Windows 10 Version 1803 (KB4486153)
+
+### Microsoft Windows 10
+
+* 2026-07 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5099538)
+
+### Microsoft Windows 10
+
+* 2026-07 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5099539)
+
+### Microsoft Windows 10
+
+* 2026-07 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5099539)
+
+### Microsoft Windows 11
+
+* 2026-07 Cumulative Update for Windows 11, version 23H2 for x64-based Systems (KB5099414)
+
+### Microsoft Windows 11
+
+* 2026-07 Cumulative Update for Windows 11, version 24H2 for x64-based Systems (KB5101650) (26100.8875)
+
+### Microsoft Windows 11
+
+* 2026-07 Cumulative Update for Windows 11, version 25H2 for x64-based Systems (KB5101650) (26200.8875)
+
+### Microsoft Windows 11
+
+* 2026-07 Cumulative Update for Windows 11, version 26H1 for x64-based Systems (KB5101649) (28000.2525)
+
+### Microsoft Windows Server 2016
+
+* 2026-07 Servicing Stack Update for Windows Server 2016 for x64-based Systems (KB5099542)
+* 2026-07 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5099535)
+
+### Microsoft Windows Server 2019
+
+* 2026-07 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5099538)
+
+### Microsoft Windows Server 2022
+
+* 2026-07 Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5099540)
+
+### Microsoft Windows Server 2025
+
+* 2026-07 Cumulative Update for Microsoft server operating system version 24H2 for x64-based Systems (KB5099536) (26100.33158)
+
+### Microsoft Windows Server 2012 R2
+
+* 2026-07 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5106412)
+* 2026-07 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5099444)
+
+### Microsoft Windows Server 2012
+
+* 2026-07 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5106414)
+* 2026-07 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5099445)
+
+
+## 2026-07-08
+
+### Microsoft Windows 10
+
+* Microsoft .NET Framework 4.8 for Windows 10 Version 1803 for x64 (KB4486153)
+
+
+## 2026-07-01
+
+### Microsoft Windows 10
+
+* Microsoft .NET Framework 4.8 for Windows 10 Version 1803 (KB4486153)
+
+
+## 2026-06-24
+
+### Microsoft Windows 10
+
+* 2026-06 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5094122)
+
+### Microsoft Windows Server 2016
+
+* 2026-06 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5094122)
+
+
+## 2026-06-17
+
+### Microsoft Windows 10
+
+* Microsoft .NET Framework 4.8 for Windows 10 Version 1803 for x64 (KB4486153)
+
+
+## 2026-06-10
+
+### Microsoft Windows 10
+
+* 2026-06 Servicing Stack Update for Windows 10 Version 1607 for x64-based Systems (KB5094141)
+* 2026-06 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5094122)
+
+### Microsoft Windows 10
+
+* 2026-06 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5094123)
+
+### Microsoft Windows 10
+
+* 2026-06 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5094127)
+
+### Microsoft Windows 10
+
+* 2026-06 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5094127)
+
+### Microsoft Windows 11
+
+* 2026-06 Cumulative Update for Windows 11, version 23H2 for x64-based Systems (KB5093998)
+
+### Microsoft Windows 11
+
+* 2026-06 Cumulative Update for Windows 11, version 24H2 for x64-based Systems (KB5094126) (26100.8655)
+
+### Microsoft Windows 11
+
+* 2026-06 Cumulative Update for Windows 11, version 25H2 for x64-based Systems (KB5094126) (26200.8655)
+
+### Microsoft Windows 11
+
+* 2026-06 Cumulative Update for Windows 11, version 26H1 for x64-based Systems (KB5095051) (28000.2269)
+
+### Microsoft Windows Server 2016
+
+* 2026-06 Servicing Stack Update for Windows Server 2016 for x64-based Systems (KB5094141)
+* 2026-06 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5094122)
+
+### Microsoft Windows Server 2019
+
+* 2026-06 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5094123)
+
+### Microsoft Windows Server 2022
+
+* 2026-06 Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5094128)
+
+### Microsoft Windows Server 2025
+
+* 2026-06 Cumulative Update for Microsoft server operating system version 24H2 for x64-based Systems (KB5094125) (26100.32995)
+
+### Microsoft Windows Server 2012 R2
+
+* 2026-06 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5094041)
+
+### Microsoft Windows Server 2012
+
+* 2026-06 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5094042)
+
+
 
 ## 2026-05-20
 
