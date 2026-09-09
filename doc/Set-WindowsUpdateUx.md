@@ -18,8 +18,10 @@ If specified, skips restarting the Windows Update (`wuauserv`) service after reg
 
 ### `-UxMode`
 Determines if UX restrictions (Settings access, Tray icon, Auto-Reboot) are applied.
-*   **Disable** (Default): Updates the registry to hide the System Tray icon, suppress reboot notifications, and prevent access to Windows Update settings.
-*   **Enable**: Removes the UX restriction registry keys, restoring normal visibility and settings access.
+*   **Disable** (Default): Updates the registry to hide the System Tray icon, suppress reboot notifications, prevent access to Windows Update settings, and hide the Windows Update page (plus its sub-pages: action, history, restart options) from the Settings app entirely via `SettingsPageVisibility`.
+*   **Enable**: Removes the UX restriction registry keys, restoring normal visibility and settings access, including un-hiding the Windows Update Settings page.
+
+The Settings-page hide exists because on machines where the Windows Update Orchestrator is disabled in favor of direct WUA COM automation (see `Update-WindowsNative.ps1`), the Settings app's Windows Update page shows permanently stale "available updates" data from the disabled Orchestrator - it can never refresh, and users file support tickets over it. Hiding the page removes the confusion at the source rather than just restricting interaction with it. The `SettingsPageVisibility` registry value is shared - other tools/policies could also use it to hide unrelated Settings pages - so this script merges its own page identifiers into whatever is already there (and removes only its own identifiers on `-UxMode Enable`) rather than overwriting the whole value. If the existing value is in the `showonly:` (allow-list) format, or an unrecognized format, the script leaves it untouched rather than guess.
 
 ### `-WuMode`
 Determines if overall Windows Update access is allowed.

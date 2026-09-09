@@ -10,7 +10,11 @@
 
 .PARAMETER UxMode
     Determines if UX restrictions (Settings access, Tray icon, Auto-Reboot) are applied.
-    'Disable' (default) prevents access and hides UX.
+    'Disable' (default) prevents access and hides UX. This includes hiding the Windows
+    Update page (and its sub-pages) from the Settings app entirely via SettingsPageVisibility,
+    since on machines where the Windows Update Orchestrator is disabled in favor of direct
+    WUA COM automation (see Update-WindowsNative.ps1), that page's status is permanently
+    stale and misleads users into filing support tickets.
     'Enable' removes these restrictions.
 
 .PARAMETER WuMode
@@ -58,6 +62,99 @@ function Write-Log {
 	} else {
 		Write-Host $FormattedMessage -ForegroundColor $ColorMap[$Level]
 	}
+}
+
+function Set-WuSettingsPageVisibility {
+	<#
+	.SYNOPSIS
+		Adds or removes the Windows Update Settings-page identifiers from the shared
+		SettingsPageVisibility registry value, without disturbing any other pages that
+		value may already be hiding.
+	#>
+	[CmdletBinding(SupportsShouldProcess = $true)]
+	param (
+		[Parameter(Mandatory = $true)]
+		[ValidateSet('Hide', 'Show')]
+		[string]$Mode
+	)
+
+	if (-not (Test-Path -Path $SettingsVisibilityPath)) {
+		if ($Mode -eq 'Show') {
+			Write-Log -Message "$SettingsVisibilityName key not found; nothing to restore." -Level 'VERBOSE'
+			return $false
+		}
+		if ($PSCmdlet.ShouldProcess($SettingsVisibilityPath, 'Create registry key')) {
+			Write-Log -Message "Key not found. Creating: $SettingsVisibilityPath" -Level 'VERBOSE'
+			New-Item -Path $SettingsVisibilityPath -ItemType Directory -Force -ErrorAction Stop | Out-Null
+		}
+	}
+
+	$Existing = (Get-ItemProperty -Path $SettingsVisibilityPath -Name $SettingsVisibilityName -ErrorAction SilentlyContinue).$SettingsVisibilityName
+
+	if ([string]::IsNullOrWhiteSpace($Existing)) {
+		if ($Mode -eq 'Show') {
+			Write-Log -Message "$SettingsVisibilityName not set; nothing to restore." -Level 'VERBOSE'
+			return $false
+		}
+		$NewValue = 'hide:' + ($WuSettingsPages -join ';')
+		if ($PSCmdlet.ShouldProcess($SettingsVisibilityPath, "Set $SettingsVisibilityName to '$NewValue'")) {
+			Write-Log -Message "Setting $SettingsVisibilityName to '$NewValue'" -Level 'VERBOSE'
+			Set-ItemProperty -Path $SettingsVisibilityPath -Name $SettingsVisibilityName -Value $NewValue -Type String -ErrorAction Stop
+			return $true
+		}
+		return $false
+	}
+
+	if ($Existing -notmatch '^hide:') {
+		# Likely 'showonly:' mode (an allow-list) or an unrecognized format - safely merging either
+		# would require knowing what the value looked like before we ever touched it, which we don't
+		# track. Leave it alone rather than guess and risk corrupting someone else's policy.
+		Write-Log -Message "$SettingsVisibilityName is not in 'hide:' format ('$Existing'); leaving it untouched." -Level 'WARN'
+		return $false
+	}
+
+	$Prefix = 'hide:'
+	$CurrentPages = [System.Collections.Generic.List[string]]@($Existing.Substring($Prefix.Length) -split ';' | Where-Object { $_ })
+
+	if ($Mode -eq 'Hide') {
+		$Changed = $false
+		foreach ($Page in $WuSettingsPages) {
+			if ($CurrentPages -notcontains $Page) {
+				$CurrentPages.Add($Page)
+				$Changed = $true
+			}
+		}
+		if (-not $Changed) {
+			Write-Log -Message "$SettingsVisibilityName already hides all Windows Update pages." -Level 'VERBOSE'
+			return $false
+		}
+	} else {
+		$CountBefore = $CurrentPages.Count
+		foreach ($Page in $WuSettingsPages) {
+			[void]$CurrentPages.Remove($Page)
+		}
+		if ($CurrentPages.Count -eq $CountBefore) {
+			Write-Log -Message "$SettingsVisibilityName does not currently hide any Windows Update pages." -Level 'VERBOSE'
+			return $false
+		}
+	}
+
+	if ($CurrentPages.Count -eq 0) {
+		if ($PSCmdlet.ShouldProcess($SettingsVisibilityPath, "Remove $SettingsVisibilityName (no pages left to hide)")) {
+			Write-Log -Message "Removing $SettingsVisibilityName (no pages left to hide)" -Level 'VERBOSE'
+			Remove-ItemProperty -Path $SettingsVisibilityPath -Name $SettingsVisibilityName -ErrorAction Stop
+			return $true
+		}
+		return $false
+	}
+
+	$NewValue = $Prefix + ($CurrentPages -join ';')
+	if ($PSCmdlet.ShouldProcess($SettingsVisibilityPath, "Set $SettingsVisibilityName to '$NewValue'")) {
+		Write-Log -Message "Setting $SettingsVisibilityName to '$NewValue'" -Level 'VERBOSE'
+		Set-ItemProperty -Path $SettingsVisibilityPath -Name $SettingsVisibilityName -Value $NewValue -Type String -ErrorAction Stop
+		return $true
+	}
+	return $false
 }
 
 #endregion
@@ -116,6 +213,17 @@ $WuModeReg = @{
 	Type  = 'DWord'
 }
 
+# Windows Update's main Settings page plus its sub-pages, so no related page is left reachable via deep link
+$WuSettingsPages = @(
+	'windowsupdate',
+	'windowsupdate-action',
+	'windowsupdate-history',
+	'windowsupdate-restartoptions',
+	'windowsupdate-options'
+)
+$SettingsVisibilityPath = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer'
+$SettingsVisibilityName = 'SettingsPageVisibility'
+
 ################################## THE SCRIPT ##################################
 Write-Log -Message ('Script Started ').PadRight(80, '-') -Level 'INFO'
 
@@ -146,6 +254,7 @@ if ($UxMode -eq 'Disable') {
 			$Changed++
 		}
 	}
+	if (Set-WuSettingsPageVisibility -Mode 'Hide') { $Changed++ }
 } else {
 	Write-Log -Message 'UxMode Enable' -Level 'INFO'
 	foreach ($Config in $UxModeRegs) {
@@ -162,6 +271,7 @@ if ($UxMode -eq 'Disable') {
 			}
 		}
 	}
+	if (Set-WuSettingsPageVisibility -Mode 'Show') { $Changed++ }
 }
 
 if ($WuMode -eq 'Disable') {
