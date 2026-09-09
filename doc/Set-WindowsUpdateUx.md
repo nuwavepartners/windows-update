@@ -47,3 +47,4 @@ Determines if overall Windows Update access is allowed.
 *   **Author**: Chris Stone
 *   **Version**: 1.4.2
 *   **Requirements**: Administrative privileges (HKLM access needed).
+*   **`-WhatIf` / `-Confirm`**: Supported. Every registry key/property change and the `wuauserv` restart are gated behind `ShouldProcess`, so `-WhatIf` previews changes without applying them.

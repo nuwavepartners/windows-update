@@ -55,3 +55,4 @@ This script leverages the native Windows Update API (`Microsoft.Update.Session`)
 *   **Administrator Privileges**: This script must be run in a PowerShell session with elevated (Administrator) privileges.
 *   **PowerShell Version**: Requires PowerShell version 3.0 or higher.
 *   **Internet Connection**: An active internet connection is necessary to download the Windows updates.
+*   **`-WhatIf` / `-Confirm`**: Supported for `-Action Install` — downloading and installing is gated behind `ShouldProcess`.

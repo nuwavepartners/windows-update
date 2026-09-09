@@ -17,13 +17,13 @@ function Write-Log {
 	param(
 		[Parameter(Mandatory = $true)]
 		[string]$Message,
-		[ValidateSet('TRACE', 'INFO', 'WARN', 'ERROR')]
+		[ValidateSet('VERBOSE', 'INFO', 'WARN', 'ERROR')]
 		[string]$Level = 'INFO',
 		[hashtable]$ColorMap = @{
-			TRACE = 'DarkGray'
-			INFO  = 'Green'
-			WARN  = 'Yellow'
-			ERROR = 'Red'
+			VERBOSE = 'DarkGray'
+			INFO    = 'Green'
+			WARN    = 'Yellow'
+			ERROR   = 'Red'
 		}
 	)
 	$FormattedMessage = "$(Get-Date -Format 's') [$Level] $Message"
@@ -40,14 +40,20 @@ function Get-WUCSearch {
 		[int]		$Limit = 1,
 		[Uri]		$Uri = 'https://www.catalog.update.microsoft.com/Search.aspx'
 	)
-	$SearchResults = (Invoke-WebRequest -Uri $Uri -Method Post -Body ('q={0}' -f $Query)).Links | Where-Object id -Like '*_link' | Select-Object -First $Limit
+	try {
+		$SearchResults = (Invoke-WebRequest -Uri $Uri -Method Post -Body ('q={0}' -f $Query) -ErrorAction Stop).Links | Where-Object id -Like '*_link' | Select-Object -First $Limit
+	} catch {
+		Write-Log -Message ("Catalog search failed for query '{0}': {1}" -f $Query, $_.Exception.Message) -Level 'WARN'
+		return $null
+	}
 
 	if (!$SearchResults.Count) { return $null }
 
 	return $SearchResults | ForEach-Object {
 		$UpdateID = $_.id -replace '_link', ''
 		$Title = ($_.outerHTML -replace '<.+>', '').Trim()
-		$KBN = [Regex]::Matches($Title, 'KB\d+')[0].Value
+		$KBMatch = [Regex]::Match($Title, 'KB\d+')
+		$KBN = if ($KBMatch.Success) { $KBMatch.Value } else { $null }
 		$Source = Get-WUCDownload $UpdateID
 		return @{
 			UpdateID    = $UpdateID
@@ -62,29 +68,42 @@ function Get-WUCDownload {
 		[string]	$updateId,
 		[Uri]		$Uri = 'https://www.catalog.update.microsoft.com/DownloadDialog.aspx'
 	)
-	$DownloadResults = Invoke-WebRequest -Uri $Uri -Method "POST" -Body ('updateIDs=[{"updateID":"#"}]' -replace '#', $updateId)
-	return (($DownloadResults.Content -split '\r?\n').Trim() -match '^downloadInformation\[0\].files\[0\].url' -split ' ')[-1].Replace("'", "").Replace(";", "")
+	try {
+		$DownloadResults = Invoke-WebRequest -Uri $Uri -Method "POST" -Body ('updateIDs=[{"updateID":"#"}]' -replace '#', $updateId) -ErrorAction Stop
+	} catch {
+		Write-Log -Message ("Catalog download lookup failed for update '{0}': {1}" -f $updateId, $_.Exception.Message) -Level 'WARN'
+		return $null
+	}
+	$Url = (($DownloadResults.Content -split '\r?\n').Trim() -match '^downloadInformation\[0\].files\[0\].url' -split ' ')[-1].Replace("'", "").Replace(";", "")
+	if ($Url -notmatch '^https?://') {
+		Write-Log -Message ("Catalog download URL extraction failed for update '{0}' - the Catalog page format may have changed." -f $updateId) -Level 'WARN'
+		return $null
+	}
+	return $Url
 }
 
 ################################## THE SCRIPT ##################################
 
 Write-Log -Message ('Script Started ').PadRight(80, '-') -Level 'INFO'
 
+$PolicyPath = Join-Path -Path $PSScriptRoot -ChildPath 'Windows-UpdatePolicy.json'
+$MappingPath = Join-Path -Path $PSScriptRoot -ChildPath 'Windows-Mapping.json'
+
 # Load existing policy file if it exists
 $ExistingPolicy = $null
-if (Test-Path -Path ".\Windows-UpdatePolicy.json") {
+if (Test-Path -Path $PolicyPath) {
 	Write-Log -Message "Loading existing policy file" -Level 'INFO'
-	$ExistingPolicy = Get-Content -Path ".\Windows-UpdatePolicy.json" | ConvertFrom-Json
+	$ExistingPolicy = Get-Content -Path $PolicyPath | ConvertFrom-Json
 }
 
 # Load OS Mapping Data from external JSON file
 Write-Log -Message 'Loading Windows Mapping' -Level 'INFO'
-$OSs = Get-Content -Path ".\Windows-Mapping.json" | ConvertFrom-Json
+$OSs = Get-Content -Path $MappingPath | ConvertFrom-Json
 
 # EoL Information
 Write-Log -Message 'Loading Windows End of Life' -Level 'INFO'
 $EoLURI = 'https://endoflife.date/api/windows.json'
-$EoL = (New-Object System.Net.WebClient).DownloadString($EoLURI) | ConvertFrom-Json
+$EoL = Invoke-RestMethod -Uri $EoLURI -ErrorAction Stop
 
 # Define Update Search Specifications using embedded JSON
 $WUSpec = @'
@@ -126,9 +145,15 @@ $WUs = @()
 foreach ($OS in $OSs) {
 
 	# Check End of Life status before searching for updates
-	$EoLInfo = $EoL | Where-Object { $_.latest -eq $OS.Version } | Sort-Object { [datetime]$_.eol } -Descending | Select-Object -First 1
-	if ($SkipEoL -and ($null -ne $EoLInfo) -and ([datetime]$EoLInfo.eol -lt (Get-Date).AddDays(-30))) {
-		Write-Log -Message ("{0} past End of Life ({1}). Copying from existing policy." -f $OS.WUName, ([datetime]$EoLInfo.eol).ToString('yyyy-MM-dd')) -Level 'WARN'
+	# endoflife.date can return non-date 'eol' values (e.g. $false for rolling releases); skip those rather than crash the cast
+	$EoLInfo = $EoL | Where-Object { $_.latest -eq $OS.Version } | ForEach-Object {
+		$EoLDate = [datetime]::MinValue
+		if ([datetime]::TryParse([string]$_.eol, [ref]$EoLDate)) {
+			[pscustomobject]@{ EoLDate = $EoLDate }
+		}
+	} | Sort-Object -Property EoLDate -Descending | Select-Object -First 1
+	if ($SkipEoL -and ($null -ne $EoLInfo) -and ($EoLInfo.EoLDate -lt (Get-Date).AddDays(-30))) {
+		Write-Log -Message ("{0} past End of Life ({1}). Copying from existing policy." -f $OS.WUName, $EoLInfo.EoLDate.ToString('yyyy-MM-dd')) -Level 'WARN'
 
 		$ExistingOSUpdates = $null
 		if ($null -ne $ExistingPolicy) {
@@ -187,12 +212,12 @@ $Out = @{
 	WindowsEoL    = $EoL
 }
 
-$Out | ConvertTo-Json -Depth 9 -AsArray | Out-File -FilePath ".\Windows-UpdatePolicy.json"
+$Out | ConvertTo-Json -Depth 9 -AsArray | Set-Content -Path $PolicyPath -Encoding utf8
 
 # Update Changelog if requested
 if ($UpdateChangelog) {
 	Write-Log -Message 'Generating Changelog' -Level 'INFO'
-	$ChangelogPath = '.\CHANGELOG.POLICY.md'
+	$ChangelogPath = Join-Path -Path $PSScriptRoot -ChildPath 'CHANGELOG.POLICY.md'
 	$Today = Get-Date -Format 'yyyy-MM-dd'
 
 	$ExistingWUs = if ($ExistingPolicy -is [array]) { $ExistingPolicy[0].WindowsUpdate } else { $ExistingPolicy.WindowsUpdate }

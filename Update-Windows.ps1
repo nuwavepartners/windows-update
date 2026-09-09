@@ -5,7 +5,7 @@
 .VERSION
     2.1.1
 #>
-[CmdletBinding()]
+[CmdletBinding(SupportsShouldProcess = $true)]
 param (
 	[Parameter(Mandatory = $false)]
 	[ValidateSet('List', 'Install')]
@@ -22,13 +22,13 @@ function Write-Log {
 	param(
 		[Parameter(Mandatory = $true)]
 		[string]$Message,
-		[ValidateSet('TRACE', 'INFO', 'WARN', 'ERROR')]
+		[ValidateSet('VERBOSE', 'INFO', 'WARN', 'ERROR')]
 		[string]$Level = 'INFO',
 		[hashtable]$ColorMap = @{
-			TRACE = 'DarkGray'
-			INFO  = 'Green'
-			WARN  = 'Yellow'
-			ERROR = 'Red'
+			VERBOSE = 'DarkGray'
+			INFO    = 'Green'
+			WARN    = 'Yellow'
+			ERROR   = 'Red'
 		}
 	)
 	$FormattedMessage = "$(Get-Date -Format 's') [$Level] $Message"
@@ -59,25 +59,20 @@ if ($PSVersionTable.PSVersion.Major -lt 3) {
 # 2. Preparation (Policy)
 
 Write-Log -Message 'Running in Policy Mode' -Level 'INFO'
-$HttpClient = $null
 $Conf = $null
 
-if (-not ("System.Net.Http.HttpClient" -as [Type])) {
-	Add-Type -AssemblyName System.Net.Http
-}
-$HttpClient = New-Object System.Net.Http.HttpClient
 Write-Log -Message 'Script Configuration' -Level 'INFO'
-Write-Log -Message 'Loading configuration' -Level 'TRACE'
+Write-Log -Message 'Loading configuration' -Level 'VERBOSE'
 try {
-	$JsonData = $HttpClient.GetStringAsync($PolicyUri).GetAwaiter().GetResult()
-	$Conf = $JsonData | ConvertFrom-Json
+	$JsonData = Invoke-WebRequest -Uri $PolicyUri -UseBasicParsing -ErrorAction Stop
+	$Conf = $JsonData.Content | ConvertFrom-Json
 } catch {
 	Write-Log -Message ('Failed to download or parse configuration from {0}. Error: {1}' -f $PolicyUri, $_.Exception.Message) -Level 'ERROR'
 	return
 }
 
 if ($null -ne $Conf._meta.Date_Modified) {
-	Write-Log -Message 'Verifying configuration' -Level 'TRACE'
+	Write-Log -Message 'Verifying configuration' -Level 'VERBOSE'
 	$PatchTuesday = (1..7 | ForEach-Object { $(Get-Date -Day 7 -Hour 0 -Minute 0 -Second 0).AddDays($_) } | Where-Object { $_.DayOfWeek -like 'Tue*' })
 	if (((Get-Date) -ge $PatchTuesday.AddDays(1)) -and ((Get-Date -Date $Conf._meta.Date_Modified) -lt $PatchTuesday)) {
 		Write-Log -Message ('Patch policy data may be Outdated! {0}' -f $Conf._meta.Date_Modified) -Level 'WARN'
@@ -96,18 +91,18 @@ try {
 		$ThisWUS = @($WUSearcher.QueryHistory(0, $historyCount))
 	}
 } catch {
-	Write-Log -Message ('Unable to query Windows Update history: {0}' -f $_.Exception.Message) -Level 'TRACE'
+	Write-Log -Message ('Unable to query Windows Update history: {0}' -f $_.Exception.Message) -Level 'VERBOSE'
 }
-Write-Log -Message ('OS: {0} {1} <{2}>' -f $ThisOS.Caption, $ThisOS.Version, $ThisOS.ProductType) -Level 'TRACE'
-Write-Log -Message ('CBS: {0} Installed, Most recent {1}' -f $ThisCBS.Count, ($ThisCBS.InstalledOn | Measure-Object -Maximum).Maximum) -Level 'TRACE'
-Write-Log -Message ('WUS: {0} updates installed, Most recent {1}' -f $ThisWUS.Count, ($ThisWUS.Date | Measure-Object -Maximum).Maximum) -Level 'TRACE'
+Write-Log -Message ('OS: {0} {1} <{2}>' -f $ThisOS.Caption, $ThisOS.Version, $ThisOS.ProductType) -Level 'VERBOSE'
+Write-Log -Message ('CBS: {0} Installed, Most recent {1}' -f $ThisCBS.Count, ($ThisCBS.InstalledOn | Measure-Object -Maximum).Maximum) -Level 'VERBOSE'
+Write-Log -Message ('WUS: {0} updates installed, Most recent {1}' -f $ThisWUS.Count, ($ThisWUS.Date | Measure-Object -Maximum).Maximum) -Level 'VERBOSE'
 
 if ($Conf.WindowsEoL) {
 	$Conf.WindowsEoL | Where-Object { $ThisOS.Version -match $_.latest } | ForEach-Object {
 		if ($_.eol -lt (Get-Date)) {
 			Write-Log -Message 'This Operating System is End of Life and may be insecure.' -Level 'WARN'
 		} else {
-			Write-Log -Message ('Operating System Supported until {0}' -f $_.eol) -Level 'TRACE'
+			Write-Log -Message ('Operating System Supported until {0}' -f $_.eol) -Level 'VERBOSE'
 		}
 	}
 }
@@ -118,7 +113,7 @@ if ($SkipRecentlyUpdated -gt 0) {
 		$DaysSinceLastUpdate = ((Get-Date) - [datetime]$MostRecentCBS).TotalDays
 		if ($DaysSinceLastUpdate -lt $SkipRecentlyUpdated) {
 			Write-Log -Message ('Skipped: Most recently installed update was {0:N1} days ago (Threshold: {1} days)' -f $DaysSinceLastUpdate, $SkipRecentlyUpdated) -Level 'INFO'
-			return 0
+			return
 		}
 	}
 }
@@ -143,12 +138,13 @@ if ($SkipRecentlyUpdated -gt 0) {
 
 	foreach ($Update in $UpdateCollection.Updates) {
 		Write-Log -Message ('Searching for {0}' -f $Update.Title) -Level 'INFO'
-		if ((($null -ne $ThisCBS.HotFixID) -and ($ThisCBS.HotFixID -contains $Update.KBArticleID)) -or (($null -ne $ThisWUS.Title) -and ($ThisWUS.Title -match $Update.KBArticleID))) {
-			Write-Log -Message 'Found' -Level 'TRACE'
+		$KBId = if ($Update.KBArticleID -notmatch '^KB') { "KB$($Update.KBArticleID)" } else { $Update.KBArticleID }
+		if ((($null -ne $ThisCBS.HotFixID) -and ($ThisCBS.HotFixID -contains $KBId)) -or (($null -ne $ThisWUS.Title) -and ($ThisWUS.Title -match $KBId))) {
+			Write-Log -Message 'Found' -Level 'VERBOSE'
 		} else {
-			Write-Log -Message 'Not Installed' -Level 'TRACE'
+			Write-Log -Message 'Not Installed' -Level 'VERBOSE'
 
-			if ($Action -eq 'Install') {
+			if (($Action -eq 'Install') -and $PSCmdlet.ShouldProcess($Update.KBArticleID, 'Download and install update')) {
 				$Source = $Update.Source
 				if ($null -eq $Source) {
 					Write-Log -Message 'Source not found - Possibly Unsupported' -Level 'WARN'
@@ -157,44 +153,48 @@ if ($SkipRecentlyUpdated -gt 0) {
 
 				# Download
 				$f = Join-Path $env:TEMP ([System.IO.Path]::GetRandomFileName())
-				$Stream = $null
-				$FileStream = $null
 				try {
-					Write-Log -Message 'Downloading' -Level 'TRACE'
-					$Stream = $HttpClient.GetStreamAsync($Source).GetAwaiter().GetResult()
-					$FileStream = [System.IO.File]::Create($f)
-					$Stream.CopyTo($FileStream)
+					Write-Log -Message 'Downloading' -Level 'VERBOSE'
+					Invoke-WebRequest -Uri $Source -OutFile $f -UseBasicParsing -ErrorAction Stop
 				} catch {
 					Write-Log -Message ('Failed to download update {0} from {1}. Error: {2}' -f $Update.KBArticleID, $Source, $_.Exception.Message) -Level 'ERROR'
+					Remove-Item -Path $f -Force -ErrorAction SilentlyContinue
 					continue # Skip this update
-				} finally {
-					if ($FileStream) { $FileStream.Dispose() }
-					if ($Stream) { $Stream.Dispose() }
+				}
+
+				# Verify the package is genuinely signed by Microsoft before installing it
+				$Sig = Get-AuthenticodeSignature -FilePath $f
+				if (($Sig.Status -ne 'Valid') -or ($Sig.SignerCertificate.Subject -notmatch 'O=Microsoft Corporation')) {
+					Write-Log -Message ('Authenticode signature check failed for {0} ({1}). Refusing to install.' -f $Update.KBArticleID, $Sig.Status) -Level 'ERROR'
+					Remove-Item -Path $f -Force -ErrorAction SilentlyContinue
+					continue # Skip this update
 				}
 
 				# Install
 				$r = $null
 				try {
-					Write-Log -Message 'Installing' -Level 'TRACE'
-					$r = Start-Process -FilePath 'C:\Windows\System32\wusa.exe' -ArgumentList $f, '/quiet', '/norestart' -Wait -PassThru -ErrorAction Stop
+					Write-Log -Message 'Installing' -Level 'VERBOSE'
+					$r = Start-Process -FilePath 'C:\Windows\System32\wusa.exe' -ArgumentList "`"$f`"", '/quiet', '/norestart' -Wait -PassThru -ErrorAction Stop
 				} catch {
 					Write-Log -Message ('Failed to start installer (wusa.exe) for {0}. Error: {1}' -f $Update.KBArticleID, $_.Exception.Message) -Level 'ERROR'
 					Remove-Item -Path $f -ErrorAction SilentlyContinue
 					continue # Skip this update
 				}
 
-				switch ($r.ExitCode) {
-					0x0 { Write-Log -Message 'Installed successfully' -Level 'TRACE'; break }
-					0x00240006	{ Write-Log -Message 'Update already installed' -Level 'TRACE'; break }
-					0x00240005	{ Write-Log -Message 'Installed, Pending reboot' -Level 'TRACE'; $RebootRequired = $true; break }
-					0x0BC2 { Write-Log -Message 'Installed, Pending reboot' -Level 'TRACE'; $RebootRequired = $true; break }
-					{ $_ -gt 0 } {
-						Write-Log -Message ('Installation returned {0} (0x{1:X8})' -f $r.ExitCode, $r.ExitCode) -Level 'ERROR'
-						continue # Don't throw, just log and continue to the next update
+				try {
+					switch -Exact ($r.ExitCode) {
+						0x0 { Write-Log -Message 'Installed successfully' -Level 'VERBOSE'; break }
+						0x00240006	{ Write-Log -Message 'Update already installed' -Level 'VERBOSE'; break }
+						0x00240005	{ Write-Log -Message 'Installed, Pending reboot' -Level 'VERBOSE'; $RebootRequired = $true; break }
+						0x0BC2 { Write-Log -Message 'Installed, Pending reboot' -Level 'VERBOSE'; $RebootRequired = $true; break }
+						default {
+							Write-Log -Message ('Installation returned {0} (0x{1:X8})' -f $r.ExitCode, $r.ExitCode) -Level 'ERROR'
+							continue # Don't throw, just log and continue to the next update
+						}
 					}
+				} finally {
+					Remove-Item -Path $f -ErrorAction SilentlyContinue
 				}
-
-				Remove-Item -Path $f -ErrorAction SilentlyContinue
 			}
 		}
 	}

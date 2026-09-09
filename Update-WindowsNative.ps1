@@ -41,7 +41,7 @@
     Author: Chris Stone
     Version: 2.0.7
 #>
-[CmdletBinding(DefaultParameterSetName = 'CustomCriteria')]
+[CmdletBinding(DefaultParameterSetName = 'CustomCriteria', SupportsShouldProcess = $true)]
 param (
 	[Parameter(Mandatory = $false)]
 	[ValidateSet('Search', 'List', 'Install')]
@@ -88,13 +88,13 @@ function Write-Log {
 	param(
 		[Parameter(Mandatory = $true)]
 		[string]$Message,
-		[ValidateSet('TRACE', 'INFO', 'WARN', 'ERROR')]
+		[ValidateSet('VERBOSE', 'INFO', 'WARN', 'ERROR')]
 		[string]$Level = 'INFO',
 		[hashtable]$ColorMap = @{
-			TRACE = 'DarkGray'
-			INFO  = 'Green'
-			WARN  = 'Yellow'
-			ERROR = 'Red'
+			VERBOSE = 'DarkGray'
+			INFO    = 'Green'
+			WARN    = 'Yellow'
+			ERROR   = 'Red'
 		}
 	)
 	$FormattedMessage = "$(Get-Date -Format 's') [$Level] $Message"
@@ -206,6 +206,7 @@ function Get-WuaErrorMessage {
 
 function Invoke-UpdateDetection {
 	Write-Log -Message 'Initiating new update search (DetectNow)...' -Level 'INFO'
+	$AutoUpdate = $null
 	try {
 		$AutoUpdate = New-Object -ComObject 'Microsoft.Update.AutoUpdate' -ErrorAction Stop
 		$AutoUpdate.DetectNow()
@@ -213,6 +214,8 @@ function Invoke-UpdateDetection {
 	} catch {
 		$ErrorMessage = Get-WuaErrorMessage -Exception $_.Exception
 		Write-Log -Message ("Failed to initiate update search. Error: $ErrorMessage") -Level 'ERROR'
+	} finally {
+		if ($AutoUpdate) { [System.Runtime.InteropServices.Marshal]::ReleaseComObject($AutoUpdate) | Out-Null }
 	}
 }
 
@@ -221,8 +224,11 @@ function Find-AvailableUpdate {
 		[Parameter(Mandatory = $true)]
 		[string]$Criteria
 	)
+	$MSUpdateSession = $null
+	$MSUpdateSearcher = $null
+	$SearchResult = $null
 	try {
-		Write-Log -Message 'Searching for available updates...' -Level 'TRACE'
+		Write-Log -Message 'Searching for available updates...' -Level 'VERBOSE'
 		$MSUpdateSession = New-Object -ComObject 'Microsoft.Update.Session' -ErrorAction Stop
 		$MSUpdateSession.ClientApplicationID = 'Update-WindowsNative'
 		try {
@@ -230,14 +236,19 @@ function Find-AvailableUpdate {
 		} catch {
 			$MSUpdateSession.UserLocale = 1033
 		}
-		
+
 		$MSUpdateSearcher = $MSUpdateSession.CreateUpdateSearcher()
 		$MSUpdateSearcher.Online = $true
-		return , $MSUpdateSearcher.Search($Criteria).Updates
+		$SearchResult = $MSUpdateSearcher.Search($Criteria)
+		return , $SearchResult.Updates
 	} catch {
 		$ErrorMessage = Get-WuaErrorMessage -Exception $_.Exception
 		Write-Log -Message ("Failed to search for updates. Error: $ErrorMessage") -Level 'ERROR'
 		return $null
+	} finally {
+		if ($SearchResult) { [System.Runtime.InteropServices.Marshal]::ReleaseComObject($SearchResult) | Out-Null }
+		if ($MSUpdateSearcher) { [System.Runtime.InteropServices.Marshal]::ReleaseComObject($MSUpdateSearcher) | Out-Null }
+		if ($MSUpdateSession) { [System.Runtime.InteropServices.Marshal]::ReleaseComObject($MSUpdateSession) | Out-Null }
 	}
 }
 
@@ -260,13 +271,13 @@ function New-UpdateCollection {
 	}
 }
 
-function Accept-UpdateEula {
+function Confirm-UpdateEula {
 	param (
 		[Parameter(Mandatory = $true)]
 		$UpdateCollection
 	)
 	try {
-		Write-Log -Message 'Accepting EULAs, if necessary...' -Level 'TRACE'
+		Write-Log -Message 'Accepting EULAs, if necessary...' -Level 'VERBOSE'
 		for ($i = 0; $i -lt $UpdateCollection.Count; $i++) {
 			$Update = $UpdateCollection.Item($i)
 			if ($null -ne $Update -and -not $Update.EulaAccepted) {
@@ -286,6 +297,8 @@ function Receive-UpdateDownload {
 		[Parameter(Mandatory = $true)]
 		$UpdateCollection
 	)
+	$MSUpdateSession = $null
+	$MSUpdateDownloader = $null
 	try {
 		Write-Log -Message 'Downloading selected updates...' -Level 'INFO'
 		$MSUpdateSession = New-Object -ComObject 'Microsoft.Update.Session' -ErrorAction Stop
@@ -293,12 +306,15 @@ function Receive-UpdateDownload {
 		$MSUpdateDownloader = $MSUpdateSession.CreateUpdateDownloader()
 		$MSUpdateDownloader.Updates = $UpdateCollection
 		$DownloadResult = $MSUpdateDownloader.Download()
-		Write-Log -Message ('Download result code: {0}' -f $DownloadResult.ResultCode) -Level 'TRACE'
+		Write-Log -Message ('Download result code: {0}' -f $DownloadResult.ResultCode) -Level 'VERBOSE'
 		return $DownloadResult
 	} catch {
 		$ErrorMessage = Get-WuaErrorMessage -Exception $_.Exception
 		Write-Log -Message ("Failed to download updates. Error: $ErrorMessage") -Level 'ERROR'
 		return $null
+	} finally {
+		if ($MSUpdateDownloader) { [System.Runtime.InteropServices.Marshal]::ReleaseComObject($MSUpdateDownloader) | Out-Null }
+		if ($MSUpdateSession) { [System.Runtime.InteropServices.Marshal]::ReleaseComObject($MSUpdateSession) | Out-Null }
 	}
 }
 
@@ -307,6 +323,8 @@ function Install-UpdateCollection {
 		[Parameter(Mandatory = $true)]
 		$UpdateCollection
 	)
+	$MSUpdateSession = $null
+	$MSUpdateInstaller = $null
 	try {
 		Write-Log -Message 'Installing downloaded updates...' -Level 'INFO'
 		$MSUpdateSession = New-Object -ComObject 'Microsoft.Update.Session' -ErrorAction Stop
@@ -318,10 +336,13 @@ function Install-UpdateCollection {
 		$ErrorMessage = Get-WuaErrorMessage -Exception $_.Exception
 		Write-Log -Message ("Failed to install updates. Error: $ErrorMessage") -Level 'ERROR'
 		return $null
+	} finally {
+		if ($MSUpdateInstaller) { [System.Runtime.InteropServices.Marshal]::ReleaseComObject($MSUpdateInstaller) | Out-Null }
+		if ($MSUpdateSession) { [System.Runtime.InteropServices.Marshal]::ReleaseComObject($MSUpdateSession) | Out-Null }
 	}
 }
 
-function Log-AvailableUpdates {
+function Write-AvailableUpdateLog {
 	param(
 		[Parameter(Mandatory = $true)]
 		$Updates
@@ -337,7 +358,7 @@ function Log-AvailableUpdates {
 				$Category = $Classification.Name
 			}
 		} catch {}
-		Write-Log -Message ('  - {0} (Category: {1})' -f $Title, $Category) -Level 'TRACE'
+		Write-Log -Message ('  - {0} (Category: {1})' -f $Title, $Category) -Level 'VERBOSE'
 	}
 }
 
@@ -407,34 +428,18 @@ if ($PSCmdlet.ParameterSetName -eq 'BuiltCriteria') {
 		}
 	}
 
-	$OrGroups = @()
-	if ($CategoryCriteria.Count -gt 0 -and $UpdateIdCriteria.Count -gt 0) {
-		foreach ($Cat in $CategoryCriteria) {
-			foreach ($Id in $UpdateIdCriteria) {
-				$OrGroups += '{0} AND {1} AND {2}' -f $BaseCriteriaString, $Cat, $Id
-			}
-		}
-	} elseif ($CategoryCriteria.Count -gt 0) {
-		foreach ($Cat in $CategoryCriteria) {
-			$OrGroups += '{0} AND {1}' -f $BaseCriteriaString, $Cat
-		}
-	} elseif ($UpdateIdCriteria.Count -gt 0) {
-		foreach ($Id in $UpdateIdCriteria) {
-			$OrGroups += '{0} AND {1}' -f $BaseCriteriaString, $Id
-		}
-	} else {
-		$OrGroups += $BaseCriteriaString
+	$CriteriaParts = @($BaseCriteriaString)
+	if ($CategoryCriteria.Count -gt 0) {
+		$CriteriaParts += if ($CategoryCriteria.Count -gt 1) { '({0})' -f ($CategoryCriteria -join ' OR ') } else { $CategoryCriteria[0] }
 	}
-
-	if ($OrGroups.Count -gt 1) {
-		$Criteria = '({0})' -f ($OrGroups -join ') OR (')
-	} else {
-		$Criteria = $OrGroups[0]
+	if ($UpdateIdCriteria.Count -gt 0) {
+		$CriteriaParts += if ($UpdateIdCriteria.Count -gt 1) { '({0})' -f ($UpdateIdCriteria -join ' OR ') } else { $UpdateIdCriteria[0] }
 	}
+	$Criteria = $CriteriaParts -join ' AND '
 
-	Write-Log -Message "Built Search Criteria: $Criteria" -Level 'TRACE'
+	Write-Log -Message "Built Search Criteria: $Criteria" -Level 'VERBOSE'
 } else {
-	Write-Log -Message "Using Parameter Criteria: $Criteria" -Level 'TRACE'
+	Write-Log -Message "Using Parameter Criteria: $Criteria" -Level 'VERBOSE'
 }
 
 switch ($Action) {
@@ -452,7 +457,7 @@ switch ($Action) {
 			Write-Log -Message 'No available updates found.' -Level 'INFO'
 		} else {
 			Write-Log -Message ('Found {0} available updates:' -f $Updates.Count) -Level 'INFO'
-			Log-AvailableUpdates -Updates $Updates
+			Write-AvailableUpdateLog -Updates $Updates
 		}
 	}
 
@@ -469,16 +474,17 @@ switch ($Action) {
 		}
 
 		Write-Log -Message ('Found {0} updates to install.' -f $Updates.Count) -Level 'INFO'
-		Log-AvailableUpdates -Updates $Updates
+		Write-AvailableUpdateLog -Updates $Updates
 
 		# 2. Create Update Collection
 		$MSUpdateCollection = New-UpdateCollection -Updates $Updates
 		if ($null -eq $MSUpdateCollection) { return }
 
 		# 3. Accept EULAs
-		if (-not (Accept-UpdateEula -UpdateCollection $MSUpdateCollection)) { return }
+		if (-not (Confirm-UpdateEula -UpdateCollection $MSUpdateCollection)) { return }
 
 		# 4. Download Updates
+		if (-not $PSCmdlet.ShouldProcess(('{0} update(s)' -f $MSUpdateCollection.Count), 'Download and install')) { return }
 		$DownloadResult = Receive-UpdateDownload -UpdateCollection $MSUpdateCollection
 		if ($null -eq $DownloadResult) { return }
 
@@ -495,7 +501,7 @@ switch ($Action) {
 				$ResultCodeMap = @{ 0 = 'Not Started'; 1 = 'In Progress'; 2 = 'Succeeded'; 3 = 'Succeeded with Errors'; 4 = 'Failed'; 5 = 'Aborted' }
 				$Title = $Update.Title
 				if ([string]::IsNullOrWhiteSpace($Title)) { $Title = '[Blank Title]' }
-				Write-Log -Message ('  - {0}: Installation Status: {1}' -f $Title, $ResultCodeMap[$Result.ResultCode]) -Level 'TRACE'
+				Write-Log -Message ('  - {0}: Installation Status: {1}' -f $Title, $ResultCodeMap[$Result.ResultCode]) -Level 'VERBOSE'
 				if ($Result.ResultCode -eq 4) {
 					Write-Log -Message ('  - {0}: Installation Failed. Error: {1}' -f $Title, $Result.HResult) -Level 'ERROR'
 				}

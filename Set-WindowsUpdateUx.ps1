@@ -26,7 +26,7 @@
     PSVersion:  5.0+
 #>
 
-[CmdletBinding()]
+[CmdletBinding(SupportsShouldProcess = $true)]
 param (
 	[switch]$SkipServiceRestart,
 
@@ -43,13 +43,13 @@ function Write-Log {
 	param(
 		[Parameter(Mandatory = $true)]
 		[string]$Message,
-		[ValidateSet('TRACE', 'INFO', 'WARN', 'ERROR')]
+		[ValidateSet('VERBOSE', 'INFO', 'WARN', 'ERROR')]
 		[string]$Level = 'INFO',
 		[hashtable]$ColorMap = @{
-			TRACE = 'DarkGray'
-			INFO  = 'Green'
-			WARN  = 'Yellow'
-			ERROR = 'Red'
+			VERBOSE = 'DarkGray'
+			INFO    = 'Green'
+			WARN    = 'Yellow'
+			ERROR   = 'Red'
 		}
 	)
 	$FormattedMessage = "$(Get-Date -Format 's') [$Level] $Message"
@@ -109,7 +109,7 @@ $UxModeRegs = @(
 	}
 )
 
-$WuModeResg = @{
+$WuModeReg = @{
 	Path  = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate'
 	Name  = 'DisableWindowsUpdateAccess'
 	Value = 1
@@ -118,6 +118,13 @@ $WuModeResg = @{
 
 ################################## THE SCRIPT ##################################
 Write-Log -Message ('Script Started ').PadRight(80, '-') -Level 'INFO'
+
+# Check for Administrative Rights
+if (!(New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+	Write-Log -Message 'Script must be run as Administrator' -Level 'ERROR'
+	return
+}
+
 $Changed = 0
 
 if ($UxMode -eq 'Disable') {
@@ -125,14 +132,16 @@ if ($UxMode -eq 'Disable') {
 	foreach ($Config in $UxModeRegs) {
 		# Ensure the Registry Key exists before attempting to set the property
 		if (-not (Test-Path -Path $Config.Path)) {
-			Write-Log -Message "Key not found. Creating: $($Config.Path)" -Level 'TRACE'
-			New-Item -Path $Config.Path -ItemType Directory -Force -ErrorAction Stop | Out-Null
+			if ($PSCmdlet.ShouldProcess($Config.Path, 'Create registry key')) {
+				Write-Log -Message "Key not found. Creating: $($Config.Path)" -Level 'VERBOSE'
+				New-Item -Path $Config.Path -ItemType Directory -Force -ErrorAction Stop | Out-Null
+			}
 		}
 		$ExistingValue = Get-ItemProperty -Path $Config.Path -Name $Config.Name -ErrorAction SilentlyContinue
-		if ($ExistingValue.($Config.Name) -eq $Config.Value) {
-			Write-Log -Message "Property $($Config.Name) already set to $($Config.Value)" -Level 'TRACE'
-		} else {
-			Write-Log -Message "Setting $($Config.Name) from $($ExistingValue.($Config.Name)) to $($Config.Value)" -Level 'TRACE'
+		if (($null -ne $ExistingValue) -and ($ExistingValue.PSObject.Properties.Name -contains $Config.Name) -and ($ExistingValue.($Config.Name) -eq $Config.Value)) {
+			Write-Log -Message "Property $($Config.Name) already set to $($Config.Value)" -Level 'VERBOSE'
+		} elseif ($PSCmdlet.ShouldProcess($Config.Path, "Set registry property $($Config.Name) to $($Config.Value)")) {
+			Write-Log -Message "Setting $($Config.Name) from $($ExistingValue.($Config.Name)) to $($Config.Value)" -Level 'VERBOSE'
 			Set-ItemProperty @Config -ErrorAction Stop
 			$Changed++
 		}
@@ -143,11 +152,13 @@ if ($UxMode -eq 'Disable') {
 		if (Test-Path -Path $Config.Path) {
 			$ExistingValue = Get-ItemProperty -Path $Config.Path -Name $Config.Name -ErrorAction SilentlyContinue
 			if ($null -ne $ExistingValue) {
-				Write-Log -Message "Removing $($Config.Name)" -Level 'TRACE'
-				Remove-ItemProperty -Path $Config.Path -Name $Config.Name -ErrorAction Stop
-				$Changed++
+				if ($PSCmdlet.ShouldProcess($Config.Path, "Remove registry property $($Config.Name)")) {
+					Write-Log -Message "Removing $($Config.Name)" -Level 'VERBOSE'
+					Remove-ItemProperty -Path $Config.Path -Name $Config.Name -ErrorAction Stop
+					$Changed++
+				}
 			} else {
-				Write-Log -Message "Property $($Config.Name) not found." -Level 'TRACE'
+				Write-Log -Message "Property $($Config.Name) not found." -Level 'VERBOSE'
 			}
 		}
 	}
@@ -156,36 +167,44 @@ if ($UxMode -eq 'Disable') {
 if ($WuMode -eq 'Disable') {
 	Write-Log -Message 'WuMode Disable' -Level 'INFO'
 
-	if (-not (Test-Path -Path $WuModeResg.Path)) {
-		Write-Log -Message "Key not found. Creating: $($WuModeResg.Path)" -Level 'TRACE'
-		New-Item -Path $WuModeResg.Path -ItemType Directory -Force -ErrorAction Stop | Out-Null
+	if (-not (Test-Path -Path $WuModeReg.Path)) {
+		if ($PSCmdlet.ShouldProcess($WuModeReg.Path, 'Create registry key')) {
+			Write-Log -Message "Key not found. Creating: $($WuModeReg.Path)" -Level 'VERBOSE'
+			New-Item -Path $WuModeReg.Path -ItemType Directory -Force -ErrorAction Stop | Out-Null
+		}
 	}
 
-	$ExistingValue = Get-ItemProperty -Path $WuModeResg.Path -Name $WuModeResg.Name -ErrorAction SilentlyContinue
-	if ($ExistingValue.($WuModeResg.Name) -eq $WuModeResg.Value) {
-		Write-Log -Message "Property $($WuModeResg.Name) already set to $($WuModeResg.Value)" -Level 'TRACE'
-	} else {
-		Write-Log -Message "Setting $($WuModeResg.Name) from $($ExistingValue.($WuModeResg.Name)) to $($WuModeResg.Value)" -Level 'TRACE'
-		Set-ItemProperty @WuModeResg -ErrorAction Stop
+	$ExistingValue = Get-ItemProperty -Path $WuModeReg.Path -Name $WuModeReg.Name -ErrorAction SilentlyContinue
+	if (($null -ne $ExistingValue) -and ($ExistingValue.PSObject.Properties.Name -contains $WuModeReg.Name) -and ($ExistingValue.($WuModeReg.Name) -eq $WuModeReg.Value)) {
+		Write-Log -Message "Property $($WuModeReg.Name) already set to $($WuModeReg.Value)" -Level 'VERBOSE'
+	} elseif ($PSCmdlet.ShouldProcess($WuModeReg.Path, "Set registry property $($WuModeReg.Name) to $($WuModeReg.Value)")) {
+		Write-Log -Message "Setting $($WuModeReg.Name) from $($ExistingValue.($WuModeReg.Name)) to $($WuModeReg.Value)" -Level 'VERBOSE'
+		Set-ItemProperty @WuModeReg -ErrorAction Stop
 		$Changed++
 	}
 } else {
 	Write-Log -Message 'WuMode Enable' -Level 'INFO'
-	if (Test-Path -Path $WuModeResg.Path) {
-		$ExistingValue = Get-ItemProperty -Path $WuModeResg.Path -Name $WuModeResg.Name -ErrorAction SilentlyContinue
+	if (Test-Path -Path $WuModeReg.Path) {
+		$ExistingValue = Get-ItemProperty -Path $WuModeReg.Path -Name $WuModeReg.Name -ErrorAction SilentlyContinue
 		if ($null -ne $ExistingValue) {
-			Write-Log -Message "Removing $($WuModeResg.Name)" -Level 'TRACE'
-			Remove-ItemProperty -Path $WuModeResg.Path -Name $WuModeResg.Name -ErrorAction Stop
-			$Changed++
+			if ($PSCmdlet.ShouldProcess($WuModeReg.Path, "Remove registry property $($WuModeReg.Name)")) {
+				Write-Log -Message "Removing $($WuModeReg.Name)" -Level 'VERBOSE'
+				Remove-ItemProperty -Path $WuModeReg.Path -Name $WuModeReg.Name -ErrorAction Stop
+				$Changed++
+			}
 		} else {
-			Write-Log -Message "Property $($WuModeResg.Name) not found." -Level 'TRACE'
+			Write-Log -Message "Property $($WuModeReg.Name) not found." -Level 'VERBOSE'
 		}
 	}
 }
 
-if ((-not $SkipServiceRestart) -and ($Changed -gt 0)) {
+if ((-not $SkipServiceRestart) -and ($Changed -gt 0) -and $PSCmdlet.ShouldProcess('wuauserv', 'Restart service')) {
 	Write-Log -Message 'Restarting Windows Update Service' -Level 'INFO'
-	Restart-Service -Name wuauserv -Force -ErrorAction Stop
+	try {
+		Restart-Service -Name wuauserv -Force -ErrorAction Stop
+	} catch {
+		Write-Log -Message ('Failed to restart Windows Update service: {0}' -f $_.Exception.Message) -Level 'WARN'
+	}
 }
 
 Write-Log -Message ('Script Finished ').PadRight(80, '-') -Level 'INFO'

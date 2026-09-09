@@ -59,6 +59,8 @@ Convenient for running the script on a regular schedule, and catching up a serve
 * **Administrator Privileges**: These scripts must be run in a PowerShell session with elevated (Administrator) privileges.
 * **PowerShell Version**: Requires PowerShell version 3.0 or higher.
 * **Internet Connection**: An active internet connection is necessary to download the configuration file and the Windows updates.
+* **Package Integrity**: Before installation, each downloaded package must carry a valid Authenticode signature from `Microsoft Corporation`; packages that fail this check are discarded and skipped.
+* **`-WhatIf` / `-Confirm`**: Supported for `-Action Install` — downloading and installing each update is gated behind `ShouldProcess`.
 * **Exit Codes**: The script uses `wusa.exe` to install updates. Common exit codes for this process include:
   * `0x0`: The update installed successfully.
   * `0x00240006`: The update is already installed.
