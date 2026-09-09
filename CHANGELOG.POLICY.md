@@ -1,5 +1,68 @@
 # Changelog
 
+## 2026-09-09
+
+### Microsoft Windows 10
+
+* 2026-09 Servicing Stack Update for Windows 10 Version 1607 for x64-based Systems (KB5122874)
+* 2026-09 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5123099)
+
+### Microsoft Windows 10
+
+* 2026-09 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5122876)
+
+### Microsoft Windows 10
+
+* 2026-09 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5122878)
+
+### Microsoft Windows 10
+
+* 2026-09 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5122878)
+
+### Microsoft Windows 11
+
+* 2026-09 Cumulative Update for Windows 11, version 23H2 for x64-based Systems (KB5122880)
+
+### Microsoft Windows 11
+
+* 2026-09 Cumulative Update for Windows 11, version 24H2 for x64-based Systems (KB5124008) (26100.9445)
+
+### Microsoft Windows 11
+
+* 2026-09 Cumulative Update for Windows 11, version 25H2 for x64-based Systems (KB5124008) (26200.9445)
+
+### Microsoft Windows 11
+
+* 2026-09 Cumulative Update for Windows 11, version 26H1 for x64-based Systems (KB5124012) (28000.2954)
+
+### Microsoft Windows Server 2016
+
+* 2026-09 Servicing Stack Update for Windows Server 2016 for x64-based Systems (KB5122874)
+* 2026-09 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5123099)
+
+### Microsoft Windows Server 2019
+
+* 2026-09 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5122876)
+
+### Microsoft Windows Server 2022
+
+* 2026-09 Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5122882)
+
+### Microsoft Windows Server 2025
+
+* 2026-09 Cumulative Update for Microsoft server operating system version 24H2 for x64-based Systems (KB5122871) (26100.33438)
+
+### Microsoft Windows Server 2012 R2
+
+* 2026-09 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5123499)
+* 2026-09 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5123066)
+
+### Microsoft Windows Server 2012
+
+* 2026-09 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5123602)
+* 2026-09 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5123065)
+
+
 ## 2026-08-12
 
 ### Microsoft Windows 10
