@@ -93,9 +93,12 @@ try {
 } catch {
 	Write-Log -Message ('Unable to query Windows Update history: {0}' -f $_.Exception.Message) -Level 'VERBOSE'
 }
+$MostRecentCBS = ($ThisCBS.InstalledOn | Measure-Object -Maximum).Maximum
+$MostRecentWUS = ($ThisWUS.Date | Measure-Object -Maximum).Maximum
+$MostRecentAny = ($MostRecentCBS, $MostRecentWUS | Where-Object { $null -ne $_ } | Measure-Object -Maximum).Maximum
 Write-Log -Message ('OS: {0} {1} <{2}>' -f $ThisOS.Caption, $ThisOS.Version, $ThisOS.ProductType) -Level 'VERBOSE'
-Write-Log -Message ('CBS: {0} Installed, Most recent {1}' -f $ThisCBS.Count, ($ThisCBS.InstalledOn | Measure-Object -Maximum).Maximum) -Level 'VERBOSE'
-Write-Log -Message ('WUS: {0} updates installed, Most recent {1}' -f $ThisWUS.Count, ($ThisWUS.Date | Measure-Object -Maximum).Maximum) -Level 'VERBOSE'
+Write-Log -Message ('CBS: {0} Installed, Most recent {1}' -f $ThisCBS.Count, $MostRecentCBS) -Level 'VERBOSE'
+Write-Log -Message ('WUS: {0} updates installed, Most recent {1}' -f $ThisWUS.Count, $MostRecentWUS) -Level 'VERBOSE'
 
 if ($Conf.WindowsEoL) {
 	$Conf.WindowsEoL | Where-Object { $ThisOS.Version -match $_.latest } | ForEach-Object {
@@ -108,13 +111,16 @@ if ($Conf.WindowsEoL) {
 }
 
 if ($SkipRecentlyUpdated -gt 0) {
-	$MostRecentCBS = ($ThisCBS.InstalledOn | Measure-Object -Maximum).Maximum
-	if ($null -ne $MostRecentCBS) {
-		$DaysSinceLastUpdate = ((Get-Date) - [datetime]$MostRecentCBS).TotalDays
+	if ($null -ne $MostRecentAny) {
+		$DaysSinceLastUpdate = ((Get-Date) - [datetime]$MostRecentAny).TotalDays
 		if ($DaysSinceLastUpdate -lt $SkipRecentlyUpdated) {
-			Write-Log -Message ('Skipped: Most recently installed update was {0:N1} days ago (Threshold: {1} days)' -f $DaysSinceLastUpdate, $SkipRecentlyUpdated) -Level 'INFO'
+			Write-Log -Message ('Skipped: Most recently installed update (CBS/WUS) was {0:N1} days ago (Threshold: {1} days)' -f $DaysSinceLastUpdate, $SkipRecentlyUpdated) -Level 'INFO'
 			return
+		} else {
+			Write-Log -Message ('Continuing: Most recently installed update (CBS/WUS) was {0:N1} days ago (Threshold: {1} days)' -f $DaysSinceLastUpdate, $SkipRecentlyUpdated) -Level 'VERBOSE'
 		}
+	} else {
+		Write-Log -Message ('Continuing: No CBS or WUS update history found, unable to evaluate SkipRecentlyUpdated threshold of {0} days' -f $SkipRecentlyUpdated) -Level 'VERBOSE'
 	}
 }
 
