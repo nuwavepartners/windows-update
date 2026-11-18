@@ -1,5 +1,36 @@
 # Changelog
 
+## 2026-11-18
+
+### Microsoft Windows 10
+
+* 2026-11 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5136490)
+
+### Microsoft Windows 10
+
+* 2026-11 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5136493)
+
+### Microsoft Windows 10
+
+* 2026-11 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5136493)
+
+### Microsoft Windows 11
+
+* 2026-11 Cumulative Update for Windows 11, version 23H2 for x64-based Systems (KB5136483)
+
+### Microsoft Windows Server 2019
+
+* 2026-11 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5136490)
+
+### Microsoft Windows Server 2022
+
+* 2026-11 Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5136487)
+
+### Microsoft Windows Server 2025
+
+* 2026-11 Cumulative Update for Microsoft server operating system version 24H2 for x64-based Systems (KB5136489) (26100.33828)
+
+
 ## 2026-11-11
 
 ### Microsoft Windows 10
