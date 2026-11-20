@@ -2,6 +2,28 @@
   {
     "WindowsEoL": [
       {
+        "cycle": "11-26h2-e",
+        "releaseLabel": "11 26H2 (E)",
+        "releaseDate": "2026-09-29",
+        "eol": "2029-10-09",
+        "latest": "10.0.26300",
+        "link": "https://learn.microsoft.com/windows/release-health/windows11-release-information",
+        "lts": false,
+        "support": "2029-10-09",
+        "extendedSupport": false
+      },
+      {
+        "cycle": "11-26h2-w",
+        "releaseLabel": "11 26H2 (W)",
+        "releaseDate": "2026-09-29",
+        "eol": "2028-10-10",
+        "latest": "10.0.26300",
+        "link": "https://learn.microsoft.com/windows/release-health/windows11-release-information",
+        "lts": false,
+        "support": "2028-10-10",
+        "extendedSupport": false
+      },
+      {
         "cycle": "11-26h1-e",
         "releaseLabel": "11 26H1 (E)",
         "releaseDate": "2026-02-10",
@@ -164,7 +186,7 @@
         "latest": "10.0.19044",
         "link": "https://learn.microsoft.com/windows/release-health/release-information#enterprise-and-iot-enterprise-ltsbltsc-editions",
         "support": "2027-01-12",
-        "extendedSupport": false
+        "extendedSupport": "2030-01-12"
       },
       {
         "cycle": "10-21h2-e",
@@ -370,7 +392,7 @@
         "releaseDate": "2017-04-11",
         "eol": "2019-10-08",
         "latest": "10.0.15063",
-        "link": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/end-of-service-reminders-for-windows-10-versions-1703-and-1803/ba-p/903715",
+        "link": "https://techcommunity.microsoft.com/blog/windows-itpro-blog/end-of-service-reminders-for-windows-10-versions-1703-and-1803/903715",
         "lts": false,
         "support": "2019-10-08",
         "extendedSupport": false
@@ -381,7 +403,7 @@
         "releaseDate": "2017-04-11",
         "eol": "2018-10-09",
         "latest": "10.0.15063",
-        "link": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/end-of-service-reminders-for-windows-10-versions-1703-and-1803/ba-p/903715",
+        "link": "https://techcommunity.microsoft.com/blog/windows-itpro-blog/end-of-service-reminders-for-windows-10-versions-1703-and-1803/903715",
         "lts": false,
         "support": "2018-10-09",
         "extendedSupport": false
@@ -395,7 +417,7 @@
         "latest": "10.0.14393",
         "link": "https://learn.microsoft.com/windows/release-health/supported-versions-windows-client#enterprise-and-iot-enterprise-ltsbltsc-editions",
         "support": "2021-10-12",
-        "extendedSupport": false
+        "extendedSupport": "2029-10-13"
       },
       {
         "cycle": "10-1607-e",
@@ -501,7 +523,7 @@
         "releaseLabel": "Vista SP2",
         "releaseDate": "2009-04-29",
         "eol": "2017-04-11",
-        "latest": "6.0.6200",
+        "latest": "6.0.6002",
         "link": "https://learn.microsoft.com/lifecycle/products/windows-vista",
         "lts": false,
         "support": "2012-04-10",
@@ -520,21 +542,21 @@
       }
     ],
     "_meta": {
-      "Date_Modified": "2026-09-16T00:36:13Z"
+      "Date_Modified": "2026-11-18T00:23:12Z"
     },
     "WindowsUpdate": [
       {
         "Updates": [
           {
             "KBArticleID": "KB5066587",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/10/windows10.0-kb5066587-x64_3b8f34e54db81e02c66f22fffa6c9cadc553611b.msu",
             "UpdateID": "2b5014d7-68dd-4ff8-9823-3c90e4f485fb",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2025/10/windows10.0-kb5066587-x64_3b8f34e54db81e02c66f22fffa6c9cadc553611b.msu",
             "Title": "2025-10 Servicing Stack Update for Windows 10 Version 1507 for x64-based Systems (KB5066587)"
           },
           {
             "KBArticleID": "KB5066837",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/10/windows10.0-kb5066837-x64_8850aa27c06aee37ca18242bf43c4586c8ce8704.msu",
             "UpdateID": "a9d4eba2-c458-4a07-a0c6-4690f70f2678",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/10/windows10.0-kb5066837-x64_8850aa27c06aee37ca18242bf43c4586c8ce8704.msu",
             "Title": "2025-10 Cumulative Update for Windows 10 Version 1507 for x64-based Systems (KB5066837)"
           }
         ],
@@ -547,8 +569,8 @@
         "Updates": [
           {
             "KBArticleID": "KB4093109",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2018/03/windows10.0-kb4093109-x64_23878b35ac2f25483092cd28fb75b5c75b5d4ae1.msu",
             "UpdateID": "98ac416f-e0b8-4ced-9de8-d229b75b4d7a",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2018/03/windows10.0-kb4093109-x64_23878b35ac2f25483092cd28fb75b5c75b5d4ae1.msu",
             "Title": "2018-04 Cumulative Update for Windows 10 Version 1511 for x64-based Systems (KB4093109)"
           }
         ],
@@ -560,21 +582,21 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5122874",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2026/09/windows10.0-kb5122874-x64_61985cacea651b4c00f5c7aebd819b8d18f7d125.msu",
-            "UpdateID": "7a313f52-419b-41ec-a032-6bece9b415d8",
-            "Title": "2026-09 Servicing Stack Update for Windows 10 Version 1607 for x64-based Systems (KB5122874)"
+            "KBArticleID": "KB5131083",
+            "UpdateID": "467c25a1-9df2-4641-a53f-0720e3a597fa",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2026/11/windows10.0-kb5131083-x64_e58efc0fc4de2972bf79a59ba35dc0e533b68728.msu",
+            "Title": "2026-11 Servicing Stack Update for Windows 10 Version 1607 for x64-based Systems (KB5131083)"
           },
           {
-            "KBArticleID": "KB5129239",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2026/09/windows10.0-kb5129239-x64_b8127a51e81ce7d7dcb4aec0f1cc2397665f6053.msu",
-            "UpdateID": "5edbcc90-3afa-4e6a-aadd-882ee1876268",
-            "Title": "2026-09 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5129239)"
+            "KBArticleID": "KB5131291",
+            "UpdateID": "8b2ef1da-1b20-4b9f-9d2b-a751c5a5da2b",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2026/11/windows10.0-kb5131291-x64_d8d8e50d7311255186cfec29c7851d690d50dc06.msu",
+            "Title": "2026-11 Cumulative Update for Windows 10 Version 1607 for x64-based Systems (KB5131291)"
           },
           {
             "KBArticleID": "KB4486129",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu",
             "UpdateID": "a95db49d-342f-412b-8ef7-c8b1aff6ad05",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu",
             "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1607 and Windows Server 2016 for x64 (KB4486129)"
           }
         ],
@@ -587,14 +609,14 @@
         "Updates": [
           {
             "KBArticleID": "KB5000812",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2021/03/windows10.0-kb5000812-x64_40fa4a2bc24183c18efa21dd13056c6711a988d4.msu",
             "UpdateID": "34499bfa-c4b2-4fc3-81ae-c5773af66875",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2021/03/windows10.0-kb5000812-x64_40fa4a2bc24183c18efa21dd13056c6711a988d4.msu",
             "Title": "2021-03 Cumulative Update for Windows 10 Version 1703 for x64-based Systems (KB5000812)"
           },
           {
             "KBArticleID": "KB4486129",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu",
             "UpdateID": "94a49466-d72f-40e5-949c-c3f7bf2f2295",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu",
             "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1703 for x64 (KB4486129)"
           }
         ],
@@ -607,14 +629,14 @@
         "Updates": [
           {
             "KBArticleID": "KB4580328",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2020/10/windows10.0-kb4580328-x64_b0565c3b26e77c3ce230a19121e30dccfb756235.msu",
             "UpdateID": "f01aa891-eec2-4390-9974-dc226f4d6bf4",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2020/10/windows10.0-kb4580328-x64_b0565c3b26e77c3ce230a19121e30dccfb756235.msu",
             "Title": "2020-10 Cumulative Update for Windows 10 Version 1709 for x64-based Systems (KB4580328)"
           },
           {
             "KBArticleID": "KB4486153",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x86_de1c8a0152b298f88ff42dc9114eabfa61d5e957.msu",
             "UpdateID": "abd48545-bcf4-44b1-9dd5-6d9cd7ebcbee",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x86_de1c8a0152b298f88ff42dc9114eabfa61d5e957.msu",
             "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1709 (KB4486153)"
           }
         ],
@@ -627,14 +649,14 @@
         "Updates": [
           {
             "KBArticleID": "KB5003174",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2021/05/windows10.0-kb5003174-x64_54fb6b8349dbaf6d5a9fff96c1cfe5f3663bf660.msu",
             "UpdateID": "eba97f44-1871-4538-8fef-fc147baca298",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2021/05/windows10.0-kb5003174-x64_54fb6b8349dbaf6d5a9fff96c1cfe5f3663bf660.msu",
             "Title": "2021-05 Cumulative Update for Windows 10 Version 1803 for x64-based Systems (KB5003174)"
           },
           {
             "KBArticleID": "KB4486153",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x86_de1c8a0152b298f88ff42dc9114eabfa61d5e957.msu",
             "UpdateID": "3f888c77-5e40-46f8-9677-d148afdcb232",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x86_de1c8a0152b298f88ff42dc9114eabfa61d5e957.msu",
             "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1803 (KB4486153)"
           }
         ],
@@ -646,15 +668,15 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5129238",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2026/09/windows10.0-kb5129238-x64_0160d868c628b6f1ba2777a3d9fa8d1d7e72730b.msu",
-            "UpdateID": "a47707f6-2c59-4ffa-aad1-57bd061e1f60",
-            "Title": "2026-09 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5129238)"
+            "KBArticleID": "KB5136490",
+            "UpdateID": "9de45a25-1eb2-4e2f-b9b2-9f0c7dad7f0e",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2026/11/windows10.0-kb5136490-x64_54372dedcb0fe875848b3b3477f5ce5c213189b0.msu",
+            "Title": "2026-11 Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5136490)"
           },
           {
             "KBArticleID": "KB4486153",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu",
             "UpdateID": "6b34ac14-4b34-4d0a-a640-1133e9e5baa7",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu",
             "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1809 and Windows Server 2019 for x64 (KB4486153)"
           }
         ],
@@ -667,8 +689,8 @@
         "Updates": [
           {
             "KBArticleID": "KB4592449",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows10.0-kb4592449-x64_aa193efa8432018464d6173c497ce3de71a581e2.msu",
             "UpdateID": "639cae64-91b2-444e-9810-50ef1637c7e2",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2020/12/windows10.0-kb4592449-x64_aa193efa8432018464d6173c497ce3de71a581e2.msu",
             "Title": "2020-12 Cumulative Update for Windows 10 Version 1903 for x64-based Systems (KB4592449)"
           }
         ],
@@ -681,8 +703,8 @@
         "Updates": [
           {
             "KBArticleID": "KB5010792",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2022/01/windows10.0-kb5010792-x64_0137657193d0d56be086f4bf134098c3d5dc8efa.msu",
             "UpdateID": "d8bb0228-075e-4258-868d-1d4d008ebd6c",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2022/01/windows10.0-kb5010792-x64_0137657193d0d56be086f4bf134098c3d5dc8efa.msu",
             "Title": "2022-01 Cumulative Update for Windows 10 Version 1909 for x64-based Systems (KB5010792)"
           }
         ],
@@ -702,8 +724,8 @@
         "Updates": [
           {
             "KBArticleID": "KB5026361",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/05/windows10.0-kb5026361-x64_961f439d6b20735f067af766e1813936bf76cb94.msu",
             "UpdateID": "30587323-eed8-4a09-b3a9-0d3324c382c5",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/05/windows10.0-kb5026361-x64_961f439d6b20735f067af766e1813936bf76cb94.msu",
             "Title": "2023-05 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5026361)"
           }
         ],
@@ -716,8 +738,8 @@
         "Updates": [
           {
             "KBArticleID": "KB5021233",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/12/windows10.0-kb5021233-x64_00bbf75a829a2cb4f37e4a2b876ea9503acfaf4d.msu",
             "UpdateID": "f39116ae-d925-4d35-b3f7-191f3382e4b0",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2022/12/windows10.0-kb5021233-x64_00bbf75a829a2cb4f37e4a2b876ea9503acfaf4d.msu",
             "Title": "2022-12 Cumulative Update for Windows 10 Version 21H1 for x64-based Systems (KB5021233)"
           }
         ],
@@ -729,10 +751,10 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5129236",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2026/09/windows10.0-kb5129236-x64_4413bfb0ab8a665cd0244ed67ec361170bb12ecb.msu",
-            "UpdateID": "7814f4b1-d0e1-4384-90b6-b08ab397934c",
-            "Title": "2026-09 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5129236)"
+            "KBArticleID": "KB5136493",
+            "UpdateID": "0f74a7f2-f0c7-4210-9f88-c6f7e2018315",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2026/11/windows10.0-kb5136493-x64_11be8880831b3f254f40a9a9176f1b1886e339bc.msu",
+            "Title": "2026-11 Cumulative Update for Windows 10 Version 21H2 for x64-based Systems (KB5136493)"
           }
         ],
         "OS": {
@@ -743,10 +765,10 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5129236",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2026/09/windows10.0-kb5129236-x64_4413bfb0ab8a665cd0244ed67ec361170bb12ecb.msu",
-            "UpdateID": "09dbfba0-43e2-4350-88b2-31e5a16c67df",
-            "Title": "2026-09 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5129236)"
+            "KBArticleID": "KB5136493",
+            "UpdateID": "0dd7a604-683a-490f-a5ed-e4bae6d3c3f8",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2026/11/windows10.0-kb5136493-x64_11be8880831b3f254f40a9a9176f1b1886e339bc.msu",
+            "Title": "2026-11 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5136493)"
           }
         ],
         "OS": {
@@ -758,8 +780,8 @@
         "Updates": [
           {
             "KBArticleID": "KB5044280",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/10/windows10.0-kb5044280-x64_1ae3e328b1e44c196c57b4989d71f7919e0131c5.msu",
             "UpdateID": "3f26da43-d0b4-4d82-9223-068bfa0958a7",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/10/windows10.0-kb5044280-x64_1ae3e328b1e44c196c57b4989d71f7919e0131c5.msu",
             "Title": "2024-10 Cumulative Update for Windows 11 for x64-based Systems (KB5044280)"
           }
         ],
@@ -772,8 +794,8 @@
         "Updates": [
           {
             "KBArticleID": "KB5066793",
-            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/7a3fc5e6-826c-47a3-918f-82e6dd585929/public/windows11.0-kb5066793-x64_c2161f7373f0c06757ff5abdb607f2399d86d466.msu",
             "UpdateID": "7d2bf0a7-9f97-4717-b7fc-68b53ec65cfa",
+            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/7a3fc5e6-826c-47a3-918f-82e6dd585929/public/windows11.0-kb5066793-x64_c2161f7373f0c06757ff5abdb607f2399d86d466.msu",
             "Title": "2025-10 Cumulative Update for Windows 11 Version 22H2 for x64-based Systems (KB5066793)"
           }
         ],
@@ -785,10 +807,10 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5129242",
-            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/794e3f08-9beb-484d-8bcb-14fbecd0bc60/public/windows11.0-kb5129242-x64_6fb71c82604a60a3d324bd5fc18d42756b84f6e9.msu",
-            "UpdateID": "13a3b212-6163-4d26-9cca-df2383b0d13d",
-            "Title": "2026-09 Cumulative Update for Windows 11, version 23H2 for x64-based Systems (KB5129242)"
+            "KBArticleID": "KB5136483",
+            "UpdateID": "8bf5d3af-b6ce-481b-8939-11bbb3b5fad7",
+            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/2c9f6072-741f-458b-9656-ce6cbc1ea071/public/windows11.0-kb5136483-x64_ba42710f193f68ab43a4647e96edff6c1bab9e98.msu",
+            "Title": "2026-11 Cumulative Update for Windows 11, version 23H2 for x64-based Systems (KB5136483)"
           }
         ],
         "OS": {
@@ -799,10 +821,10 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5129195",
-            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/471c8f54-b9fc-491d-9944-234d5db009f0/public/windows11.0-kb5129195-x64_ed361878ec2b56a7dfdb8f256565263a7fdc8eaa.msu",
-            "UpdateID": "6523f702-594e-4013-bc9b-0764bddd9dd1",
-            "Title": "2026-09 Cumulative Update for Windows 11, version 24H2 for x64-based Systems (KB5129195) (26100.9457)"
+            "KBArticleID": "KB5132061",
+            "UpdateID": "d8619910-6bb9-4563-9797-9f753c736522",
+            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/d8b7f92b-bd35-4b4c-96e5-46ce984b31e0/public/windows11.0-kb5043080-x64_953449672073f8fb99badb4cc6d5d7849b9c83e8.msu",
+            "Title": "2026-11 Cumulative Update for Windows 11, version 24H2 for x64-based Systems (KB5132061) (26100.9974)"
           }
         ],
         "OS": {
@@ -813,10 +835,10 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5129195",
-            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/471c8f54-b9fc-491d-9944-234d5db009f0/public/windows11.0-kb5129195-x64_ed361878ec2b56a7dfdb8f256565263a7fdc8eaa.msu",
-            "UpdateID": "5cc91450-4f0f-40a8-a67a-63dc58d9dac9",
-            "Title": "2026-09 Cumulative Update for Windows 11, version 25H2 for x64-based Systems (KB5129195) (26200.9457)"
+            "KBArticleID": "KB5132061",
+            "UpdateID": "950b2422-28ad-4493-a96c-03725fd0d8c2",
+            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/d8b7f92b-bd35-4b4c-96e5-46ce984b31e0/public/windows11.0-kb5043080-x64_953449672073f8fb99badb4cc6d5d7849b9c83e8.msu",
+            "Title": "2026-11 Cumulative Update for Windows 11, version 25H2 for x64-based Systems (KB5132061) (26200.9974)"
           }
         ],
         "OS": {
@@ -827,10 +849,10 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5129194",
-            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/d82c3bd8-a3a6-4d87-bd8e-5df5eb7b6cb2/public/windows11.0-kb5129194-x64_e46546e8472484b91514d74bd6c5c4f6a3b647ac.msu",
-            "UpdateID": "eb8de9d6-4e43-432e-9cfd-5ee0491b482d",
-            "Title": "2026-09 Cumulative Update for Windows 11, version 26H1 for x64-based Systems (KB5129194) (28000.2956)"
+            "KBArticleID": "KB5132059",
+            "UpdateID": "34d5b2b7-0701-4b96-b9a3-c45ab9d0be59",
+            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/b03d1a4a-d014-40aa-a2bc-0fd7554feb80/public/windows11.0-kb5132059-x64_5981ef2a4d58dccb937cd3dbd2d6a3b2546443d4.msu",
+            "Title": "2026-11 Cumulative Update for Windows 11, version 26H1 for x64-based Systems (KB5132059) (28000.3501)"
           }
         ],
         "OS": {
@@ -841,21 +863,21 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5122874",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2026/09/windows10.0-kb5122874-x64_61985cacea651b4c00f5c7aebd819b8d18f7d125.msu",
-            "UpdateID": "f783cf56-4c85-470a-99db-1a565ead2304",
-            "Title": "2026-09 Servicing Stack Update for Windows Server 2016 for x64-based Systems (KB5122874)"
+            "KBArticleID": "KB5131083",
+            "UpdateID": "10d139d8-ce5a-4ba0-a1d7-23f709fc9676",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2026/11/windows10.0-kb5131083-x64_e58efc0fc4de2972bf79a59ba35dc0e533b68728.msu",
+            "Title": "2026-11 Servicing Stack Update for Windows Server 2016 for x64-based Systems (KB5131083)"
           },
           {
-            "KBArticleID": "KB5129239",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2026/09/windows10.0-kb5129239-x64_b8127a51e81ce7d7dcb4aec0f1cc2397665f6053.msu",
-            "UpdateID": "c38e4c04-1db8-4d60-a997-a30eff356496",
-            "Title": "2026-09 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5129239)"
+            "KBArticleID": "KB5131291",
+            "UpdateID": "563d1041-2048-4977-aadc-614237e30adb",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2026/11/windows10.0-kb5131291-x64_d8d8e50d7311255186cfec29c7851d690d50dc06.msu",
+            "Title": "2026-11 Cumulative Update for Windows Server 2016 for x64-based Systems (KB5131291)"
           },
           {
             "KBArticleID": "KB4486129",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu",
             "UpdateID": "a95db49d-342f-412b-8ef7-c8b1aff6ad05",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486129-x64_0b61d9a03db731562e0a0b49383342a4d8cbe36a.msu",
             "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1607 and Windows Server 2016 for x64 (KB4486129)"
           }
         ],
@@ -867,15 +889,15 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5129238",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2026/09/windows10.0-kb5129238-x64_0160d868c628b6f1ba2777a3d9fa8d1d7e72730b.msu",
-            "UpdateID": "b17e8efe-33b9-4452-a39b-f1138fbb260b",
-            "Title": "2026-09 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5129238)"
+            "KBArticleID": "KB5136490",
+            "UpdateID": "1c93fda7-d0c4-4b62-9600-88c344124247",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2026/11/windows10.0-kb5136490-x64_54372dedcb0fe875848b3b3477f5ce5c213189b0.msu",
+            "Title": "2026-11 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5136490)"
           },
           {
             "KBArticleID": "KB4486153",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu",
             "UpdateID": "6b34ac14-4b34-4d0a-a640-1133e9e5baa7",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/windows10.0-kb4486153-x64_43ee33b302bfdba470542a128a9ee0b58faa5412.msu",
             "Title": "Microsoft .NET Framework 4.8 for Windows 10 Version 1809 and Windows Server 2019 for x64 (KB4486153)"
           }
         ],
@@ -887,10 +909,10 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5129237",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2026/09/windows10.0-kb5129237-x64_e93c6b857e895024aeee1e023db638f8c7619096.msu",
-            "UpdateID": "5e84b275-7092-42f6-99bd-f74a4e33f113",
-            "Title": "2026-09 Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5129237)"
+            "KBArticleID": "KB5136487",
+            "UpdateID": "6b53cc24-c58b-4e8c-9c38-faf2f0a59ece",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2026/11/windows10.0-kb5136487-x64_ca79fbc4a5343a56548f064ec951d91158a5e702.msu",
+            "Title": "2026-11 Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5136487)"
           }
         ],
         "OS": {
@@ -902,8 +924,8 @@
         "Updates": [
           {
             "KBArticleID": "KB5087541",
-            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/ba643ed9-3524-4e27-a43f-14279d339e2e/public/windows11.0-kb5087541-x64_854120caa89cf431a9a152b788484ef10023c59d.msu",
             "UpdateID": "0cd83157-88c4-42ec-8473-1ca3be0e8345",
+            "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/ba643ed9-3524-4e27-a43f-14279d339e2e/public/windows11.0-kb5087541-x64_854120caa89cf431a9a152b788484ef10023c59d.msu",
             "Title": "2026-05 Cumulative Update for Microsoft server operating system version 23H2 for x64-based Systems (KB5087541)"
           }
         ],
@@ -915,10 +937,10 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5129235",
+            "KBArticleID": "KB5136489",
+            "UpdateID": "8e961bf2-cf78-410f-b4c2-9ffec78af719",
             "Source": "https://catalog.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/d8b7f92b-bd35-4b4c-96e5-46ce984b31e0/public/windows11.0-kb5043080-x64_953449672073f8fb99badb4cc6d5d7849b9c83e8.msu",
-            "UpdateID": "797fec39-6d79-43b7-8585-8d95c6017cc3",
-            "Title": "2026-09 Cumulative Update for Microsoft server operating system version 24H2 for x64-based Systems (KB5129235) (26100.33451)"
+            "Title": "2026-11 Cumulative Update for Microsoft server operating system version 24H2 for x64-based Systems (KB5136489) (26100.33828)"
           }
         ],
         "OS": {
@@ -929,27 +951,27 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5123499",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2026/09/windows8.1-kb5123499-x64_d3171847f5ba034ca34a4de60457bec9014100f5.msu",
-            "UpdateID": "350ab5d9-f021-4f00-a3ed-98f4d9694bfb",
-            "Title": "2026-09 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5123499)"
+            "KBArticleID": "KB5127356",
+            "UpdateID": "63f4f3ee-1b6d-4245-acca-ae50d17d2f9f",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2026/10/windows8.1-kb5127356-x64_1a80feffb6534ad2dff34cdda4e118a7cd387fa3.msu",
+            "Title": "2026-10 Servicing Stack Update for Windows Server 2012 R2 for x64-based Systems (KB5127356)"
           },
           {
-            "KBArticleID": "KB5123066",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2026/09/windows8.1-kb5123066-x64_f566874be7de085ec679fbc697b38243d314f1d8.msu",
-            "UpdateID": "ac1c1101-b642-4df2-9d4b-a379f5c89664",
-            "Title": "2026-09 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5123066)"
+            "KBArticleID": "KB5126836",
+            "UpdateID": "7f479c57-cf7b-4beb-b6c9-635173e3a729",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2026/10/windows8.1-kb5126836-x64_8b26b788117d713ccabf03c0a4598fbce398a566.msu",
+            "Title": "2026-10 Security Monthly Quality Rollup for Windows Server 2012 R2 for x64-based Systems (KB5126836)"
           },
           {
             "KBArticleID": "KB4486105",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
             "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
             "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)"
           },
           {
             "KBArticleID": "KB3191564",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
             "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
             "Title": "Update for Windows Server 2012 R2 (KB3191564)"
           }
         ],
@@ -962,26 +984,26 @@
         "Updates": [
           {
             "KBArticleID": "KB5018922",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
             "UpdateID": "ab1275ca-75ca-4974-8a3b-ee576e54ea24",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/10/windows8.1-kb5018922-x64_3aa7832b7586e11304f8fee5e09b6829b32d1833.msu",
             "Title": "2022-10 Servicing Stack Update for Windows 8.1 for x64-based Systems (KB5018922)"
           },
           {
             "KBArticleID": "KB5022352",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
             "UpdateID": "553e68b1-ea2e-4124-a1da-e0f9978418c7",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows8.1-kb5022352-x64_d625561eda52f6d1f768dc444b817af0650ce81f.msu",
             "Title": "2023-01 Security Monthly Quality Rollup for Windows 8.1 for x64-based Systems (KB5022352)"
           },
           {
             "KBArticleID": "KB4486105",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
             "UpdateID": "a9c1befd-7deb-4b38-a08a-c56958e54341",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
             "Title": "Microsoft .NET Framework 4.8 for Windows 8.1 for x64 (KB4486105)"
           },
           {
             "KBArticleID": "KB3191564",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
             "UpdateID": "fb5a333d-f817-411d-88e3-e6a559e77088",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x86_821ec3c54602311f44caa4831859eac6f1dd0350.msu",
             "Title": "Update for Windows 8.1 (KB3191564)"
           }
         ],
@@ -993,33 +1015,33 @@
       {
         "Updates": [
           {
-            "KBArticleID": "KB5123602",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2026/09/windows8-rt-kb5123602-x64_4428e29a600041fd9d9dc6d83ca10179151c6bc3.msu",
-            "UpdateID": "77f46645-afbd-43f5-9ac0-b895b8113bd4",
-            "Title": "2026-09 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5123602)"
+            "KBArticleID": "KB5127357",
+            "UpdateID": "0fabb18b-27d6-4d87-9d4a-1b9980eb19f6",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2026/10/windows8-rt-kb5127357-x64_3d6dba522a958c025a93cfa273287ad055833cef.msu",
+            "Title": "2026-10 Servicing Stack Update for Windows Server 2012 for x64-based Systems (KB5127357)"
           },
           {
-            "KBArticleID": "KB5123065",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2026/09/windows8-rt-kb5123065-x64_8943ba7271b03556a8684eec82d6e2a71ab52b16.msu",
-            "UpdateID": "6021d484-3cc2-413e-b42d-ec82aa89561b",
-            "Title": "2026-09 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5123065)"
+            "KBArticleID": "KB5126835",
+            "UpdateID": "0b56a4ee-0151-4350-98e5-a9bd46a5ec2b",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2026/10/windows8-rt-kb5126835-x64_2e3bd1bfe924bd5e942ca0db9686fd344611a522.msu",
+            "Title": "2026-10 Security Monthly Quality Rollup for Windows Server 2012 for x64-based Systems (KB5126835)"
           },
           {
             "KBArticleID": "KB4486105",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
             "UpdateID": "d1fe2427-174b-4b7b-ba04-69aa90060d12",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2019/12/windows8.1-kb4486105-x64_1cba02a8aec5034da82cb2dca744648bc4a4eaef.msu",
             "Title": "Microsoft .NET Framework 4.8 for Windows Server 2012 R2 for x64 (KB4486105)"
           },
           {
             "KBArticleID": "KB3191564",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
             "UpdateID": "bd319740-3655-4eb1-bb6e-e23a7f45dcd4",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windowsblue-kb3191564-x64_91d95a0ca035587d4c1babe491f51e06a1529843.msu",
             "Title": "Update for Windows Server 2012 R2 (KB3191564)"
           },
           {
             "KBArticleID": "KB3191565",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
             "UpdateID": "dd23462d-1196-4d50-a255-c109e6fb4139",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/03/windows8-rt-kb3191565-x64_b346e79d308af9105de0f5842d462d4f9dbc7f5a.msu",
             "Title": "Update for Windows Server 2012 (KB3191565)"
           }
         ],
@@ -1032,8 +1054,8 @@
         "Updates": [
           {
             "KBArticleID": "KB4486081",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
             "UpdateID": "4f969474-0319-475c-a0b0-e92c6035e42b",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows8-rt-kb4019990-x64_a77f4e3e1f2d47205824763e7121bb11979c2716.msu",
             "Title": "Microsoft .NET Framework 4.8 for Windows Embedded 8 Standard for x64 (KB4486081)"
           }
         ],
@@ -1046,20 +1068,20 @@
         "Updates": [
           {
             "KBArticleID": "KB5071810",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/11/windows6.1-kb5071810-x64_a357d0303f3f9016e142cd1a4ac7579440f7c328.msu",
             "UpdateID": "a7758d4d-4811-4c1d-b8e5-e1fa903cea6d",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/11/windows6.1-kb5071810-x64_a357d0303f3f9016e142cd1a4ac7579440f7c328.msu",
             "Title": "2025-11 Servicing Stack Update for Windows Server 2008 R2 for x64-based Systems (KB5071810)"
           },
           {
             "KBArticleID": "KB5073695",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2026/01/windows6.1-kb5073695-x64_443453044a10fa075790bd7f2acc6e112bfe0bbb.msu",
             "UpdateID": "ea734313-a55f-4571-aca2-2c9e93b7685f",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2026/01/windows6.1-kb5073695-x64_443453044a10fa075790bd7f2acc6e112bfe0bbb.msu",
             "Title": "2026-01 Security Monthly Quality Rollup for Windows Server 2008 R2 for x64-based Systems (KB5073695)"
           },
           {
             "KBArticleID": "KB4503548",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/ftpk/2019/08/ndp48-x86-x64-enu_0885a72554ca76d2cd3ad76f98878f22b6a1d0b2.exe",
             "UpdateID": "6b472058-2645-4e95-9235-6c89e6305c95",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows6.1-kb4019990-x64_35cc310e81ef23439ba0ec1f11d7b71dd34adfe5.msu",
             "Title": "Microsoft .NET Framework 4.8 for Windows Server 2008 R2 for x64 (KB4503548)"
           }
         ],
@@ -1072,20 +1094,20 @@
         "Updates": [
           {
             "KBArticleID": "KB5017397",
-            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
             "UpdateID": "6c442b81-f915-4ac7-ae07-8a892a23c80f",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/09/windows6.1-kb5017397-x64_2a9999bd20cb964869c59bb16841a76e14030a29.msu",
             "Title": "2022-09 Servicing Stack Update for Windows 7 for x64-based Systems (KB5017397)"
           },
           {
             "KBArticleID": "KB5022338",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
             "UpdateID": "0835612e-2975-4660-b61d-e5ecf8cb5391",
+            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/01/windows6.1-kb5022338-x64_75d100c03bcaee4b62d08004cc382337ed09d327.msu",
             "Title": "2023-01 Security Monthly Quality Rollup for Windows 7 for x64-based Systems (KB5022338)"
           },
           {
             "KBArticleID": "KB4503548",
-            "Source": "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/ftpk/2020/01/ndp48-kb4503575-x64_6c25d7b9595000a2575fd1596e70341234df7bfe.exe",
             "UpdateID": "2437a1a6-c72c-4e62-81bc-46de945cc0ab",
+            "Source": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2017/05/windows6.1-kb4019990-x64_35cc310e81ef23439ba0ec1f11d7b71dd34adfe5.msu",
             "Title": "Microsoft .NET Framework 4.8 for Windows 7 for x64 (KB4503548)"
           }
         ],
