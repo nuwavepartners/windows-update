@@ -73,6 +73,7 @@ param (
 		'Updates',
 		'Upgrades'
 	)]
+	[Alias('Category')]
 	[string[]] $Categories,
 
 	[Parameter(ParameterSetName = 'BuiltCriteria')]

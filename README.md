@@ -31,6 +31,15 @@ Open a Windows PowerShell prompt as Administrator, paste this:
 & ([scriptblock]::Create((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Update-WindowsNative.ps1'))) -Action Install
 ```
 
+### List Updates Natively
+
+Open a Windows PowerShell prompt as Administrator, paste this:
+
+```powershell
+[Net.ServicePointManager]::SecurityProtocol = [System.Enum]::GetValues([System.Net.SecurityProtocolType]) | Where-Object { $_ -match 'Tls' };
+& ([scriptblock]::Create((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/nuwavepartners/windows-update/main/Update-WindowsNative.ps1'))) -Action List
+```
+
 ## Compatibility
 
 This project is intended to work on all Windows 6.0+ (Vista/Server 2008)  Operating Systems with PowerShell 3.0+; the oldest OSes may need Windows Management Framework and/or .NET Framework updates before the scripts function correctly.
